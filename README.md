@@ -21,6 +21,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Yup](https://github.com/jquense/yup) is an open-source library that integrates perfectly with Formik. It allows you to set all your form validation rules declaratively.
 - [React-hook-form](https://github.com/jquense/yup) is another popular library to easily manage your form state and validation rules.
 
+### React Context
+- [React.memo from the official React docs](https://reactjs.org/docs/react-api.html#reactmemo), an API that can be used in conjunction with Context Providers to prevent unnecessary re-renders in top-level components in the tree. 
+
+- [useMemo from the official React docs](https://reactjs.org/docs/hooks-reference.html#usememo), a hook to guarantee referential equality on objects across rendering passes.
+
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
