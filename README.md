@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# App features
+- Form validation
+- Feedback form
+- Translation
+- Light-dark theme switcher
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Additional resources
+### Rendering Lists
+- [Map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+ allows you to create new arrays populated with the results of calling a transformation function on every element. 
+- [Rendering lists on official React docs website](https://beta.reactjs.org/learn/rendering-lists#rendering-data-from-arrays)
+ dives deeper into how to display multiple similar components from a collection of data, providing examples of both filtering and transformations.
+- [React keys on official docs](https://beta.reactjs.org/learn/rendering-lists#where-to-get-your-key)
+ offers a comprehensive set of memotecnic rules to reinforce how to use keys properly.
+
+### Forms
+- [Forms from the official React docs](https://reactjs.org/docs/forms.html) illustrate some examples of how React deals with certain form fields compared to traditional HTML tags, like the text area, select and file input tags. It also showcases how to handle multiple inputs by leveraging event.target.name and the implications of using null as a value in a controlled input.
+- [Formik](https://formik.org/) is the most popular open source form library for React. It saves you lots of time when building forms and offers a declarative, intuitive and adoptable paradigm. 
+- [Yup](https://github.com/jquense/yup) is an open-source library that integrates perfectly with Formik. It allows you to set all your form validation rules declaratively.
+- [React-hook-form](https://github.com/jquense/yup) is another popular library to easily manage your form state and validation rules.
 
 ## Available Scripts
 

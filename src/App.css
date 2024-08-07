@@ -1,4 +1,24 @@
 .App {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.form-feedback textarea {
+  min-height: 100px;
+}
+
+.navbar {
+  min-height: 60px;
+}
+
+.theme-dark {
+  background-color: #121212;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +55,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
