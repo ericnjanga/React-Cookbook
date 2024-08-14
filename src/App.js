@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import { useTheme } from './ThemeContext';
 import Nav from './Nav';
+import UserList from './UserList';
 // import PageHome from './PageHome';
 // import PageRegister from './PageRegister';
 // // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -26,10 +27,13 @@ function App() {
         </div>
 
         <div className="row">
-          <div className="col-md-7">
+          <div className="col-md-4">
+            <UserList />
+          </div>
+          <div className="col-md-4">
             <RegistrationForm />
           </div>
-          <div className="col-md-5">
+          <div className="col-md-4">
             <FeedbackForm />
           </div>
         </div>
