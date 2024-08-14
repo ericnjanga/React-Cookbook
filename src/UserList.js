@@ -20,6 +20,7 @@ function UserList() {
             <h1>Fetching user information</h1>
             <h2>First name: {user.results[0].name.first}</h2>
             <h2>Last name: {user.results[0].name.last}</h2>
+            <img src={user.results[0].picture.large} alt="" />
         </div>
     ) : (
         <h1>Data Pending ...</h1>
