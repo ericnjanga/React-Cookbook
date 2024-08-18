@@ -5,6 +5,16 @@
   min-height: 100vh;
 }
 
+h1 {
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+
 .form-feedback textarea {
   min-height: 100px;
 }
@@ -24,6 +34,14 @@
 .badge-success {
   color: #fff;
   background-color: #28a745;
+}
+.badge-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+.badge-dark {
+  color: #fff;
+  background-color: #343a40;
 }
 
 

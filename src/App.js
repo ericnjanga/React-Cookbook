@@ -4,6 +4,7 @@ import Nav from './Nav';
 import UserList from './UserList';
 import ExpenseTracker from './ExpenseTracker';
 import CustomHookTest from './CustomHookTest';
+import DaysOfTheWeek from './DaysOfTheWeek';
 // import PageHome from './PageHome';
 // import PageRegister from './PageRegister';
 // // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -29,7 +30,7 @@ function App() {
         </div>
         
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-5">
             <div className="card">
               <div className="card-body">
                 <span className="badge badge-success">useReducer Hook</span>
@@ -37,11 +38,19 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-3">
             <div className="card">
               <div className="card-body">
               <span className="badge badge-success">Custom Hook</span>
                 <CustomHookTest />
+                </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="card">
+              <div className="card-body">
+              <span className="badge badge-success">Custom Hook</span>
+                <DaysOfTheWeek />
                 </div>
             </div>
           </div>

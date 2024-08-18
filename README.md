@@ -39,8 +39,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - The [useEffect reference on official React docs website](https://beta.reactjs.org/apis/react/useEffect#useeffect) helps you understand the syntax of this hook and goes into some depth to explain how to use and troubleshoot the useEffect hook. 
 
 ### Rules of Hooks and Fetching Data with Hooks
-- The 
-[Rules of Hooks reading on Reactjs.org](https://reactjs.org/docs/hooks-rules.html) website gives you an overview of how to work with the hooks as recommended by the React Core team at Meta. 
+- The [Rules of Hooks reading on Reactjs.org](https://reactjs.org/docs/hooks-rules.html) website gives you an overview of how to work with the hooks as recommended by the React Core team at Meta. 
 
 - The [Fetching data with Effects](https://beta.reactjs.org/apis/react/useEffect#fetching-data-with-effects)
  article on React docs discusses fetching data using a few different approaches, including using async / await syntax. 
@@ -48,6 +47,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [How to use promises](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises) is a resource that describes the "behind-the-scenes" of how data fetching works in greater depth. 
 
 - [async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) is a resource on MDN that discusses the use of the async and await keywords as a more recent way to handle API requests in JavaScript. 
+
+### Advanced Hooks
+- The [useReducer hook reference](https://react.dev/reference/react/useReducer) in the React docs discusses the basics of useReducer, along with specifying initial state and lazy initialization. 
+
+- The React docs also has a reference on [using the useRef hook](https://react.dev/reference/react/useRef) which is a great example of various options that are available when working with the useRef hook. 
+
+- The [Reusing Logic with Custom Hooks](https://beta.reactjs.org/learn/reusing-logic-with-custom-hooks) reference in the React docs discusses the dynamics of custom hooks and provides a few practical examples to complement the theory behind them. 
+
+
 
 
 
