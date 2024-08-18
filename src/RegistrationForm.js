@@ -87,6 +87,7 @@ function RegistrationForm() {
             <input
               id="input3"
               placeholder="Email address"
+                autoComplete="username"
               value={email}
               className="form-control"
               onChange={(e) => setEmail(e.target.value)}
@@ -104,6 +105,7 @@ function RegistrationForm() {
               id="input4"
                 type="password"
                 placeholder="Password"
+                autoComplete="current-password"
                 value={password.value}
                 className={'form-control' + (PasswordIsNotValid() ? ' is-invalid' : '')}
                 onChange={(e) => {

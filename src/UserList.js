@@ -13,8 +13,6 @@ function UserList() {
         fetchData();
     }, []);
 
-    // return <p>....</p>;
-
     return Object.keys(user).length > 0 ? (
         <div>
             <h1>Fetching user information</h1>

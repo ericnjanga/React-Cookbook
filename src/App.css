@@ -17,6 +17,15 @@
   background-color: #121212;
 }
 
+.badge-primary {
+  color: #fff;
+  background-color: #007bff;
+}
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+}
+
 
 /* .App {
   text-align: center;

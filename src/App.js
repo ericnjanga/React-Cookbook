@@ -2,6 +2,8 @@
 import { useTheme } from './ThemeContext';
 import Nav from './Nav';
 import UserList from './UserList';
+import ExpenseTracker from './ExpenseTracker';
+import CustomHookTest from './CustomHookTest';
 // import PageHome from './PageHome';
 // import PageRegister from './PageRegister';
 // // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -19,22 +21,62 @@ function App() {
   const { theme } = useTheme();
   return (
     <div className={`App theme-${theme}`}>
-      <div class="container">
+      <div className="container">
         <div className="row">
           <div className="col">
             <Nav />
           </div>
         </div>
+        
+        <div className="row">
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-body">
+                <span className="badge badge-success">useReducer Hook</span>
+                <ExpenseTracker />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-body">
+              <span className="badge badge-success">Custom Hook</span>
+                <CustomHookTest />
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <br />
+          <hr />
+          <br />
+        </div>
 
         <div className="row">
           <div className="col-md-4">
-            <UserList />
+            <div className="card">
+              <div className="card-body">
+                <span className="badge badge-success">Data Fetching</span>
+                <UserList />
+              </div>
+            </div>
           </div>
           <div className="col-md-4">
-            <RegistrationForm />
+            <div className="card">
+              <div className="card-body">
+                <span className="badge badge-success">Controlled form</span>
+                <RegistrationForm />
+              </div>
+            </div>
           </div>
           <div className="col-md-4">
-            <FeedbackForm />
+            <div className="card">
+              <div className="card-body">
+              <span className="badge badge-success">Uncontrolled form</span>
+                <FeedbackForm />
+              </div>
+            </div>
           </div>
         </div>
       </div>
