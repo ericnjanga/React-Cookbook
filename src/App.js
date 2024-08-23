@@ -1,10 +1,12 @@
 // import logo from './logo.svg';
+import { useState } from 'react';
 import { useTheme } from './ThemeContext';
 import Nav from './Nav';
 import UserList from './UserList';
 import ExpenseTracker from './ExpenseTracker';
 import CustomHookTest from './CustomHookTest';
 import DaysOfTheWeek from './DaysOfTheWeek';
+import { Button, DeleteButton, Alert } from './MixedComponents';
 // import PageHome from './PageHome';
 // import PageRegister from './PageRegister';
 // // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -20,12 +22,36 @@ import './App.css';
 
 function App() {
   const { theme } = useTheme();
+  const [alertVisibility, setAlertVisibility] = useState(false);
   return (
     <div className={`App theme-${theme}`}>
       <div className="container">
         <div className="row">
           <div className="col">
             <Nav />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col">
+            <div className="card">
+              <div className="card-body">
+                <div style={{ display:'flex', gap:'6px', marginBottom: '15px' }}>
+                  <span className="badge badge-success">Component Composition with Children</span>
+                  <span className="badge badge-secondary">Containment</span>
+                  <span className="badge badge-secondary">Specialization</span>
+                </div>
+                <div>
+                  <header>Little Lemon Restaurant</header>
+                  <Button onClickHandler={() => setAlertVisibility(true)}>Delete account</Button>
+                  <Alert isVisible={alertVisibility}>
+                    <h1>Delete Account</h1>
+                    <p>Are you sure you want to proceed? You'll miss out on all the delicious receipes.</p>
+                    <DeleteButton clickHandler={() => setAlertVisibility(false)} />
+                  </Alert>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         

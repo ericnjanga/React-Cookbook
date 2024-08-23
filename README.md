@@ -1,4 +1,5 @@
 # App features
+- Component Composition (with children) Design Pattern
 - Custom Hook
 - Small expenses tracker
 - Fetching users' information from a random API source
