@@ -1,10 +1,34 @@
 .App {
   display: flex;
-  padding: 16px;
+  /* padding: 16px; */
   flex-direction: column;
   min-height: 100vh;
 }
+.App > .container-fluid {
+  height: 100vh;
+}
+.App > .container-fluid > .row {
+  height: 100vh;
+}
 
+
+
+.main-sidebar {    
+  padding: 2.4rem;
+  background-color: #101B3B;
+  color: #fff;
+}
+.main-sidebar a {
+  color: #A5AFCD;
+}
+.main-sidebar a:hover {
+  color: #c2fd00;
+  text-decoration: none;
+}
+
+.main-content {
+  padding: 3.5rem;
+}
 h1 {
   font-size: 1.8rem;
 }
