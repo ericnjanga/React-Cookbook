@@ -1,0 +1,14 @@
+@import './_variables.css';
+
+/* Utilities */
+.utils-highlight {
+    padding: 0.2rem 0.3rem;
+    background-color: var(--website-theme-light-aaaa-3);
+}
+pre {
+    display: inline;
+    padding: 0.2rem 0.3rem;
+    border-radius: 3px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}

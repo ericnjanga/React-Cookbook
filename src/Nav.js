@@ -8,7 +8,10 @@ const Nav = () => {
         <nav>
             <ul>
                 <li>
-                    <NavLink to="/" className={activateLink}>Hooks</NavLink>
+                    <NavLink to="/" className={activateLink}>Dynamic JSX</NavLink> {/* /dynamic-jsx */}
+                </li> 
+                <li>
+                    <NavLink to="/hooks" className={activateLink}>Hooks</NavLink>
                 </li>
                 <li>
                     <NavLink to="/forms" className={activateLink}>Forms</NavLink>

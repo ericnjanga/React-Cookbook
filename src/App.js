@@ -4,6 +4,7 @@ import PageHooks from './PageHooks';
 import PageForms from './PageForms';
 import PageComponentComposition from './PageComponentComposition';
 import PageDataFetching from './PageDataFetching';
+import PageDynamicJsx from './PageDynamicJsx';
 
 import { useTheme } from './ThemeContext';
 import Switch from "./Switch";
@@ -11,7 +12,7 @@ import Nav from './Nav';
 
 
 
-import './App.css';
+import './styles/App.css';
 
 function App() {
   const { theme } = useTheme();
@@ -30,7 +31,8 @@ function App() {
               <Switch></Switch>
 
               <Routes>
-                <Route path="/" element={<PageHooks />} />
+                <Route path="/" element={<PageDynamicJsx />} />
+                <Route path="/hooks" element={<PageHooks />} />
                 <Route path="/forms" element={<PageForms />} />
                 <Route path="/component-composition" element={<PageComponentComposition />} />
                 <Route path="/data-fetching" element={<PageDataFetching />} />

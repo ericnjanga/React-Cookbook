@@ -1,3 +1,8 @@
+@import './_initialization.css';
+@import './_utilities.css';
+@import './_variables.css';
+
+
 .App {
   display: flex;
   /* padding: 16px; */
@@ -30,15 +35,7 @@
 .main-content {
   padding: 3.5rem;
 }
-h1 {
-  font-size: 1.8rem;
-}
-h2 {
-  font-size: 1.5rem;
-}
-h3 {
-  font-size: 1.2rem;
-}
+ 
 
 .form-feedback textarea {
   min-height: 100px;
@@ -69,58 +66,11 @@ h3 {
   background-color: #343a40;
 }
 
-
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* - Live order app */
+.app-liveOrder__row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: hsl(210, 55%, 92%);
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
-
-.overlay {
-  position: fixed;
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 998;
-}
-.alert {
-  background: #fff;
-  z-index: 999;
+.app-liveOrder__row p {
+  margin: 0;
 }

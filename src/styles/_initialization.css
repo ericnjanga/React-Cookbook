@@ -1,0 +1,50 @@
+:root {
+    /* Font faces */
+    --website-font-body: "Arimo", sans-serif;
+    --website-font-headings: "Hanken Grotesk", sans-serif;
+}
+
+
+/**
+ * INITIALIZATION
+ * ---------------------------------------------
+*/ 
+body {
+  /* Making the font appear crisp globally ... */
+  -webkit-font-smoothing: antialiased; /* For Chrome, Safari, and newer versions of Edge */
+  -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+  font-smooth: auto; /* For older versions of Edge and other browsers */
+
+  /* ... */
+  font-size: 1.05rem;
+
+  /* Typography */
+  font-family: var(--website-font-body);
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  /* font-size handled by bootstrap  */
+} 
+
+* {
+  transition: all 0.3s ease; /* Adjust the duration and timing function as needed */
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5, .btn {
+  font-family: var(--website-font-headings); 
+  font-style: normal;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 800; 
+}
