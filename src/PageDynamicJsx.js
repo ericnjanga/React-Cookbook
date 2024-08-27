@@ -1,5 +1,6 @@
 import React from 'react';
 import LiveOrder from './LiveOrders';
+import FeedbackRadioGroup from './FeedbackRadioBtn';
 
 
 const PageDynamicJsx = () => {
@@ -18,16 +19,29 @@ const PageDynamicJsx = () => {
                 <h3>The problem</h3>
                 <p>We need to apply custom styles to the children elements of a "Row" component 
                     <span className="utils-highlight">without having to modify the original JSX markup</span>. 
-                    To solve this problem, we will use <pre><a href="https://react.dev/reference/react/Children" target="_blank">React.Children()</a></pre> map function to loop through 
-                    every child of component, and <pre><a href="https://react.dev/reference/react/cloneElement" target="_blank">React.cloneElement</a></pre> to return a new copy of the 
+                    To solve this problem, we will use <span className="code"><a href="https://react.dev/reference/react/Children" target="_blank">React.Children()</a></span> map function to loop through 
+                    every child of component, and <span className="code"><a href="https://react.dev/reference/react/cloneElement" target="_blank">React.cloneElement</a></span> to return a new copy of the 
                     element to which we will apply the new styles.</p>
             </div>
 
             <div style={spacinfStyle}></div>
             
             <div className="row">
-                <h3>Code output</h3>
+                <h3>Code output 1</h3>
                 <LiveOrder />
+            </div>
+
+            <div style={spacinfStyle}></div>
+
+            <div className="row">
+                <div className="col">
+                    <h3>Code output 2</h3>
+                    <p className="mb-3">We generate the radio group below by encapsulating the core functionalities 
+                        into 2 components: <span className="code">RadioGroup</span> and 
+                        <span className="code">RadioOption</span>. Next, we use <span className="code">RadioGroup</span> 
+                        to dynamically modify its children properties, which makes for a much clearner and flexible code implementation.</p>
+                    <FeedbackRadioGroup />
+                </div>
             </div>
 
             <div style={spacinfStyle}></div>
@@ -40,6 +54,10 @@ const PageDynamicJsx = () => {
                     </div>
                 </div>
             </div>
+
+
+            
+            
         </>
     );
 };
