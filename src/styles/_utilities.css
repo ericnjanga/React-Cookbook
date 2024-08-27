@@ -12,3 +12,7 @@ pre {
     background-color: #eee;
     border: 1px solid #ccc;
 }
+p:last-of-type {
+    /* border: 1px solid red; */
+    margin-bottom: 0;
+}
