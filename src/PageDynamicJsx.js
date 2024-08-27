@@ -19,8 +19,8 @@ const PageDynamicJsx = () => {
                 <h3>The problem</h3>
                 <p>We need to apply custom styles to the children elements of a "Row" component 
                     <span className="utils-highlight">without having to modify the original JSX markup</span>. 
-                    To solve this problem, we will use <span className="code"><a href="https://react.dev/reference/react/Children" target="_blank">React.Children()</a></span> map function to loop through 
-                    every child of component, and <span className="code"><a href="https://react.dev/reference/react/cloneElement" target="_blank">React.cloneElement</a></span> to return a new copy of the 
+                    To solve this problem, we will use <span className="code"><a href="https://react.dev/reference/react/Children" target="_blank">React.Children()</a></span> API map function to loop through 
+                    every child of component, and <span className="code"><a href="https://react.dev/reference/react/cloneElement" target="_blank">React.cloneElement</a></span> API to return a new copy of the 
                     element to which we will apply the new styles.</p>
             </div>
 

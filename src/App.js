@@ -1,17 +1,8 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-import PageHooks from './PageHooks';
-import PageForms from './PageForms';
-import PageComponentComposition from './PageComponentComposition';
-import PageDataFetching from './PageDataFetching';
-import PageDynamicJsx from './PageDynamicJsx';
-
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoutes from './AppRoutes';
 import { useTheme } from './ThemeContext';
 import Switch from "./Switch";
 import Nav from './Nav';
-
-
-
 import './styles/App.css';
 
 function App() {
@@ -29,14 +20,7 @@ function App() {
 
             <section className="main-content col-lg-9">
               <Switch></Switch>
-
-              <Routes>
-                <Route path="/" element={<PageDynamicJsx />} />
-                <Route path="/hooks" element={<PageHooks />} />
-                <Route path="/forms" element={<PageForms />} />
-                <Route path="/component-composition" element={<PageComponentComposition />} />
-                <Route path="/data-fetching" element={<PageDataFetching />} />
-              </Routes>
+              <AppRoutes />
             </section>
           </div>
         </div>
