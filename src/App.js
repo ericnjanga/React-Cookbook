@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import PageHooks from './PageHooks';
 import PageForms from './PageForms';
 import PageComponentComposition from './PageComponentComposition';
+import PageDataFetching from './PageDataFetching';
 
 import { useTheme } from './ThemeContext';
-// import Nav from './Nav';
-// import UserList from './UserList';
-// // // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Switch from "./Switch";
+import Nav from './Nav';
 
 
 
@@ -23,66 +23,21 @@ function App() {
           <div className="row">
             <aside className="main-sidebar col-lg-3">
               <h1>React Patterns</h1>
-              <nav>
-                <ul>
-                  <li>
-                    <Link to="/">Hooks</Link>
-                  </li>
-                  <li>
-                    <Link to="/forms">Forms</Link>
-                  </li>
-                  <li>
-                    <Link to="/component-composition">Component Composition</Link>
-                  </li>
-                </ul>
-              </nav>
+              <Nav />
             </aside>
+
             <section className="main-content col-lg-9">
+              <Switch></Switch>
 
               <Routes>
                 <Route path="/" element={<PageHooks />} />
                 <Route path="/forms" element={<PageForms />} />
                 <Route path="/component-composition" element={<PageComponentComposition />} />
+                <Route path="/data-fetching" element={<PageDataFetching />} />
               </Routes>
-  
-              {/* <div className="row">    
-                <div className="col">
-                  <Nav />
-                </div>
-              </div>
-      
-              <div className="row">
-                <div className="col-md-4">
-                  <div className="card">
-                    <div className="card-body">
-                      <span className="badge badge-success">Data Fetching</span>
-                      <UserList />
-                    </div>
-                  </div>
-                </div>
-                
-              </div> */}
-  
             </section>
           </div>
-
-          
         </div>
-
-
-
-
-        {/* <Router>
-          
-          <Routes>
-            <Route exact path="/" component={PageHome} />
-            <Route path="/register" component={PageRegister} />
-              <Route path="/about" component={About} />
-              <Route path="/contact" component={Contact} />
-          </Routes>
-
-          
-        </Router> */}
       </div>
     </Router>
   );

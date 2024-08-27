@@ -21,7 +21,8 @@
 .main-sidebar a {
   color: #A5AFCD;
 }
-.main-sidebar a:hover {
+.main-sidebar a:hover,
+.main-sidebar a.active {
   color: #c2fd00;
   text-decoration: none;
 }

@@ -11,7 +11,7 @@ const PageForms = () => {
             <h1>Forms (Controlled and Uncontrolled)</h1>
           </div>
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-6">
               <div className="card">
                   <div className="card-body">
                     <span className="badge badge-success">Controlled form</span>
@@ -19,7 +19,7 @@ const PageForms = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-6">
                 <div className="card">
                   <div className="card-body">
                   <span className="badge badge-success">Uncontrolled form</span>

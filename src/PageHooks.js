@@ -9,8 +9,8 @@ const PageHooks = () => {
             <div className="row">
                 <h1>React Hooks</h1>
             </div>
-            <div className="row">
-                <div className="col-md-5">
+            <div className="row mb-4">
+                <div className="col-md-10">
                     <div className="card">
                         <div className="card-body">
                         <span className="badge badge-success">useReducer Hook</span>
@@ -18,7 +18,9 @@ const PageHooks = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-3">
+            </div>
+            <div className="row"> 
+                <div className="col-md-5">
                     <div className="card">
                         <div className="card-body">
                         <span className="badge badge-success">Custom Hook</span>
@@ -26,7 +28,7 @@ const PageHooks = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-5">
                     <div className="card">
                         <div className="card-body">
                         <span className="badge badge-success">Custom Hook</span>
