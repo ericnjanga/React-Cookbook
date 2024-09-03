@@ -1,0 +1,11 @@
+
+.AbstractRendering {
+  border: 5px solid green;
+  padding: 3rem;
+  min-height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

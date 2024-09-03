@@ -29,6 +29,9 @@ const PageCategoryLogicEncapsulation = () => {
                     <li>
                         <NavLink to="/hooks">Custom Hooks</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/render-props">Render Props</NavLink>
+                    </li>
                 </ul>
             </div>
         </>

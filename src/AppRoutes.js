@@ -9,12 +9,14 @@ import PageDynamicJsx from './PageDynamicJsx';
 import PageAdditionalResources from './PageAdditionalResources';
 import PageHighOrderComponents from './PageHighOrderComponents';
 import PageCategoryLogicEncapsulation from './PageCategoryLogicEncapsulation';
+import PageRenderProps from './PageRenderProps';
 
 const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<PageDynamicJsx />} />
             <Route path="/hooks" element={<PageHooks />} />
+            <Route path="/render-props" element={<PageRenderProps />} />
             <Route path="/forms" element={<PageForms />} />
             <Route path="/component-composition" element={<PageComponentComposition />} />
             <Route path="/data-fetching" element={<PageDataFetching />} />

@@ -21,6 +21,9 @@ const Nav = () => {
                         <NavLink to="/hooks" className={activateLink}>Hooks</NavLink>
                     </li>
                     <li>
+                        <NavLink to="/render-props">Render Props</NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/forms" className={activateLink}>Forms</NavLink>
                     </li>
                     <li>
