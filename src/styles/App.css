@@ -44,6 +44,7 @@
   color: #dce3fb;
 }
 .theme-dark p,
+.theme-dark span,
 .theme-dark ul {
   color: #b3bddf;
 }

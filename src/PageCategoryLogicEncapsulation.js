@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
+import Breadcrumbs from "./Breadcrumbs";
 
 const activateLink = ({ isActive }) => ( isActive ? 'active' : null );
 
@@ -12,21 +13,9 @@ const PageCategoryLogicEncapsulation = () => {
 
     return (
         <>
-            <div className="row">
+            <Breadcrumbs />
 
-                {/*  --- Breadcrumb Component */}
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <NavLink to="/" className={activateLink}>Home</NavLink>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic enpasulation</NavLink>
-                        </li>
-                    </ol>
-                </nav>
-                {/*  --- Breadcrumb Component */}
-             
+            <div className="row">
                 <h1>Logic encapsulation patterns</h1>
             </div>
 
