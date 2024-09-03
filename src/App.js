@@ -18,7 +18,7 @@ function App() {
               <Nav />
             </aside>
 
-            <section className="main-content col-lg-9">
+            <section className="main-content offset-lg-3 col-lg-9">
               <Switch></Switch>
               <AppRoutes />
             </section>

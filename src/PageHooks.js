@@ -1,11 +1,31 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import ExpenseTracker from './ExpenseTracker';
 import CustomHookTest from './CustomHookTest';
 import DaysOfTheWeek from './DaysOfTheWeek';
 
+const activateLink = ({ isActive }) => ( isActive ? 'active' : null );
+
 const PageHooks = () => {
     return ( 
         <>
+            <div className="row">
+                
+                {/*  --- Breadcrumb Component */}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <NavLink to="/" className={activateLink}>Home</NavLink>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic enpasulation</NavLink>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Hooks</li>
+                    </ol>
+                </nav>
+                {/*  --- Breadcrumb Component */} 
+            </div>
+
             <div className="row">
                 <h1>React Hooks</h1>
             </div>
