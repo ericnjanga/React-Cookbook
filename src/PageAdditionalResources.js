@@ -105,6 +105,27 @@ const PageAdditionalResources = () => {
                     </li>
                 </ul>
             </div>
+  
+            <div style={spacinfStyle}></div>
+
+            <div className="row">
+                <h2>Reusing behaviour</h2>
+                <p>Here is a list of additional resources as you continue to explore Reusing Behavior:</p>
+                <ul>
+                    <li>
+                        <a href="https://github.com/downshift-js/downshift" target="_blank">Downshift</a> is a popular open-source library that implements an autocomplete, combo box or select experience using the render prop pattern.  
+                    </li>
+                    <li>
+                        <a href="https://reactjs.org/docs/render-props.html" target="_blank">Render props</a> from the official React docs.  
+                    </li>
+                    <li>
+                        <a href="https://reactjs.org/docs/higher-order-components.html" target="_blank">Higher Order Components</a> from the official React docs. 
+                    </li>
+                    <li>
+                        <a href="https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components" target="_blank">Forwarding Refs</a> from the official React docs showcases in detail how to forward refs in higher-order components, so that they are passed through properly. 
+                    </li>
+                </ul>
+            </div>
         </>
     );
 };

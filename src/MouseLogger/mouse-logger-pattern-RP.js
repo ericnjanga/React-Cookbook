@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 // Render functions
 // ------------
-const Render1 = (mousePosition) => {
+const Render1 = ({ mousePosition }) => {
     return (
         <div className="CoordinatesMouseLogger">
             <p>Mouse position as coordinates</p>
@@ -18,7 +18,7 @@ const Render1 = (mousePosition) => {
         </div>
     );
 };
-const Render2 = (mousePosition) => {
+const Render2 = ({ mousePosition }) => {
     return (
         <div className="PointMouseLogger">
             <p>Mouse position as a point</p>
@@ -31,7 +31,7 @@ const Render2 = (mousePosition) => {
 // Encapsulating cross-cutting concerns
 // ------------
 // Encapsulation the event handler, state management, and returns a component enhanced with mouse positions
-const ActionComponent = ({ renderMethod, prop }) => {
+const ActionComponent = ({ renderMethod }) => {
 
     // Initiate mouse position and keeping it in the state
     const [mousePosition, setMousePosition] = useState({
@@ -59,28 +59,13 @@ const ActionComponent = ({ renderMethod, prop }) => {
         };
     }, []); 
 
-    return renderMethod(mousePosition);
+    return renderMethod({ mousePosition });
 };
 
 
 // Enhanced components
 // ------------
-// Creating two new enhanced component versions that will be aware of the mouse position data
-const NewComp1 = () => {
-    return (
-        <ActionComponent
-            renderMethod={Render1}
-        />
-    );
-};
-const NewComp2 = () => {
-    return (
-        <ActionComponent
-            renderMethod={Render2}
-        />
-    );
-};
-
+// No need to create enhanced components here...
 
 // Main Application
 // ------------
@@ -91,8 +76,8 @@ const MouseLoggerRP = () => {
                 <h5>"Mouse Logger" functionality using the <span className='utils-highlight'>Render Props</span> pattern</h5>
             </header>
             <div className='AppDemoFrame__wrapper'>
-                <NewComp1 />
-                <NewComp2 />
+                <ActionComponent renderMethod={Render1} />
+                <ActionComponent renderMethod={Render2} />
             </div>
         </div>
     );
