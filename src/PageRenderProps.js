@@ -1,6 +1,7 @@
 import React from "react";
 import Breadcrumbs from "./Breadcrumbs";
-import AbstractRendering from "./AbstractRendering";
+import AbstractRenderingRP from "./AbstractRenderingRP";
+import MouseLoggerRP from "./MouseLogger/mouse-logger-pattern-RP";
 
 const PageRenderProps = () => {
 
@@ -24,19 +25,20 @@ const PageRenderProps = () => {
                 <p>First, we encapsulate the data fetching functionality into a component that returns a 
                     call to an abstract render function. Next, using component composition, we render 
                     the data fetching component into a new component, and provide as a props a unique render function.</p>
-                
-                <br />
+            </div>
 
-
-                <h3>Example</h3>
-                <p>We have two comcponents that use the same fetching functionality to fetch two different types of data, 
-                    and renders them in two different ways.</p>
+            <div className="row"> 
+                <h3>Example 1</h3>
+                <p>Using the <span className='utils-highlight'>Render Props</span> pattern to render two different components with the same business logic.</p>
+                <AbstractRenderingRP />
             </div>
 
             <div style={spacinfStyle}></div>
 
-            <div className="row">
-                <AbstractRendering />
+            <div className="row"> 
+                <h3>Example 2</h3>
+                <p>Using the <span className='utils-highlight'>Render Props</span> pattern to create the "Mouse Logger" functionality.</p>
+                <MouseLoggerRP />
             </div>
         </>
     );

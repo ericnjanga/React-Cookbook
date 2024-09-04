@@ -1,4 +1,7 @@
-import './styles.css';
+/**
+ * Using the Render Props pattern for abstract rendering
+ */
+ 
 import { useEffect, useState } from 'react';
 
 // Render style 1
@@ -58,11 +61,12 @@ const DrinkCount = () => {
     );
 };
 
-function AbstractRendering() {
+function AbstractRenderingRP() {
     return (
         <div className="AppDemoFrame">
             <header className="AppDemoFrame__header">
-                <h5>Using the <span className='utils-highlight'>Render Props</span> pattern to render two different components with the same business logic</h5>
+                <p>We have two comcponents that use the same fetching functionality to fetch two different types of data, 
+                and renders them in two different ways.</p>
             </header>
 
             <div className="AppDemoFrame__wrapper">
@@ -73,4 +77,4 @@ function AbstractRendering() {
     );
 }
 
-export default AbstractRendering;
+export default AbstractRenderingRP;

@@ -2,11 +2,45 @@
  * Using the High Order Compoments pattern to create this "Mouse Logger" functionality
  */
 
-import './styles.css';
 import { useState, useEffect } from 'react';
 
+// Render functions
+// ------------
+// Gets a mouse position, and renders it as a coordinate
+const Render1 = ({ mousePosition }) => {
+    if (!mousePosition) { // Will not render anything if the mouse position is not provided
+        return null;
+    }
+
+    return (
+        <div className="CoordinatesMouseLogger">
+            <p>Mouse position as coordinates</p>
+            <div className="row">
+                <span>x: {mousePosition.x}</span>
+                <span>y: {mousePosition.y}</span>
+            </div>
+        </div>
+    );
+};
+
+// Gets a mouse position, and renders it as a point
+const Render2 = ({ mousePosition }) => {
+    if (!mousePosition) { // Will not render anything if the mouse position is not provided
+        return null;
+    }
+
+    return (
+            <div className="PointMouseLogger">
+                <p>Mouse position as a point</p>
+                <span>({mousePosition.x}, {mousePosition.y})</span>
+            </div>
+    );
+};
+
+
 // Encapsulating cross-cutting concerns
-// HOC that returns a component enhanced with mouse positions
+// ------------
+// HOC that encapsulates the event handler, state management, and returns a component enhanced with mouse positions
 const withMousePosition = (WrappedComponent) => {
     return (props) => {
 
@@ -27,6 +61,7 @@ const withMousePosition = (WrappedComponent) => {
                 });
             };
 
+            // Subscribe the function handler on mousemove
             window.addEventListener('mousemove', handleMousePositionChange);
 
             return () => { 
@@ -41,52 +76,27 @@ const withMousePosition = (WrappedComponent) => {
     };
 };
 
-// Gets a mouse position, and renders it as a coordinate
-const CoordinatesMouseLoggerHOC = ({ mousePosition }) => {
-    if (!mousePosition) { // Will not render anything if the mouse position is not provided
-        return null;
-    }
 
-    return (
-        <div className="CoordinatesMouseLoggerHOC">
-            <p>Mouse position as coordinates</p>
-            <div className="row">
-                <span>x: {mousePosition.x}</span>
-                <span>y: {mousePosition.y}</span>
-            </div>
-        </div>
-    );
-};
-
-// Gets a mouse position, and renders it as a point
-const PointMouseLoggerHOC = ({ mousePosition }) => {
-    if (!mousePosition) { // Will not render anything if the mouse position is not provided
-        return null;
-    }
-
-    return (
-            <div className="PointMouseLoggerHOC">
-                <p>Mouse position as a point</p>
-                <span>({mousePosition.x}, {mousePosition.y})</span>
-            </div>
-    );
-};
-
+// Enhanced components
+// ------------
 // Creating two new enhanced component versions that will be aware of the mouse position data
-const PanelMouseTracker = withMousePosition(CoordinatesMouseLoggerHOC);
-const PointMouseTracker = withMousePosition(PointMouseLoggerHOC);
+const NewComp1 = withMousePosition(Render1);
+const NewComp2 = withMousePosition(Render2);
 
+
+// Main Application
+// ------------
 function MouseLoggerHOC() {
     return (
         <div className="MouseLoggerHOCApp AppDemoFrame">
             <header className="AppDemoFrame__header">
-                <h5>"Mouse Logger" functionality using the <span className='utils-highlight'>High Order Component </span> pattern</h5>
+                <h5>"Mouse Logger" functionality using the <span className='utils-highlight'>High Order Component</span> pattern</h5>
             </header>
 
             {/** We will now have 2 different trackers that display the same information in different ways */}
             <div className='AppDemoFrame__wrapper'>
-                <PanelMouseTracker />
-                <PointMouseTracker /> 
+                <NewComp1 />
+                <NewComp2 /> 
             </div>
         </div>
     );

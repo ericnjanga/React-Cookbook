@@ -14,25 +14,25 @@ const Breadcrumbs = () => {
 
     return (
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item">
                     <NavLink to="/" className={activateLink}>Home</NavLink>
                 </li>
-                <li class="breadcrumb-item">
+                <li className="breadcrumb-item">
                     <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic enpasulation</NavLink>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">High Order Components (HOC) ...</li>
+                <li className="breadcrumb-item active" aria-current="page">High Order Components (HOC) ...</li>
             </ol>
         </nav>
 
 
  
         // <nav aria-label="breadcrumb">
-        //     <ol class="breadcrumb">
-        //         <li class="breadcrumb-item">
+        //     <ol className="breadcrumb">
+        //         <li className="breadcrumb-item">
         //             <NavLink to="/" className={activateLink}>Home</NavLink>
         //         </li>
-        //         <li class="breadcrumb-item">
+        //         <li className="breadcrumb-item">
         //             <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic enpasulation</NavLink>
         //         </li>
         //     </ol>
@@ -41,14 +41,14 @@ const Breadcrumbs = () => {
 
  
         // <nav aria-label="breadcrumb">
-        //     <ol class="breadcrumb">
-        //         <li class="breadcrumb-item">
+        //     <ol className="breadcrumb">
+        //         <li className="breadcrumb-item">
         //             <NavLink to="/" className={activateLink}>Home</NavLink>
         //         </li>
-        //         <li class="breadcrumb-item">
+        //         <li className="breadcrumb-item">
         //             <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic enpasulation</NavLink>
         //         </li>
-        //         <li class="breadcrumb-item active" aria-current="page">Hooks</li>
+        //         <li className="breadcrumb-item active" aria-current="page">Hooks</li>
         //     </ol>
         // </nav> 
     );

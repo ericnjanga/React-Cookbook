@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import MouseLoggerHOC from "./MouseLoggerHOC";
+import MouseLoggerHOC from "./MouseLogger/mouse-logger-pattern-HOC";
 import Breadcrumbs from "./Breadcrumbs";
 
 const PageHighOrderComponents = () => {
