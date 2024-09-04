@@ -28,7 +28,10 @@ const PageDynamicJsx = () => {
             
             <div className="row">
                 <h3>Code output 1</h3>
-                <LiveOrder />
+                <p className="mb-3">We have dynamically added left margins to all child elements of the "Row" component by first cloning each element, and then applying styles to the copies of these elements.</p>
+                <div className='AppDemoFrame'>
+                    <LiveOrder />
+                </div>
             </div>
 
             <div style={spacinfStyle}></div>
@@ -40,7 +43,10 @@ const PageDynamicJsx = () => {
                         into 2 components: <span className="code">RadioGroup</span> and 
                         <span className="code">RadioOption</span>. Next, we use <span className="code">RadioGroup</span> 
                         to dynamically modify its children properties, which makes for a much clearner and flexible code implementation.</p>
-                    <FeedbackRadioGroup />
+
+                        <div className='AppDemoFrame'>
+                        <FeedbackRadioGroup />
+                        </div>
                 </div>
             </div>
 

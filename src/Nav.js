@@ -15,13 +15,13 @@ const Nav = () => {
                         <NavLink to="/high-order-components" className={activateLink}>High Order Components (HOC)</NavLink>
                     </li> 
                     <li>
+                        <NavLink to="/render-props">Render Props</NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/component-composition" className={activateLink}>Component Composition</NavLink>
                     </li>
                     <li>
                         <NavLink to="/hooks" className={activateLink}>Hooks</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/render-props">Render Props</NavLink>
                     </li>
                     <li>
                         <NavLink to="/forms" className={activateLink}>Forms</NavLink>

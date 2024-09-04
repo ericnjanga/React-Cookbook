@@ -60,9 +60,15 @@ const DrinkCount = () => {
 
 function AbstractRendering() {
     return (
-        <div className="AbstractRendering">
-            <DessertsCount />
-            <DrinkCount />
+        <div className="AppDemoFrame">
+            <header className="AppDemoFrame__header">
+                <h5>Using the <span className='utils-highlight'>Render Props</span> pattern to render two different components with the same business logic</h5>
+            </header>
+
+            <div className="AppDemoFrame__wrapper">
+                <DessertsCount />
+                <DrinkCount />
+            </div>
         </div>
     );
 }

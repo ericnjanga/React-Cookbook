@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import MouseLogger from "./MouseLogger";
+import MouseLoggerHOC from "./MouseLoggerHOC";
 import Breadcrumbs from "./Breadcrumbs";
 
 const PageHighOrderComponents = () => {
@@ -25,7 +25,7 @@ const PageHighOrderComponents = () => {
 
                 <br />
 
-                <MouseLogger />
+                <MouseLoggerHOC />
             </div>
 
             <div style={spacinfStyle}></div>

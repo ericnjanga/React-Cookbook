@@ -20,7 +20,6 @@ const PageRenderProps = () => {
                 
                 <br />
 
-
                 <h3>Solution</h3>
                 <p>First, we encapsulate the data fetching functionality into a component that returns a 
                     call to an abstract render function. Next, using component composition, we render 

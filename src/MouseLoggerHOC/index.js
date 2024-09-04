@@ -1,3 +1,7 @@
+/**
+ * Using the High Order Compoments pattern to create this "Mouse Logger" functionality
+ */
+
 import './styles.css';
 import { useState, useEffect } from 'react';
 
@@ -38,13 +42,13 @@ const withMousePosition = (WrappedComponent) => {
 };
 
 // Gets a mouse position, and renders it as a coordinate
-const CoordinatesMouseLogger = ({ mousePosition }) => {
+const CoordinatesMouseLoggerHOC = ({ mousePosition }) => {
     if (!mousePosition) { // Will not render anything if the mouse position is not provided
         return null;
     }
 
     return (
-        <div className="CoordinatesMouseLogger">
+        <div className="CoordinatesMouseLoggerHOC">
             <p>Mouse position as coordinates</p>
             <div className="row">
                 <span>x: {mousePosition.x}</span>
@@ -55,13 +59,13 @@ const CoordinatesMouseLogger = ({ mousePosition }) => {
 };
 
 // Gets a mouse position, and renders it as a point
-const PointMouseLogger = ({ mousePosition }) => {
+const PointMouseLoggerHOC = ({ mousePosition }) => {
     if (!mousePosition) { // Will not render anything if the mouse position is not provided
         return null;
     }
 
     return (
-            <div className="PointMouseLogger">
+            <div className="PointMouseLoggerHOC">
                 <p>Mouse position as a point</p>
                 <span>({mousePosition.x}, {mousePosition.y})</span>
             </div>
@@ -69,21 +73,23 @@ const PointMouseLogger = ({ mousePosition }) => {
 };
 
 // Creating two new enhanced component versions that will be aware of the mouse position data
-const PanelMouseTracker = withMousePosition(CoordinatesMouseLogger);
-const PointMouseTracker = withMousePosition(PointMouseLogger);
+const PanelMouseTracker = withMousePosition(CoordinatesMouseLoggerHOC);
+const PointMouseTracker = withMousePosition(PointMouseLoggerHOC);
 
-function MouseLogger() {
+function MouseLoggerHOC() {
     return (
-        <div className="MouseLoggerApp">
-            <header className="header">
-                <h5>Panel Mouse Logger</h5>
+        <div className="MouseLoggerHOCApp AppDemoFrame">
+            <header className="AppDemoFrame__header">
+                <h5>"Mouse Logger" functionality using the <span className='utils-highlight'>High Order Component </span> pattern</h5>
             </header>
 
             {/** We will now have 2 different trackers that display the same information in different ways */}
-            <PanelMouseTracker />
-            <PointMouseTracker />
+            <div className='AppDemoFrame__wrapper'>
+                <PanelMouseTracker />
+                <PointMouseTracker /> 
+            </div>
         </div>
     );
 }
 
-export default MouseLogger;
+export default MouseLoggerHOC;

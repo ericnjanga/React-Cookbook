@@ -30,7 +30,6 @@ const Row = ({ children, spacing }) => {
 const LiveOrder = () => {
     return (
         <div className="app-liveOrder">
-            <p className="mb-3">We have dynamically added left margins to all child elements of the "Row" component by first cloning each element, and then applying styles to the copies of these elements.</p>
             <Row spacing={32}>
                 <p>Pizza Margarita</p>
                 <p>2</p>
