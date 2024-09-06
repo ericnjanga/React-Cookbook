@@ -6,7 +6,7 @@ import Nav from './Nav';
 import './styles/App.css';
 
 function App() {
-  const { theme } = useTheme();
+  const { theme = 'light' } = useTheme();
 
   return (
     <Router>

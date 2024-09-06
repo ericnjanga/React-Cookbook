@@ -37,7 +37,7 @@ const Nav = () => {
 
                 <ul>
                     <li>
-                        <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic enpasulation</NavLink>
+                        <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic encapsulation &amp; code reuse</NavLink>
                     </li> 
                 </ul>
             </nav>

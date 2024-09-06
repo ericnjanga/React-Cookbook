@@ -16,7 +16,7 @@ const PageCategoryLogicEncapsulation = () => {
             <Breadcrumbs />
 
             <div className="row">
-                <h1>Logic encapsulation patterns</h1>
+                <h1>Logic encapsulation and code reuse patterns</h1>
             </div>
 
             <div style={spacinfStyle}></div>
