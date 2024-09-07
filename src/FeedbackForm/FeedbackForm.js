@@ -6,7 +6,7 @@ import React, { useState } from "react";
  * 2) Rating is 5 stars up (comments are optional in this case)
  * @returns 
  */
-const FeedbackForm = () => {
+const FeedbackForm = ({ onSubmit }) => {
     const [score, setScore] = useState("10");
     const [comment, setComment] = useState("");
 
@@ -17,6 +17,12 @@ const FeedbackForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Fire function in props ...
+        if (onSubmit) {
+            onSubmit({ score, comment });
+            console.log('>>>> form submitted'); 
+        }
 
         // Reinitiate the form after submission
         setComment('');
