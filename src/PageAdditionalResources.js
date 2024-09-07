@@ -126,6 +126,44 @@ const PageAdditionalResources = () => {
                     </li>
                 </ul>
             </div>
+  
+            <div style={spacinfStyle}></div>
+
+            <div className="row">
+                <h2>Integrating tests with React Testing Library</h2>
+                <p>Here is a list of additional resources as you continue to explore Integration tests with React Testing Library:</p>
+                <ul>
+                    <li>
+                        <a href="https://testing-library.com/docs/react-testing-library/intro/" target="_blank" rel="noreferrer">React testing library</a> official documentation.  
+                    </li>
+                    <li>
+                        <a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment" target="_blank" rel="noreferrer">Continuous delivery</a> is a great article from Atlassian that illustrates the differences between Continuous integration, delivery and deployment, and how they all tie together. 
+                    </li>
+                    <li>
+                        <a href="https://martinfowler.com/articles/practical-test-pyramid.html" target="_blank" rel="noreferrer">Practical test pyramid</a> is an extensive article that dives into the importance of test automation, showing you which kind of tests you should be looking for in the different levels of the pyramid and providing practical examples on how those can be implemented. 
+                    </li>
+                </ul>
+            </div>
+  
+            <div style={spacinfStyle}></div>
+
+            <div className="row">
+                <h2>Popular external libraries</h2>
+                <ul>
+                    <li>
+                        <a href="https://v2.chakra-ui.com/" target="_blank" rel="noreferrer">Chakra UI</a> for layout, typography, ... UI libraries are a great way to speed up the development process. They provide a set of robust, well-tested and highly configurable pre-built components that you can use to create your applications.
+                    </li>
+                    <li>
+                        <a href="https://formik.org/" target="_blank" rel="noreferrer">Formik</a> and <a href="https://github.com/jquense/yup" target="_blank" rel="noreferrer">Yup</a> for React forms. . The library takes care of the repetitive tasks of managing the state of the form, validation and submission, so you can focus on the business logic of your application.
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noreferrer">#</a> 
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noreferrer">#</a> 
+                    </li>
+                </ul>
+            </div>
         </>
     );
 };
