@@ -1,6 +1,7 @@
 import React from 'react';
 import LiveOrder from './LiveOrders';
 import FeedbackRadioGroup from './FeedbackRadioBtn';
+import { Link } from '@chakra-ui/react';
 
 
 const PageDynamicJsx = () => {
@@ -19,8 +20,8 @@ const PageDynamicJsx = () => {
                 <h3>The problem</h3>
                 <p>We need to apply custom styles to the children elements of a "Row" component 
                     <span className="utils-highlight">without having to modify the original JSX markup</span>. 
-                    To solve this problem, we will use <span className="code"><a href="https://react.dev/reference/react/Children" target="_blank" rel="noreferrer">React.Children()</a></span> API map function to loop through 
-                    every child of component, and <span className="code"><a href="https://react.dev/reference/react/cloneElement" target="_blank" rel="noreferrer">React.cloneElement</a></span> API to return a new copy of the 
+                    To solve this problem, we will use <span className="code"><Link href="https://react.dev/reference/react/Children" isExternal>React.Children()</Link></span> API map function to loop through 
+                    every child of component, and <span className="code"><Link href="https://react.dev/reference/react/cloneElement" isExternal>React.cloneElement</Link></span> API to return a new copy of the 
                     element to which we will apply the new styles.</p>
             </div>
 
@@ -56,7 +57,7 @@ const PageDynamicJsx = () => {
                 <div className="col">
                     <div className="alert alert-info" role="alert">
                         <h5>Code sample</h5>
-                        <p><a href="https://github.com/ericnjanga/React-Cookbook/blob/main/src/LiveOrders.js" target="_blank" rel="noreferrer">See the code on GitHUb</a></p>
+                        <p><Link href="https://github.com/ericnjanga/React-Cookbook/blob/main/src/LiveOrders.js" isExternal>See the code on GitHUb</Link></p>
                     </div>
                 </div>
             </div>
