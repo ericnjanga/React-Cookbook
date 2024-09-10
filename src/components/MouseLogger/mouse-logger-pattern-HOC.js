@@ -3,6 +3,7 @@
  */
 
 import { useState, useEffect } from 'react';
+import { Card, CardBody, CardHeader, HStack, Badge } from '@chakra-ui/react';
 
 // Render functions
 // ------------
@@ -88,17 +89,19 @@ const NewComp2 = withMousePosition(Render2);
 // ------------
 function MouseLoggerHOC() {
     return (
-        <div className="MouseLoggerHOCApp AppDemoFrame">
-            <header className="AppDemoFrame__header">
-                <h5>"Mouse Logger" functionality using the <span className='utils-highlight'>High Order Component</span> pattern</h5>
-            </header>
+        <Card shadow='md'>
+            <CardHeader>
+                <h5>"Mouse Logger" functionality using the <Badge>High Order Component</Badge> pattern</h5>
+            </CardHeader>
 
             {/** We will now have 2 different trackers that display the same information in different ways */}
-            <div className='AppDemoFrame__wrapper'>
-                <NewComp1 />
-                <NewComp2 /> 
-            </div>
-        </div>
+            <CardBody>
+                <HStack>
+                    <NewComp1 />
+                    <NewComp2 /> 
+                </HStack>
+            </CardBody>
+        </Card>
     );
 }
 

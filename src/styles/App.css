@@ -1,7 +1,39 @@
 @import './_initialization.css';
 @import './_utilities.css';
 @import './_variables.css';
-@import './_AppDemoFrame.css';
+
+ 
+
+/*
+
+  DELETED
+  ------------
+
+.AppDemoFrame {
+    border: 5px solid turquoise;
+    padding: 3rem;
+    min-height: 300px;
+    padding: 2rem;
+     
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .AppDemoFrame__header {
+    margin-bottom: 2rem;
+    max-width: 560px;
+    text-align: center;
+  }
+  .AppDemoFrame__wrapper { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+*/
+
 
 
 .App {
@@ -28,7 +60,12 @@
 .main-content {
   padding: 3.5rem;
 }
- 
+.main-content a {
+  text-decoration: underline;
+}
+.main-content a:hover {
+  text-decoration: none;
+}
 
 .form-feedback textarea {
   min-height: 100px;
@@ -79,7 +116,7 @@
 }
 .app-liveOrder__row {
   display: flex;
-  background-color: hsl(210, 55%, 92%);
+  /* background-color: hsl(210, 55%, 92%); */
 }
 .app-liveOrder__row p {
   margin: 0;

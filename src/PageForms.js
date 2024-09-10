@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FeedbackForm from './FeedbackForm/FeedbackForm';
+import FeedbackForm from './components/FeedbackForm/FeedbackForm';
 import RegistrationForm from './RegistrationForm';
 
 

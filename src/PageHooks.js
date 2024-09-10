@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import ExpenseTracker from './ExpenseTracker';
 import CustomHookTest from './CustomHookTest';
 import DaysOfTheWeek from './DaysOfTheWeek';
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 const activateLink = ({ isActive }) => ( isActive ? 'active' : null );
 

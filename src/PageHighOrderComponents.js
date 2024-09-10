@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import MouseLoggerHOC from "./MouseLogger/mouse-logger-pattern-HOC";
-import Breadcrumbs from "./Breadcrumbs";
-import { Link } from '@chakra-ui/react';
+import MouseLoggerHOC from "./components/MouseLogger/mouse-logger-pattern-HOC";
+import Breadcrumbs from "./components/Breadcrumbs";
+import { Link, Badge } from '@chakra-ui/react';
 
 const PageHighOrderComponents = () => {
 
@@ -35,8 +35,8 @@ const PageHighOrderComponents = () => {
                 <h3>The problem</h3>
                 <p>We need to create a generic functionality that is not related to the application's business logic and that is 
                     needed in many places. For example, let's say we have a pattern occuring over and over again in our application 
-                    that <span className="utils-highlight">subscribes to a data source</span> and 
-                    <span className="utils-highlight">sets the local state with new data</span>. 
+                    that <Badge>subscribes to a data source</Badge> and 
+                    <Badge>sets the local state with new data</Badge>. 
                     <b>How can we encapsulate that logic for easy reuse all over the application?</b>
                 </p>
             

@@ -1,7 +1,8 @@
 import React from "react";
-import Breadcrumbs from "./Breadcrumbs";
-import AbstractRenderingRP from "./AbstractRenderingRP";
-import MouseLoggerRP from "./MouseLogger/mouse-logger-pattern-RP";
+import Breadcrumbs from "./components/Breadcrumbs";
+import AbstractRenderingRP from "./components/AbstractRenderingRP";
+import MouseLoggerRP from "./components/MouseLogger/mouse-logger-pattern-RP";
+import { Badge } from "@chakra-ui/react";
 
 const PageRenderProps = () => {
 
@@ -29,7 +30,7 @@ const PageRenderProps = () => {
 
             <div className="row"> 
                 <h3>Example 1</h3>
-                <p>Using the <span className='utils-highlight'>Render Props</span> pattern to render two different components with the same business logic.</p>
+                <p>Using the <Badge>Render Props</Badge> pattern to render two different components with the same business logic.</p>
                 <AbstractRenderingRP />
             </div>
 
@@ -37,7 +38,7 @@ const PageRenderProps = () => {
 
             <div className="row"> 
                 <h3>Example 2</h3>
-                <p>Using the <span className='utils-highlight'>Render Props</span> pattern to create the "Mouse Logger" functionality.</p>
+                <p>Using the <Badge>Render Props</Badge> pattern to create the "Mouse Logger" functionality.</p>
                 <MouseLoggerRP />
             </div>
         </>

@@ -3,6 +3,7 @@
  */
  
 import { useEffect, useState } from 'react';
+import { Card, CardBody, CardHeader, HStack } from '@chakra-ui/react';
 
 // Render style 1
 const renderDessertCount = (data) => {
@@ -63,17 +64,19 @@ const DrinkCount = () => {
 
 function AbstractRenderingRP() {
     return (
-        <div className="AppDemoFrame">
-            <header className="AppDemoFrame__header">
+        <Card shadow='md'>
+            <CardHeader>
                 <p>We have two comcponents that use the same fetching functionality to fetch two different types of data, 
                 and renders them in two different ways.</p>
-            </header>
+            </CardHeader>
 
-            <div className="AppDemoFrame__wrapper">
-                <DessertsCount />
-                <DrinkCount />
-            </div>
-        </div>
+            <CardBody>
+                <HStack>
+                    <DessertsCount />
+                    <DrinkCount />
+                </HStack>
+            </CardBody>
+        </Card>
     );
 }
 

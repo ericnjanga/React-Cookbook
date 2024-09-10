@@ -24,6 +24,8 @@ body {
   font-style: normal;
   font-optical-sizing: auto;
   /* font-size handled by bootstrap  */
+
+  background-color: #EDEBF7;
 } 
 
 * {
