@@ -10,6 +10,8 @@ import PageAdditionalResources from './PageAdditionalResources';
 import PageHighOrderComponents from './PageHighOrderComponents';
 import PageCategoryLogicEncapsulation from './PageCategoryLogicEncapsulation';
 import PageRenderProps from './PageRenderProps';
+import PageReactInterviewQuestions from './PageReactInterviewQuestions';
+import PageHTMLCSSInterviewQuestions from './PageHTMLCSSInterviewQuestions';
 
 const AppRoutes = () => {
     return (
@@ -23,6 +25,9 @@ const AppRoutes = () => {
             <Route path="/additional-resources" element={<PageAdditionalResources />} />
             <Route path="/high-order-components" element={<PageHighOrderComponents />} />
             <Route path="/category-logic-enpasulation" element={<PageCategoryLogicEncapsulation />} />
+            <Route path="/additional-resources" element={<PageCategoryLogicEncapsulation />} />
+            <Route path="/react-interview-questions" element={<PageReactInterviewQuestions />} />
+            <Route path="/html-css-interview-questions" element={<PageHTMLCSSInterviewQuestions />} />
         </Routes>
     );
 };

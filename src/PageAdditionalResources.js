@@ -5,11 +5,7 @@ import {
   List,
   ListItem,
   ListIcon,
-  OrderedList,
-  UnorderedList,
 } from "@chakra-ui/react";
-// 1. Import
-import { Icon } from "@chakra-ui/react";
 import { MdCheckCircle } from "react-icons/md";
 
 const PageAdditionalResources = () => {
