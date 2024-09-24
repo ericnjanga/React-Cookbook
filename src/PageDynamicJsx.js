@@ -31,7 +31,7 @@ const PageDynamicJsx = () => {
                 <div className='col'>
                     <h3>Code output 1</h3>
                     <p className="mb-3">We have dynamically added left margins to all child elements of the "Row" component by first cloning each element, and then applying styles to the copies of these elements.</p>
-                    <Card shadow='md'>
+                    <Card shadow='md' borderWidth='1px' borderColor='gray.300'>
                         <CardBody>
                             <LiveOrder />
                         </CardBody>
@@ -50,7 +50,7 @@ const PageDynamicJsx = () => {
                         to dynamically modify its children properties, which makes for a much clearner and flexible code implementation.</p>
                 </div>
             </div>
-            <Card shadow='md'>
+            <Card shadow='md' borderWidth='1px' borderColor='gray.300'>
                         <CardBody>
                         <FeedbackRadioGroup />
                         </CardBody>

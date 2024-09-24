@@ -1,4 +1,4 @@
-import './Styles.css';
+import './_switch.scss';
 import { useColorMode, Button, Box } from '@chakra-ui/react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

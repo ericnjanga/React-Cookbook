@@ -89,7 +89,7 @@ const NewComp2 = withMousePosition(Render2);
 // ------------
 function MouseLoggerHOC() {
     return (
-        <Card shadow='md'>
+        <Card shadow='md' borderWidth='1px' borderColor='gray.300'>
             <CardHeader>
                 <h5>"Mouse Logger" functionality using the <Badge>High Order Component</Badge> pattern</h5>
             </CardHeader>

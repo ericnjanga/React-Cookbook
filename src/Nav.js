@@ -64,12 +64,17 @@ const Nav = () => {
         <ul>
           <li>
             <NavLink to="/react-interview-questions" className={activateLink}>
-              React Interview Quesrtions
+              React Interview Questions
             </NavLink>
           </li>
           <li>
             <NavLink to="/html-css-interview-questions" className={activateLink}>
-              HTML/CSS Interview Quesrtions
+              HTML/CSS Interview Questions
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/javascript-interview-questions" className={activateLink}>
+              JavaScript Interview Questions
             </NavLink>
           </li>
         </ul>

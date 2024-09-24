@@ -64,7 +64,7 @@ const DrinkCount = () => {
 
 function AbstractRenderingRP() {
     return (
-        <Card shadow='md'>
+        <Card shadow='md' borderWidth='1px' borderColor='gray.300'>
             <CardHeader>
                 <p>We have two comcponents that use the same fetching functionality to fetch two different types of data, 
                 and renders them in two different ways.</p>

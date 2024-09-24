@@ -1,0 +1,46 @@
+
+html[data-theme="light"] {  
+  .chakra-accordion__item {
+    border-top-color: rgb(193, 193, 193);
+    border-bottom-color: rgb(193, 193, 193);
+  }
+
+  .chakra-code {
+    background: #eee;
+  }
+}
+
+html[data-theme="dark"] { 
+  // .chakra-accordion__item {
+  //   border-top-color: rgb(193, 193, 193);
+  //   border-bottom-color: rgb(193, 193, 193);
+  // }
+
+  .chakra-code {
+    background: #22262e;
+  }
+}
+
+
+
+  .chakra-code {
+    margin: .4rem 0;
+    display: block;
+    padding: .7rem 1.3rem!important;
+  }
+
+.section-documentation {
+  // border: 10px solid turquoise;
+
+  .chakra-card__header {
+    // border: 3px solid blue;
+    .chakra-heading {
+      margin: 0;
+    }
+  }
+
+  .chakra-card__body {
+    // border: 3px solid blueviolet;
+    padding-top: 0;
+  }
+}

@@ -1,4 +1,4 @@
-@import './_variables.css';
+@import './variables';
 
 /* Utilities */
  
@@ -10,7 +10,8 @@
     background-color: #eee;
     border: 1px solid #ccc;
 }
-p:nth-last-child(){
-    /* border: 1px solid red; */
-    margin-bottom: 0;
-}
+// p { 
+//     &:nth-last-child() {
+//         margin-bottom: 0;
+//     }
+// }

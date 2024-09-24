@@ -3,7 +3,7 @@ import AppRoutes from './AppRoutes';
 // import { useTheme } from './theme/ThemeContext';
 import Switch from "./components/Switch";
 import Nav from './Nav';
-import './styles/App.css';
+import './styles/_App.scss';
 import theme from './theme/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { ColorModeScript } from '@chakra-ui/react';
