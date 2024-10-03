@@ -1,90 +1,74 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Heading } from "@chakra-ui/react";
+import Logo from "./images/Logo.png";
 
 const activateLink = ({ isActive }) => (isActive ? "active" : null);
 
 const Nav = () => {
   return (
     <>
-      <nav>
-        <ul>
+      <header className="main-sidebar-header">
+        <NavLink to="/" className={activateLink}>
+          <img className="logo" src={Logo} alt="Front-end knowledge base" />
+        </NavLink>
+      </header>
+
+      <nav className="main-sidebar-nav">
+        <ul className="menu-list">
+          <h3 className="main-sidebar-heading">Introduction</h3>
           <li>
             <NavLink to="/" className={activateLink}>
-              Dynamic JSX
-            </NavLink>{" "}
-            {/* /dynamic-jsx */}
-          </li>
-          <li>
-            <NavLink to="/high-order-components" className={activateLink}>
-              High Order Components (HOC)
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/render-props">Render Props</NavLink>
-          </li>
-          <li>
-            <NavLink to="/component-composition" className={activateLink}>
-              Component Composition
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/hooks" className={activateLink}>
-              Hooks
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/forms" className={activateLink}>
-              Forms
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/data-fetching" className={activateLink}>
-              Data Fetching
+              Overview
             </NavLink>
           </li>
         </ul>
 
-        <hr />
-
-        <Heading as="h4" size='4'>Categories</Heading>
-
-        <ul>
+        <ul className="menu-list">
+          <h3 className="main-sidebar-heading">Coding patterns</h3>
           <li>
-            <NavLink to="/category-logic-enpasulation" className={activateLink}>
-              Logic encapsulation &amp; code reuse
+            <NavLink to="/coding-patterns/javascript" className={activateLink}>
+              JavaScript
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/coding-patterns/react" className={activateLink}>
+              React
             </NavLink>
           </li>
         </ul>
 
-        <hr />
+        <ul className="menu-list">
+          <h3 className="main-sidebar-heading">Knowledge base</h3>
+          <li>
+            <NavLink to="/knowledge-base/javascript" className={activateLink}>
+              JavaScript
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/knowledge-base/html-css" className={activateLink}>
+              HTML &amp; CSS
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/knowledge-base/react" className={activateLink}>
+              React
+            </NavLink>
+          </li>
+        </ul>
 
-        <Heading as="h4" size='4'>Interview Questions</Heading>
-        
-        <ul>
+        <ul className="menu-list">
+          <h3 className="main-sidebar-heading">Addition Resources</h3>
           <li>
-            <NavLink to="/react-interview-questions" className={activateLink}>
-              React Interview Questions
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/html-css-interview-questions" className={activateLink}>
-              HTML/CSS Interview Questions
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/javascript-interview-questions" className={activateLink}>
-              JavaScript Interview Questions
+            <NavLink
+              to="/additional-resources/overview"
+              className={activateLink}
+            >
+              Overview
             </NavLink>
           </li>
         </ul>
       </nav>
-
-      <footer>
-        <NavLink to="/additional-resources" className={activateLink}>
-          Addition Resources
-        </NavLink>
-      </footer>
     </>
   );
 };

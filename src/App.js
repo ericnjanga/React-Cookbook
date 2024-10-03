@@ -21,7 +21,6 @@ function App() {
           <div className="container-fluid">
             <div className="row">
               <aside className="main-sidebar col-lg-3">
-                <h1>React Patterns</h1>
                 <Nav />
               </aside>
 

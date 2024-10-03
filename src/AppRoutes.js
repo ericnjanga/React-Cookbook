@@ -1,23 +1,34 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import PageHooks from "./PageHooks";
-import PageForms from "./PageForms";
-import PageComponentComposition from "./PageComponentComposition";
-import PageDataFetching from "./PageDataFetching";
-import PageDynamicJsx from "./PageDynamicJsx";
-import PageAdditionalResources from "./PageAdditionalResources";
-import PageHighOrderComponents from "./PageHighOrderComponents";
-import PageCategoryLogicEncapsulation from "./PageCategoryLogicEncapsulation";
-import PageRenderProps from "./PageRenderProps";
-import PageReactInterviewQuestions from "./PageReactInterviewQuestions";
-import PageHTMLCSSInterviewQuestions from "./PageHTMLCSSInterviewQuestions";
-import PageJavascriptInterviewQuestions from "./PageJavascriptInterviewQuestions";
+import PageHooks from "./pages/coding-patterns/PageHooks";
+import PageForms from "./pages/coding-patterns/PageForms";
+import PageComponentComposition from "./pages/coding-patterns/PageComponentComposition";
+import PageDataFetching from "./pages/coding-patterns/PageDataFetching";
+import PageDynamicJsx from "./pages/coding-patterns/PageDynamicJsx";
+import ResourcesOverview from "./pages/additional-resources/PageOverview";
+import PageHighOrderComponents from "./pages/coding-patterns/PageHighOrderComponents";
+import PageCategoryLogicEncapsulation from "./pages/coding-patterns/PageCategoryLogicEncapsulation";
+import PageRenderProps from "./pages/coding-patterns/PageRenderProps";
+import PageReactInterviewQuestions from "./pages/knowledge-base/PageReactInterviewQuestions";
+import PageHTMLCSSInterviewQuestions from "./pages/knowledge-base/PageHTMLCSSInterviewQuestions";
+import PageJavascriptInterviewQuestions from "./pages/knowledge-base/PageJavascriptInterviewQuestions";
+import PageHome from "./pages";
+import PageCodingPatternsJs from "./pages/coding-patterns/javascript";
+import PageCodingPatternsReact from "./pages/coding-patterns/react";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<PageDynamicJsx />} />
+
+
+<Route path="/coding-patterns/javascript" element={<PageCodingPatternsJs />} />
+
+<Route path="/coding-patterns/react" element={<PageCodingPatternsReact />} />
+
+
+
+      <Route path="/" element={<PageHome />} />
       <Route path="/hooks" element={<PageHooks />} />
       <Route path="/render-props" element={<PageRenderProps />} />
       <Route path="/forms" element={<PageForms />} />
@@ -27,8 +38,8 @@ const AppRoutes = () => {
       />
       <Route path="/data-fetching" element={<PageDataFetching />} />
       <Route
-        path="/additional-resources"
-        element={<PageAdditionalResources />}
+        path="/additional-resources/overview"
+        element={<ResourcesOverview />}
       />
       <Route
         path="/high-order-components"
@@ -39,19 +50,19 @@ const AppRoutes = () => {
         element={<PageCategoryLogicEncapsulation />}
       />
       <Route
-        path="/additional-resources"
+        path="/additional-resources/overview"
         element={<PageCategoryLogicEncapsulation />}
       />
       <Route
-        path="/react-interview-questions"
+        path="/knowledge-base/react"
         element={<PageReactInterviewQuestions />}
       />
       <Route
-        path="/html-css-interview-questions"
+        path="/knowledge-base/html-css"
         element={<PageHTMLCSSInterviewQuestions />}
       />
       <Route
-        path="/javascript-interview-questions"
+        path="/knowledge-base/javascript"
         element={<PageJavascriptInterviewQuestions />}
       />
     </Routes>

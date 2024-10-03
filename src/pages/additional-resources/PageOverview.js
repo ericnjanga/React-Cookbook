@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { MdCheckCircle } from "react-icons/md";
 
-const PageAdditionalResources = () => {
+const PageOverview = () => {
   const spacinfStyle = {
     // using string interpolation to set the margin
     marginBottom: `1.5rem`,
@@ -400,4 +400,4 @@ const PageAdditionalResources = () => {
   );
 };
 
-export default PageAdditionalResources;
+export default PageOverview;

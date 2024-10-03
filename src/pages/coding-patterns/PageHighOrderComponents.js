@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import MouseLoggerHOC from "./components/MouseLogger/mouse-logger-pattern-HOC";
-import Breadcrumbs from "./components/Breadcrumbs";
+import MouseLoggerHOC from "../../components/MouseLogger/mouse-logger-pattern-HOC";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import { Link, Badge } from '@chakra-ui/react';
 
 const PageHighOrderComponents = () => {

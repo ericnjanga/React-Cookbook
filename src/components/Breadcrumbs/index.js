@@ -21,12 +21,12 @@ const Breadcrumbs = () => {
     return (
         <Breadcrumb>
             <BreadcrumbItem>
-                <BreadcrumbLink as={NavLink} to="/">Home</BreadcrumbLink>
+                <BreadcrumbLink as={NavLink} to="/">Welcome</BreadcrumbLink>
             </BreadcrumbItem>
 
-            <BreadcrumbItem>
+            {/* <BreadcrumbItem>
                 <BreadcrumbLink as={NavLink} to="/category-logic-enpasulation">Logic enpasulation</BreadcrumbLink>
-            </BreadcrumbItem>
+            </BreadcrumbItem> */}
 
             {/* <BreadcrumbItem isCurrentPage>
                 <BreadcrumbLink as={NavLink} to="/">Breadcrumb</BreadcrumbLink>

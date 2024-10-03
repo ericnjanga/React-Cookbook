@@ -1,4 +1,16 @@
-import { useEffect, useState } from 'react'; 
+import { useSyncExternalStore } from 'react';
+
+// Listens to the navigator online/offline status
+function subscribe (callback) {
+
+  window.addEventListener('online', callback); 
+  window.addEventListener('offline', callback);
+
+  return () => { // Unsubscribes when it's all over
+    window.removeEventListener('online', callback); 
+    window.removeEventListener('offline', callback);
+  };
+}
 
 /**
  * This custom hook helps track the online/offline status of the user's browser and 
@@ -6,27 +18,11 @@ import { useEffect, useState } from 'react';
  * based on the user's connectivity status.
  */
 function useOnlineStatus () {
-  const [isOnline, setIsOnline] = useState(true);
-
-  useEffect(() => {
-    function handleOnline() {
-      setIsOnline(true);
-    }
-
-    function handleOffline() {
-      setIsOnline(false);
-    }
-
-    window.addEventListener('online', handleOnline); 
-    window.addEventListener('offline', handleOffline);
-
-    return () => {
-      window.removeEventListener('online', handleOnline); 
-      window.removeEventListener('offline', handleOffline);
-    };
-  }, []);
-
-  return isOnline;
+  return useSyncExternalStore(
+    subscribe, // Subscribes to the navigator online/offline status
+    () => navigator.onLine, // Retrives the current value of the navigator's online status
+    () => true // (optional): Gets the snapshot when the code runs on the server (e.g., for server-side rendering).
+  );
 }
 
 export default useOnlineStatus;

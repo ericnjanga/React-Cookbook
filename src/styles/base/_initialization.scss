@@ -1,0 +1,117 @@
+:root {
+    /* Font faces */
+    --website-font-body: "Arimo", sans-serif;
+    --website-font-headings: "Hanken Grotesk", sans-serif;
+
+
+
+    // Font sizes and line heights ... 
+  --website-fs-h1: 32px;
+  --website-ln-h1: 34px; 
+  --website-fs-h2: 24px;
+  --website-ln-h2: 28px; 
+  --website-fs-h3: 20px;
+  --website-ln-h3: 27px; 
+  --website-fs-h4: 18px;
+  --website-ln-h4: 24px;
+  --website-fs-h5: 21px;
+  --website-fs-h6: 18px;
+
+  // Bottom margins
+  --website-mb-h1: 8px;
+  --website-mb-h2: 10px;
+  --website-mb-h3: 10px;
+}
+
+
+/**
+ * INITIALIZATION
+ * ---------------------------------------------
+*/ 
+body {
+  /* Making the font appear crisp globally ... */
+  -webkit-font-smoothing: antialiased; /* For Chrome, Safari, and newer versions of Edge */
+  -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+  font-smooth: auto; /* For older versions of Edge and other browsers */
+
+  /* ... */
+  font-size: 1.05rem;
+
+  /* Typography */
+  font-family: var(--website-font-body);
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  /* font-size handled by bootstrap  */
+} 
+
+* {
+  transition: all 0.3s ease; /* Adjust the duration and timing function as needed */
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5, .btn {
+  font-family: var(--website-font-headings); 
+  font-style: normal;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800; 
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  line-height: 2.5rem;
+}
+
+
+h1 {
+  margin-bottom: var(--website-mb-h1)!important;
+  font-size: var(--website-fs-h1);
+  line-height: var(--website-ln-h1);
+  letter-spacing: -0.66px;
+}
+
+h2 {
+  margin-bottom: var(--website-mb-h2)!important;
+  font-size: var(--website-fs-h2); 
+  line-height: var(--website-ln-h2);
+  letter-spacing: -0.28px;
+}
+
+h3 {
+  margin-bottom: var(--website-mb-h3)!important;
+  font-size: var(--website-fs-h3); 
+  line-height: var(--website-ln-h3);
+  letter-spacing: -0.46px;
+}
+
+h4 {
+  font-size: var(--website-fs-h4)!important;
+  line-height: var(--website-ln-h4);
+  letter-spacing: -0.46px;
+}
+
+h5 {
+  font-size: var(--website-fs-h5)!important;
+}
+
+h6 {
+  font-size: var(--website-fs-h6)!important;  
+}
+
+ 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Button, DeleteButton, Alert } from './MixedComponents'; 
+import { Button, DeleteButton, Alert } from '../../MixedComponents'; 
 
 const PageComponentComposition = () => {
     const [alertVisibility, setAlertVisibility] = useState(false);

@@ -1,7 +1,7 @@
 import React from "react";
-import Breadcrumbs from "./components/Breadcrumbs";
-import AbstractRenderingRP from "./components/AbstractRenderingRP";
-import MouseLoggerRP from "./components/MouseLogger/mouse-logger-pattern-RP";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import AbstractRenderingRP from "../../components/AbstractRenderingRP";
+import MouseLoggerRP from "../../components/MouseLogger/mouse-logger-pattern-RP";
 import { Badge } from "@chakra-ui/react";
 
 const PageRenderProps = () => {

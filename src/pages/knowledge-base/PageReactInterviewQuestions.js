@@ -7,6 +7,7 @@ import {
   AccordionIcon,
   Badge,
   CardHeader,
+  Spacer,
 } from "@chakra-ui/react";
 import { Code } from "@chakra-ui/react";
 import {
@@ -168,9 +169,8 @@ const PageReactInterviewQuestions = () => {
                       </Tbody>
                     </Table>
                   </TableContainer>
-                  
+
                   <br />
-                 
                 </AccordionPanel>
               </AccordionItem>
 
@@ -405,26 +405,197 @@ const PageReactInterviewQuestions = () => {
                   </AccordionButton>
                 </Heading>
                 <AccordionPanel pb={4}>
+                  <h3>Explain the concept of components in React.</h3>
+                  <Text>
+                    In React, components are the building blocks of the user
+                    interface (UI). They allow you to split your UI into
+                    independent, reusable pieces, making it easier to manage and
+                    develop complex applications. Each component can manage its
+                    own state and lifecycle, making React a powerful tool for
+                    building interactive UIs.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f58ce9-8738-8001-a0cb-891de78046cf"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <Spacer height="2rem"></Spacer>
+
+                  <h3>What Differentiates functional and class components?</h3>
+                  <Text>
+                    In React, functional and class components are two ways to
+                    define components, each with its own characteristics and use
+                    cases. Here are the key differences:{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f591dc-a47c-8001-aac0-988dd14b5102"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <TableContainer>
+                    <Table size="md" variant="stripped" whiteSpace="wrap">
+                      <Thead>
+                        <Tr>
+                          <Th></Th>
+                          <Th>Functional</Th>
+                          <Th>Class</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        <Tr>
+                          <Td fontWeight="bold">Definition</Td>
+                          <Td>
+                            These are JavaScript functions that return JSX
+                            (JavaScript XML), which describes what the UI should
+                            look like. They can use hooks to manage state and
+                            side effects.
+                          </Td>
+                          <Td>
+                            These are ES6 classes that extend from
+                            React.Component. They have a render method that
+                            returns JSX. Class components can manage local state
+                            and lifecycle methods.
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight="bold">State Management</Td>
+                          <Td>
+                            Initially, they did not have their own state, but
+                            with the introduction of Hooks (like useState), they
+                            can manage state.
+                          </Td>
+                          <Td>
+                            They have a built-in state management system and can
+                            manage state using this.state and this.setState().
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight="bold">Lifecycle Methods</Td>
+                          <Td>
+                            They do not have lifecycle methods directly.
+                            However, you can use the useEffect Hook to replicate
+                            lifecycle behavior (like componentDidMount,
+                            componentDidUpdate, and componentWillUnmount).
+                          </Td>
+                          <Td>
+                            They provide built-in lifecycle methods such as
+                            componentDidMount, componentDidUpdate, and
+                            componentWillUnmount.
+                          </Td>
+                        </Tr>
+                      </Tbody>
+                    </Table>
+                  </TableContainer>
+
+                  <Spacer height="2rem"></Spacer>
+
                   <h3>
-                    5. Explain the concept of components in React. Differentiate
-                    between functional and class components and how they
-                    contribute to the modular structure of a React app.
+                    How do functional and class components contribute to the
+                    modular structure of a React app?
                   </h3>
-                  <Text>...</Text>
+                  <Text>
+                    In React, both functional and class components play vital
+                    roles in creating a modular structure, each contributing in
+                    different ways:{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f59442-65b4-8001-b74e-d0ea1eb73f38"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <TableContainer>
+                    <Table size="md" variant="stripped" whiteSpace="wrap">
+                      <Thead>
+                        <Tr>
+                          <Th></Th>
+                          <Th>Functional</Th>
+                          <Th>Class</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        <Tr>
+                          <Td fontWeight="bold">Separation of Concerns</Td>
+                          <Td>
+                            These are often used for presentational purposes,
+                            focusing solely on rendering UI based on props. They
+                            encourage a clear separation between UI logic and
+                            business logic.
+                          </Td>
+                          <Td>
+                            Typically used for managing state and lifecycle
+                            methods, they can encapsulate more complex behavior,
+                            allowing for a clearer organization of
+                            functionality.
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight="bold">Reusability</Td>
+                          <Td>
+                            They can easily be reused across different parts of
+                            the application, enhancing code maintainability and
+                            reducing redundancy. Hooks can be used within
+                            functional components to share logic among them.
+                          </Td>
+                          <Td>
+                            These can also be reused, and their lifecycle
+                            methods can manage shared state and effects that are
+                            complex to handle with functional components alone.
+                          </Td>
+                        </Tr>
+                      </Tbody>
+                    </Table>
+                  </TableContainer>
+
+                  <Spacer height="2rem"></Spacer>
 
                   <h3>
                     What is the difference between controlled and uncontrolled
-                    components in React? Discuss how controlled components have
-                    their state controlled by React, while uncontrolled
-                    components rely on the DOM.
+                    components in React?
                   </h3>
-                  <Text>...</Text>
+                  <Text>
+                    In React, controlled and uncontrolled components refer to
+                    how form elements manage their state.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f598cd-c164-8001-88d3-2da17eb72c49"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+                  <UnorderedList className="list-align-left">
+                    <ListItem>
+                      <b>Controlled Components</b>: React manages the form data.
+                      Good for managing form state, validation, and complex
+                      forms.
+                    </ListItem>
+                    <ListItem>
+                      <b>Uncontrolled Components</b>: The DOM manages the form
+                      data. Useful for simple forms or when integrating with
+                      non-React libraries.
+                    </ListItem>
+                  </UnorderedList>
 
-                  <h3>
-                    13. What are higher-order components (HOC)? Discuss the
-                    concept of HOCs, which allow for reusing component logic.
-                  </h3>
-                  <Text>...</Text>
+                  <Spacer height="2rem"></Spacer>
+
+                  <h3>What is a higher-order component (HOC)?</h3>
+                  <Text>
+                    A high-order component in React is a pattern for reusing
+                    component logic that we want to enhance or extend. It works
+                    by taking a component as an argument and returning an
+                    enhanced component.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f59bfd-5e6c-8001-939b-cfdef98e23fe"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -446,18 +617,69 @@ const PageReactInterviewQuestions = () => {
                   </AccordionButton>
                 </Heading>
                 <AccordionPanel pb={4}>
+                  <h3>6. What are React Hooks?</h3>
+                  <Text>
+                    Hooks are functions that make it easier to manage state and
+                    side effects directly inside functional components without
+                    needing to refactor into class components (The functionality
+                    was previously only available in class components until
+                    Hooks came along in React 16.8).
+                  </Text>
+                  <Heading as="h6">Key React Hooks:</Heading>
+                  <UnorderedList marginLeft=".5rem" paddingLeft="0">
+                    <ListItem mb=".7rem">
+                      <b>useState:</b> Allows state management to functional
+                      components.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useEffect:</b> Allows side effects such as{" "}
+                      <b>data fetching, subscriptions, or DOM manipulations</b>,
+                      but keeps components pure by ensuring those effects happen
+                      after the render.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useContext:</b> Allows for the easy flow of data down
+                      the component tree without the need for{" "}
+                      <b>props drilling</b>.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useReducer:</b> is a "super-powered" version of
+                      useState, that deals effectively with{" "}
+                      <b>complex state logic</b> or{" "}
+                      <b>multiple state transitions</b> that depend on previous
+                      states.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useMomo:</b> is used to <b>optimize performance</b> by
+                      memoizing (or caching) the result of a computation so that
+                      it only recalculates when necessary.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useCallback:</b> is used to <b>optimize performance</b>{" "}
+                      by memoizing (or caching) a function definition so that it
+                      doesn't get recreated on every render. This can be
+                      particularly useful when passing functions to child
+                      components, preventing unnecessary re-renders.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useRef:</b> is used to maintain a mutable reference to
+                      a value that does not trigger re-renders when updated.
+                    </ListItem>
+                  </UnorderedList>
+                  <br /> <br /> <br />
                   <h3>
-                    6. What are React Hooks? Describe the purpose of hooks like
-                    useState, useEffect, and others. Compare them with lifecycle
-                    methods in class components.
+                    Describe the purpose of hooks like useState, useEffect, and
+                    others. Compare them with lifecycle methods in class
+                    components.
                   </h3>
                   <Text>...</Text>
-
                   <h3>
                     8. What is useEffect used for in React? Discuss how
                     useEffect is used for handling side effects, such as data
                     fetching, subscriptions, or DOM manipulations.
                   </h3>
+                  <Text>...</Text>
+                  <h3>What are Custom Hooks? When do we use them?</h3>
                   <Text>...</Text>
                 </AccordionPanel>
               </AccordionItem>
@@ -545,6 +767,88 @@ const PageReactInterviewQuestions = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
+                      Advanced State management with Redux
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>
+                  <h3>
+                    What is Redux, and how does it differ from React’s built-in
+                    state management?
+                  </h3>
+                  <Text>
+                    Redux is a predictable state container for JavaScript
+                    applications, commonly used with React for managing the
+                    application state in a more structured and scalable way.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f598cd-c164-8001-88d3-2da17eb72c49"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <h3>
+                    Can you explain the concept of a Redux store and how actions
+                    and reducers interact with it?
+                  </h3>
+                  <Text>
+                    In Redux, the store is the central place where the entire
+                    state of your application is held. It manages the state
+                    tree, allows access to the state, and enables updates
+                    through a process governed by actions and reducers.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f5e3b5-193c-8001-ba38-cef6fbdd4266"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <h3>
+                    What are the benefits of using middleware in Redux, and can
+                    you give examples of common middleware used in Redux
+                    applications?
+                  </h3>
+                  <Text>
+                    In Redux, middleware is used to extend Redux's functionality
+                    and enhance the flow of data between dispatching actions and
+                    reaching the reducers.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f5e3ff-d020-8001-92cc-77abb6997e20"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <h3>
+                    How do you implement and manage side effects in a Redux
+                    application?
+                  </h3>
+                  <Text>...</Text>
+
+                  <h3>
+                    Can you describe how to use the useSelector and useDispatch
+                    hooks in a functional React component?
+                  </h3>
+                  <Text>...</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <Heading>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
                       Routes
                     </Box>
                     <AccordionIcon />
@@ -558,42 +862,35 @@ const PageReactInterviewQuestions = () => {
                   </h3>
                   <Text>...</Text>
 
-                  <h3>What is the difference between relative and absolute paths?
+                  <h3>
+                    What is the difference between relative and absolute paths?
                   </h3>
                   <Text>
-                    In the context of Single Page Applications (SPAs), relative and absolute paths refer to how routes are structured and how they are resolved within the app.
-
-                    1. Relative Paths
+                    In the context of Single Page Applications (SPAs), relative
+                    and absolute paths refer to how routes are structured and
+                    how they are resolved within the app. 1. Relative Paths
                     Relative paths are defined in relation to the current route.
-
-                    They don't start with a slash (/), meaning the navigation will happen based on the current route or parent route.
-
-                    Example:
-
-                    Current route: /users/profile
-                    Relative path: settings
-                    Resulting path: /users/profile/settings
-                    In this case, the settings route is appended to the current route /users/profile.
-
-                    2. Absolute Paths
-                    Absolute paths start with a leading slash (/) and are resolved from the root of the application, ignoring the current route.
-
-                    Example:
-
-                    Current route: /users/profile
-                    Absolute path: /settings
-                    Resulting path: /settings
-                    In this case, the route navigation jumps directly to /settings, regardless of the current route.
-
-                    Key Differences:
-                    Relative paths are context-sensitive, relying on the current URL.
-                    Absolute paths always refer to the same location from the root of the app.
-                    In an SPA, understanding these differences helps to manage navigation based on the application's routing hierarchy.
+                    They don't start with a slash (/), meaning the navigation
+                    will happen based on the current route or parent route.
+                    Example: Current route: /users/profile Relative path:
+                    settings Resulting path: /users/profile/settings In this
+                    case, the settings route is appended to the current route
+                    /users/profile. 2. Absolute Paths Absolute paths start with
+                    a leading slash (/) and are resolved from the root of the
+                    application, ignoring the current route. Example: Current
+                    route: /users/profile Absolute path: /settings Resulting
+                    path: /settings In this case, the route navigation jumps
+                    directly to /settings, regardless of the current route. Key
+                    Differences: Relative paths are context-sensitive, relying
+                    on the current URL. Absolute paths always refer to the same
+                    location from the root of the app. In an SPA, understanding
+                    these differences helps to manage navigation based on the
+                    application's routing hierarchy.
                   </Text>
                 </AccordionPanel>
               </AccordionItem>
 
-              {/* <AccordionItem>
+              <AccordionItem>
                 <Heading>
                   <AccordionButton
                     _expanded={{ bg: "blue.200", color: "gray.900" }}
@@ -605,13 +902,56 @@ const PageReactInterviewQuestions = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      *****Heading******
+                      Performance
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
+                <AccordionPanel pb={4}>
+                  <h3>Here are several tool for improved React Performance</h3>
+                  <UnorderedList>
+                    <ListItem>
+                      <Link
+                        isExternal
+                        href="https://github.com/welldone-software/why-did-you-render?tab=readme-ov-file"
+                      >
+                        Why did you render?
+                      </Link>
+                    </ListItem>
+                    <ListItem>Lighthouse (Chrome DevTools)</ListItem>
+                    <ListItem>
+                      <Link
+                        isExternal
+                        href="https://github.com/webpack-contrib/webpack-bundle-analyzer"
+                      >
+                        Bundle Analyzer Tools (Webpack/CRA)
+                      </Link>
+                    </ListItem>
+                  </UnorderedList>
+                  <Text>...</Text>
+
+                  <h3>Explain how the useMemo hook helps with performance</h3>
+                  <Text>...</Text>
+
+                  <h3>Explain how the useCall hook helps with performance</h3>
+                  <Text>...</Text>
+
+                  <h3>
+                    Why is it bad when a function is recreated on every
+                    re-render?
+                  </h3>
+                  <Text>
+                    <Link
+                      href="https://chatgpt.com/share/66f57e1f-8da4-8001-b758-b4c20b4e2d72"
+                      isExternal
+                    >
+                      The answer.
+                    </Link>
+                  </Text>
+                </AccordionPanel>
               </AccordionItem>
+
+              {/* 
 
               <AccordionItem>
                 <Heading>
@@ -857,55 +1197,65 @@ const PageReactInterviewQuestions = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      What is the difference between the the virtual DOM and the
-                      real DOM?
+                      What is the difference between the the real DOM and the
+                      virtual DOM?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
                   <Text>
-                    Virtual DOM and the real DOM differ in how they interact
-                    with and update the UI.
+                    The real DOM and virtual DOM differ in their <b>nature</b>, <b>interaction</b>, and <b>update</b> the UI.
                   </Text>
 
                   <TableContainer>
                     <Table size="md" variant="stripped" whiteSpace="wrap">
                       <Thead>
                         <Tr>
+                          <Th></Th>
                           <Th>The DOM</Th>
                           <Th>Virtual DOM</Th>
                         </Tr>
                       </Thead>
                       <Tbody>
                         <Tr>
+                          <Td>
+                            <b>NATURE</b>
+                          </Td>
                           <Td>Is an API</Td>
                           <Td>Is a coding pattern</Td>
                         </Tr>
                         <Tr>
+                          <Td>
+                            <b>NATURE</b>
+                          </Td>
                           <Td>Represents the document as nodes and objects</Td>
                           <Td>
-                            Is a virtual representation/copy of the document,
-                            and is kept in memory
+                            Is a copy of the document (virtual representation)
+                            that is kept in memory
                           </Td>
                         </Tr>
                         <Tr>
                           <Td>
-                            Page reload is triggered by ineractions such as form
-                            submit or link navigation
+                            <b>INTERRACTIONS</b>  such as <b>form submit</b> or <b>link navigation</b>
                           </Td>
                           <Td>
-                            Page reload <b>IS NOT</b> triggered by ineractions
-                            such as form submit or link navigation
+                            Trigger page reload
+                          </Td>
+                          <Td>
+                            <b>Do not</b> trigger page reload
                           </Td>
                         </Tr>
                         <Tr>
                           <Td>
-                            Manipulations have <b>direct effect</b> on the
+                            <b>UI UPDATES</b> manipulations
+                          </Td>
+                          <Td>
+                            Have <b>direct effect</b> on the
                             document
                           </Td>
                           <Td>
-                            Manipulations have <b>NO direct effect</b> on the
+                            Have <b>NO direct effect</b> on the
                             document, and are only applied <b>after</b> the{" "}
                             <Link
                               href="https://legacy.reactjs.org/docs/reconciliation.html"
@@ -913,7 +1263,7 @@ const PageReactInterviewQuestions = () => {
                             >
                               Reconciliation
                             </Link>{" "}
-                            process performed by{" "}
+                            process is performed by{" "}
                             <Link
                               href="https://legacy.reactjs.org/docs/react-dom.html"
                               isExternal

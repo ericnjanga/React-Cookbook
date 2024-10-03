@@ -1,0 +1,19 @@
+ 
+html[data-theme="light"] {
+  body {
+    background-color: var(--website-col-aaa-1);
+  }
+  .main-sidebar { 
+    background-color: var(--website-col-aaa-4);
+  }
+  p {
+    color: var(--website-col-aaa-3);
+  }
+
+  .main-content {
+    a {
+      color: var(--website-col-aaa-2b);
+    }
+  }
+}
+

@@ -30,6 +30,27 @@ const PageJavascriptInterviewQuestions = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
+                      What is a JavaScript closure?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>A closure is a function that retains access to the variables of its outer (parent) function's scope, even after the outer function has finished executing.</Text>
+                  <Text mb='0'>Closures retain access to variables, not just the scope, and they don't necessarily require the parent function to have finished execution—closures are formed as soon as a function is defined inside another function.</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton _expanded={{ bg: 'blue.200', color: 'gray.900' }}>
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
                       What is a route/url parameter?
                     </Box>
                     <AccordionIcon />
@@ -39,7 +60,6 @@ const PageJavascriptInterviewQuestions = () => {
                   <Text mb='0'>A route or URL parameter is a variable part of a URL that can be used to capture and pass data in the URL itself. These parameters help define dynamic routes in web applications, allowing for flexibility in handling different data with the same route pattern.</Text>
                 </AccordionPanel>
               </AccordionItem>
-
               
             </Accordion>
           </CardBody>

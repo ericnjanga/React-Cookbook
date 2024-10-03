@@ -1,0 +1,18 @@
+ 
+html[data-theme="dark"] {
+  body {
+    background-color: var(--website-col-aaa-6);
+  }
+  .main-sidebar { 
+    background-color: var(--website-col-aaa-5);
+  }
+  p {
+    color: var(--website-col-aaa-1b);
+  }
+
+  .main-content {
+    a {
+      color: var(--website-col-aaa-1d);
+    }
+  }
+}

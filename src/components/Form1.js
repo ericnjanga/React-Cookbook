@@ -1,24 +1,40 @@
-import React from 'react'; 
-import useFormInput from '../hooks/useFormInput';
-
+import React from "react";
+import useFormInput from "../hooks/useFormInput";
 
 export default function Form1() {
-  const firstNameProps = useFormInput('Momo');
-  const lastNameProps = useFormInput('Mone');
+  const firstNameProps = useFormInput("Momo");
+  const lastNameProps = useFormInput("Mone");
 
   return (
     <>
-      <label>
-        First name:
-        <input className='form-control' value={firstNameProps.value} onChange={firstNameProps.onChange} /> 
-      </label>
-      <label>
-        Last name: 
-        <input className='form-control' value={lastNameProps.value} onChange={lastNameProps.onChange} /> 
-      </label>
-      <p><b>Good morning, {firstNameProps.value} {lastNameProps.value}.</b></p>
+      <div className="row">
+        <div className="col">
+          <label className="d-block">
+            First name:
+            <input
+              className="form-control"
+              value={firstNameProps.value}
+              onChange={firstNameProps.onChange}
+            />
+          </label>
+        </div>
+        <div className="col">
+        <label className="d-block">
+            Last name:
+            <input
+              className="form-control"
+              value={lastNameProps.value}
+              onChange={lastNameProps.onChange}
+            />
+          </label>
+        </div>
+
+        <p>
+            <b>
+              Good morning, {firstNameProps.value} {lastNameProps.value}.
+            </b>
+          </p>
+      </div>
     </>
   );
 }
-
-

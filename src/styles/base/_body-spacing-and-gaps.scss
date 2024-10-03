@@ -1,0 +1,67 @@
+:root {
+  // --website-spacing-top-gap: 20px;
+  // // --website-spacing-1: 3.5rem;
+  --website-spacing-section-1: 3.5rem;
+}
+
+// * {
+//   transition: all 0.3s ease; /* Adjust the duration and timing function as needed */
+// }
+
+body {
+  // Extra Large screens ...
+  @media (min-width: 1400px) {
+    --website-spacing-section-1: 120px;
+    // --website-spacing-1: 60px;
+  }
+
+  // Large screens ...
+  @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+    --website-spacing-section-1: 90px;
+    // --website-spacing-1: 60px;
+  }
+
+  // Large Medium screens ...
+  @media (min-width: 992px) and (max-width: (1200px - 1)) {
+    --website-spacing-section-1: 70px;
+    // --website-spacing-1: 40px;
+  }
+
+  // Medium Medium screens ...
+  @media (min-width: 768px) and (max-width: (992px - 1)) {
+    --website-spacing-section-1: 60px;
+  }
+
+  // Small Medium screens ...
+  @media (min-width: 576px) and (max-width: (768px - 1)) {
+  }
+
+  // Smaller screens ...
+  @media (max-width: (576px - 1px)) {
+  }
+}
+
+@layer blocks {
+  .sc-block {
+    padding-top: var(--website-spacing-section-1);
+    padding-bottom: var(--website-spacing-section-1);
+  }
+
+  .sc-block-mg-top {
+    margin-top: var(--website-spacing-section-1);
+  }
+  .sc-block-mg-bot {
+    margin-bottom: var(--website-spacing-section-1);
+  }
+  .sc-block-mg-bot-2 {
+    margin-bottom: calc(var(--website-spacing-section-1) / 2);
+  }
+  
+  .sc-block-pd-top {
+    padding-top: var(--website-spacing-section-1);
+  }
+  .sc-block-pd-bot {
+    padding-bottom: var(--website-spacing-section-1);
+  }
+}
+ 

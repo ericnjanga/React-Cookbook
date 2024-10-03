@@ -1,7 +1,7 @@
 import React from 'react';
 
-import FeedbackForm from './components/FeedbackForm/FeedbackForm';
-import RegistrationForm from './RegistrationForm';
+import FeedbackForm from '../../components/FeedbackForm/FeedbackForm';
+import RegistrationForm from '../../RegistrationForm';
 
 
 const PageForms = () => {

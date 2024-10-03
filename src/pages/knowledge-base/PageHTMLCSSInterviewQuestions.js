@@ -159,9 +159,9 @@ const PageHTMLCSSInterviewQuestions = () => {
                   <Text marginBottom="1rem">
                     The CSS box model controls how element dimensions are
                     calculated and defines the layout of elements on a webpage.
-                    It consists of four areas: content (text/images), padding
-                    (space inside the border), border (surrounds the padding),
-                    and margin (space outside the border). Each layer affects
+                    It consists of four areas: <b>content</b> (text/images), <b>padding</b>
+                    (space inside the border), <b>border</b> (surrounds the padding),
+                    and <b>margin</b> (space outside the border). Each layer affects
                     the element's total width and height, determining how it
                     interacts with neighboring elements.
                   </Text>
@@ -246,15 +246,16 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </Text>
                   <UnorderedList marginLeft="0" paddingLeft="1.3rem">
                     <ListItem>
-                      <Badge colorScheme="purple">Fluid Grid Layouts</Badge>:
-                      Using percentage-based widths make elements scale relative
-                      to the screen size.
+                      <Badge colorScheme="purple">Mobile-First Approach</Badge>:
+                      To ensure the best performance and usability on mobile
+                      devices by design for mobile screens first, then use media
+                      queries to enhance for larger devices.
                     </ListItem>
                     <ListItem>
-                      <Badge colorScheme="purple">
-                        Flexible Images and Media
-                      </Badge>
-                      : To ensure images resize within their containers.
+                      <Badge colorScheme="purple">Responsive Frameworks</Badge>:
+                      Frameworks like Chakra UI, Bootstrap, and Tailwind CSS
+                      provide built-in grid systems, components, and utilities
+                      to quickly build responsive layouts.
                     </ListItem>
                     <ListItem>
                       <Badge colorScheme="purple">Media Queries</Badge>: To
@@ -268,6 +269,17 @@ const PageHTMLCSSInterviewQuestions = () => {
                       viewport meta tag in the HTML.
                     </ListItem>
                     <ListItem>
+                      <Badge colorScheme="purple">Fluid Grid Layouts</Badge>:
+                      Using percentage-based widths make elements scale relative
+                      to the screen size.
+                    </ListItem>
+                    <ListItem>
+                      <Badge colorScheme="purple">
+                        Flexible Images and Media
+                      </Badge>
+                      : To ensure images resize within their containers.
+                    </ListItem>
+                    <ListItem>
                       <Badge colorScheme="purple">Responsive Typography</Badge>:
                       To adjust font sizes and line heights using relative units
                       like em, rem, or percentages rather than fixed pixels.
@@ -279,18 +291,6 @@ const PageHTMLCSSInterviewQuestions = () => {
                       layout system for aligning items in rows or columns, while
                       the <b>Grid</b> is a two-dimensional system for creating complex
                       layouts with both rows and columns.)
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">Mobile-First Approach</Badge>:
-                      To ensure the best performance and usability on mobile
-                      devices by design for mobile screens first, then use media
-                      queries to enhance for larger devices.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">Responsive Frameworks</Badge>:
-                      Frameworks like Chakra UI, Bootstrap, and Tailwind CSS
-                      provide built-in grid systems, components, and utilities
-                      to quickly build responsive layouts.
                     </ListItem>
                   </UnorderedList>
                 </AccordionPanel>

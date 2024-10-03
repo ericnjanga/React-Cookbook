@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import Breadcrumbs from "./components/Breadcrumbs";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 const activateLink = ({ isActive }) => ( isActive ? 'active' : null );
 
