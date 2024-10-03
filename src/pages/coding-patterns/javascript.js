@@ -1,14 +1,8 @@
 import React from "react";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import { NavLink } from "react-router-dom";
-
-const activateLink = ({ isActive }) => (isActive ? "active" : null);
 
 const PageCodingPatternsJs = () => {
   return (
     <>
-      <Breadcrumbs />
-
       <div className="row">
         <div className="col-9">
           <header className="sc-block-mg-bot-2">

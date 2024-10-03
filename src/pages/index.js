@@ -1,5 +1,4 @@
 import React from "react";
-import Breadcrumbs from "../components/Breadcrumbs";
 import { NavLink } from "react-router-dom";
 
 const activateLink = ({ isActive }) => (isActive ? "active" : null);
@@ -7,8 +6,6 @@ const activateLink = ({ isActive }) => (isActive ? "active" : null);
 const PageHome = () => {
   return (
     <>
-      <Breadcrumbs />
-
       <div className="row">
         <div className="col-9">
           <header className="sc-block-mg-bot-2">
@@ -65,7 +62,7 @@ const PageHome = () => {
               <ul className="list-align-left">
                 <li>
                   <NavLink
-                    to="/knowledge-base/javascript"
+                    to="/coding-patterns/javascript"
                     className={activateLink}
                   >
                     JavaScript
@@ -73,7 +70,7 @@ const PageHome = () => {
                 </li> 
                 <li>
                   <NavLink
-                    to="/knowledge-base/javascript"
+                    to="/coding-patterns/javascript"
                     className={activateLink}
                   >
                     React

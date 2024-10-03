@@ -1,77 +1,48 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbSeparator,
-  } from '@chakra-ui/react';
+import { NavLink } from "react-router-dom";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
+import { useLocation } from "react-router-dom";
 
-const activateLink = ({ isActive }) => ( isActive ? 'active' : null );
+const activateLink = ({ isActive }) => (isActive ? "active" : null);
 
 /**
- * 
+ *
  * @returns TODO:
  * - I must complete the React Router training before finishing up this component:
  * https://www.coursera.org/learn/learn-react-router-6/home/module/1
  */
 
 const Breadcrumbs = () => {
+  const location = useLocation();
 
-    return (
-        <Breadcrumb>
-            <BreadcrumbItem>
-                <BreadcrumbLink as={NavLink} to="/">Welcome</BreadcrumbLink>
-            </BreadcrumbItem>
+  // console.log();
+  const crumbs = location.pathname
+    .split("/")
+    .filter((item) => item !== "")
+    .map((item, index, array) => {
+      return (
+        <BreadcrumbItem key={index}>
+          {index === array.length - 1 ? (
+            <span>{item}</span>
+          ) : (
+            <BreadcrumbLink as={NavLink} to={item}>
+              {item}
+            </BreadcrumbLink>
+          )}
+        </BreadcrumbItem>
+      );
+    });
 
-            {/* <BreadcrumbItem>
-                <BreadcrumbLink as={NavLink} to="/category-logic-enpasulation">Logic enpasulation</BreadcrumbLink>
-            </BreadcrumbItem> */}
-
-            {/* <BreadcrumbItem isCurrentPage>
-                <BreadcrumbLink as={NavLink} to="/">Breadcrumb</BreadcrumbLink>
-            </BreadcrumbItem> */}
-        </Breadcrumb>
-
-        // <nav aria-label="breadcrumb">
-        //     <ol className="breadcrumb">
-        //         <li className="breadcrumb-item">
-        //             <NavLink to="/" className={activateLink}>Home</NavLink>
-        //         </li>
-        //         <li className="breadcrumb-item">
-        //             <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic enpasulation</NavLink>
-        //         </li>
-        //         <li className="breadcrumb-item active" aria-current="page">High Order Components (HOC) ...</li>
-        //     </ol>
-        // </nav>
-
-
- 
-        // <nav aria-label="breadcrumb">
-        //     <ol className="breadcrumb">
-        //         <li className="breadcrumb-item">
-        //             <NavLink to="/" className={activateLink}>Home</NavLink>
-        //         </li>
-        //         <li className="breadcrumb-item">
-        //             <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic enpasulation</NavLink>
-        //         </li>
-        //     </ol>
-        // </nav> 
-
-
- 
-        // <nav aria-label="breadcrumb">
-        //     <ol className="breadcrumb">
-        //         <li className="breadcrumb-item">
-        //             <NavLink to="/" className={activateLink}>Home</NavLink>
-        //         </li>
-        //         <li className="breadcrumb-item">
-        //             <NavLink to="/category-logic-enpasulation" className={activateLink}>Logic enpasulation</NavLink>
-        //         </li>
-        //         <li className="breadcrumb-item active" aria-current="page">Hooks</li>
-        //     </ol>
-        // </nav> 
-    );
-}
+  return (
+    <Breadcrumb>
+      <BreadcrumbItem>
+        <BreadcrumbLink as={NavLink} to="/">
+          Welcome
+        </BreadcrumbLink>
+      </BreadcrumbItem>
+      {crumbs}
+    </Breadcrumb>
+  );
+};
 
 export default Breadcrumbs;

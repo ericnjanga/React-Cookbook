@@ -1,11 +1,23 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { Heading } from "@chakra-ui/react";
-import Logo from "./images/Logo.png";
+import { NavLink } from "react-router-dom"; 
+import Logo from './../images/Logo.png';
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const activateLink = ({ isActive }) => (isActive ? "active" : null);
 
 const Nav = () => {
+
+  const location = useLocation();
+  const [currentRoute, setCurrentRoute] = useState('r');
+
+  // Extract the current route param
+  useEffect(() => {
+    // Split pathname into an array, eliminate empty elements, and extract the last array element
+    const currRoute = location.pathname.split('/').filter(item => item!=='').pop();
+    setCurrentRoute(currRoute); 
+  }, [currentRoute, location.pathname]);
+
   return (
     <>
       <header className="main-sidebar-header">
@@ -35,6 +47,38 @@ const Nav = () => {
             <NavLink to="/coding-patterns/react" className={activateLink}>
               React
             </NavLink>
+            {currentRoute === 'react' &&
+              <ul>
+                <li>
+                  <NavLink to="/high-order-components" className={activateLink}>
+                    High Order Components (HOC)
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/render-props">Render Props</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/component-composition" className={activateLink}>
+                    Component Composition
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/hooks" className={activateLink}>
+                    Hooks
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/forms" className={activateLink}>
+                    Forms
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/data-fetching" className={activateLink}>
+                    Data Fetching
+                  </NavLink>
+                </li>
+              </ul>
+            }
           </li>
         </ul>
 
