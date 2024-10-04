@@ -10,8 +10,7 @@ const PageCodingPatternsJs = () => {
             <p>
               Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum
               bibendum pharetra massa facilisis scelerisque tempor in. Commodo
-              pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam
-              sed nunc accumsan. Eu id nulla est diam.
+              pulvinar aliquet lacinia neque nibh tempor.
             </p>
           </header>
 

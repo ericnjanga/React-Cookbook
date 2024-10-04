@@ -12,7 +12,7 @@ const renderDessertCount = (data) => {
     return (
         <div>
             <p>{data.length} deserts</p>
-            <img src={img} style={{ width: '150px' }} />
+            <img src={img} style={{ width: '150px' }} alt="" />
         </div>
     );
 };
@@ -37,7 +37,7 @@ const DataFetcher = ({ render, url }) => {
         } else {
             setData(['water', 'soda', 'juice']);
         }
-    }, []);
+    }, [url]);
 
     return render(data);
 };

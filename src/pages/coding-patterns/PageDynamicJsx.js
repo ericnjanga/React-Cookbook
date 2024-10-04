@@ -1,6 +1,6 @@
 import React from 'react';
-import LiveOrder from '../../LiveOrders';
-import FeedbackRadioGroup from '../../FeedbackRadioBtn';
+import LiveOrder from '../../LiveOrders'; 
+import FeedbackRadioGroup from '../../components/FeedbackRadioBtn';
 import { Link, Card, CardBody, Alert, AlertIcon, Heading, VStack, Badge } from '@chakra-ui/react';
 
 

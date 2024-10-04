@@ -1,7 +1,7 @@
 import React from "react";
-import ExpenseTracker from "../../ExpenseTracker";
-import CustomHookTest from "../../CustomHookTest";
-import DaysOfTheWeek from "../../DaysOfTheWeek";
+import ExpenseTracker from "../../components/ExpenseTracker";
+import CustomHookTest from "../../components/CustomHookTest";
+import DaysOfTheWeek from "../../components/DaysOfTheWeek";
 import { Card, CardBody } from "@chakra-ui/react";
 import StatusBar from "../../components/StatusBar";
 import SaveButton from "../../components/SaveButton";

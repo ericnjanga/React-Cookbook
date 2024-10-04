@@ -11,6 +11,9 @@
 .xxxx {
   border: 20px solid green;
 }
+.layout-subpage {
+  border: 10px solid rgb(128, 105, 0);
+}
 
 
 
@@ -36,6 +39,7 @@
   &-heading {
     color: var(--website-col-aaa-1c);
     text-transform: uppercase;
+    font-size: 1.125rem;
   }
 
   .menu-list {
@@ -51,6 +55,7 @@
 
       &:hover {
         color: var(--website-col-bbb-1);
+        background-color: rgba(250, 250, 250, .10);
 
         &::before {
           background-color: var(--website-col-bbb-1);
@@ -69,6 +74,7 @@
 
       &.active {
         color: var(--website-col-bbb-2);
+        background-color: rgba(250, 250, 250, .10);
 
         &::before {
           background-color: var(--website-col-bbb-2);

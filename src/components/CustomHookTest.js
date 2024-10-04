@@ -1,9 +1,7 @@
 import { useState } from "react";
-import useConsoleLog from "./useConsoleLog";
 
 function CustomHookTest() {
   const [count, setCount] = useState(0);
-  // useConsoleLog(count);
 
   function increment() {
     setCount(prevCount => prevCount + 1);

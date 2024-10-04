@@ -1,5 +1,5 @@
 import { useState } from "react";
-import usePrevious from "./hooks/usePrevious";
+import usePrevious from "../hooks/usePrevious";
 
 function DaysOfTheWeek() {
   const [day, setDay] = useState("Monday");

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Heading, VStack, Text } from "@chakra-ui/react";
-import useCounter from "../hooks/useCounter";
-import useInterval from "../hooks/useInterval";
+import useCounter from "../hooks/useCounter"; 
 
 
 const CounterApp = () => {

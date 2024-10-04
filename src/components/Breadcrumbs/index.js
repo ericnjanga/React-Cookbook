@@ -1,37 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react"; 
+import { isEqual } from "lodash";
+import useRouteSegments from "../../hooks/useRouteSegments";
 
-const activateLink = ({ isActive }) => (isActive ? "active" : null);
+const Breadcrumbs = () => { 
+  const [crumbs, setCrumbs] = useState([]);
+  const routeSegments = useRouteSegments();
 
-/**
- *
- * @returns TODO:
- * - I must complete the React Router training before finishing up this component:
- * https://www.coursera.org/learn/learn-react-router-6/home/module/1
- */
+  console.log('>>> [Breadcrumbs] routeSegments = ', routeSegments);
 
-const Breadcrumbs = () => {
-  const location = useLocation();
+  useEffect(() => {
+    /**
+     * Use route segments to generate an array of breadcrumbs components 
+      // For each array items (except the last one):
+      // - Wrap it with a <BreadcrumbLink /> component and pass it down the "route" and "id" extracted
+      // - Wrap the last item with just a <span /> as it is not supposed to link anywhere
+     */
+    const newBreadcrumbsArray = routeSegments
+      .map((itemId, index, array) => {
+        let itemRoute = array.slice(0, index + 1).join('/');
+  
+        return (
+          <BreadcrumbItem key={index}>
+            {index === array.length - 1 ? (
+              <span>{itemId}</span>
+            ) : (
+              <BreadcrumbLink as={NavLink} to={itemRoute}>
+                {itemId}
+              </BreadcrumbLink>
+            )}
+          </BreadcrumbItem>
+        );
+      });
 
-  // console.log();
-  const crumbs = location.pathname
-    .split("/")
-    .filter((item) => item !== "")
-    .map((item, index, array) => {
-      return (
-        <BreadcrumbItem key={index}>
-          {index === array.length - 1 ? (
-            <span>{item}</span>
-          ) : (
-            <BreadcrumbLink as={NavLink} to={item}>
-              {item}
-            </BreadcrumbLink>
-          )}
-        </BreadcrumbItem>
-      );
-    });
+    // Don't update the state unless the new and previous state are different
+    setCrumbs((prevCrumbs) => {
+      if (isEqual(prevCrumbs, newBreadcrumbsArray)) {
+        return prevCrumbs;
+      }
+      return newBreadcrumbsArray;
+    })
+
+  }, [routeSegments]);
 
   return (
     <Breadcrumb>

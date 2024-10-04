@@ -1,22 +1,26 @@
 import React from "react";
-import { NavLink } from "react-router-dom"; 
-import Logo from './../images/Logo.png';
-import { useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Logo from "./../images/Logo.png";
 import { useState, useEffect } from "react";
+import { MenuList } from "../components/Menus";
+import useRouteSegments from "../hooks/useRouteSegments";
 
 const activateLink = ({ isActive }) => (isActive ? "active" : null);
 
-const Nav = () => {
 
-  const location = useLocation();
-  const [currentRoute, setCurrentRoute] = useState('r');
+const Nav = () => { 
+  const [hasReactSegment, setHasReactSegment] = useState(false);
+  const routeSegments = useRouteSegments();
 
-  // Extract the current route param
+  /**
+   * Set a boolean to true if a specific route segment is contained in the list.
+   * We will use it to conditionally render submenus. This will allow the submenu
+   * to remain visible anytime the parent route is active
+   */
   useEffect(() => {
-    // Split pathname into an array, eliminate empty elements, and extract the last array element
-    const currRoute = location.pathname.split('/').filter(item => item!=='').pop();
-    setCurrentRoute(currRoute); 
-  }, [currentRoute, location.pathname]);
+    const reactSegmentExisits = routeSegments.includes('react');
+    setHasReactSegment(reactSegmentExisits);
+  }, [routeSegments, hasReactSegment]);
 
   return (
     <>
@@ -47,38 +51,7 @@ const Nav = () => {
             <NavLink to="/coding-patterns/react" className={activateLink}>
               React
             </NavLink>
-            {currentRoute === 'react' &&
-              <ul>
-                <li>
-                  <NavLink to="/high-order-components" className={activateLink}>
-                    High Order Components (HOC)
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/render-props">Render Props</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/component-composition" className={activateLink}>
-                    Component Composition
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/hooks" className={activateLink}>
-                    Hooks
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/forms" className={activateLink}>
-                    Forms
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/data-fetching" className={activateLink}>
-                    Data Fetching
-                  </NavLink>
-                </li>
-              </ul>
-            }
+            {hasReactSegment && <MenuList name='react coding patterns' />}
           </li>
         </ul>
 

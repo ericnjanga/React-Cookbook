@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading, Box, Card, CardBody, Text, Badge } from "@chakra-ui/react";
-import { List, ListItem, OrderedList, UnorderedList } from "@chakra-ui/react";
+import { ListItem, OrderedList, UnorderedList } from "@chakra-ui/react";
 import {
   Accordion,
   AccordionItem,
