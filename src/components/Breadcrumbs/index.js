@@ -8,8 +8,6 @@ const Breadcrumbs = () => {
   const [crumbs, setCrumbs] = useState([]);
   const routeSegments = useRouteSegments();
 
-  console.log('>>> [Breadcrumbs] routeSegments = ', routeSegments);
-
   useEffect(() => {
     /**
      * Use route segments to generate an array of breadcrumbs components 
@@ -33,6 +31,8 @@ const Breadcrumbs = () => {
           </BreadcrumbItem>
         );
       });
+
+    console.log('....routeSegments=', routeSegments)
 
     // Don't update the state unless the new and previous state are different
     setCrumbs((prevCrumbs) => {

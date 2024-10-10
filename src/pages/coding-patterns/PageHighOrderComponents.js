@@ -7,7 +7,7 @@ const PageHighOrderComponents = () => {
     return (
         <>
             <div className="row">
-                <h1>Enhancing or extending the capabilities of a component provided</h1>
+                <h1>High Order Components: Enhancing or extending the capabilities of a component provided</h1>
             </div>
 
 

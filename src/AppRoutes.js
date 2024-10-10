@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 import LayoutGlobal from "./layouts/LayoutGlobal";
 // import LayoutCodingPatterns from "./layouts/LayoutCodingPatterns";
@@ -14,14 +14,16 @@ import ResourcesOverview from "./pages/additional-resources/PageOverview";
 import PageHighOrderComponents from "./pages/coding-patterns/PageHighOrderComponents";
 // import PageCategoryLogicEncapsulation from "./pages/coding-patterns/PageCategoryLogicEncapsulation";
 import PageRenderProps from "./pages/coding-patterns/PageRenderProps";
-// import PageReactInterviewQuestions from "./pages/knowledge-base/PageReactInterviewQuestions";
-// import PageHTMLCSSInterviewQuestions from "./pages/knowledge-base/PageHTMLCSSInterviewQuestions";
-// import PageJavascriptInterviewQuestions from "./pages/knowledge-base/PageJavascriptInterviewQuestions";
+import PageReactInterviewQuestions from "./pages/knowledge-base/PageReactInterviewQuestions";
+import PageHTMLCSSInterviewQuestions from "./pages/knowledge-base/PageHTMLCSSInterviewQuestions";
+import PageJavascriptInterviewQuestions from "./pages/knowledge-base/PageJavascriptInterviewQuestions";
 import PageHome from "./pages";
 import PageCodingPatternsJs from "./pages/coding-patterns/javascript";
 // import PageCodingPatternsReact from "./pages/coding-patterns/react";
-import LayoutSubpage from "./layouts/LayoutSubpage";
+import LayoutPage, { LayoutTemp } from "./layouts/LayoutPage";
 import PageReactPerformance from "./pages/coding-patterns/PageReactPerformance";
+import PassingDataDeepDown from "./pages/coding-patterns/PassingDataDeepDown";
+import { PageCodPattJSPage1, PageCodPattJSPage2 } from "./pages/coding-patterns/PageCodPattJSPages";
 
 const AppRoutes = () => {
   return (
@@ -29,15 +31,19 @@ const AppRoutes = () => {
       <Route path="/" element={<LayoutGlobal />}>
         <Route index element={<PageHome />} />
 
-        <Route path="/coding-patterns" element={<LayoutSubpage />}>
+        <Route path="/coding-patterns" element={<LayoutPage />}>
           {/** Nested routes */}
-          {/** -> These routes are relative to the parent route (host) */}
-          <Route index element={<PageCodingPatternsJs />} />
-          <Route path="javascript" element={<PageCodingPatternsJs />} />
+          {/** -> These routes are relative to the parent route (host) */} 
+          <Route path="javascript" element={<LayoutTemp />}>
+            <Route index element={<Navigate to="js-page1" />} /> {/* Parent route links here by default */}
+            <Route path="js-page1" element={<PageCodPattJSPage1 />} />
+            <Route path="js-page2" element={<PageCodPattJSPage2 />} />
+          </Route>
 
-          <Route path="react" element={<LayoutSubpage />}>
-            {/** Nested routes */}
-            <Route index path="performance-patterns" element={<PageReactPerformance />} />
+          {/** Nested routes */}
+          <Route path="react" element={<LayoutTemp />}>
+            <Route index element={<Navigate to="performance-patterns" />} /> {/* Parent route links here by default */}
+            <Route path="performance-patterns" element={<PageReactPerformance />} />
             <Route path="hooks" element={<PageHooks />} />
             <Route path="render-props" element={<PageRenderProps />} />
             <Route path="forms" element={<PageForms />} />
@@ -47,42 +53,39 @@ const AppRoutes = () => {
             />
             <Route path="data-fetching" element={<PageDataFetching />} />
             <Route
-              path="additional-resources/overview"
-              element={<ResourcesOverview />}
-            />
-            <Route
-              path="high-order-components"
+              path="logic-enapsulation"
               element={<PageHighOrderComponents />}
             />
+            <Route
+              path="passing-data-deeply"
+              element={<PassingDataDeepDown />}
+            /> 
           </Route>
         </Route>
 
-        {/* <Route
-          path="/coding-patterns/javascript"
-          element={<PageCodingPatternsJs />}
-        />
+        <Route path="/knowledge-base" element={<LayoutTemp />}>
+          {/** Nested routes */}
+          {/** -> These routes are relative to the parent route (host) */} 
 
+          <Route path="javascript" element={<LayoutPage />}>
+            <Route index element={<Navigate to="javascript-core-concepts" />} /> {/* Parent route links here by default */}
+            <Route path="javascript-core-concepts" element={<PageJavascriptInterviewQuestions />} />
+          </Route>
+          <Route path="html-and-css" element={<LayoutPage />}>
+            <Route index element={<Navigate to="html-and-css-core-concepts" />} /> {/* Parent route links here by default */}
+            <Route path="html-and-css-core-concepts" element={<PageHTMLCSSInterviewQuestions />} />
+          </Route>
+          <Route path="react" element={<LayoutPage />}>
+          <Route index element={<Navigate to="react-core-concepts" />} /> {/* Parent route links here by default */}
+            <Route path="react-core-concepts" element={<PageReactInterviewQuestions />} />
+          </Route>
+        </Route>
 
-        <Route
-          path="/category-logic-enpasulation"
-          element={<PageCategoryLogicEncapsulation />}
-        />
-        <Route
-          path="/additional-resources/overview"
-          element={<PageCategoryLogicEncapsulation />}
-        />
-        <Route
-          path="/knowledge-base/react"
-          element={<PageReactInterviewQuestions />}
-        />
-        <Route
-          path="/knowledge-base/html-css"
-          element={<PageHTMLCSSInterviewQuestions />}
-        />
-        <Route
-          path="/knowledge-base/javascript"
-          element={<PageJavascriptInterviewQuestions />}
-        /> */}
+        <Route path="/additional-resources" element={<LayoutPage />}>
+          {/** Nested routes */} 
+          <Route index element={<Navigate to="react-resoures" />} /> {/* Parent route links here by default */}
+          <Route path="react-resoures" element={<ResourcesOverview />} />
+        </Route>
       </Route>
     </Routes>
   );

@@ -19,7 +19,7 @@ const PageCategoryLogicEncapsulation = () => {
             <div className="row">
                 <ul>
                     <li>
-                        <NavLink to="/high-order-components">High Order Components (HOC)</NavLink>
+                        <NavLink to="/logic-enapsulation">High Order Components (HOC)</NavLink>
                     </li>
                     <li>
                         <NavLink to="/hooks">Custom Hooks</NavLink>

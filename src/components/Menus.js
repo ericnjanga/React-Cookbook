@@ -11,7 +11,7 @@ const MenuReact = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to={`${root}/high-order-components`}>
+          <NavLink to={`${root}/logic-enapsulation`}>
             High Order Components (HOC)
           </NavLink>
         </li>

@@ -4,9 +4,17 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import makeMirageServer from './ApiServer/mirageServerSetup';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Initialize MirageJS server
+if (process.env.NODE_ENV === "development") {
+  makeMirageServer();
+}
+
+// Render app ...
 root.render(
   <React.StrictMode>
     <App />

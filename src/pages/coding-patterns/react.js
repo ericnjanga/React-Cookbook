@@ -22,7 +22,7 @@ const PageCodingPatternsReact = () => {
             <div className="col-6">
               <ul className="list-align-left">
                 <li>
-                  <NavLink to="/high-order-components" className={activateLink}>
+                  <NavLink to="/logic-enapsulation" className={activateLink}>
                     High Order Components (HOC)
                   </NavLink>
                 </li>

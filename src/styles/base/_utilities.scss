@@ -1,15 +1,43 @@
-@import './variables';
+@import "./variables";
 
 /* Utilities */
- 
+
 .code {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: inline;
-    padding: 0.2rem 0.3rem;
-    border-radius: 3px;
-    background-color: #eee;
-    border: 1px solid #ccc;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: inline;
+  padding: 0.2rem 0.3rem;
+  border-radius: 3px;
+  background-color: #eee;
+  border: 1px solid #ccc;
 }
 .list-align-left {
-    padding-left: 0.9rem;
+  padding-left: 0.9rem;
+}
+
+/**
+ * Pulse animation
+*/
+.placeholder {
+  width: 100%; 
+  animation: pulse 1s infinite; /* Animation for pulsing */
+
+  &.heading {
+    min-height: 1.7rem;
+  }
+  &.text {
+    min-height: 7rem;
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    background-color: #626262; /* Dark gray */
+  }
+  50% {
+    background-color: #999999; /* Light gray */
+  }
+  100% {
+    background-color: #626262; /* Dark gray */
+  }
 }

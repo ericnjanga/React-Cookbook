@@ -1,27 +1,21 @@
 
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { isEqual } from "lodash";
+import { useMemo } from "react"; 
 
+/**
+ * Returns an array of segments from the page's url
+ * Example: If the Url is http://localhost:3000/coding-patterns/react/component-composition
+ * the function will return and array of 3 segments: [coding-patterns, react, component-composition]
+ * @returns 
+ */
 const useRouteSegments = () => {
-  const location = useLocation();
-  const [segmentArray, setSegmentArray] = useState([]);
-
-  useEffect(() => {
+  const { pathname } = useLocation();  
+  const segmentArray = useMemo(() => {
     // split the location pathname into an array and eliminate empty array cells
-    const newData = location.pathname
+    return  pathname
       .split("/") // split the location pathname into an array and eliminate empty array cells
-      .filter((item) => item !== "");
-
-    // Don't update the state unless the new and previous state are different
-    setSegmentArray((prevArray) => {
-      if (isEqual(prevArray, newData)) {
-        return prevArray;
-      }
-      return newData;
-    });
-
-  }, [location.pathname]);
+      .filter((item) => item !== ""); 
+  }, [pathname]);
 
   return segmentArray;
 };

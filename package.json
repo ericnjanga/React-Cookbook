@@ -52,6 +52,7 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@welldone-software/why-did-you-render": "^8.0.3",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "miragejs": "^0.2.0-alpha.3"
   }
 }
