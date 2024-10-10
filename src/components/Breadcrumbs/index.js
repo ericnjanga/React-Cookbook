@@ -1,14 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react"; 
 import { isEqual } from "lodash";
 import useRouteSegments from "../../hooks/useRouteSegments";
+
+// The page will be fetched here
+export const PageContext = createContext(undefined);
 
 const Breadcrumbs = () => { 
   const [crumbs, setCrumbs] = useState([]);
   const routeSegments = useRouteSegments();
 
   useEffect(() => {
+    /**
+     * ------- THE PAGE OBJECT WILL BE DETERMINED HERE -------
+     * ------- HERE --------
+     * ------- PageContext --------
+     * ------- HERE --------
+     */
+
+
+
+
     /**
      * Use route segments to generate an array of breadcrumbs components 
       // For each array items (except the last one):
@@ -32,8 +45,6 @@ const Breadcrumbs = () => {
         );
       });
 
-    console.log('....routeSegments=', routeSegments)
-
     // Don't update the state unless the new and previous state are different
     setCrumbs((prevCrumbs) => {
       if (isEqual(prevCrumbs, newBreadcrumbsArray)) {
@@ -52,6 +63,8 @@ const Breadcrumbs = () => {
         </BreadcrumbLink>
       </BreadcrumbItem>
       {crumbs}
+
+      <PageContext.Provider value={undefined}></PageContext.Provider>
     </Breadcrumb>
   );
 };

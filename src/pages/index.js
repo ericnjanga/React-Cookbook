@@ -1,20 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { usePage } from "../hooks/useDatabase";
+import PageHeader from "../components/PageHeader";
 
 const activateLink = ({ isActive }) => (isActive ? "active" : null);
 
 const PageHome = () => {
   const page = usePage({ id: -1 });
+
+  // console.log('>>>>>page=', page);
   
   return (
     <>
       <div className="row">
         <div className="col-9">
-          <header className="sc-block-mg-bot-2">
-            <h1 className={!page ? 'placeholder heading' : ''}>{page && page.title}</h1>
-            <p className={!page ? 'placeholder text' : ''}>{page && page.subtitle}</p>
-          </header>
+          <PageHeader />
 
           <div className="row">
             <div className="col-4">

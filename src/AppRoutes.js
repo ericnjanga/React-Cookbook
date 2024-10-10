@@ -1,8 +1,7 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 
-import LayoutGlobal from "./layouts/LayoutGlobal";
-// import LayoutCodingPatterns from "./layouts/LayoutCodingPatterns";
+import LayoutGlobal from "./layouts/LayoutGlobal"; 
 // import PageCodingPatterns from "./pages/coding-patterns";
 
 import PageHooks from "./pages/coding-patterns/PageHooks";
@@ -33,6 +32,7 @@ const AppRoutes = () => {
 
         <Route path="/coding-patterns" element={<LayoutPage />}>
           {/** Nested routes */}
+          <Route index element={<Navigate to="javascript/js-page1" />} /> {/* Parent route links here by default */}
           {/** -> These routes are relative to the parent route (host) */} 
           <Route path="javascript" element={<LayoutTemp />}>
             <Route index element={<Navigate to="js-page1" />} /> {/* Parent route links here by default */}
@@ -65,8 +65,8 @@ const AppRoutes = () => {
 
         <Route path="/knowledge-base" element={<LayoutTemp />}>
           {/** Nested routes */}
-          {/** -> These routes are relative to the parent route (host) */} 
-
+          <Route index element={<Navigate to="javascript/javascript-core-concepts" />} /> {/* Parent route links here by default */}
+          {/** -> These routes are relative to the parent route (host) */}  
           <Route path="javascript" element={<LayoutPage />}>
             <Route index element={<Navigate to="javascript-core-concepts" />} /> {/* Parent route links here by default */}
             <Route path="javascript-core-concepts" element={<PageJavascriptInterviewQuestions />} />

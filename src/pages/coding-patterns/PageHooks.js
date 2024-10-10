@@ -8,8 +8,7 @@ import SaveButton from "../../components/SaveButton";
 import Form1 from "../../components/Form1";
 import ChatroomApp from "../../components/TheChatroom/ChatroomApp";
 import CounterApp from "../../components/CounterApp";
-
-// const activateLink = ({ isActive }) => (isActive ? "active" : null);
+ 
 
 const PageHooks = () => {
   const spacinfStyle = {

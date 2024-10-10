@@ -1,5 +1,7 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom"; 
+import PageHeader from "../components/PageHeader";
+ 
 // import { usePage } from "../hooks/useDatabase";
 
 
@@ -18,16 +20,13 @@ const LayoutPage = () => {
    * --> My idea is to make sure usePage() API request is only called when the ID is changed
    */
   // const page = usePage({ id: 19 });
-  const page = null;
+  const page = null; 
 
   return (
     <div className="layout-subpage">
       <div className="row">
         <div className="col-9">
-          <header className="sc-block-mg-bot-2">
-            <h1 className={!page ? 'placeholder heading' : ''}>{page && page.title}</h1>
-            <p className={!page ? 'placeholder text' : ''}>{page && page.subtitle}</p>
-          </header>
+          <PageHeader />
         </div>
       </div>
       <Outlet></Outlet>

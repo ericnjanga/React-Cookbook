@@ -105,7 +105,73 @@ export const useSections = () => {
 
 
 
-// <header className="sc-block-mg-bot-2">
-// <h1 className={!page ? 'placeholder heading' : ''}>{page && page.title}</h1>
-// <p className={!page ? 'placeholder text' : ''}>{page && page.subtitle}</p>
-// </header>
+export const useCategories = (categoryIds) => {
+  const [cats, setCats] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(
+          `/api/categories?ids=${JSON.stringify(categoryIds)}`
+        );
+
+        // Throws an error if there is an HTTP issue
+        if (!response.ok) {
+          throw new Error(`HTTP Error. Status: ${response.status}`);
+        }
+        // Otherwise, parse the response
+        const data = await response.json();
+
+        // Throws an error is the response structure is invalid
+        if (!data || !data.categories) {
+          throw new Error("Invalid data structure");
+        }
+
+        // Otherwise update the state
+        setCats(data.categories);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchCategories();
+  }, [categoryIds]);
+
+  return cats;
+};
+
+
+
+export const usePages = (sectionId, categoryId) => {
+  const [pages, setPages] = useState([]);
+  
+  useEffect(() => {
+    const fetchPages = async () => {
+      try {
+        const response = await fetch(`/api/pages?sectionId=${sectionId}&categoryId=${categoryId}`);
+
+        // Throws an error if there is an HTTP issue
+        if(!response.ok) {
+          throw new Error(`HTTP Error. Status: ${response.status}`);
+        }
+        // Otherwise, parse the response
+        const data = await response.json();
+
+        // Throws an error is the response structure is invalid
+        if(!data || !data.pages) {
+          throw new Error('Invalid data structure');
+        }
+
+        // Otherwise update the state
+        setPages(data.pages);
+      }
+      catch(error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchPages();
+  }, [sectionId, categoryId]);
+
+  return pages;
+};

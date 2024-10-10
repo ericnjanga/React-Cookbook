@@ -28,12 +28,6 @@ const MainNavigation = () => {
 
       <nav className="main-sidebar-nav">
         {pageSections.map((section, index) => {
-          // console.log('.....>>>>section.id = ', section.id);
-          console.log(
-            ".....>>>>section.categoryIds.length = ",
-            section.categoryIds.length
-          );
-
           return (
             <NavSection key={index} {...section}>
               {/** Render any page that IS DIRECTLY LINKED to a section (no category intermediary) */
