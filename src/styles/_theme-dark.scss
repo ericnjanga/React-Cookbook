@@ -1,9 +1,8 @@
- 
 html[data-theme="dark"] {
   body {
     background-color: var(--website-col-aaa-6);
   }
-  .main-sidebar { 
+  .main-sidebar {
     background-color: var(--website-col-aaa-5);
   }
   p {
@@ -14,5 +13,8 @@ html[data-theme="dark"] {
     a {
       color: var(--website-col-aaa-1d);
     }
+  }
+  .chakra-code {
+    background: #22262e;
   }
 }

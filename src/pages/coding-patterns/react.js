@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
-const activateLink = ({ isActive }) => (isActive ? "active" : null);
+import { setActiveClass } from "../../utilities/utils";
 
 const PageCodingPatternsReact = () => {
   return (
@@ -22,7 +21,7 @@ const PageCodingPatternsReact = () => {
             <div className="col-6">
               <ul className="list-align-left">
                 <li>
-                  <NavLink to="/logic-enapsulation" className={activateLink}>
+                  <NavLink to="/logic-enapsulation" className={setActiveClass}>
                     High Order Components (HOC)
                   </NavLink>
                 </li>
@@ -30,22 +29,22 @@ const PageCodingPatternsReact = () => {
                   <NavLink to="/render-props">Render Props</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/component-composition" className={activateLink}>
+                  <NavLink to="/component-composition" className={setActiveClass}>
                     Component Composition
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/hooks" className={activateLink}>
+                  <NavLink to="/hooks" className={setActiveClass}>
                     Hooks
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/forms" className={activateLink}>
+                  <NavLink to="/forms" className={setActiveClass}>
                     Forms
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/data-fetching" className={activateLink}>
+                  <NavLink to="/data-fetching" className={setActiveClass}>
                     Data Fetching
                   </NavLink>
                 </li>
@@ -61,7 +60,7 @@ const PageCodingPatternsReact = () => {
 
         <ul>
           <li>
-            <NavLink to="/category-logic-enpasulation" className={activateLink}>
+            <NavLink to="/category-logic-enpasulation" className={setActiveClass}>
               Logic encapsulation &amp; code reuse
             </NavLink>
           </li>

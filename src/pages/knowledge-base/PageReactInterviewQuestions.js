@@ -119,8 +119,15 @@ const PageReactInterviewQuestions = () => {
                     architecture, and features. Below is a detailed comparison
                     between React, Angular, and Vue:
                   </Text>
+
                   <TableContainer>
-                    <Table size="sm">
+                    <Table
+                      size="sm"
+                      variant="striped"
+                      colorScheme="teal"
+                      whiteSpace="wrap"
+                      className="table-definition"
+                    >
                       <Thead>
                         <Tr>
                           <Th>Aspect</Th>
@@ -137,12 +144,6 @@ const PageReactInterviewQuestions = () => {
                           <Td>Progressive framework</Td>
                         </Tr>
                         <Tr>
-                          <Td>Learning Curve</Td>
-                          <Td>Moderate (with JSX & Hooks)</Td>
-                          <Td>Steep (with TypeScript & RxJS)</Td>
-                          <Td>Easy to moderate</Td>
-                        </Tr>
-                        <Tr>
                           <Td>Data Binding</Td>
                           <Td>One-way</Td>
                           <Td>Two-way</Td>
@@ -152,19 +153,19 @@ const PageReactInterviewQuestions = () => {
                           <Td>State Management</Td>
                           <Td>External (Redux/MobX)</Td>
                           <Td>Built-in (services, RxJS, NgRx)</Td>
-                          <Td>Vuex (official)</Td>
+                          <Td>Built-in (VueX)</Td>
+                        </Tr>
+                        <Tr>
+                          <Td>Routes Management</Td>
+                          <Td>External (react-router)</Td>
+                          <Td>Built-in (routing module)</Td>
+                          <Td>Built-in (Vuew-router)</Td>
                         </Tr>
                         <Tr>
                           <Td>Performance</Td>
                           <Td>Fast with Virtual DOM</Td>
                           <Td>Slower with change detection</Td>
                           <Td>Fast with Virtual DOM</Td>
-                        </Tr>
-                        <Tr>
-                          <Td>Community</Td>
-                          <Td>Largest (Facebook support)</Td>
-                          <Td>Large (Google support)</Td>
-                          <Td>Growing (independent)</Td>
                         </Tr>
                       </Tbody>
                     </Table>
@@ -423,21 +424,34 @@ const PageReactInterviewQuestions = () => {
 
                   <Spacer height="2rem"></Spacer>
 
-                  <h3>What Differentiates functional and class components?</h3>
+                  <h3>Functional vs Class components</h3>
+
                   <Text>
-                    In React, functional and class components are two ways to
-                    define components, each with its own characteristics and use
-                    cases. Here are the key differences:{" "}
+                    They can be defiend separely (
                     <Link
                       href="https://chatgpt.com/share/66f591dc-a47c-8001-aac0-988dd14b5102"
                       isExternal
                     >
                       Learn more
                     </Link>
+                    ), and contribute in different ways (
+                    <Link
+                      href="https://chatgpt.com/share/66f59442-65b4-8001-b74e-d0ea1eb73f38"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                    ).
                   </Text>
 
                   <TableContainer>
-                    <Table size="md" variant="stripped" whiteSpace="wrap">
+                    <Table
+                      size="sm"
+                      variant="striped"
+                      colorScheme="teal"
+                      whiteSpace="wrap"
+                      className="table-definition"
+                    >
                       <Thead>
                         <Tr>
                           <Th></Th>
@@ -449,103 +463,55 @@ const PageReactInterviewQuestions = () => {
                         <Tr>
                           <Td fontWeight="bold">Definition</Td>
                           <Td>
-                            These are JavaScript functions that return JSX
-                            (JavaScript XML), which describes what the UI should
-                            look like. They can use hooks to manage state and
-                            side effects.
+                            JS functions taking props in params and returning
+                            JSX.
                           </Td>
                           <Td>
-                            These are ES6 classes that extend from
-                            React.Component. They have a render method that
-                            returns JSX. Class components can manage local state
-                            and lifecycle methods.
+                            ES6 classes extending React.Component. Return JSX
+                            through a render method.
                           </Td>
                         </Tr>
                         <Tr>
                           <Td fontWeight="bold">State Management</Td>
+                          <Td>Through hooks (useState, useReducer).</Td>
                           <Td>
-                            Initially, they did not have their own state, but
-                            with the introduction of Hooks (like useState), they
-                            can manage state.
-                          </Td>
-                          <Td>
-                            They have a built-in state management system and can
-                            manage state using this.state and this.setState().
+                            Built-in state management methods (this.state,
+                            this.setState).
                           </Td>
                         </Tr>
                         <Tr>
                           <Td fontWeight="bold">Lifecycle Methods</Td>
                           <Td>
-                            They do not have lifecycle methods directly.
-                            However, you can use the useEffect Hook to replicate
-                            lifecycle behavior (like componentDidMount,
-                            componentDidUpdate, and componentWillUnmount).
+                            Through hooks like <b>useEffect</b>:
+                            <UnorderedList mb="0" className="list-align-left">
+                              <ListItem>After component render</ListItem>
+                              <ListItem>State/props change</ListItem>
+                              <ListItem>Cleanup phase</ListItem>
+                            </UnorderedList>
                           </Td>
                           <Td>
-                            They provide built-in lifecycle methods such as
-                            componentDidMount, componentDidUpdate, and
-                            componentWillUnmount.
-                          </Td>
-                        </Tr>
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
-
-                  <Spacer height="2rem"></Spacer>
-
-                  <h3>
-                    How do functional and class components contribute to the
-                    modular structure of a React app?
-                  </h3>
-                  <Text>
-                    In React, both functional and class components play vital
-                    roles in creating a modular structure, each contributing in
-                    different ways:{" "}
-                    <Link
-                      href="https://chatgpt.com/share/66f59442-65b4-8001-b74e-d0ea1eb73f38"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                  </Text>
-
-                  <TableContainer>
-                    <Table size="md" variant="stripped" whiteSpace="wrap">
-                      <Thead>
-                        <Tr>
-                          <Th></Th>
-                          <Th>Functional</Th>
-                          <Th>Class</Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        <Tr>
-                          <Td fontWeight="bold">Separation of Concerns</Td>
-                          <Td>
-                            These are often used for presentational purposes,
-                            focusing solely on rendering UI based on props. They
-                            encourage a clear separation between UI logic and
-                            business logic.
-                          </Td>
-                          <Td>
-                            Typically used for managing state and lifecycle
-                            methods, they can encapsulate more complex behavior,
-                            allowing for a clearer organization of
-                            functionality.
+                            Through built-in lifecycle methods:
+                            <UnorderedList mb="0" className="list-align-left">
+                              <ListItem>
+                                <b>componentDidMount</b>: After component render
+                              </ListItem>
+                              <ListItem>
+                                <b>componentDidUpdate</b>: State/props change
+                              </ListItem>
+                              <ListItem>
+                                <b>componentWillUnmount</b>: Cleanup phase
+                              </ListItem>
+                            </UnorderedList>
                           </Td>
                         </Tr>
+
                         <Tr>
-                          <Td fontWeight="bold">Reusability</Td>
+                          <Td fontWeight="bold">Complexity</Td>
+                          <Td>...</Td>
                           <Td>
-                            They can easily be reused across different parts of
-                            the application, enhancing code maintainability and
-                            reducing redundancy. Hooks can be used within
-                            functional components to share logic among them.
-                          </Td>
-                          <Td>
-                            These can also be reused, and their lifecycle
-                            methods can manage shared state and effects that are
-                            complex to handle with functional components alone.
+                            Best suited for handling complex state and effects
+                            (with their built-in lifecycle methods) than
+                            functional counterparts.
                           </Td>
                         </Tr>
                       </Tbody>
@@ -559,8 +525,7 @@ const PageReactInterviewQuestions = () => {
                     components in React?
                   </h3>
                   <Text>
-                    In React, controlled and uncontrolled components refer to
-                    how form elements manage their state.{" "}
+                    This refers to how <b>form elements</b> manage their state.{" "}
                     <Link
                       href="https://chatgpt.com/share/66f598cd-c164-8001-88d3-2da17eb72c49"
                       isExternal
@@ -568,34 +533,63 @@ const PageReactInterviewQuestions = () => {
                       Learn more
                     </Link>
                   </Text>
-                  <UnorderedList className="list-align-left">
-                    <ListItem>
-                      <b>Controlled Components</b>: React manages the form data.
-                      Good for managing form state, validation, and complex
-                      forms.
-                    </ListItem>
-                    <ListItem>
-                      <b>Uncontrolled Components</b>: The DOM manages the form
-                      data. Useful for simple forms or when integrating with
-                      non-React libraries.
-                    </ListItem>
-                  </UnorderedList>
+
+                  <TableContainer>
+                    <Table
+                      size="sm"
+                      variant="striped"
+                      colorScheme="teal"
+                      whiteSpace="wrap"
+                      className="table-definition"
+                    >
+                      <Thead>
+                        <Tr>
+                          <Th></Th>
+                          <Th>Controlled</Th>
+                          <Th>Uncontrolled</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        <Tr>
+                          <Td fontWeight="bold">State management</Td>
+                          <Td>React</Td>
+                          <Td>The DOM</Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight="bold">Good for</Td>
+                          <Td>
+                            Complex forms, tighter control (validation, state
+                            management)
+                          </Td>
+                          <Td>
+                            Simple forms, looser control (validation, state
+                            management)
+                          </Td>
+                        </Tr>
+                      </Tbody>
+                    </Table>
+                  </TableContainer>
 
                   <Spacer height="2rem"></Spacer>
 
                   <h3>What is a higher-order component (HOC)?</h3>
-                  <Text>
-                    A high-order component in React is a pattern for reusing
-                    component logic that we want to enhance or extend. It works
-                    by taking a component as an argument and returning an
-                    enhanced component.{" "}
-                    <Link
-                      href="https://chatgpt.com/share/66f59bfd-5e6c-8001-939b-cfdef98e23fe"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                  </Text>
+
+                  <UnorderedList className="list-align-left">
+                    <ListItem>Pattern for reusing component logic</ListItem>
+                    <ListItem>For enhancement or extension purposes</ListItem>
+                    <ListItem>
+                      Takes a component as an argument, returns an enhanced
+                      component
+                    </ListItem>
+                    <ListItem>
+                      <Link
+                        href="https://chatgpt.com/share/66f59bfd-5e6c-8001-939b-cfdef98e23fe"
+                        isExternal
+                      >
+                        Learn more
+                      </Link>
+                    </ListItem>
+                  </UnorderedList>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1085,17 +1079,25 @@ const PageReactInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>
-                    <Link
-                      href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
-                      isExternal
-                    >
-                      The DOM
-                    </Link>{" "}
-                    (Document Object Model) is a programming interface that
-                    represents the web document as nodes and objects; so that
-                    programming languages such as JavaScript can manipulate it.
-                  </Text>
+                  <UnorderedList className="list-align-left" mb="10">
+                    <ListItem>
+                      <Link
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
+                        isExternal
+                      >
+                        Document Object Model
+                      </Link>
+                    </ListItem>
+                    <ListItem>
+                      Programming interface that represents the web document as
+                      nodes and objects
+                    </ListItem>
+                    <ListItem>
+                      Allows programming languages such as JS to manipulate the
+                      web document
+                    </ListItem>
+                  </UnorderedList>
+
                   <Text>
                     The DOM is not a programming language, but without it, the
                     JavaScript language wouldn't have any model or notion of web
@@ -1129,31 +1131,30 @@ const PageReactInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>
-                    <Link
-                      href="https://legacy.reactjs.org/docs/faq-internals.html#what-is-the-virtual-dom"
-                      isExternal
-                    >
-                      The virtual DOM (VDOM)
-                    </Link>{" "}
-                    is a programming concept where an ideal, or “virtual”,
-                    representation of a UI is kept in memory and synced with the
-                    “real” DOM by a library such as{" "}
-                    <Link
-                      href="https://legacy.reactjs.org/docs/react-dom.html"
-                      isExternal
-                    >
-                      ReactDOM
-                    </Link>
-                    . This process is called{" "}
-                    <Link
-                      href="https://legacy.reactjs.org/docs/reconciliation.html"
-                      isExternal
-                    >
-                      Reconciliation
-                    </Link>
-                    .
-                  </Text>
+                  <UnorderedList className="list-align-left" mb="10">
+                    <ListItem>
+                      <Link
+                        href="https://legacy.reactjs.org/docs/faq-internals.html#what-is-the-virtual-dom"
+                        isExternal
+                      >
+                        Programming concept
+                      </Link>
+                    </ListItem>
+                    <ListItem>
+                      Keeps an "ideal" or virtual representation of the UI in
+                      memory
+                    </ListItem>
+                    <ListItem>
+                      Syncs React elements with the "reat" DOM (
+                      <Link
+                        href="https://legacy.reactjs.org/docs/reconciliation.html"
+                        isExternal
+                      >
+                        Reconciliation process
+                      </Link>
+                      )
+                    </ListItem>
+                  </UnorderedList>
 
                   <h2>
                     4. What is the Virtual DOM, and how does it work in React?
@@ -1205,11 +1206,18 @@ const PageReactInterviewQuestions = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                   <Text>
-                    The real DOM and virtual DOM differ in their <b>nature</b>, <b>interaction</b>, and <b>update</b> the UI.
+                    The real DOM and virtual DOM differ in their <b>nature</b>,{" "}
+                    <b>interaction</b>, and <b>update</b> the UI.
                   </Text>
 
                   <TableContainer>
-                    <Table size="md" variant="stripped" whiteSpace="wrap">
+                    <Table
+                      size="sm"
+                      variant="striped"
+                      colorScheme="teal"
+                      whiteSpace="wrap"
+                      className="table-definition"
+                    >
                       <Thead>
                         <Tr>
                           <Th></Th>
@@ -1237,11 +1245,10 @@ const PageReactInterviewQuestions = () => {
                         </Tr>
                         <Tr>
                           <Td>
-                            <b>INTERRACTIONS</b>  such as <b>form submit</b> or <b>link navigation</b>
+                            <b>INTERRACTIONS</b> such as <b>form submit</b> or{" "}
+                            <b>link navigation</b>
                           </Td>
-                          <Td>
-                            Trigger page reload
-                          </Td>
+                          <Td>Trigger page reload</Td>
                           <Td>
                             <b>Do not</b> trigger page reload
                           </Td>
@@ -1251,12 +1258,11 @@ const PageReactInterviewQuestions = () => {
                             <b>UI UPDATES</b> manipulations
                           </Td>
                           <Td>
-                            Have <b>direct effect</b> on the
-                            document
+                            Have <b>direct effect</b> on the document
                           </Td>
                           <Td>
-                            Have <b>NO direct effect</b> on the
-                            document, and are only applied <b>after</b> the{" "}
+                            Have <b>NO direct effect</b> on the document, and
+                            are only applied <b>after</b> the{" "}
                             <Link
                               href="https://legacy.reactjs.org/docs/reconciliation.html"
                               isExternal
@@ -1319,18 +1325,23 @@ const PageReactInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text marginBottom="0">
-                    <Link
-                      href="https://legacy.reactjs.org/docs/introducing-jsx.html"
-                      isExternal
-                    >
-                      JSX
-                    </Link>{" "}
-                    is short for JavaScript-XML. It is a template syntax
-                    extension to JavaScript that looks like HTML, but under the
-                    hood is still JavaScript. JSX describes what the UI should
-                    look like and produces React “elements”.
-                  </Text>
+                  <UnorderedList className="list-align-left">
+                    <ListItem>
+                      <Link
+                        href="https://legacy.reactjs.org/docs/introducing-jsx.html"
+                        isExternal
+                      >
+                        Short for JavaScript-XML
+                      </Link>{" "}
+                    </ListItem>
+                    <ListItem>
+                      A template syntax extension to JavaScript
+                    </ListItem>
+                    <ListItem>Looks like HTML</ListItem>
+                    <ListItem>Describes what the UI should look like</ListItem>
+                    <ListItem>Returned by react components</ListItem>
+                    <ListItem>Transpiled into React “elements”</ListItem>
+                  </UnorderedList>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1354,16 +1365,16 @@ const PageReactInterviewQuestions = () => {
                 <AccordionPanel pb={4}>
                   <OrderedList marginLeft=".5rem" paddingLeft="0">
                     <ListItem mb=".7rem">
-                      JSX let you write a code that looks like HTML, but that is
-                      still JavaScript under the hood.
+                      <div>Write HTML-like JS code.</div>
                       <Code>
                         const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;
                       </Code>
                     </ListItem>
                     <ListItem mb=".7rem">
-                      Within JSX, you can embed JavaScript expressions inside
-                      curly braces &#123;&#125;. This allows dynamic content to
-                      be inserted into your UI:
+                      <div>
+                        Option to embed JS expressions inside curly braces
+                        &#123;&#125;
+                      </div>
                       <Code>
                         const val = "John"; <br />
                         const element = &lt;h1&gt;Hello,
@@ -1371,19 +1382,12 @@ const PageReactInterviewQuestions = () => {
                       </Code>
                     </ListItem>
                     <ListItem mb=".7rem">
-                      Because browsers don't understand JSX natively, it is
-                      transpiled into regular JavaScript by compilers like
-                      Babel.
-                      <Code>
-                        const element = React.createElement('h1', null, 'Hello,
-                        John!');
-                      </Code>
-                    </ListItem>
-                    <ListItem mb=".7rem">
-                      The call to{" "}
-                      <Badge colorScheme="purple">React.createElement</Badge>{" "}
-                      produces a React element, which is a plain JavaScript
-                      object that represents a DOM node. For example:
+                      <div>
+                        Transpiled into React elements (by compilers like Babel
+                        with{" "}
+                        <Badge colorScheme="purple">React.createElement</Badge>{" "}
+                        function):
+                      </div>
                       <Code>
                         const element = &#123; <br />
                         &nbsp;&nbsp;type: 'h1', <br />
@@ -1394,30 +1398,28 @@ const PageReactInterviewQuestions = () => {
                       </Code>
                     </ListItem>
                     <ListItem mb=".7rem">
-                      That React element is then stored in the virtual DOM.
+                      React element stored in the virtual DOM.
                     </ListItem>
                     <ListItem mb=".7rem">
-                      The actual conversion from the React element (virtual DOM)
-                      to real HTML occurs when{" "}
-                      <Badge colorScheme="purple">ReactDOM.render()</Badge> is
-                      called:
+                      <div>
+                        From virtual DOM to actual DOM node using{" "}
+                        <Badge colorScheme="purple">ReactDOM.render()</Badge>{" "}
+                        function.
+                      </div>
                       <Code>
                         ReactDOM.render(element,
                         document.getElementById('root'));
                       </Code>
                     </ListItem>
                     <ListItem mb=".7rem">
-                      <Badge colorScheme="purple">ReactDOM.render()</Badge>{" "}
-                      takes the virtual DOM element (the element in this case)
-                      and creates actual DOM nodes in the browser, which results
-                      in the rendered HTML:
+                      <div>Final DOM node output:</div>
                       <Code>&lt;h1&gt;Hello, John!&lt;/h1&gt;</Code>
                     </ListItem>
                   </OrderedList>
                 </AccordionPanel>
               </AccordionItem>
 
-              <AccordionItem>
+              {/* <AccordionItem>
                 <h2>
                   <AccordionButton
                     _expanded={{ bg: "blue.200", color: "gray.900" }}
@@ -1437,7 +1439,7 @@ const PageReactInterviewQuestions = () => {
                 <AccordionPanel pb={4}>
                   <Text>...</Text>
                 </AccordionPanel>
-              </AccordionItem>
+              </AccordionItem> */}
 
               <AccordionItem>
                 <h2>
@@ -1457,8 +1459,60 @@ const PageReactInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  An element is a JavaScript object created by JSX, whereas a
-                  component is a function that returns an element.
+                  <TableContainer>
+                    <Table
+                      size="sm"
+                      variant="striped"
+                      colorScheme="teal"
+                      whiteSpace="wrap"
+                      className="table-definition"
+                    >
+                      <Thead>
+                        <Tr>
+                          <Th></Th>
+                          <Th>React Element</Th>
+                          <Th>Component</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        <Tr>
+                          <Td>Definition</Td>
+                          <Td>
+                            A plain JavaScript object that represents a DOM
+                            element.
+                          </Td>
+                          <Td>
+                            A JavaScript function (or class) that returns React
+                            elements (often using JSX).
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td>Creation/Type</Td>
+                          <Td>
+                            Produced by JSX syntax, which gets transpiled into
+                            React.createElement() calls. For example, &lt;div
+                            /&gt; gets converted to React.createElement('div').
+                          </Td>
+                          <Td>
+                            Can be either functional or class-based. Functional
+                            components are often simpler and use hooks for state
+                            and lifecycle management, while classes use built-in
+                            methods.
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td>Immutability/Reusability</Td>
+                          <Td>
+                            Are immutable; once created, they cannot be changed.
+                          </Td>
+                          <Td>
+                            Are reusable building blocks and can manage their
+                            own state or lifecycle.
+                          </Td>
+                        </Tr>
+                      </Tbody>
+                    </Table>
+                  </TableContainer>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>

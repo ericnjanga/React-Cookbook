@@ -1,28 +1,27 @@
 import React from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
-
-import LayoutGlobal from "./layouts/LayoutGlobal"; 
-// import PageCodingPatterns from "./pages/coding-patterns";
-
+import { Route, Routes, Navigate } from "react-router-dom"; 
+import LayoutGlobal from "./layouts/LayoutGlobal";  
 import PageHooks from "./pages/coding-patterns/PageHooks";
 import PageForms from "./pages/coding-patterns/PageForms";
 import PageComponentComposition from "./pages/coding-patterns/PageComponentComposition";
 import PageDataFetching from "./pages/coding-patterns/PageDataFetching";
+// import PageCodingPatterns from "./pages/coding-patterns";
 // import PageDynamicJsx from "./pages/coding-patterns/PageDynamicJsx";
+// import PageCategoryLogicEncapsulation from "./pages/coding-patterns/PageCategoryLogicEncapsulation";
+// import PageCodingPatternsJs from "./pages/coding-patterns/javascript";
+// import PageCodingPatternsReact from "./pages/coding-patterns/react";
 import ResourcesOverview from "./pages/additional-resources/PageOverview";
 import PageHighOrderComponents from "./pages/coding-patterns/PageHighOrderComponents";
-// import PageCategoryLogicEncapsulation from "./pages/coding-patterns/PageCategoryLogicEncapsulation";
 import PageRenderProps from "./pages/coding-patterns/PageRenderProps";
 import PageReactInterviewQuestions from "./pages/knowledge-base/PageReactInterviewQuestions";
 import PageHTMLCSSInterviewQuestions from "./pages/knowledge-base/PageHTMLCSSInterviewQuestions";
-import PageJavascriptInterviewQuestions from "./pages/knowledge-base/PageJavascriptInterviewQuestions";
+import PageJavascriptCoreConcepts from "./pages/knowledge-base/PageJavascriptCoreConcepts";
 import PageHome from "./pages";
-import PageCodingPatternsJs from "./pages/coding-patterns/javascript";
-// import PageCodingPatternsReact from "./pages/coding-patterns/react";
 import LayoutPage, { LayoutTemp } from "./layouts/LayoutPage";
 import PageReactPerformance from "./pages/coding-patterns/PageReactPerformance";
 import PassingDataDeepDown from "./pages/coding-patterns/PassingDataDeepDown";
 import { PageCodPattJSPage1, PageCodPattJSPage2 } from "./pages/coding-patterns/PageCodPattJSPages";
+import PageJavascriptInterestingPatterns from "./pages/knowledge-base/PageJavascriptInterestingPatterns";
 
 const AppRoutes = () => {
   return (
@@ -30,6 +29,11 @@ const AppRoutes = () => {
       <Route path="/" element={<LayoutGlobal />}>
         <Route index element={<PageHome />} />
 
+        {/**
+         * TO DO: 
+         * -------------------
+         * I NEED DYNAMIC ROUTES ASAP ---
+         */}
         <Route path="/coding-patterns" element={<LayoutPage />}>
           {/** Nested routes */}
           <Route index element={<Navigate to="javascript/js-page1" />} /> {/* Parent route links here by default */}
@@ -66,10 +70,12 @@ const AppRoutes = () => {
         <Route path="/knowledge-base" element={<LayoutTemp />}>
           {/** Nested routes */}
           <Route index element={<Navigate to="javascript/javascript-core-concepts" />} /> {/* Parent route links here by default */}
+          
           {/** -> These routes are relative to the parent route (host) */}  
           <Route path="javascript" element={<LayoutPage />}>
             <Route index element={<Navigate to="javascript-core-concepts" />} /> {/* Parent route links here by default */}
-            <Route path="javascript-core-concepts" element={<PageJavascriptInterviewQuestions />} />
+            <Route path="core-concepts" element={<PageJavascriptCoreConcepts />} />
+            <Route path="interesting-patterns" element={<PageJavascriptInterestingPatterns />} />
           </Route>
           <Route path="html-and-css" element={<LayoutPage />}>
             <Route index element={<Navigate to="html-and-css-core-concepts" />} /> {/* Parent route links here by default */}

@@ -103,6 +103,39 @@ export const useSections = () => {
   return sections;
 }
 
+export const useSectionBy = (sectionUri) => {
+  const [section, setSection] = useState();
+
+  
+  const sectionFetch = async(sectionUri) => {
+
+    try {
+      const response = await fetch(`/api/sectionByUri/${sectionUri}`);
+      if(!response.ok) {
+        throw new Error(`HTTP Error. Status: ${response.status}`);
+      }
+      const data = await response.json();
+
+      if(!data || !data.sections) {
+        console.log('>>>>> data ', data);
+        throw new Error('Invalid data structure');
+      }
+
+      setSection(data.sections[0]);
+      console.log('>>>>> data.sections ', data.sections[0]);
+    }
+    catch(error) {
+      console.error(error.message);
+    }
+  };
+
+  useEffect(() => {
+    sectionFetch(sectionUri);
+  }, [sectionUri]);
+
+  return section;
+};
+
 
 
 export const useCategories = (categoryIds) => {

@@ -1,12 +1,12 @@
-@import './base/body-spacing-and-gaps';
-@import './base/initialization';
-@import './base/utilities';
-@import './base/variables';
+@import "./base/body-spacing-and-gaps";
+@import "./base/initialization";
+@import "./base/utilities";
+@import "./base/variables";
 
-@import './accordion';
-@import './theme-light';
-@import './theme-dark';
-
+@import "./accordion";
+@import "./code";
+@import "./theme-light";
+@import "./theme-dark";
 
 .xxxx {
   border: 20px solid green;
@@ -18,7 +18,6 @@
   border: 3px solid rgb(0, 72, 207);
 }
 
-
 .menu-level-1 {
   border: 3px solid rgb(207, 0, 0);
 }
@@ -28,17 +27,43 @@
 .menu-level-3 {
   border: 3px solid rgb(0, 200, 207);
 }
- 
-
-
 
 .App {
   min-height: 100vh;
 }
 
-.main-sidebar {    
+/** To make an HTML table naturally wrap its text **/
+.table-text-wrap {
+  th,
+  td { 
+    max-width: 150px; /* Set a maximum width for cells */
+    overflow: hidden; /* Hide overflow content */
+    white-space: wrap; 
+  }
+}
+/** To make an HTML table naturally truncate its text **/
+.table-text-truncate {
+  th,
+  td { 
+    max-width: 150px; /* Set a maximum width for cells */
+    overflow: hidden; /* Hide overflow content */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+  }
+}
+/** To make an HTML table limit the width of it's first elements of each row **/
+.table-definition {
+  th,
+  td { 
+    &:nth-of-type(1) {
+      width: 70px;
+    }
+  }
+}
+
+.main-sidebar {
   position: fixed;
-  height: 100vh; 
+  height: 100vh;
   padding: 3.75rem 2.4rem;
   overflow-y: scroll;
   // color: #fff;
@@ -66,11 +91,11 @@
       position: relative;
       text-decoration: none;
       color: var(--website-col-aaa-1c);
-      padding: .4rem 1rem .4rem 1.75rem;
+      padding: 0.4rem 1rem 0.4rem 1.75rem;
 
       &:hover {
         color: var(--website-col-bbb-1);
-        background-color: rgba(250, 250, 250, .10);
+        background-color: rgba(250, 250, 250, 0.1);
 
         &::before {
           background-color: var(--website-col-bbb-1);
@@ -78,18 +103,18 @@
       }
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0.875rem;
         width: 3px;
         height: 100%;
-        background-color: rgba(250, 250, 250, .40);
+        background-color: rgba(250, 250, 250, 0.4);
       }
 
       &.active {
         color: var(--website-col-bbb-2);
-        background-color: rgba(250, 250, 250, .10);
+        background-color: rgba(250, 250, 250, 0.1);
 
         &::before {
           background-color: var(--website-col-bbb-2);
@@ -101,9 +126,9 @@
       list-style: none;
       padding-left: 0.875rem;
 
-      a { 
-        padding: .15rem 1rem .15rem 1.75rem;
-        font-size: .95rem;
+      a {
+        padding: 0.15rem 1rem 0.15rem 1.75rem;
+        font-size: 0.95rem;
 
         &::before {
           left: 0;
@@ -112,8 +137,6 @@
     }
   }
 }
-  
-
 
 .chakra-breadcrumb {
   margin-bottom: 1.25rem;
@@ -156,7 +179,11 @@
 .theme-dark {
   background-color: #121212;
 }
-.theme-dark h1, .theme-dark h2, .theme-dark h3, .theme-dark h4, .theme-dark h5 {
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5 {
   color: #dce3fb;
 }
 .theme-dark p,
@@ -182,9 +209,6 @@
   background-color: #343a40;
 }
 
-
-
-
 /**
  * Live order app
  * ------------
@@ -199,9 +223,6 @@
 .app-liveOrder__row p {
   margin: 0;
 }
-
-
-
 
 /**
  * CoordinatesMouseLogger

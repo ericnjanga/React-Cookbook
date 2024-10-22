@@ -7,6 +7,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Link,
 } from "@chakra-ui/react";
 
 const PageHTMLCSSInterviewQuestions = () => {
@@ -17,12 +18,14 @@ const PageHTMLCSSInterviewQuestions = () => {
       </Box>
 
       <Box className="row" marginBottom="10">
-        <Card shadow='md' borderWidth='1px' borderColor='gray.300'>
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
           <CardBody>
             <Accordion defaultIndex={[0]} allowToggle>
               <AccordionItem>
                 <h2>
-                  <AccordionButton _expanded={{ bg: 'blue.200', color: 'gray.900' }}>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
                     <Box
                       as="span"
                       flex="1"
@@ -37,10 +40,10 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
+                  <Text>By writing, using, enabling, and ensuring:</Text>
                   <OrderedList marginLeft="0" paddingLeft="1.3rem">
                     <ListItem>
-                      By writing{" "}
-                      <Badge colorScheme="purple">semantic HTML</Badge> (
+                      <Badge colorScheme="purple">semantic HTML</Badge> ... (
                       <Badge bgColor="blue.100">Avoid using &lt;div&gt;</Badge>{" "}
                       or
                       <Badge bgColor="blue.100">&lt;span&gt;</Badge> elements
@@ -54,40 +57,38 @@ const PageHTMLCSSInterviewQuestions = () => {
                       <Badge bgColor="blue.100">&lt;textarea&gt;</Badge>, etc…
                       to give structure and meaning to the content)
                     </ListItem>
-                    <ListItem>
-                      By using{" "}
-                      <Badge colorScheme="purple">ARIA attributes</Badge>{" "}
+                    <ListItem> 
+                      <Badge colorScheme="purple">ARIA attributes</Badge> ... {" "}
                       (Accessible Rich Internet Applications)
                       <Badge bgColor="blue.100">
                         (e.g., aria-label, aria-hidden, role)
                       </Badge>
                       ,{" "}
                     </ListItem>
-                    <ListItem>
-                      By enabling{" "}
+                    <ListItem> 
                       <Badge colorScheme="purple">Keyboard Navigation</Badge>,{" "}
                     </ListItem>
-                    <ListItem>
-                      By ensuring
+                    <ListItem> 
                       <Badge colorScheme="purple">
                         sufficient color contrast
                       </Badge>{" "}
                       ​​betweeen text and background
                     </ListItem>
-                    <ListItem>
-                      By ensuring{" "}
+                    <ListItem> 
                       <Badge colorScheme="purple">
-                        layouts are responsive and flexible
+                        Responsive and flexible layouts
                       </Badge>
                     </ListItem>
-                    <ListItem>and much more …</ListItem>
+                    <ListItem>…</ListItem>
                   </OrderedList>
                 </AccordionPanel>
               </AccordionItem>
 
               <AccordionItem>
                 <h2>
-                  <AccordionButton _expanded={{ bg: 'blue.200', color: 'gray.900' }}>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
                     <Box
                       as="span"
                       flex="1"
@@ -142,7 +143,9 @@ const PageHTMLCSSInterviewQuestions = () => {
 
               <AccordionItem>
                 <h2>
-                  <AccordionButton _expanded={{ bg: 'blue.200', color: 'gray.900' }}>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
                     <Box
                       as="span"
                       flex="1"
@@ -156,36 +159,78 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text marginBottom="1rem">
-                    The CSS box model controls how element dimensions are
-                    calculated and defines the layout of elements on a webpage.
-                    It consists of four areas: <b>content</b> (text/images), <b>padding</b>
-                    (space inside the border), <b>border</b> (surrounds the padding),
-                    and <b>margin</b> (space outside the border). Each layer affects
-                    the element's total width and height, determining how it
-                    interacts with neighboring elements.
-                  </Text>
-                  <Text marginBottom="0">
+                  <Text marginBottom="0" fontWeight={'bold'}>
+                    The CSS box model controls the dimensions of elements, defines the layout, and determining how it interacts with neighboring elements.</Text>
+
+                    <Text marginBottom="3">It consists in "the content area",
+                    which itself is made out of four areas (or layers):</Text>
+
+
+                    {/* The CSS box model controls how element dimensions ("width"
+                    and "height") are calculated and  of
+                    elements on a webpage. ; each
+                    layer affects the element's total width and height,
+                    : */}
+                  
+
+                  <ul className="list-align-left">
+                    <li>
+                      <b>Content:</b> text and images
+                    </li>
+                    <li>
+                      <b>Padding:</b> space inside the border
+                    </li>
+                    <li>
+                      <b>Border:</b> surrounds the padding
+                    </li>
+                    <li>
+                      <b>Margin:</b> space outside the border
+                    </li>
+                  </ul>
+
+                  <Heading as="h4" mb="3">
                     There are two types of CSS box models:
-                  </Text>
-                  <OrderedList marginLeft="0" paddingLeft="1.3rem">
-                    <ListItem>
-                      <b>Content-box (default):</b> Width and height apply only
-                      to the content area. Padding, border, and margin are added
-                      outside the content size.
-                    </ListItem>
-                    <ListItem>
-                      <b>Border-box:</b> Width and height include the content,
-                      padding, and border. Margin is added outside this total
-                      size.
-                    </ListItem>
-                  </OrderedList>
+                  </Heading>
+
+                  <ul className="list-align-left">
+                    <li>
+                      In the <b>Content-box</b> model: The content area is only
+                      constructed based on the "width" and "height" properties.
+                      Key layer properties like "padding", "margin", and
+                      "border" are added on top, which causes{" "}
+                      <Badge bgColor="blue.100">
+                        the element size to increase
+                      </Badge>
+                      .
+                    </li>
+                    <li>
+                      In the <b>Border-box</b> model: The content area is
+                      constructed with all the key layer properties ("padding",
+                      "margin", and "border") in addition to the "width",
+                      "height". This causes{" "}
+                      <Badge bgColor="blue.100">
+                        the element's size to remain the same
+                      </Badge>
+                      .
+                    </li>
+                  </ul>
+
+                  <footer>
+                    <Link
+                      href="https://jsfiddle.net/enjanga/wqvpbd9k/54/"
+                      isExternal
+                    >
+                      See code examples
+                    </Link> 
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
 
               <AccordionItem>
                 <h2>
-                  <AccordionButton _expanded={{ bg: 'blue.200', color: 'gray.900' }}>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
                     <Box
                       as="span"
                       flex="1"
@@ -204,7 +249,7 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </Heading>
                   <Text marginBottom="1rem">
                     A CSS pseudo-class is a keyword added to selectors that
-                    targets elements in a specific state, such as :hover,
+                    targets elements in a specific <b>state</b> or <b>position</b>, such as :hover,
                     :focus, or :nth-child(), without modifying the document
                     structure.
                   </Text>
@@ -226,7 +271,9 @@ const PageHTMLCSSInterviewQuestions = () => {
 
               <AccordionItem>
                 <h2>
-                  <AccordionButton _expanded={{ bg: 'blue.200', color: 'gray.900' }}>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
                     <Box
                       as="span"
                       flex="1"
@@ -287,10 +334,11 @@ const PageHTMLCSSInterviewQuestions = () => {
                     <ListItem>
                       <Badge colorScheme="purple">CSS Flexbox or Grid</Badge>:
                       To ensure more control over responsive design by allowing
-                      flexible, adaptive layouts. (The <b>Flexbox</b> is a one-dimensional
-                      layout system for aligning items in rows or columns, while
-                      the <b>Grid</b> is a two-dimensional system for creating complex
-                      layouts with both rows and columns.)
+                      flexible, adaptive layouts. (The <b>Flexbox</b> is a
+                      one-dimensional layout system for aligning items in rows
+                      or columns, while the <b>Grid</b> is a two-dimensional
+                      system for creating complex layouts with both rows and
+                      columns.)
                     </ListItem>
                   </UnorderedList>
                 </AccordionPanel>

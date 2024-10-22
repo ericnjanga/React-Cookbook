@@ -5,8 +5,8 @@ const makeMirageServer = () => {
   createServer({
     models: {
       section: Model,
-      page: Model, 
       category: Model,
+      page: Model, 
     },
 
     seeds(server) {
@@ -83,8 +83,8 @@ const makeMirageServer = () => {
         categoryId: null,
         isHome: true,
         title: 'Introduction',
-        subtitle: '--- Home page introduction --- Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
-        uri: '',
+        subtitle: `--- **** ---  I've always asked myself "WHY?". Why do we do what we do? What's the practical usage of such and such pattern? Whta's the benefit of coding this way or that way? What's the reason behind this or that pattern? Creating this cookbook has provided me with an excellent opportunity to research and answer these questions; and I hope readers will find this UI cookbook as inspiring as I did.`,
+        uri: 'introduction',
       });
       // JS page 1
       server.create('page', {
@@ -199,9 +199,17 @@ const makeMirageServer = () => {
         id: 13,
         sectionId: 3, // /knowledge-base
         categoryId: 1,
-        title: 'JavaScript Core Concepts',
+        title: 'Core Concepts',
         subtitle: 'Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
-        uri: 'javascript-core-concepts',
+        uri: 'core-concepts',
+      });
+      server.create('page', { 
+        id: 16,
+        sectionId: 3, // /knowledge-base
+        categoryId: 1,
+        title: 'Interesting Patterns',
+        subtitle: 'Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
+        uri: 'interesting-patterns',
       });
       // /knowledge-base/html-and-css-core-concepts
       server.create('page', { 
@@ -235,6 +243,11 @@ const makeMirageServer = () => {
       // 1) SECTIONS ---------------------------------------
       this.get('/api/sections', () => {
         return this.schema.sections.all();
+      });
+      this.get('/api/sectionByUri/:uri', (schema, request) => {
+        return this.schema.sections.where(record => {
+          return record.uri === request.params.uri;
+        });
       });
 
 

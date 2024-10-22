@@ -6,6 +6,7 @@ import { useSections } from "../../hooks/useDatabase";
 import NavSection from "./NavSection";
 import NavCategories from "./NavCategories";
 import NavPages, { NavSectionPage } from "./NavPages";
+import { setActiveClass } from "../../utilities/utils";
 
 /**
  * Renders a menu organized in the following order:
@@ -16,12 +17,11 @@ import NavPages, { NavSectionPage } from "./NavPages";
  */
 const MainNavigation = () => {
   const pageSections = useSections();
-  const activateLink = ({ isActive }) => (isActive ? "active" : null);
 
   return (
     <>
       <header className="main-sidebar-header">
-        <NavLink to="/" className={activateLink}>
+        <NavLink to="/" className={setActiveClass}>
           <img className="logo" src={Logo} alt="Front-end knowledge base" />
         </NavLink>
       </header>
