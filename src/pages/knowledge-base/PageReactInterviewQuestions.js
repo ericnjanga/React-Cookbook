@@ -67,48 +67,41 @@ const PageReactInterviewQuestions = () => {
                 </Heading>
                 <AccordionPanel pb={4}>
                   <h3>What is React?</h3>
-                  <Text>
-                    React is a JavaScript library for building user interfaces,
-                    particularly for single-page applications. It allows
-                    developers to create large, complex applications where data
-                    changes over time without reloading the page. React was
-                    developed by Meta and is maintained as an open-source
-                    project.
-                  </Text>
-                  <br />
+                  <Text mb={0}>React:</Text>
+
+                  <ul className="list-align-left">
+                    <li>
+                      Is a JavaScript library for building user interfaces
+                    </li>
+                    <li>
+                      Is good for creating large, complex, and single-page
+                      applications
+                    </li>
+                    <li>
+                      Excels at creating applications where data changes over
+                      time without reloading the page
+                    </li>
+                  </ul>
+
+                  <hr></hr>
+
                   <h3>Why using React? Explain its benefits</h3>
-                  <Text>Developers use React for several reasons:</Text>
-                  <UnorderedList>
-                    <ListItem>
+                  <Text mb={0}>Developers use React for several reasons:</Text>
+                  <ul className="list-align-left">
+                    <li>
                       <b>Reusability:</b> Build components once, reuse
                       everywhere.
-                    </ListItem>
-                    <ListItem>
+                    </li>
+                    <li>
                       <b>Efficiency:</b> Fast updates via Virtual DOM.
-                    </ListItem>
-                    <ListItem>
+                    </li>
+                    <li>
                       <b>Simplicity:</b> Declarative syntax for easy
                       understanding.
-                    </ListItem>
-                    <ListItem>
-                      <b>Scalability:</b> Component architecture makes scaling
-                      easy.
-                    </ListItem>
-                    <ListItem>
-                      <b>Cross-platform development</b> with React Native.
-                    </ListItem>
-                    <ListItem>
-                      <b>Community:</b> Large ecosystem and developer tools.
-                    </ListItem>
-                    <ListItem>
-                      <b>SEO Benefits:</b> With server-side rendering (with
-                      NextJS), React improves SEO capabilities.
-                    </ListItem>
-                    <ListItem>
-                      <b>Ease of Learning and Use</b> for JavaScript developers.
-                    </ListItem>
-                  </UnorderedList>
-                  <br />
+                    </li>
+                  </ul>
+
+                  <hr></hr>
                   <h3>
                     How does React differs from other front-end frameworks like
                     Angular or Vue?
@@ -187,18 +180,30 @@ const PageReactInterviewQuestions = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      Features
+                      Main features
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </Heading>
                 <AccordionPanel pb={4}>
-                  <h3>
-                    2. What are the main features of React? Discuss features
-                    like JSX, components, virtual DOM, state management, and
-                    hooks.
-                  </h3>
                   <Text>...</Text>
+
+                  <ul className="list-align-left">
+                    <li><b>JSX</b>: Template syntax extension to JavaScript</li>
+                    <li><b>Components</b>: Reusable building blocks of a React application</li>
+                    <li><b>Virtual DOM</b>: ...</li>
+                    <li>...</li>
+                    <li>...</li>
+                  </ul>
+
+                  <footer>
+                    <Link
+                      href="https://chatgpt.com/share/67190ccb-7cbc-8001-b630-f59131e68254"
+                      isExternal
+                    >
+                      More about React features
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
 

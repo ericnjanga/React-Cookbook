@@ -1,8 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-// import { usePage } from "../hooks/useDatabase";
-import PageHeader from "../components/PageHeader";
-import { setActiveClass } from "../utilities/utils";
+// import { NavLink } from "react-router-dom";
+// // import { usePage } from "../hooks/useDatabase";
+// import PageHeader from "../components/PageHeader";
+// import { setActiveClass } from "../utilities/utils";
 
 const PageHome = () => {
   // const page = usePage({ id: -1 });
@@ -11,7 +11,7 @@ const PageHome = () => {
   
   return (
     <>
-      <div className="row">
+      {/* <div className="row">
         <div className="col-9">
           <PageHeader />
 
@@ -22,14 +22,7 @@ const PageHome = () => {
                 Lorem ipsum dolor sit amet consectetur massa facilisis
                 scelerisque tempor in.
               </p>
-              {
-                /**
-                 * 
-                 * BACKUP INTRODUCTORY TEXT:
-                 * ---------
-        subtitle: `--- **** ---  I've always asked myself WHY. Why do we do what we do? Whta's the benefit of coding this way or that way? What's the reason behind this or that pattern? Creating this cookbook has provided me with an excellent opportunity to research and answer these questions; and I hope readers will find this UI cookbook as inspiring as I did.`,
-                 */
-              }
+           
               <ul className="list-align-left">
                 <li>
                   <NavLink
@@ -100,7 +93,7 @@ const PageHome = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

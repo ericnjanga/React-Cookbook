@@ -5,11 +5,6 @@ import PageHooks from "./pages/coding-patterns/PageHooks";
 import PageForms from "./pages/coding-patterns/PageForms";
 import PageComponentComposition from "./pages/coding-patterns/PageComponentComposition";
 import PageDataFetching from "./pages/coding-patterns/PageDataFetching";
-// import PageCodingPatterns from "./pages/coding-patterns";
-// import PageDynamicJsx from "./pages/coding-patterns/PageDynamicJsx";
-// import PageCategoryLogicEncapsulation from "./pages/coding-patterns/PageCategoryLogicEncapsulation";
-// import PageCodingPatternsJs from "./pages/coding-patterns/javascript";
-// import PageCodingPatternsReact from "./pages/coding-patterns/react";
 import ResourcesOverview from "./pages/additional-resources/PageOverview";
 import PageHighOrderComponents from "./pages/coding-patterns/PageHighOrderComponents";
 import PageRenderProps from "./pages/coding-patterns/PageRenderProps";
@@ -78,8 +73,8 @@ const AppRoutes = () => {
             <Route path="interesting-patterns" element={<PageJavascriptInterestingPatterns />} />
           </Route>
           <Route path="html-and-css" element={<LayoutPage />}>
-            <Route index element={<Navigate to="html-and-css-core-concepts" />} /> {/* Parent route links here by default */}
-            <Route path="html-and-css-core-concepts" element={<PageHTMLCSSInterviewQuestions />} />
+            <Route index element={<Navigate to="core-concepts" />} /> {/* Parent route links here by default */}
+            <Route path="core-concepts" element={<PageHTMLCSSInterviewQuestions />} />
           </Route>
           <Route path="react" element={<LayoutPage />}>
           <Route index element={<Navigate to="react-core-concepts" />} /> {/* Parent route links here by default */}

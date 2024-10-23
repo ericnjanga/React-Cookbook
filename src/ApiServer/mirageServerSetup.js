@@ -218,7 +218,7 @@ const makeMirageServer = () => {
         categoryId: 2,
         title: 'HTML & CSS Core Concepts',
         subtitle: 'Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
-        uri: 'html-and-css-core-concepts',
+        uri: 'core-concepts',
       });
       // /knowledge-base/react-core-concepts
       server.create('page', { 

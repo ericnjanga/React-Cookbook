@@ -14,7 +14,7 @@ const PageHTMLCSSInterviewQuestions = () => {
   return (
     <>
       <Box className="row">
-        <Heading as="h1">HTML/CSS Interview Questions</Heading>
+        <Heading as="h1">Core Concepts</Heading>
       </Box>
 
       <Box className="row" marginBottom="10">
@@ -57,30 +57,44 @@ const PageHTMLCSSInterviewQuestions = () => {
                       <Badge bgColor="blue.100">&lt;textarea&gt;</Badge>, etc…
                       to give structure and meaning to the content)
                     </ListItem>
-                    <ListItem> 
-                      <Badge colorScheme="purple">ARIA attributes</Badge> ... {" "}
+                    <ListItem>
+                      <Badge colorScheme="purple">ARIA attributes</Badge> ...{" "}
                       (Accessible Rich Internet Applications)
                       <Badge bgColor="blue.100">
                         (e.g., aria-label, aria-hidden, role)
                       </Badge>
-                      ,{" "}
                     </ListItem>
-                    <ListItem> 
-                      <Badge colorScheme="purple">Keyboard Navigation</Badge>,{" "}
+                    <ListItem>
+                      <Badge colorScheme="purple">Keyboard Navigation</Badge>
                     </ListItem>
-                    <ListItem> 
+                    <ListItem>
                       <Badge colorScheme="purple">
                         sufficient color contrast
                       </Badge>{" "}
                       ​​betweeen text and background
                     </ListItem>
-                    <ListItem> 
+                    <ListItem>
                       <Badge colorScheme="purple">
                         Responsive and flexible layouts
                       </Badge>
                     </ListItem>
-                    <ListItem>…</ListItem>
                   </OrderedList>
+
+                  <footer>
+                    <Link
+                      href="https://chatgpt.com/share/6718f079-9674-8001-a48b-2f6ced5eb123"
+                      isExternal
+                    >
+                      Accessibility best practices
+                    </Link>
+                    &nbsp; | &nbsp;
+                    <Link
+                      href="https://chatgpt.com/share/6718f286-7a24-8001-a9a5-27b418df3bcc"
+                      isExternal
+                    >
+                      Enabling keyboard navigation
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -159,19 +173,20 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text marginBottom="0" fontWeight={'bold'}>
-                    The CSS box model controls the dimensions of elements, defines the layout, and determining how it interacts with neighboring elements.</Text>
+                  <Text marginBottom="0" fontWeight={"bold"}>
+                    The CSS box model:
+                  </Text>
 
-                    <Text marginBottom="3">It consists in "the content area",
-                    which itself is made out of four areas (or layers):</Text>
+                  <ul className="list-align-left">
+                    <li>Controls the dimensions of elements</li>
+                    <li>Defines the layout</li>
+                    <li>Determes how it interacts with neighboring elements</li>
+                  </ul>
 
-
-                    {/* The CSS box model controls how element dimensions ("width"
-                    and "height") are calculated and  of
-                    elements on a webpage. ; each
-                    layer affects the element's total width and height,
-                    : */}
-                  
+                  <Text marginBottom="0">
+                    It consists in "the content area", which itself is made out
+                    of four areas (or layers):
+                  </Text>
 
                   <ul className="list-align-left">
                     <li>
@@ -221,7 +236,7 @@ const PageHTMLCSSInterviewQuestions = () => {
                       isExternal
                     >
                       See code examples
-                    </Link> 
+                    </Link>
                   </footer>
                 </AccordionPanel>
               </AccordionItem>
@@ -244,15 +259,18 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Heading as="h4" size="sm" marginBottom="0">
-                    Introduction
-                  </Heading>
-                  <Text marginBottom="1rem">
-                    A CSS pseudo-class is a keyword added to selectors that
-                    targets elements in a specific <b>state</b> or <b>position</b>, such as :hover,
-                    :focus, or :nth-child(), without modifying the document
-                    structure.
-                  </Text>
+                  <Text marginBottom="0">A CSS pseudo-class:</Text>
+                  <ul className="list-align-left">
+                    <li>Is a keyword added to selectors</li>
+                    <li>
+                      It targets elements in a specific <b>state</b> or{" "}
+                      <b>position</b>
+                    </li>
+                    <li>It doesn't modifying the document structure</li>
+                    <li>
+                      <b>Example:</b> :hover, :focus, or :nth-child()
+                    </li>
+                  </ul>
 
                   <Heading as="h4" size="sm" marginBottom="0">
                     explain the difference between the :hover and :focus
@@ -287,60 +305,26 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text marginBottom="1rem">
+                  <Text marginBottom="0">
                     Responsive design is implemented by combining various
                     techniques:
                   </Text>
                   <UnorderedList marginLeft="0" paddingLeft="1.3rem">
-                    <ListItem>
-                      <Badge colorScheme="purple">Mobile-First Approach</Badge>:
-                      To ensure the best performance and usability on mobile
-                      devices by design for mobile screens first, then use media
-                      queries to enhance for larger devices.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">Responsive Frameworks</Badge>:
-                      Frameworks like Chakra UI, Bootstrap, and Tailwind CSS
-                      provide built-in grid systems, components, and utilities
-                      to quickly build responsive layouts.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">Media Queries</Badge>: To
-                      allow different CSS rules to be applied based on the
-                      device’s screen size (or other features like orientation
-                      or resolution).
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">Viewport Meta Tag</Badge>: To
-                      ensure proper scaling on mobile devices by including the
-                      viewport meta tag in the HTML.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">Fluid Grid Layouts</Badge>:
-                      Using percentage-based widths make elements scale relative
-                      to the screen size.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">
-                        Flexible Images and Media
-                      </Badge>
-                      : To ensure images resize within their containers.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">Responsive Typography</Badge>:
-                      To adjust font sizes and line heights using relative units
-                      like em, rem, or percentages rather than fixed pixels.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">CSS Flexbox or Grid</Badge>:
-                      To ensure more control over responsive design by allowing
-                      flexible, adaptive layouts. (The <b>Flexbox</b> is a
-                      one-dimensional layout system for aligning items in rows
-                      or columns, while the <b>Grid</b> is a two-dimensional
-                      system for creating complex layouts with both rows and
-                      columns.)
-                    </ListItem>
+                    <ListItem>Mobile-First Approach</ListItem>
+                    <ListItem>Responsive Frameworks</ListItem>
+                    <ListItem>Media Queries</ListItem>
+                    <ListItem>Viewport Meta Tag</ListItem>
+                    <ListItem>Fluid Grid Layouts</ListItem>
                   </UnorderedList>
+
+                  <footer>
+                    <Link
+                      href="https://chatgpt.com/share/6719010c-b180-8001-bd6b-96374027173a"
+                      isExternal
+                    >
+                      Key aspects of responsive designs
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
