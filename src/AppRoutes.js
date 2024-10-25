@@ -8,7 +8,7 @@ import PageDataFetching from "./pages/coding-patterns/PageDataFetching";
 import ResourcesOverview from "./pages/additional-resources/PageOverview";
 import PageHighOrderComponents from "./pages/coding-patterns/PageHighOrderComponents";
 import PageRenderProps from "./pages/coding-patterns/PageRenderProps";
-import PageReactInterviewQuestions from "./pages/knowledge-base/PageReactInterviewQuestions";
+import PageReactCoreConcepts from "./pages/knowledge-base/PageReactCoreConcepts";
 import PageHTMLCSSInterviewQuestions from "./pages/knowledge-base/PageHTMLCSSInterviewQuestions";
 import PageJavascriptCoreConcepts from "./pages/knowledge-base/PageJavascriptCoreConcepts";
 import PageHome from "./pages";
@@ -64,11 +64,11 @@ const AppRoutes = () => {
 
         <Route path="/knowledge-base" element={<LayoutTemp />}>
           {/** Nested routes */}
-          <Route index element={<Navigate to="javascript/javascript-core-concepts" />} /> {/* Parent route links here by default */}
+          <Route index element={<Navigate to="javascript/core-concepts" />} /> {/* Parent route links here by default */}
           
           {/** -> These routes are relative to the parent route (host) */}  
           <Route path="javascript" element={<LayoutPage />}>
-            <Route index element={<Navigate to="javascript-core-concepts" />} /> {/* Parent route links here by default */}
+            <Route index element={<Navigate to="core-concepts" />} /> {/* Parent route links here by default */}
             <Route path="core-concepts" element={<PageJavascriptCoreConcepts />} />
             <Route path="interesting-patterns" element={<PageJavascriptInterestingPatterns />} />
           </Route>
@@ -77,8 +77,8 @@ const AppRoutes = () => {
             <Route path="core-concepts" element={<PageHTMLCSSInterviewQuestions />} />
           </Route>
           <Route path="react" element={<LayoutPage />}>
-          <Route index element={<Navigate to="react-core-concepts" />} /> {/* Parent route links here by default */}
-            <Route path="react-core-concepts" element={<PageReactInterviewQuestions />} />
+          <Route index element={<Navigate to="core-concepts" />} /> {/* Parent route links here by default */}
+            <Route path="core-concepts" element={<PageReactCoreConcepts />} />
           </Route>
         </Route>
 

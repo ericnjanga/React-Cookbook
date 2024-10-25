@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Heading, Box, Card, CardBody, Text } from "@chakra-ui/react"; 
 import {
   Accordion,
@@ -8,8 +8,11 @@ import {
   AccordionIcon,
   Link
 } from "@chakra-ui/react";
+import { ModalContext } from "../../components/Modal/Modal";
 
 const PageJavascriptCoreConcepts = () => {
+  const { openModal } = useContext(ModalContext);
+
   return (
     <>
       <Box className="row">
@@ -20,6 +23,37 @@ const PageJavascriptCoreConcepts = () => {
         <Card shadow='md' borderWidth='1px' borderColor='gray.300'>
           <CardBody>
             <Accordion defaultIndex={[0]} allowToggle>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton _expanded={{ bg: 'blue.200', color: 'gray.900' }}>
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      What is a Promise?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>A JavaScript promise is:</Text><ul className="list-aligh-left">
+                    <li>An object that represents the eventual completion (or failure)</li>
+                    <li>of an asynchronous operation</li>
+                    <li>and its resulting value</li>
+                    <li>It allows the handling asynchronous code more cleanly</li>
+                    <li>compared to traditional callback-based approaches</li>
+                  </ul> 
+
+                  <footer>
+                    <Link className="btn btn-small btn-secondary" href="#" isExternal>See code examples</Link>&nbsp; | &nbsp;
+                    <Link className="btn btn-small btn-secondary" href="https://chatgpt.com/share/671a8c2c-9964-8001-bf4d-24a7ad5889f5" isExternal>More about promises</Link>
+                  </footer>
+                </AccordionPanel>
+              </AccordionItem>
+
               <AccordionItem>
                 <h2>
                   <AccordionButton _expanded={{ bg: 'blue.200', color: 'gray.900' }}>
@@ -49,8 +83,8 @@ const PageJavascriptCoreConcepts = () => {
                   </ul> */}
 
                   <footer>
-                    <Link href="https://jsfiddle.net/enjanga/tv1gnycp/255/" isExternal>See code examples</Link>&nbsp; | &nbsp;
-                    <Link href="https://chatgpt.com/share/6717c56e-a458-8001-b394-dff9727e2c5f" isExternal>More about async functions</Link>
+                    <Link className="btn btn-small btn-secondary" href="https://jsfiddle.net/enjanga/tv1gnycp/255/" isExternal>See code examples</Link>&nbsp; | &nbsp;
+                    <Link className="btn btn-small btn-secondary" href="https://chatgpt.com/share/6717c56e-a458-8001-b394-dff9727e2c5f" isExternal>More about async functions</Link>
                   </footer>
                 </AccordionPanel>
               </AccordionItem>
@@ -80,8 +114,8 @@ const PageJavascriptCoreConcepts = () => {
                   </ul>
 
                   <footer>
-                    <Link href="https://jsfiddle.net/enjanga/dju9xcbk/16/" isExternal>See code examples</Link>&nbsp; | &nbsp;
-                    <Link href="https://chatgpt.com/share/670a9e0a-9048-8001-9209-546779191a56" isExternal>Why closures are useful</Link>
+                    <Link className="btn btn-small btn-secondary" href="https://jsfiddle.net/enjanga/dju9xcbk/16/" isExternal>See code examples</Link>&nbsp; | &nbsp;
+                    <Link className="btn btn-small btn-secondary" href="https://chatgpt.com/share/670a9e0a-9048-8001-9209-546779191a56" isExternal>Why closures are useful</Link>
                   </footer>
                 </AccordionPanel>
               </AccordionItem>
@@ -102,7 +136,9 @@ const PageJavascriptCoreConcepts = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>The curring technique consist of transforming a function that takes multiple arguments into a series of funtions that each take a single argument.</Text>
+                  <Text>The curring technique consist of transforming a function that takes multiple arguments into a series of funtions (<button className="btn-link" onClick={openModal}>
+                              closures
+                            </button>) that each take a single argument.</Text>
                   <Heading as='h4' mb='1'>Practical use of currying:</Heading>
                   <ul className="list-aligh-left">
                     <li><b>Partial application:</b> You can create a specialized version of a function by pre-filling some arguments.</li>
@@ -110,8 +146,8 @@ const PageJavascriptCoreConcepts = () => {
                   </ul>
 
                   <footer>
-                    <Link href="https://jsfiddle.net/enjanga/yx0c5twr/20/" isExternal>See code examples</Link>&nbsp; | &nbsp;
-                    <Link href="https://chatgpt.com/share/670fd7e1-2448-8001-9e43-b2459c4657d9" isExternal>Why Currying is useful</Link>
+                    <Link className="btn btn-small btn-secondary" href="https://jsfiddle.net/enjanga/yx0c5twr/20/" isExternal>See code examples</Link>&nbsp; | &nbsp;
+                    <Link className="btn btn-small btn-secondary" href="https://chatgpt.com/share/670fd7e1-2448-8001-9e43-b2459c4657d9" isExternal>Why Currying is useful</Link>
                   </footer>
                 </AccordionPanel>
               </AccordionItem>

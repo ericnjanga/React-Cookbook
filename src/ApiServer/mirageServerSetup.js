@@ -7,9 +7,19 @@ const makeMirageServer = () => {
       section: Model,
       category: Model,
       page: Model, 
+      definition: Model,
     },
 
     seeds(server) {
+      // DEFINITION ---------------------------------
+      server.create('definition', {
+        id: 1, 
+        title: 'JSX',
+        description: '---JSX---Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
+      });
+
+
+
       // SECTION ---------------------------------
       // 1: Intro
       server.create('section', {
@@ -194,7 +204,7 @@ const makeMirageServer = () => {
 
 
       // /knowledge-base ...
-      // /knowledge-base/javascript-core-concepts-core-concepts
+      // /knowledge-base/javascript/core-concepts-core-concepts
       server.create('page', { 
         id: 13,
         sectionId: 3, // /knowledge-base
@@ -220,14 +230,14 @@ const makeMirageServer = () => {
         subtitle: 'Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
         uri: 'core-concepts',
       });
-      // /knowledge-base/react-core-concepts
+      // /knowledge-base/core-concepts
       server.create('page', { 
         id: 15,
         sectionId: 3, // /knowledge-base
         categoryId: 3,
         title: 'React Core Concepts',
         subtitle: 'Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
-        uri: 'react-core-concepts',
+        uri: 'core-concepts',
       });
 
     
@@ -239,6 +249,13 @@ const makeMirageServer = () => {
     routes() {
       // Allow requests to pass through to the external API
       this.passthrough('https://randomuser.me/api');
+
+      // 1) DEFINITIONS ---------------------------------------
+      this.get('/api/definition/:id', (schema, request) => {    
+        return schema.definitions.findBy({
+          id: request.params.id
+        });
+      });
 
       // 1) SECTIONS ---------------------------------------
       this.get('/api/sections', () => {

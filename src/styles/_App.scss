@@ -61,6 +61,28 @@
   }
 }
 
+
+.btn {
+  text-decoration: none!important;
+}
+.btn-secondary { 
+  background-color: #dbdbdb;
+  border: 1px solid #b5b5b5;
+  color: #313131!important;
+
+  &:hover {
+    background-color: #adadad;
+  }
+}
+
+
+.btn-link {
+  color: #941e89;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .main-sidebar {
   position: fixed;
   height: 100vh;

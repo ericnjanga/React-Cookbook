@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Heading, Box, Card, CardBody, Text, Badge } from "@chakra-ui/react";
 import { ListItem, OrderedList, UnorderedList } from "@chakra-ui/react";
 import {
@@ -9,8 +9,11 @@ import {
   AccordionIcon,
   Link,
 } from "@chakra-ui/react";
+import { ModalContext } from "../../components/Modal/Modal";
 
 const PageHTMLCSSInterviewQuestions = () => {
+  const { openModal } = useContext(ModalContext);
+
   return (
     <>
       <Box className="row">
@@ -61,7 +64,7 @@ const PageHTMLCSSInterviewQuestions = () => {
                       <Badge colorScheme="purple">ARIA attributes</Badge> ...{" "}
                       (Accessible Rich Internet Applications)
                       <Badge bgColor="blue.100">
-                        (e.g., aria-label, aria-hidden, role)
+                        (e.g., aria-label, aria-hidden, aria-live, ...)
                       </Badge>
                     </ListItem>
                     <ListItem>
@@ -117,41 +120,56 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <OrderedList marginLeft="0" paddingLeft="1.3rem">
-                    <ListItem>
-                      <b>Grid layouts:</b> A two-dimensional layout system that
+                  <ul className="list-align-left">
+                    <li>
+                      <button className="btn-link" onClick={openModal}>
+                        Grid layouts
+                      </button>
+                      {/* A two-dimensional layout system that
                       allows you to create complex, grid-based designs. It’s
                       used when both rows and columns need to be defined (e.g.,
-                      dashboards, galleries, complex page)
-                    </ListItem>
-                    <ListItem>
-                      <b>Flexbox layouts:</b> A one-dimensional layout model
+                      dashboards, galleries, complex page) */}
+                    </li>
+                    <li>
+                      <button className="btn-link" onClick={openModal}>
+                        Flexbox layouts
+                      </button>
+                      {/* A one-dimensional layout model
                       that allows you to align and distribute space between
                       items in a container, either in a row or column. Used for
                       one-dimensional layouts, either in a row or a column
                       (e.g., navigation bars, content sections, or forms), to
                       align items vertically or horizontally, distribute space
                       evenly, or for simple responsive layoutslayouts), or
-                      easily center or align items within grid cells.
-                    </ListItem>
-                    <ListItem>
-                      <b>Float layouts:</b> An older method of creating layouts
+                      easily center or align items within grid cells. */}
+                    </li>
+                    <li>
+                      <button className="btn-link" onClick={openModal}>
+                        Float layouts
+                      </button>
+                      {/* An older method of creating layouts
                       by floating elements left or right within a container,
                       causing content to wrap around them. Historically used for
                       creating multi-column layouts, but largely replaced by
-                      Flexbox and Grid.
-                    </ListItem>
-                    <ListItem>
-                      <b>Multi-Column Layout:</b> The columns property allows
+                      Flexbox and Grid. */}
+                    </li>
+                    <li>
+                      <button className="btn-link" onClick={openModal}>
+                        Multi-Column layouts
+                      </button>
+                      {/* The columns property allows
                       content to be divided into multiple columns, similar to
                       how text flows in a newspaper. Used for text-heavy content
                       that needs to be presented in a columnar format (e.g.,
-                      articles, news content).
-                    </ListItem>
-                    <ListItem>
-                      <b>Positioning:</b> Absolute, Relative, Fixed, Sticky
-                    </ListItem>
-                  </OrderedList>
+                      articles, news content). */}
+                    </li>
+                    <li>
+                      <button className="btn-link" onClick={openModal}>
+                        Positioning layouts
+                      </button>
+                      {/* Absolute, Relative, Fixed, Sticky */}
+                    </li>
+                  </ul>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -232,6 +250,7 @@ const PageHTMLCSSInterviewQuestions = () => {
 
                   <footer>
                     <Link
+                      className="btn btn-small btn-secondary"
                       href="https://jsfiddle.net/enjanga/wqvpbd9k/54/"
                       isExternal
                     >
@@ -273,17 +292,33 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </ul>
 
                   <Heading as="h4" size="sm" marginBottom="0">
-                    explain the difference between the :hover and :focus
-                    pseudo-classes, and give an example of when each might be
-                    used
+                    Difference between the :hover and :focus pseudo-classes
                   </Heading>
-                  <Text marginBottom="1rem">...</Text>
+                  <Text marginBottom="1rem">
+                    The :hover and :focus pseudo-classes are both used in CSS to
+                    style elements based on user interactions, but they trigger {' '}
+                     <Link
+                      className="btn-link"
+                      href="https://chatgpt.com/share/671be018-60d0-8001-aa95-bb1c52844bc8"
+                      isExternal
+                    >
+                      under different conditions ...
+                    </Link>
+                  </Text>
 
                   <Heading as="h4" size="sm" marginBottom="0">
-                    How does the :nth-child() pseudo-class work, and how would
-                    you use it to style every 3rd element in a list?
+                    How does the :nth-child() pseudo-class work?
                   </Heading>
-                  <Text marginBottom="1rem">...</Text>
+                  <Text marginBottom="1rem">The :nth-child() pseudo-class in CSS is used to select elements based on their position within a parent element. The position is {' '}
+                  <Link
+                      className="btn-link"
+                      href="https://chatgpt.com/share/671be0ea-1460-8001-9abc-872c98fc7337"
+                      isExternal
+                    > 
+                    calculated using a formula ...
+                    </Link>
+                    
+                    </Text>
                 </AccordionPanel>
               </AccordionItem>
 

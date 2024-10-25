@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -30,12 +30,15 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 import { List, ListItem, UnorderedList, OrderedList } from "@chakra-ui/react";
+import { ModalContext } from "../../components/Modal/Modal";
 
-const PageReactInterviewQuestions = () => {
+const PageReactCoreConcepts = () => {
+  const { openModal } = useContext(ModalContext);
+
   return (
     <section className="section-documentation">
       <Box className="row">
-        <Heading as="h1">React Interview Questions</Heading>
+        <Heading as="h1">Core Concepts</Heading>
       </Box>
 
       <Box className="row" marginBottom="10">
@@ -189,9 +192,19 @@ const PageReactInterviewQuestions = () => {
                   <Text>...</Text>
 
                   <ul className="list-align-left">
-                    <li><b>JSX</b>: Template syntax extension to JavaScript</li>
-                    <li><b>Components</b>: Reusable building blocks of a React application</li>
-                    <li><b>Virtual DOM</b>: ...</li>
+                    <li>
+                      <button className="btn-link" onClick={openModal}>
+                        <b>JSX</b>
+                      </button>
+                      : Template syntax extension to JavaScript
+                    </li>
+                    <li>
+                      <b>Components</b>: Reusable building blocks of a React
+                      application
+                    </li>
+                    <li>
+                      <b>Virtual DOM</b>: ...
+                    </li>
                     <li>...</li>
                     <li>...</li>
                   </ul>
@@ -225,169 +238,55 @@ const PageReactInterviewQuestions = () => {
                   </AccordionButton>
                 </Heading>
                 <AccordionPanel pb={4}>
-                  <Text>
-                    Here's a list of the major React versions and a brief
-                    description of the key updates introduced in each version:
-                  </Text>
+                  <Text>Key moments of React history:</Text>
 
                   <List spacing={3} marginLeft="0" paddingLeft="0">
                     <ListItem>
-                      <Badge colorScheme="purple">React 0.3</Badge>{" "}
-                      <b>(July 2013) Initial release of React</b>: The first
-                      public release of React by Meta. This version introduced
-                      the basic concept of React components and the Virtual DOM.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">React 0.14</Badge>{" "}
-                      <b>(October 2015) Separation of React and ReactDOM</b>:
-                      React was split into two packages: react (for defining
-                      components) and react-dom (for rendering components to the
-                      DOM). Stateless Functional Components: Introduced
-                      functional components that can be written as functions
-                      (without state or lifecycle methods).
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">React 15.0</Badge>{" "}
-                      <b>(April 2016) Improved DOM handling</b>: A major rewrite
-                      of the ReactDOM implementation for better compatibility
-                      with the latest HTML standards. Error handling: Improved
-                      error messages for easier debugging.
+                      <Badge colorScheme="purple">
+                        React 0.3 - (July 2013)
+                      </Badge>{" "}
+                      : The first public release. Basic concept of React
+                      components and the Virtual DOM.
                     </ListItem>
 
-                    <Alert status="info">
-                      <AlertIcon />
-                      React Fiber: Complete internal rewrite
-                    </Alert>
-
                     <ListItem>
-                      <Badge colorScheme="purple">React 16.0</Badge>{" "}
-                      <b>(September 2017) New Core Architecture ("Fiber")</b>:
-                      Complete internal rewrite called React Fiber, which
-                      improved rendering performance and enabled features like
-                      time slicing.
-                      <UnorderedList>
-                        <ListItem>
-                          <b>Error Boundaries:</b> Added the ability to catch
-                          errors within components using componentDidCatch and
-                          getDerivedStateFromError.{" "}
-                        </ListItem>
-                        <ListItem>
-                          <b>Portals:</b> A new way to render children into a
-                          DOM node outside of the parent component’s hierarchy.{" "}
-                        </ListItem>
-                        <ListItem>
-                          <b>Fragments:</b> Introduced &lt;React.Fragment&gt; to
-                          group a list of children without adding extra nodes to
-                          the DOM.
-                        </ListItem>
-                      </UnorderedList>
+                      <Badge colorScheme="purple">
+                        React 16.0 - (September 2017)
+                      </Badge>{" "}
+                      New Core Architecture ("Fiber"). Introduction of{" "}
+                      <b>Error Boundaries</b>, <b>Portals</b>, <b>Fragments</b>.
                     </ListItem>
                     <ListItem>
-                      <Badge colorScheme="purple">React 16.3</Badge>{" "}
-                      <b>(March 2018)</b>
-                      <UnorderedList>
-                        <ListItem>
-                          <b>New Lifecycle Methods</b>: Introduced new lifecycle
-                          methods such as getDerivedStateFromProps and
-                          getSnapshotBeforeUpdate, while marking old ones like
-                          componentWillMount, componentWillReceiveProps, and
-                          componentWillUpdate as deprecated.
-                        </ListItem>
-                        <ListItem>
-                          <b>Context API Update:</b> Revamped Context API,
-                          allowing easier and more efficient sharing of global
-                          data across components without prop drilling.
-                        </ListItem>
-                        <ListItem>
-                          <b>React's Strict Mode was introduced</b> (development
-                          tool designed to help you identify potential problems
-                          in your React applications)
-                        </ListItem>
-                      </UnorderedList>
+                      <Badge colorScheme="purple">
+                        React 16.3 - (March 2018)
+                      </Badge>{" "}
+                      <b>New Lifecycle Methods</b>, Context API Update, Strict
+                      Mode was introduced.
                     </ListItem>
                     <ListItem>
-                      <Badge colorScheme="purple">React 16.6</Badge>{" "}
-                      <b>(October 2018) Suspense (for code-splitting)</b>:
-                      Introduced React.Suspense for lazy-loading components with
-                      React.lazy(), enabling efficient code-splitting.
-                      Memoization with React.memo: Added a way to optimize
-                      functional components by preventing unnecessary
-                      re-renders. getDerivedStateFromError: Enhanced error
-                      boundaries by allowing developers to capture errors in the
-                      state.
+                      <Badge colorScheme="purple">
+                        React 16.8 - (February 2019)
+                      </Badge>{" "}
+                      Major milestone with the{" "}
+                      <b>introduction of React Hooks</b> (useState, useEffect,
+                      useContext, etc.).
                     </ListItem>
 
-                    <Alert status="info">
-                      <AlertIcon />
-                      Major milestone: Introduction to React Hooks
-                    </Alert>
                     <ListItem>
-                      <Badge colorScheme="purple">React 16.8</Badge>{" "}
-                      <b>(February 2019) Hooks</b>: Major milestone with the
-                      introduction of React Hooks (useState, useEffect,
-                      useContext, etc.), allowing functional components to have
-                      state and other features previously available only in
-                      class components.
+                      <Badge colorScheme="purple">
+                        React 18.0 - (March 2022)
+                      </Badge>{" "}
+                      Introduced <b>new concurrent rendering features</b>,
+                      allowing React to work on multiple tasks simultaneously
+                      for improved performance and responsiveness.
                     </ListItem>
                     <ListItem>
-                      <Badge colorScheme="purple">React 16.9</Badge>{" "}
-                      <b>(August 2019) Concurrent Mode (Experimental)</b>:
-                      Introduced Concurrent Mode, an experimental feature aimed
-                      at improving the rendering of large UIs by breaking work
-                      into smaller chunks. This mode was never officially
-                      released in stable form. Improved Warnings: Added better
-                      warnings for deprecated lifecycle methods and improper
-                      usage of hooks. Async Act: Improved testing support with
-                      asynchronous rendering via act() helper.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">React 16.13</Badge>{" "}
-                      <b>(February 2020) Strict Mode Warning for Legacy APIs</b>
-                      : React’s Strict Mode added more warnings for deprecated
-                      APIs and side effects. Improved Compatibility: Performance
-                      improvements and better compatibility with tools like
-                      React DevTools.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">React 17.0</Badge>{" "}
-                      <b>(October 2020) No New Features</b>: Focused on making
-                      it easier to upgrade and support multiple React versions
-                      on the same page. Improved gradual migration paths for
-                      future React versions. Event Delegation Change: Moved the
-                      event delegation from document to the React root, allowing
-                      React to better coexist with other JS libraries or
-                      frameworks. Simplified JSX Transform: With React 17, you
-                      no longer need to import React to use JSX, reducing
-                      boilerplate code.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">React 18.0</Badge>{" "}
-                      <b>(March 2022) Concurrent Features</b>: Introduced new
-                      concurrent rendering features, allowing React to work on
-                      multiple tasks simultaneously for improved performance and
-                      responsiveness. Automatic Batching: Improved how React
-                      batches updates, even inside async code, resulting in
-                      fewer re-renders. useTransition and startTransition: New
-                      hooks for marking state updates as low-priority, helping
-                      keep the UI responsive during high-priority updates.
-                      Suspense for Data Fetching: Extended the Suspense
-                      component to handle asynchronous data fetching and loading
-                      states more effectively. Strict Mode Updates: Made Strict
-                      Mode more aggressive to catch potential issues earlier
-                      during development.
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">React 18.x</Badge>{" "}
-                      <b>(Ongoing Updates) Progressive Hydration</b>: Allows
-                      React to progressively hydrate the page during server-side
-                      rendering (SSR), improving performance on complex pages.
-                      Server-Side Rendering (SSR) Improvements: Improved support
-                      for concurrent rendering in SSR environments. Key Features
-                      in React 18: Concurrent Rendering: For improved rendering
-                      efficiency, focusing on ensuring the UI is responsive
-                      during updates. useId: A new hook for generating unique
-                      IDs in SSR. Improved SSR: Includes streaming server-side
-                      rendering, improving initial page load time.
+                      <Badge colorScheme="purple">
+                        React 18.x - (Ongoing Updates)
+                      </Badge>{" "}
+                      <b>Progressive Hydration</b>: Allows React to
+                      progressively hydrate the page during server-side
+                      rendering (SSR).
                     </ListItem>
                   </List>
                 </AccordionPanel>
@@ -468,11 +367,17 @@ const PageReactInterviewQuestions = () => {
                         <Tr>
                           <Td fontWeight="bold">Definition</Td>
                           <Td>
-                            JS functions taking props in params and returning
-                            JSX.
+                            JS functions taking props in params and returning{" "}
+                            <button className="btn-link" onClick={openModal}>
+                              JSX
+                            </button>
+                            .
                           </Td>
                           <Td>
-                            ES6 classes extending React.Component. Return JSX
+                            ES6 classes extending React.Component. Return{" "}
+                            <button className="btn-link" onClick={openModal}>
+                              JSX
+                            </button>{" "}
                             through a render method.
                           </Td>
                         </Tr>
@@ -1488,13 +1393,21 @@ const PageReactInterviewQuestions = () => {
                           </Td>
                           <Td>
                             A JavaScript function (or class) that returns React
-                            elements (often using JSX).
+                            elements (often using{" "}
+                            <button className="btn-link" onClick={openModal}>
+                              JSX
+                            </button>
+                            ).
                           </Td>
                         </Tr>
                         <Tr>
                           <Td>Creation/Type</Td>
                           <Td>
-                            Produced by JSX syntax, which gets transpiled into
+                            Produced by{" "}
+                            <button className="btn-link" onClick={openModal}>
+                              JSX
+                            </button>{" "}
+                            syntax, which gets transpiled into
                             React.createElement() calls. For example, &lt;div
                             /&gt; gets converted to React.createElement('div').
                           </Td>
@@ -1942,4 +1855,4 @@ const PageReactInterviewQuestions = () => {
   );
 };
 
-export default PageReactInterviewQuestions;
+export default PageReactCoreConcepts;
