@@ -1256,40 +1256,17 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      xxx
+                      What is useState in React? 
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-
-                  <h3>
-                    10. How does React handle state management? Discuss the use
-                    of local component state, global state with Context API, and
-                    external libraries like Redux.
-                  </h3>
-                  <Text>...</Text>
-
-                  <h3>
-                    7. What is useState in React? Explain how to use the
-                    useState hook to manage state in a functional component.
-                  </h3>
-                  <Text>...</Text>
-
-                  <h3>
-                    11. What is the Context API, and when would you use it?
-                    Explain how Context API can be used for passing global data
-                    without prop drilling.
-                  </h3>
-                  <Text>...</Text>
-
-                  <h3>
-                    12. What is Prop Drilling, and how can you avoid it? Explain
-                    the problem of passing data through many components and how
-                    Context API or Redux can prevent it.
-                  </h3>
-                  <Text>...</Text>
+                  <Text>
+                  https://chatgpt.com/share/671d4449-2230-8001-bd95-e7749ba74b97
+                  </Text>
+ 
+ 
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1305,13 +1282,13 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      xxx
+                      How does React handle state management?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
+                  <Text>https://chatgpt.com/share/671d44d5-5ab8-8001-9be3-3d210e99bcf1</Text>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1327,17 +1304,29 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      xxx
+                      What is Prop Drilling, and how can you avoid it?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
+                  <Text>
+                    Prop Drilling is a concept in React development where data
+                    (props) are passed from one component to another through
+                    multiple layers of components. {' '} This can happen when a deeply  {' '}
+                  
+                    <Link
+                      href="https://chatgpt.com/share/671d40e1-e5e4-8001-8037-f7ed20e7bbe0"
+                      isExternal
+                    >
+                      nested component requires
+                      ...
+                    </Link>
+                  </Text>
                 </AccordionPanel>
               </AccordionItem>
 
-
+            
               <AccordionItem>
                 <h2>
                   <AccordionButton
@@ -1350,107 +1339,53 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      xxx
+                      What is the Context API, and when would you use it?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
+                  <Text>
+                  The Context API in React is a powerful feature for managing state and passing data across the component tree without the need for prop drilling, which is the process of passing props down multiple levels from parent to child components.</Text>
+
+                  <h3>When to Use the Context API</h3>
+                  <ul className="list-align-left">
+                    <li>
+                    You have global data
+                    </li>
+                    <li>
+                    You want to avoid prop drilling
+                    </li>
+                    <li>
+                    You want a lightweight state management solution
+                    </li>
+                  </ul>
+
+<footer className="accordion-footer">
+  <Link
+    className="btn btn-small btn-secondary"
+    href="https://chatgpt.com/share/671d42d6-8354-8001-84ab-a461c74d2fba"
+    isExternal
+  >
+    More on Context API
+  </Link>
+  <Link
+    className="btn btn-small btn-secondary btn-icon"
+    href="https://react.dev/reference/react/createContext"
+    isExternal
+  >
+    Context API
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+  </Link>
+</footer>
                 </AccordionPanel>
               </AccordionItem>
-
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      xxx
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      xxx
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      xxx
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      xxx
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-                </AccordionPanel>
-              </AccordionItem>
+ 
+              
             </Accordion>
           </CardBody>
         </Card>
@@ -1478,14 +1413,12 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      xxx
+                      What is Redux?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-
+                <AccordionPanel pb={4}> 
                   <h3>
                     What is Redux, and how does it differ from React’s built-in
                     state management?
