@@ -508,90 +508,7 @@ const PageReactCoreConcepts = () => {
                 </AccordionPanel>
               </AccordionItem>
 
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      Hooks
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>
-                  <h3>6. What are React Hooks?</h3>
-                  <Text>
-                    Hooks are functions that make it easier to manage state and
-                    side effects directly inside functional components without
-                    needing to refactor into class components (The functionality
-                    was previously only available in class components until
-                    Hooks came along in React 16.8).
-                  </Text>
-                  <Heading as="h6">Key React Hooks:</Heading>
-                  <UnorderedList marginLeft=".5rem" paddingLeft="0">
-                    <ListItem mb=".7rem">
-                      <b>useState:</b> Allows state management to functional
-                      components.
-                    </ListItem>
-                    <ListItem mb=".7rem">
-                      <b>useEffect:</b> Allows side effects such as{" "}
-                      <b>data fetching, subscriptions, or DOM manipulations</b>,
-                      but keeps components pure by ensuring those effects happen
-                      after the render.
-                    </ListItem>
-                    <ListItem mb=".7rem">
-                      <b>useContext:</b> Allows for the easy flow of data down
-                      the component tree without the need for{" "}
-                      <b>props drilling</b>.
-                    </ListItem>
-                    <ListItem mb=".7rem">
-                      <b>useReducer:</b> is a "super-powered" version of
-                      useState, that deals effectively with{" "}
-                      <b>complex state logic</b> or{" "}
-                      <b>multiple state transitions</b> that depend on previous
-                      states.
-                    </ListItem>
-                    <ListItem mb=".7rem">
-                      <b>useMomo:</b> is used to <b>optimize performance</b> by
-                      memoizing (or caching) the result of a computation so that
-                      it only recalculates when necessary.
-                    </ListItem>
-                    <ListItem mb=".7rem">
-                      <b>useCallback:</b> is used to <b>optimize performance</b>{" "}
-                      by memoizing (or caching) a function definition so that it
-                      doesn't get recreated on every render. This can be
-                      particularly useful when passing functions to child
-                      components, preventing unnecessary re-renders.
-                    </ListItem>
-                    <ListItem mb=".7rem">
-                      <b>useRef:</b> is used to maintain a mutable reference to
-                      a value that does not trigger re-renders when updated.
-                    </ListItem>
-                  </UnorderedList>
-                  <br /> <br /> <br />
-                  <h3>
-                    Describe the purpose of hooks like useState, useEffect, and
-                    others. Compare them with lifecycle methods in class
-                    components.
-                  </h3>
-                  <Text>...</Text>
-                  <h3>
-                    8. What is useEffect used for in React? Discuss how
-                    useEffect is used for handling side effects, such as data
-                    fetching, subscriptions, or DOM manipulations.
-                  </h3>
-                  <Text>...</Text>
-                  <h3>What are Custom Hooks? When do we use them?</h3>
-                  <Text>...</Text>
-                </AccordionPanel>
-              </AccordionItem>
+             
 
               <AccordionItem>
                 <Heading>
@@ -1222,7 +1139,7 @@ const PageReactCoreConcepts = () => {
 
           <CardBody>
             <Accordion defaultIndex={[0]} allowToggle>
-              <AccordionItem className="....">
+              <AccordionItem>
                 <h2>
                   <AccordionButton
                     _expanded={{ bg: "blue.200", color: "gray.900" }}
@@ -1442,6 +1359,165 @@ const PageReactCoreConcepts = () => {
           </CardBody>
         </Card>
       </Box>
+
+<Box className="row" marginBottom="10">
+  <Card shadow="md" borderWidth="1px" borderColor="gray.300">
+    <CardHeader>
+      <Heading as="h2" size="lg">
+        Hooks
+      </Heading>
+    </CardHeader>
+
+    <CardBody>
+      <Accordion defaultIndex={[0]} allowToggle>
+        <AccordionItem>
+          <h2>
+            <AccordionButton
+              _expanded={{ bg: "blue.200", color: "gray.900" }}
+            >
+              <Box
+                as="span"
+                flex="1"
+                textAlign="left"
+                fontWeight="bold"
+                fontSize="20"
+              >
+                xxx
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <Text>xxx</Text>
+
+
+
+
+
+
+
+
+
+            <h3>What are React Hooks?</h3>
+                  <Text>
+                    Hooks are functions that make it easier to manage state and
+                    side effects directly inside functional components without
+                    needing to refactor into class components (The functionality
+                    was previously only available in class components until
+                    Hooks came along in React 16.8).
+                  </Text>
+                  <Heading as="h6">Key React Hooks:</Heading>
+                  <UnorderedList marginLeft=".5rem" paddingLeft="0">
+                    <ListItem mb=".7rem">
+                      <b>useState:</b> Allows state management to functional
+                      components.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useEffect:</b> Allows side effects such as{" "}
+                      <b>data fetching, subscriptions, or DOM manipulations</b>,
+                      but keeps components pure by ensuring those effects happen
+                      after the render.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useContext:</b> Allows for the easy flow of data down
+                      the component tree without the need for{" "}
+                      <b>props drilling</b>.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useReducer:</b> is a "super-powered" version of
+                      useState, that deals effectively with{" "}
+                      <b>complex state logic</b> or{" "}
+                      <b>multiple state transitions</b> that depend on previous
+                      states.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useMomo:</b> is used to <b>optimize performance</b> by
+                      memoizing (or caching) the result of a computation so that
+                      it only recalculates when necessary.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useCallback:</b> is used to <b>optimize performance</b>{" "}
+                      by memoizing (or caching) a function definition so that it
+                      doesn't get recreated on every render. This can be
+                      particularly useful when passing functions to child
+                      components, preventing unnecessary re-renders.
+                    </ListItem>
+                    <ListItem mb=".7rem">
+                      <b>useRef:</b> is used to maintain a mutable reference to
+                      a value that does not trigger re-renders when updated.
+                    </ListItem>
+                  </UnorderedList>
+                  <br /> <br /> <br />
+                  <h3>
+                    Describe the purpose of hooks like useState, useEffect, and
+                    others. Compare them with lifecycle methods in class
+                    components.
+                  </h3>
+                  <Text>...</Text>
+                  <h3>
+                    8. What is useEffect used for in React? Discuss how
+                    useEffect is used for handling side effects, such as data
+                    fetching, subscriptions, or DOM manipulations.
+                  </h3>
+                  <Text>...</Text>
+                  <h3>What are Custom Hooks? When do we use them?</h3>
+                  <Text>...</Text>
+
+
+
+
+                  
+          </AccordionPanel>
+        </AccordionItem>
+ 
+        <AccordionItem>
+          <h2>
+            <AccordionButton
+              _expanded={{ bg: "blue.200", color: "gray.900" }}
+            >
+              <Box
+                as="span"
+                flex="1"
+                textAlign="left"
+                fontWeight="bold"
+                fontSize="20"
+              >
+                xxx
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <Text>xxx</Text>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <h2>
+            <AccordionButton
+              _expanded={{ bg: "blue.200", color: "gray.900" }}
+            >
+              <Box
+                as="span"
+                flex="1"
+                textAlign="left"
+                fontWeight="bold"
+                fontSize="20"
+              >
+                xxx
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <Text>xxx</Text>
+          </AccordionPanel>
+        </AccordionItem>
+
+      </Accordion>
+    </CardBody>
+  </Card>
+</Box>
 
       <Box className="row" marginBottom="10">
         <Card shadow="md" borderWidth="1px" borderColor="gray.300">
