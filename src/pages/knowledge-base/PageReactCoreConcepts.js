@@ -204,15 +204,19 @@ const PageReactCoreConcepts = () => {
                       application
                     </li>
                     <li>
-                      <b>Virtual DOM</b>: ...
+                      <button className="btn-link" onClick={openModal}>
+                      <b>Virtual DOM</b>
+                      </button>
+                      : Lightweight copy of the <button className="btn-link" onClick={openModal}>real DOM</button>
                     </li>
-                    <li>...</li>
-                    <li>...</li>
+                    <li><b>State Management</b>: Control of data that changes over time in response of user actions</li>
+                    <li><b>Hooks</b>: Functions that allow the usage of React features in functional components</li>
                   </ul>
 
                   <footer className="accordion-footer">
                     <Link
-                      href="https://chatgpt.com/share/67190ccb-7cbc-8001-b630-f59131e68254"
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://chatgpt.com/share/671d0f29-6b3c-8001-a137-74d54f17f824"
                       isExternal
                     >
                       More about React features
