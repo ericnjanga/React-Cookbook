@@ -83,7 +83,7 @@ const PageHTMLCSSInterviewQuestions = () => {
                     </ListItem>
                   </OrderedList>
 
-                  <footer>
+                  <footer className="accordion-footer">
                     <Link
                       href="https://chatgpt.com/share/6718f079-9674-8001-a48b-2f6ced5eb123"
                       isExternal
@@ -248,7 +248,7 @@ const PageHTMLCSSInterviewQuestions = () => {
                     </li>
                   </ul>
 
-                  <footer>
+                  <footer className="accordion-footer">
                     <Link
                       className="btn btn-small btn-secondary"
                       href="https://jsfiddle.net/enjanga/wqvpbd9k/54/"
@@ -296,8 +296,8 @@ const PageHTMLCSSInterviewQuestions = () => {
                   </Heading>
                   <Text marginBottom="1rem">
                     The :hover and :focus pseudo-classes are both used in CSS to
-                    style elements based on user interactions, but they trigger {' '}
-                     <Link
+                    style elements based on user interactions, but they trigger{" "}
+                    <Link
                       className="btn-link"
                       href="https://chatgpt.com/share/671be018-60d0-8001-aa95-bb1c52844bc8"
                       isExternal
@@ -309,16 +309,18 @@ const PageHTMLCSSInterviewQuestions = () => {
                   <Heading as="h4" size="sm" marginBottom="0">
                     How does the :nth-child() pseudo-class work?
                   </Heading>
-                  <Text marginBottom="1rem">The :nth-child() pseudo-class in CSS is used to select elements based on their position within a parent element. The position is {' '}
-                  <Link
+                  <Text marginBottom="1rem">
+                    The :nth-child() pseudo-class in CSS is used to select
+                    elements based on their position within a parent element.
+                    The position is{" "}
+                    <Link
                       className="btn-link"
                       href="https://chatgpt.com/share/671be0ea-1460-8001-9abc-872c98fc7337"
                       isExternal
-                    > 
-                    calculated using a formula ...
+                    >
+                      calculated using a formula ...
                     </Link>
-                    
-                    </Text>
+                  </Text>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -352,8 +354,9 @@ const PageHTMLCSSInterviewQuestions = () => {
                     <ListItem>Fluid Grid Layouts</ListItem>
                   </UnorderedList>
 
-                  <footer>
+                  <footer className="accordion-footer">
                     <Link
+                      className="btn btn-small btn-secondary"
                       href="https://chatgpt.com/share/6719010c-b180-8001-bd6b-96374027173a"
                       isExternal
                     >

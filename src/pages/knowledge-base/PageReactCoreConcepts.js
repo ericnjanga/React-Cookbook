@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import IconReact from "../../components/Icons/IconReact";
 import {
   Accordion,
   AccordionItem,
@@ -189,7 +190,7 @@ const PageReactCoreConcepts = () => {
                   </AccordionButton>
                 </Heading>
                 <AccordionPanel pb={4}>
-                  <Text>...</Text>
+                  <Text>React's main features are as follows:</Text>
 
                   <ul className="list-align-left">
                     <li>
@@ -209,7 +210,7 @@ const PageReactCoreConcepts = () => {
                     <li>...</li>
                   </ul>
 
-                  <footer>
+                  <footer className="accordion-footer">
                     <Link
                       href="https://chatgpt.com/share/67190ccb-7cbc-8001-b630-f59131e68254"
                       isExternal
@@ -1459,37 +1460,140 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      19. How does reconciliation work in React? Describe
-                      React’s reconciliation process for efficiently updating
-                      the DOM.
+                      How do you optimize performance in a React application?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>....</Text>
+                  <Text mb={0}>
+                    Optimizing performance in a React application involves
+                    several techniques that help in{" "}
+                    <b>reducing the app's load time</b>,{" "}
+                    <b>minimizing unnecessary renders</b>, and{" "}
+                    <b>improving the overall user experience</b>.
+                  </Text>
+                  <Text>Here are some strategies:</Text>
 
-                  <Divider />
-                  <HStack spacing={4}>
-                    <Heading as="h3" size="sm" marginBottom="0">
-                      Important readings:
-                    </Heading>
-                    <Text marginBottom="0">
-                      <Link
+                  <Heading as="h3" size={"md"} mb={0}>
+                    Processes
+                  </Heading>
+                  <ul className="list-align-left">
+                    <li>
+                      Reducing initial load time with <b>lazy loading</b>
+                    </li>
+                    <li>
+                      Breaking the code into smaller bundles with{" "}
+                      <b>Code spitting</b>
+                    </li>
+                    <li>
+                      Avoids unecessary operations with <b>Memoization</b>:
+                    </li>
+                    <ul className="list-align-left">
+                      <li>
+                        <b>React.memo()</b> for avoiding unecessary re-renders
+                      </li>
+                      <li>
+                        <b>UseMemo()</b> for avoiding unecessary re-calculations
+                      </li>
+                      <li>
+                        <b>UseCallback()</b> for caching functions
+                      </li>
+                    </ul>
+                  </ul>
+
+                  <Heading as="h3" size={"md"} mb={0}>
+                    Coding patterns
+                  </Heading>
+                  <ul className="list-align-left">
+                    <li>
+                      Reducing components size by keeping them reusable and
+                      simple
+                    </li>
+                    <li>Preventing excessive state updates</li>
+                    <li>
+                      Identifying performance bottlenecks by using DevTools
+                    </li>
+                  </ul>
+
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary"
+                      href="https://chatgpt.com/share/671bf545-c350-8001-8c04-9da0f9215634"
+                      isExternal
+                    >
+                      More on React perfomance optimization
+                    </Link>
+                  </footer>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      How does reconciliation work in React?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>
+                    React uses the reconciliation process to figure out how to
+                    update the{" "}
+                    <button className="btn-link" onClick={openModal}>
+                      actual DOM
+                    </button>{" "}
+                    to match the{" "}
+                    <button className="btn-link" onClick={openModal}>
+                      Virtual DOM
+                    </button>
+                    effectively. Here’s is{" "}
+                    <Link
+                      href="https://chatgpt.com/share/671d00f5-4244-8001-b0d7-0fcdbefb4611"
+                      isExternal
+                    >
+                      how reconciliation works ...
+                    </Link>
+                  </Text>
+
+
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
                         href="https://react.dev/learn/preserving-and-resetting-state"
                         isExternal
                       >
                         Preserving and Resetting State
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
                       </Link>
-                      {", "}
-                      <Link
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
                         href="https://legacy.reactjs.org/docs/reconciliation.html"
                         isExternal
                       >
                         Reconciliation
-                      </Link>
-                    </Text>
-                  </HStack>
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+                    </Link>
+                  </footer>
+
+
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1505,18 +1609,40 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      15. What is lazy loading in React, and how can it improve
-                      performance? Discuss the concept of code-splitting and
-                      dynamic imports using React’s lazy() and Suspense.
+                      What is lazy loading in React?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  <Text>
+                    Lazy loading in React is a performance optimization
+                    technique that defers the loading of non-critical components
+                    or resources until they’re actually needed, rather than
+                    loading them all upfront.
+                  </Text>
+
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary"
+                      href="https://chatgpt.com/share/671cfbf6-afe0-8001-8cca-a1b44838c683"
+                      isExternal
+                    >
+                      More on <b>Lazy Loading</b>
+                    </Link>
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://react.dev/reference/react/lazy"
+                      isExternal
+                    >
+                      <b>Lazy Loading</b> API
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1532,18 +1658,27 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      16. What are error boundaries in React? Explain how error
-                      boundaries help catch JavaScript errors in a component
-                      tree and provide a fallback UI.
+                      What are error boundaries in React?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  <Text>
+                    In React, error boundaries are special components that catch
+                    JavaScript errors in their child component trees, log them,
+                    and display a fallback UI instead of crashing the entire
+                    application.
+                  </Text>
+                  <Text>
+                    Error boundaries are only available{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f5e3ff-d020-8001-92cc-77abb6997e20"
+                      isExternal
+                    >
+                      in class components ...
+                    </Link>
+                  </Text>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1559,19 +1694,57 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      17. What is the difference between a key and ref in React?
-                      Discuss the purpose of key in lists to ensure efficient
-                      rendering and ref to access DOM nodes or component
-                      instances.
+                      What is the difference between a key and ref in React?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  <Text mb={0}>In React, </Text>
+
+                  <ul className="list-align-left">
+                    <li>
+                      <b>key</b> is used to uniquely identify elements in a list
+                    </li>
+                    <li>
+                      <b>ref</b> is used to directly reference a DOM node or a
+                      React component instance
+                    </li>
+                  </ul>
+
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary"
+                      href="https://chatgpt.com/share/671ce1ca-de08-8001-ab09-c811f2633c73"
+                      isExternal
+                    >
+                      More on <b>Key</b> and <b>Ref</b>
+                    </Link>
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://react.dev/learn/rendering-lists"
+                      isExternal
+                    >
+                      <b>Keys</b> and Lists
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+                    </Link>
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://react.dev/learn/referencing-values-with-refs"
+                      isExternal
+                    >
+                      <b>Refs</b> and values
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1587,46 +1760,39 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      18. What is the purpose of React’s memo function? Explain
-                      how React.memo optimizes performance by memoizing
-                      functional components to prevent unnecessary re-renders.
+                      What is the purpose of React’s memo function?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </AccordionPanel>
-              </AccordionItem>
+                  <Text>
+                    The purpose of React.memo is to prevent unnecessary
+                    re-renders of components, which can improve the
+                    application's efficiency.
+                  </Text>
 
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary"
+                      href="https://chatgpt.com/share/671cd960-2040-8001-b3c6-9502e248cd77"
+                      isExternal
                     >
-                      20. How do you optimize performance in a React
-                      application? Discuss techniques such as lazy loading, code
-                      splitting, memoization, using PureComponent or React.memo,
-                      and avoiding unnecessary re-renders.
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                      More on React Memo
+                    </Link>
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://react.dev/reference/react/memo"
+                      isExternal
+                    >
+                      React Memo API
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
@@ -1634,8 +1800,7 @@ const PageReactCoreConcepts = () => {
         </Card>
       </Box>
 
-      {/* --- Template ---*/}
-      <Box className="row" marginBottom="10">
+      {/* <Box className="row" marginBottom="10">
         <Accordion defaultIndex={[0]} allowToggle>
           <AccordionItem>
             <h2>
@@ -1687,9 +1852,9 @@ const PageReactCoreConcepts = () => {
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
-      </Box>
+      </Box> */}
 
-      <Box className="row" marginBottom="10">
+      {/* <Box className="row" marginBottom="10">
         <Accordion defaultIndex={[0]} allowToggle>
           <AccordionItem>
             <h2>
@@ -1741,116 +1906,7 @@ const PageReactCoreConcepts = () => {
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
-      </Box>
-
-      <Box className="row" marginBottom="10">
-        <Accordion defaultIndex={[0]} allowToggle>
-          <AccordionItem>
-            <h2>
-              <AccordionButton
-                _expanded={{ bg: "blue.200", color: "gray.900" }}
-              >
-                <Box
-                  as="span"
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize="20"
-                >
-                  Section 1 title
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </AccordionPanel>
-          </AccordionItem>
-
-          <AccordionItem>
-            <h2>
-              <AccordionButton
-                _expanded={{ bg: "blue.200", color: "gray.900" }}
-              >
-                <Box
-                  as="span"
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize="20"
-                >
-                  Section 2 title
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-      </Box>
-
-      <Box className="row" marginBottom="10">
-        <Accordion defaultIndex={[0]} allowToggle>
-          <AccordionItem>
-            <h2>
-              <AccordionButton
-                _expanded={{ bg: "blue.200", color: "gray.900" }}
-              >
-                <Box
-                  as="span"
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize="20"
-                >
-                  Section 1 title
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </AccordionPanel>
-          </AccordionItem>
-
-          <AccordionItem>
-            <h2>
-              <AccordionButton
-                _expanded={{ bg: "blue.200", color: "gray.900" }}
-              >
-                <Box
-                  as="span"
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize="20"
-                >
-                  Section 2 title
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-      </Box>
-      {/* --- Template ---*/}
+      </Box>  */}
     </section>
   );
 };

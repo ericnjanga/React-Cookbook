@@ -51,7 +51,7 @@ const PageJavascriptInterestingPatterns = () => {
                     &nbsp; and <b>currying</b>.
                   </Text>
 
-                  <footer>
+                  <footer className="accordion-footer">
                     <Link className="btn btn-small btn-secondary"
                       href="https://jsfiddle.net/enjanga/ba345e87/57/"
                       isExternal

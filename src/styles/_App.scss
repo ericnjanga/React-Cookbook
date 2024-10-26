@@ -8,25 +8,25 @@
 @import "./theme-light";
 @import "./theme-dark";
 
-.xxxx {
-  border: 20px solid green;
-}
-.layout-subpage {
-  border: 10px solid rgb(128, 105, 0);
-}
-.layout-temporary {
-  border: 3px solid rgb(0, 72, 207);
-}
+// .xxxx {
+//   border: 20px solid green;
+// }
+// .layout-subpage {
+//   border: 10px solid rgb(128, 105, 0);
+// }
+// .layout-temporary {
+//   border: 3px solid rgb(0, 72, 207);
+// }
 
-.menu-level-1 {
-  border: 3px solid rgb(207, 0, 0);
-}
-.menu-level-2 {
-  border: 3px solid rgb(207, 166, 0);
-}
-.menu-level-3 {
-  border: 3px solid rgb(0, 200, 207);
-}
+// .menu-level-1 {
+//   border: 3px solid rgb(207, 0, 0);
+// }
+// .menu-level-2 {
+//   border: 3px solid rgb(207, 166, 0);
+// }
+// .menu-level-3 {
+//   border: 3px solid rgb(0, 200, 207);
+// }
 
 .App {
   min-height: 100vh;
@@ -62,6 +62,12 @@
 }
 
 
+.accordion-footer {
+  display: flex;
+  gap: 1rem;
+}
+
+
 .btn {
   text-decoration: none!important;
 }
@@ -73,6 +79,12 @@
   &:hover {
     background-color: #adadad;
   }
+}
+.btn-icon {
+  width: fit-content;
+  display: flex; 
+  align-items: center;
+  gap: .5rem;
 }
 
 

@@ -47,7 +47,7 @@ const PageJavascriptCoreConcepts = () => {
                     <li>compared to traditional callback-based approaches</li>
                   </ul> 
 
-                  <footer>
+                  <footer className="accordion-footer">
                     <Link className="btn btn-small btn-secondary" href="#" isExternal>See code examples</Link>&nbsp; | &nbsp;
                     <Link className="btn btn-small btn-secondary" href="https://chatgpt.com/share/671a8c2c-9964-8001-bf4d-24a7ad5889f5" isExternal>More about promises</Link>
                   </footer>
@@ -82,7 +82,7 @@ const PageJavascriptCoreConcepts = () => {
                     <li><b>Privileged access:</b> The closure creates a private environment for these variables, not accessible from the outside.</li>
                   </ul> */}
 
-                  <footer>
+                  <footer className="accordion-footer">
                     <Link className="btn btn-small btn-secondary" href="https://jsfiddle.net/enjanga/tv1gnycp/255/" isExternal>See code examples</Link>&nbsp; | &nbsp;
                     <Link className="btn btn-small btn-secondary" href="https://chatgpt.com/share/6717c56e-a458-8001-b394-dff9727e2c5f" isExternal>More about async functions</Link>
                   </footer>
@@ -113,7 +113,7 @@ const PageJavascriptCoreConcepts = () => {
                     <li><b>Privileged access:</b> The closure creates a private environment for these variables, not accessible from the outside.</li>
                   </ul>
 
-                  <footer>
+                  <footer className="accordion-footer">
                     <Link className="btn btn-small btn-secondary" href="https://jsfiddle.net/enjanga/dju9xcbk/16/" isExternal>See code examples</Link>&nbsp; | &nbsp;
                     <Link className="btn btn-small btn-secondary" href="https://chatgpt.com/share/670a9e0a-9048-8001-9209-546779191a56" isExternal>Why closures are useful</Link>
                   </footer>
@@ -145,7 +145,7 @@ const PageJavascriptCoreConcepts = () => {
                     <li><b>Function composition:</b> In functional programming, currying can make it easier to compose small functions together.</li>
                   </ul>
 
-                  <footer>
+                  <footer className="accordion-footer">
                     <Link className="btn btn-small btn-secondary" href="https://jsfiddle.net/enjanga/yx0c5twr/20/" isExternal>See code examples</Link>&nbsp; | &nbsp;
                     <Link className="btn btn-small btn-secondary" href="https://chatgpt.com/share/670fd7e1-2448-8001-9e43-b2459c4657d9" isExternal>Why Currying is useful</Link>
                   </footer>
