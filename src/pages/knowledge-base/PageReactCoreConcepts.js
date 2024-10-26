@@ -982,15 +982,12 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      xxx
+                      Explain the concept of components in React
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-
-                  <h3>Explain the concept of components in React.</h3>
                   <Text>
                     In React, components are the building blocks of the user
                     interface (UI). They allow you to split your UI into
@@ -1005,11 +1002,28 @@ const PageReactCoreConcepts = () => {
                       Learn more
                     </Link>
                   </Text>
+                </AccordionPanel>
+              </AccordionItem>
 
-                  <Spacer height="2rem"></Spacer>
-
-                  <h3>Functional vs Class components</h3>
-
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      Explain the difference between Functional and Class
+                      components
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
                   <Text>
                     They can be defiend separely (
                     <Link
@@ -1109,11 +1123,28 @@ const PageReactCoreConcepts = () => {
                   </TableContainer>
 
                   <Spacer height="2rem"></Spacer>
+                </AccordionPanel>
+              </AccordionItem>
 
-                  <h3>
-                    What is the difference between controlled and uncontrolled
-                    components in React?
-                  </h3>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      What is the difference between controlled and uncontrolled
+                      components?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
                   <Text>
                     This refers to how <b>form elements</b> manage their state.{" "}
                     <Link
@@ -1159,11 +1190,27 @@ const PageReactCoreConcepts = () => {
                       </Tbody>
                     </Table>
                   </TableContainer>
+                </AccordionPanel>
+              </AccordionItem>
 
-                  <Spacer height="2rem"></Spacer>
-
-                  <h3>What is a higher-order component (HOC)?</h3>
-
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      What is a higher-order component (HOC)?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
                   <UnorderedList className="list-align-left">
                     <ListItem>Pattern for reusing component logic</ListItem>
                     <ListItem>For enhancement or extension purposes</ListItem>
@@ -1180,50 +1227,6 @@ const PageReactCoreConcepts = () => {
                       </Link>
                     </ListItem>
                   </UnorderedList>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      xxx
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      xxx
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
@@ -1311,6 +1314,121 @@ const PageReactCoreConcepts = () => {
                   <Text>xxx</Text>
                 </AccordionPanel>
               </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
 
               <AccordionItem>
                 <h2>
