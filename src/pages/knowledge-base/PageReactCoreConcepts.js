@@ -390,7 +390,7 @@ const PageReactCoreConcepts = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <UnorderedList className="list-align-left" mb="10">
+                  <UnorderedList className="list-align-left">
                     <ListItem>
                       <Link
                         href="https://legacy.reactjs.org/docs/faq-internals.html#what-is-the-virtual-dom"
@@ -415,33 +415,33 @@ const PageReactCoreConcepts = () => {
                     </ListItem>
                   </UnorderedList>
 
-                  <h2>
-                    4. What is the Virtual DOM, and how does it work in React?
-                    Discuss the role of the virtual DOM in improving performance
-                    by updating only the changed parts of the real DOM.
-                  </h2>
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://react.dev/learn/preserving-and-resetting-state"
+                      isExternal
+                    >
+                      Preserving and Resetting State
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+                    </Link>
 
-                  <Divider />
-                  <HStack spacing={4}>
-                    <Heading as="h3" size="sm" marginBottom="0">
-                      Important readings:
-                    </Heading>
-                    <Text marginBottom="0">
-                      <Link
-                        href="https://react.dev/learn/preserving-and-resetting-state"
-                        isExternal
-                      >
-                        Preserving and Resetting State
-                      </Link>
-                      {", "}
-                      <Link
-                        href="https://legacy.reactjs.org/docs/reconciliation.html"
-                        isExternal
-                      >
-                        Reconciliation
-                      </Link>
-                    </Text>
-                  </HStack>
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://legacy.reactjs.org/docs/reconciliation.html"
+                      isExternal
+                    >
+                      Reconciliation
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -809,14 +809,12 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      xxx
+                      What are React Hooks?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-                  <h3>What are React Hooks?</h3>
                   <Text>
                     Hooks are functions that make it easier to manage state and
                     side effects directly inside functional components without
@@ -824,62 +822,77 @@ const PageReactCoreConcepts = () => {
                     was previously only available in class components until
                     Hooks came along in React 16.8).
                   </Text>
-                  <Heading as="h6">Key React Hooks:</Heading>
-                  <UnorderedList marginLeft=".5rem" paddingLeft="0">
-                    <ListItem mb=".7rem">
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      What are the key React hooks?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <ul className="list-align-left">
+                    <li>
                       <b>useState:</b> Allows state management to functional
                       components.
-                    </ListItem>
-                    <ListItem mb=".7rem">
+                    </li>
+                    <li>
                       <b>useEffect:</b> Allows side effects such as{" "}
                       <b>data fetching, subscriptions, or DOM manipulations</b>,
                       but keeps components pure by ensuring those effects happen
                       after the render.
-                    </ListItem>
-                    <ListItem mb=".7rem">
+                    </li>
+                    <li>
                       <b>useContext:</b> Allows for the easy flow of data down
                       the component tree without the need for{" "}
                       <b>props drilling</b>.
-                    </ListItem>
-                    <ListItem mb=".7rem">
+                    </li>
+                    <li>
                       <b>useReducer:</b> is a "super-powered" version of
                       useState, that deals effectively with{" "}
                       <b>complex state logic</b> or{" "}
                       <b>multiple state transitions</b> that depend on previous
                       states.
-                    </ListItem>
-                    <ListItem mb=".7rem">
+                    </li>
+                    <li>
                       <b>useMomo:</b> is used to <b>optimize performance</b> by
                       memoizing (or caching) the result of a computation so that
                       it only recalculates when necessary.
-                    </ListItem>
-                    <ListItem mb=".7rem">
+                    </li>
+                    <li>
                       <b>useCallback:</b> is used to <b>optimize performance</b>{" "}
                       by memoizing (or caching) a function definition so that it
                       doesn't get recreated on every render. This can be
                       particularly useful when passing functions to child
                       components, preventing unnecessary re-renders.
-                    </ListItem>
-                    <ListItem mb=".7rem">
+                    </li>
+                    <li>
                       <b>useRef:</b> is used to maintain a mutable reference to
                       a value that does not trigger re-renders when updated.
-                    </ListItem>
-                  </UnorderedList>
-                  <br /> <br /> <br />
-                  <h3>
-                    Describe the purpose of hooks like useState, useEffect, and
-                    others. Compare them with lifecycle methods in class
-                    components.
-                  </h3>
-                  <Text>...</Text>
-                  <h3>
-                    8. What is useEffect used for in React? Discuss how
-                    useEffect is used for handling side effects, such as data
-                    fetching, subscriptions, or DOM manipulations.
-                  </h3>
-                  <Text>...</Text>
-                  <h3>What are Custom Hooks? When do we use them?</h3>
-                  <Text>...</Text>
+                    </li>
+                  </ul>
+
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://chatgpt.com/share/671d2a9b-9bec-8001-99e5-32b4f06d469a"
+                      isExternal
+                    >
+                      The purpose of Hooks
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -895,35 +908,51 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      xxx
+                      What are Custom Hooks?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
-                </AccordionPanel>
-              </AccordionItem>
+                  <Text>
+                    Custom Hooks in React are reusable functions that allow you
+                    to encapsulate and share logic across multiple components.
+                  </Text>
 
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
+                  <h3>When do we use them?</h3>
+
+                  <ul className="list-align-left">
+                    <li>
+                      When you need to share complex state logic, side effects
+                      or interactions across components
+                    </li>
+                    <li>
+                      When you notice similar or identical logic in multiple
+                      components
+                    </li>
+                  </ul>
+
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://chatgpt.com/share/671d300c-1754-8001-9256-86e2016ba1ac"
+                      isExternal
                     >
-                      xxx
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>xxx</Text>
+                      More on Custom hooks
+                    </Link>
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://react.dev/learn/reusing-logic-with-custom-hooks"
+                      isExternal
+                    >
+                      Custom hooks API
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
