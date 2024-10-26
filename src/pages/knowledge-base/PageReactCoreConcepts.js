@@ -205,12 +205,21 @@ const PageReactCoreConcepts = () => {
                     </li>
                     <li>
                       <button className="btn-link" onClick={openModal}>
-                      <b>Virtual DOM</b>
+                        <b>Virtual DOM</b>
                       </button>
-                      : Lightweight copy of the <button className="btn-link" onClick={openModal}>real DOM</button>
+                      : Lightweight copy of the{" "}
+                      <button className="btn-link" onClick={openModal}>
+                        real DOM
+                      </button>
                     </li>
-                    <li><b>State Management</b>: Control of data that changes over time in response of user actions</li>
-                    <li><b>Hooks</b>: Functions that allow the usage of React features in functional components</li>
+                    <li>
+                      <b>State Management</b>: Control of data that changes over
+                      time in response of user actions
+                    </li>
+                    <li>
+                      <b>Hooks</b>: Functions that allow the usage of React
+                      features in functional components
+                    </li>
                   </ul>
 
                   <footer className="accordion-footer">
@@ -296,588 +305,6 @@ const PageReactCoreConcepts = () => {
                   </List>
                 </AccordionPanel>
               </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      Components
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>
-                  <h3>Explain the concept of components in React.</h3>
-                  <Text>
-                    In React, components are the building blocks of the user
-                    interface (UI). They allow you to split your UI into
-                    independent, reusable pieces, making it easier to manage and
-                    develop complex applications. Each component can manage its
-                    own state and lifecycle, making React a powerful tool for
-                    building interactive UIs.{" "}
-                    <Link
-                      href="https://chatgpt.com/share/66f58ce9-8738-8001-a0cb-891de78046cf"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                  </Text>
-
-                  <Spacer height="2rem"></Spacer>
-
-                  <h3>Functional vs Class components</h3>
-
-                  <Text>
-                    They can be defiend separely (
-                    <Link
-                      href="https://chatgpt.com/share/66f591dc-a47c-8001-aac0-988dd14b5102"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                    ), and contribute in different ways (
-                    <Link
-                      href="https://chatgpt.com/share/66f59442-65b4-8001-b74e-d0ea1eb73f38"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                    ).
-                  </Text>
-
-                  <TableContainer>
-                    <Table
-                      size="sm"
-                      variant="striped"
-                      colorScheme="teal"
-                      whiteSpace="wrap"
-                      className="table-definition"
-                    >
-                      <Thead>
-                        <Tr>
-                          <Th></Th>
-                          <Th>Functional</Th>
-                          <Th>Class</Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        <Tr>
-                          <Td fontWeight="bold">Definition</Td>
-                          <Td>
-                            JS functions taking props in params and returning{" "}
-                            <button className="btn-link" onClick={openModal}>
-                              JSX
-                            </button>
-                            .
-                          </Td>
-                          <Td>
-                            ES6 classes extending React.Component. Return{" "}
-                            <button className="btn-link" onClick={openModal}>
-                              JSX
-                            </button>{" "}
-                            through a render method.
-                          </Td>
-                        </Tr>
-                        <Tr>
-                          <Td fontWeight="bold">State Management</Td>
-                          <Td>Through hooks (useState, useReducer).</Td>
-                          <Td>
-                            Built-in state management methods (this.state,
-                            this.setState).
-                          </Td>
-                        </Tr>
-                        <Tr>
-                          <Td fontWeight="bold">Lifecycle Methods</Td>
-                          <Td>
-                            Through hooks like <b>useEffect</b>:
-                            <UnorderedList mb="0" className="list-align-left">
-                              <ListItem>After component render</ListItem>
-                              <ListItem>State/props change</ListItem>
-                              <ListItem>Cleanup phase</ListItem>
-                            </UnorderedList>
-                          </Td>
-                          <Td>
-                            Through built-in lifecycle methods:
-                            <UnorderedList mb="0" className="list-align-left">
-                              <ListItem>
-                                <b>componentDidMount</b>: After component render
-                              </ListItem>
-                              <ListItem>
-                                <b>componentDidUpdate</b>: State/props change
-                              </ListItem>
-                              <ListItem>
-                                <b>componentWillUnmount</b>: Cleanup phase
-                              </ListItem>
-                            </UnorderedList>
-                          </Td>
-                        </Tr>
-
-                        <Tr>
-                          <Td fontWeight="bold">Complexity</Td>
-                          <Td>...</Td>
-                          <Td>
-                            Best suited for handling complex state and effects
-                            (with their built-in lifecycle methods) than
-                            functional counterparts.
-                          </Td>
-                        </Tr>
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
-
-                  <Spacer height="2rem"></Spacer>
-
-                  <h3>
-                    What is the difference between controlled and uncontrolled
-                    components in React?
-                  </h3>
-                  <Text>
-                    This refers to how <b>form elements</b> manage their state.{" "}
-                    <Link
-                      href="https://chatgpt.com/share/66f598cd-c164-8001-88d3-2da17eb72c49"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                  </Text>
-
-                  <TableContainer>
-                    <Table
-                      size="sm"
-                      variant="striped"
-                      colorScheme="teal"
-                      whiteSpace="wrap"
-                      className="table-definition"
-                    >
-                      <Thead>
-                        <Tr>
-                          <Th></Th>
-                          <Th>Controlled</Th>
-                          <Th>Uncontrolled</Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        <Tr>
-                          <Td fontWeight="bold">State management</Td>
-                          <Td>React</Td>
-                          <Td>The DOM</Td>
-                        </Tr>
-                        <Tr>
-                          <Td fontWeight="bold">Good for</Td>
-                          <Td>
-                            Complex forms, tighter control (validation, state
-                            management)
-                          </Td>
-                          <Td>
-                            Simple forms, looser control (validation, state
-                            management)
-                          </Td>
-                        </Tr>
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
-
-                  <Spacer height="2rem"></Spacer>
-
-                  <h3>What is a higher-order component (HOC)?</h3>
-
-                  <UnorderedList className="list-align-left">
-                    <ListItem>Pattern for reusing component logic</ListItem>
-                    <ListItem>For enhancement or extension purposes</ListItem>
-                    <ListItem>
-                      Takes a component as an argument, returns an enhanced
-                      component
-                    </ListItem>
-                    <ListItem>
-                      <Link
-                        href="https://chatgpt.com/share/66f59bfd-5e6c-8001-939b-cfdef98e23fe"
-                        isExternal
-                      >
-                        Learn more
-                      </Link>
-                    </ListItem>
-                  </UnorderedList>
-                </AccordionPanel>
-              </AccordionItem>
-
-             
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      State management &amp; props
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>
-                  <h3>
-                    10. How does React handle state management? Discuss the use
-                    of local component state, global state with Context API, and
-                    external libraries like Redux.
-                  </h3>
-                  <Text>...</Text>
-
-                  <h3>
-                    7. What is useState in React? Explain how to use the
-                    useState hook to manage state in a functional component.
-                  </h3>
-                  <Text>...</Text>
-
-                  <h3>
-                    11. What is the Context API, and when would you use it?
-                    Explain how Context API can be used for passing global data
-                    without prop drilling.
-                  </h3>
-                  <Text>...</Text>
-
-                  <h3>
-                    12. What is Prop Drilling, and how can you avoid it? Explain
-                    the problem of passing data through many components and how
-                    Context API or Redux can prevent it.
-                  </h3>
-                  <Text>...</Text>
-
-                  {/* <h3>***</h3>
-                  <Text>...</Text>
-
-                  <h3>***</h3>
-                  <Text>...</Text>
-
-                  <h3>***</h3>
-                  <Text>...</Text>
-
-                  <h3>***</h3>
-                  <Text>...</Text>
-
-                  <h3>***</h3>
-                  <Text>...</Text>
-
-                  <h3>***</h3>
-                  <Text>...</Text>
-
-                  <h3>***</h3>
-                  <Text>...</Text>
-
-                  <h3>***</h3> */}
-                  <Text>...</Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      Advanced State management with Redux
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>
-                  <h3>
-                    What is Redux, and how does it differ from React’s built-in
-                    state management?
-                  </h3>
-                  <Text>
-                    Redux is a predictable state container for JavaScript
-                    applications, commonly used with React for managing the
-                    application state in a more structured and scalable way.{" "}
-                    <Link
-                      href="https://chatgpt.com/share/66f598cd-c164-8001-88d3-2da17eb72c49"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                  </Text>
-
-                  <h3>
-                    Can you explain the concept of a Redux store and how actions
-                    and reducers interact with it?
-                  </h3>
-                  <Text>
-                    In Redux, the store is the central place where the entire
-                    state of your application is held. It manages the state
-                    tree, allows access to the state, and enables updates
-                    through a process governed by actions and reducers.{" "}
-                    <Link
-                      href="https://chatgpt.com/share/66f5e3b5-193c-8001-ba38-cef6fbdd4266"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                  </Text>
-
-                  <h3>
-                    What are the benefits of using middleware in Redux, and can
-                    you give examples of common middleware used in Redux
-                    applications?
-                  </h3>
-                  <Text>
-                    In Redux, middleware is used to extend Redux's functionality
-                    and enhance the flow of data between dispatching actions and
-                    reaching the reducers.{" "}
-                    <Link
-                      href="https://chatgpt.com/share/66f5e3ff-d020-8001-92cc-77abb6997e20"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                  </Text>
-
-                  <h3>
-                    How do you implement and manage side effects in a Redux
-                    application?
-                  </h3>
-                  <Text>...</Text>
-
-                  <h3>
-                    Can you describe how to use the useSelector and useDispatch
-                    hooks in a functional React component?
-                  </h3>
-                  <Text>...</Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      Routes
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>
-                  <h3>
-                    14. What is React Router, and how does it work? Explain
-                    routing in a React application and how React Router is used
-                    to manage navigation
-                  </h3>
-                  <Text>...</Text>
-
-                  <h3>
-                    What is the difference between relative and absolute paths?
-                  </h3>
-                  <Text>
-                    In the context of Single Page Applications (SPAs), relative
-                    and absolute paths refer to how routes are structured and
-                    how they are resolved within the app. 1. Relative Paths
-                    Relative paths are defined in relation to the current route.
-                    They don't start with a slash (/), meaning the navigation
-                    will happen based on the current route or parent route.
-                    Example: Current route: /users/profile Relative path:
-                    settings Resulting path: /users/profile/settings In this
-                    case, the settings route is appended to the current route
-                    /users/profile. 2. Absolute Paths Absolute paths start with
-                    a leading slash (/) and are resolved from the root of the
-                    application, ignoring the current route. Example: Current
-                    route: /users/profile Absolute path: /settings Resulting
-                    path: /settings In this case, the route navigation jumps
-                    directly to /settings, regardless of the current route. Key
-                    Differences: Relative paths are context-sensitive, relying
-                    on the current URL. Absolute paths always refer to the same
-                    location from the root of the app. In an SPA, understanding
-                    these differences helps to manage navigation based on the
-                    application's routing hierarchy.
-                  </Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      Performance
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>
-                  <h3>Here are several tool for improved React Performance</h3>
-                  <UnorderedList>
-                    <ListItem>
-                      <Link
-                        isExternal
-                        href="https://github.com/welldone-software/why-did-you-render?tab=readme-ov-file"
-                      >
-                        Why did you render?
-                      </Link>
-                    </ListItem>
-                    <ListItem>Lighthouse (Chrome DevTools)</ListItem>
-                    <ListItem>
-                      <Link
-                        isExternal
-                        href="https://github.com/webpack-contrib/webpack-bundle-analyzer"
-                      >
-                        Bundle Analyzer Tools (Webpack/CRA)
-                      </Link>
-                    </ListItem>
-                  </UnorderedList>
-                  <Text>...</Text>
-
-                  <h3>Explain how the useMemo hook helps with performance</h3>
-                  <Text>...</Text>
-
-                  <h3>Explain how the useCall hook helps with performance</h3>
-                  <Text>...</Text>
-
-                  <h3>
-                    Why is it bad when a function is recreated on every
-                    re-render?
-                  </h3>
-                  <Text>
-                    <Link
-                      href="https://chatgpt.com/share/66f57e1f-8da4-8001-b758-b4c20b4e2d72"
-                      isExternal
-                    >
-                      The answer.
-                    </Link>
-                  </Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-              {/* 
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem> */}
             </Accordion>
           </CardBody>
         </Card>
@@ -1360,45 +787,36 @@ const PageReactCoreConcepts = () => {
         </Card>
       </Box>
 
-<Box className="row" marginBottom="10">
-  <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-    <CardHeader>
-      <Heading as="h2" size="lg">
-        Hooks
-      </Heading>
-    </CardHeader>
+      <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
+          <CardHeader>
+            <Heading as="h2" size="lg">
+              Hooks
+            </Heading>
+          </CardHeader>
 
-    <CardBody>
-      <Accordion defaultIndex={[0]} allowToggle>
-        <AccordionItem>
-          <h2>
-            <AccordionButton
-              _expanded={{ bg: "blue.200", color: "gray.900" }}
-            >
-              <Box
-                as="span"
-                flex="1"
-                textAlign="left"
-                fontWeight="bold"
-                fontSize="20"
-              >
-                xxx
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <Text>xxx</Text>
-
-
-
-
-
-
-
-
-
-            <h3>What are React Hooks?</h3>
+          <CardBody>
+            <Accordion defaultIndex={[0]} allowToggle>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                  <h3>What are React Hooks?</h3>
                   <Text>
                     Hooks are functions that make it easier to manage state and
                     side effects directly inside functional components without
@@ -1462,62 +880,689 @@ const PageReactCoreConcepts = () => {
                   <Text>...</Text>
                   <h3>What are Custom Hooks? When do we use them?</h3>
                   <Text>...</Text>
+                </AccordionPanel>
+              </AccordionItem>
 
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
 
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </CardBody>
+        </Card>
+      </Box>
 
+      <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
+          <CardHeader>
+            <Heading as="h2" size="lg">
+              Components
+            </Heading>
+          </CardHeader>
 
-                  
-          </AccordionPanel>
-        </AccordionItem>
- 
-        <AccordionItem>
-          <h2>
-            <AccordionButton
-              _expanded={{ bg: "blue.200", color: "gray.900" }}
-            >
-              <Box
-                as="span"
-                flex="1"
-                textAlign="left"
-                fontWeight="bold"
-                fontSize="20"
-              >
-                xxx
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <Text>xxx</Text>
-          </AccordionPanel>
-        </AccordionItem>
+          <CardBody>
+            <Accordion defaultIndex={[0]} allowToggle>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
 
-        <AccordionItem>
-          <h2>
-            <AccordionButton
-              _expanded={{ bg: "blue.200", color: "gray.900" }}
-            >
-              <Box
-                as="span"
-                flex="1"
-                textAlign="left"
-                fontWeight="bold"
-                fontSize="20"
-              >
-                xxx
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <Text>xxx</Text>
-          </AccordionPanel>
-        </AccordionItem>
+                  <h3>Explain the concept of components in React.</h3>
+                  <Text>
+                    In React, components are the building blocks of the user
+                    interface (UI). They allow you to split your UI into
+                    independent, reusable pieces, making it easier to manage and
+                    develop complex applications. Each component can manage its
+                    own state and lifecycle, making React a powerful tool for
+                    building interactive UIs.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f58ce9-8738-8001-a0cb-891de78046cf"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
 
-      </Accordion>
-    </CardBody>
-  </Card>
-</Box>
+                  <Spacer height="2rem"></Spacer>
+
+                  <h3>Functional vs Class components</h3>
+
+                  <Text>
+                    They can be defiend separely (
+                    <Link
+                      href="https://chatgpt.com/share/66f591dc-a47c-8001-aac0-988dd14b5102"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                    ), and contribute in different ways (
+                    <Link
+                      href="https://chatgpt.com/share/66f59442-65b4-8001-b74e-d0ea1eb73f38"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                    ).
+                  </Text>
+
+                  <TableContainer>
+                    <Table
+                      size="sm"
+                      variant="striped"
+                      colorScheme="teal"
+                      whiteSpace="wrap"
+                      className="table-definition"
+                    >
+                      <Thead>
+                        <Tr>
+                          <Th></Th>
+                          <Th>Functional</Th>
+                          <Th>Class</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        <Tr>
+                          <Td fontWeight="bold">Definition</Td>
+                          <Td>
+                            JS functions taking props in params and returning{" "}
+                            <button className="btn-link" onClick={openModal}>
+                              JSX
+                            </button>
+                            .
+                          </Td>
+                          <Td>
+                            ES6 classes extending React.Component. Return{" "}
+                            <button className="btn-link" onClick={openModal}>
+                              JSX
+                            </button>{" "}
+                            through a render method.
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight="bold">State Management</Td>
+                          <Td>Through hooks (useState, useReducer).</Td>
+                          <Td>
+                            Built-in state management methods (this.state,
+                            this.setState).
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight="bold">Lifecycle Methods</Td>
+                          <Td>
+                            Through hooks like <b>useEffect</b>:
+                            <UnorderedList mb="0" className="list-align-left">
+                              <ListItem>After component render</ListItem>
+                              <ListItem>State/props change</ListItem>
+                              <ListItem>Cleanup phase</ListItem>
+                            </UnorderedList>
+                          </Td>
+                          <Td>
+                            Through built-in lifecycle methods:
+                            <UnorderedList mb="0" className="list-align-left">
+                              <ListItem>
+                                <b>componentDidMount</b>: After component render
+                              </ListItem>
+                              <ListItem>
+                                <b>componentDidUpdate</b>: State/props change
+                              </ListItem>
+                              <ListItem>
+                                <b>componentWillUnmount</b>: Cleanup phase
+                              </ListItem>
+                            </UnorderedList>
+                          </Td>
+                        </Tr>
+
+                        <Tr>
+                          <Td fontWeight="bold">Complexity</Td>
+                          <Td>...</Td>
+                          <Td>
+                            Best suited for handling complex state and effects
+                            (with their built-in lifecycle methods) than
+                            functional counterparts.
+                          </Td>
+                        </Tr>
+                      </Tbody>
+                    </Table>
+                  </TableContainer>
+
+                  <Spacer height="2rem"></Spacer>
+
+                  <h3>
+                    What is the difference between controlled and uncontrolled
+                    components in React?
+                  </h3>
+                  <Text>
+                    This refers to how <b>form elements</b> manage their state.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f598cd-c164-8001-88d3-2da17eb72c49"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <TableContainer>
+                    <Table
+                      size="sm"
+                      variant="striped"
+                      colorScheme="teal"
+                      whiteSpace="wrap"
+                      className="table-definition"
+                    >
+                      <Thead>
+                        <Tr>
+                          <Th></Th>
+                          <Th>Controlled</Th>
+                          <Th>Uncontrolled</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        <Tr>
+                          <Td fontWeight="bold">State management</Td>
+                          <Td>React</Td>
+                          <Td>The DOM</Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight="bold">Good for</Td>
+                          <Td>
+                            Complex forms, tighter control (validation, state
+                            management)
+                          </Td>
+                          <Td>
+                            Simple forms, looser control (validation, state
+                            management)
+                          </Td>
+                        </Tr>
+                      </Tbody>
+                    </Table>
+                  </TableContainer>
+
+                  <Spacer height="2rem"></Spacer>
+
+                  <h3>What is a higher-order component (HOC)?</h3>
+
+                  <UnorderedList className="list-align-left">
+                    <ListItem>Pattern for reusing component logic</ListItem>
+                    <ListItem>For enhancement or extension purposes</ListItem>
+                    <ListItem>
+                      Takes a component as an argument, returns an enhanced
+                      component
+                    </ListItem>
+                    <ListItem>
+                      <Link
+                        href="https://chatgpt.com/share/66f59bfd-5e6c-8001-939b-cfdef98e23fe"
+                        isExternal
+                      >
+                        Learn more
+                      </Link>
+                    </ListItem>
+                  </UnorderedList>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </CardBody>
+        </Card>
+      </Box>
+
+      <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
+          <CardHeader>
+            <Heading as="h2" size="lg">
+              State management &amp; props
+            </Heading>
+          </CardHeader>
+
+          <CardBody>
+            <Accordion defaultIndex={[0]} allowToggle>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+
+                  <h3>
+                    10. How does React handle state management? Discuss the use
+                    of local component state, global state with Context API, and
+                    external libraries like Redux.
+                  </h3>
+                  <Text>...</Text>
+
+                  <h3>
+                    7. What is useState in React? Explain how to use the
+                    useState hook to manage state in a functional component.
+                  </h3>
+                  <Text>...</Text>
+
+                  <h3>
+                    11. What is the Context API, and when would you use it?
+                    Explain how Context API can be used for passing global data
+                    without prop drilling.
+                  </h3>
+                  <Text>...</Text>
+
+                  <h3>
+                    12. What is Prop Drilling, and how can you avoid it? Explain
+                    the problem of passing data through many components and how
+                    Context API or Redux can prevent it.
+                  </h3>
+                  <Text>...</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </CardBody>
+        </Card>
+      </Box>
+
+      <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
+          <CardHeader>
+            <Heading as="h2" size="lg">
+              Advanced state management with Redux
+            </Heading>
+          </CardHeader>
+
+          <CardBody>
+            <Accordion defaultIndex={[0]} allowToggle>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+
+                  <h3>
+                    What is Redux, and how does it differ from React’s built-in
+                    state management?
+                  </h3>
+                  <Text>
+                    Redux is a predictable state container for JavaScript
+                    applications, commonly used with React for managing the
+                    application state in a more structured and scalable way.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f598cd-c164-8001-88d3-2da17eb72c49"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <h3>
+                    Can you explain the concept of a Redux store and how actions
+                    and reducers interact with it?
+                  </h3>
+                  <Text>
+                    In Redux, the store is the central place where the entire
+                    state of your application is held. It manages the state
+                    tree, allows access to the state, and enables updates
+                    through a process governed by actions and reducers.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f5e3b5-193c-8001-ba38-cef6fbdd4266"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <h3>
+                    What are the benefits of using middleware in Redux, and can
+                    you give examples of common middleware used in Redux
+                    applications?
+                  </h3>
+                  <Text>
+                    In Redux, middleware is used to extend Redux's functionality
+                    and enhance the flow of data between dispatching actions and
+                    reaching the reducers.{" "}
+                    <Link
+                      href="https://chatgpt.com/share/66f5e3ff-d020-8001-92cc-77abb6997e20"
+                      isExternal
+                    >
+                      Learn more
+                    </Link>
+                  </Text>
+
+                  <h3>
+                    How do you implement and manage side effects in a Redux
+                    application?
+                  </h3>
+                  <Text>...</Text>
+
+                  <h3>
+                    Can you describe how to use the useSelector and useDispatch
+                    hooks in a functional React component?
+                  </h3>
+                  <Text>...</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </CardBody>
+        </Card>
+      </Box>
+
+      <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
+          <CardHeader>
+            <Heading as="h2" size="lg">
+              Routes
+            </Heading>
+          </CardHeader>
+
+          <CardBody>
+            <Accordion defaultIndex={[0]} allowToggle>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+
+                  <h3>
+                    14. What is React Router, and how does it work? Explain
+                    routing in a React application and how React Router is used
+                    to manage navigation
+                  </h3>
+                  <Text>...</Text>
+
+                  <h3>
+                    What is the difference between relative and absolute paths?
+                  </h3>
+                  <Text>
+                    In the context of Single Page Applications (SPAs), relative
+                    and absolute paths refer to how routes are structured and
+                    how they are resolved within the app. 1. Relative Paths
+                    Relative paths are defined in relation to the current route.
+                    They don't start with a slash (/), meaning the navigation
+                    will happen based on the current route or parent route.
+                    Example: Current route: /users/profile Relative path:
+                    settings Resulting path: /users/profile/settings In this
+                    case, the settings route is appended to the current route
+                    /users/profile. 2. Absolute Paths Absolute paths start with
+                    a leading slash (/) and are resolved from the root of the
+                    application, ignoring the current route. Example: Current
+                    route: /users/profile Absolute path: /settings Resulting
+                    path: /settings In this case, the route navigation jumps
+                    directly to /settings, regardless of the current route. Key
+                    Differences: Relative paths are context-sensitive, relying
+                    on the current URL. Absolute paths always refer to the same
+                    location from the root of the app. In an SPA, understanding
+                    these differences helps to manage navigation based on the
+                    application's routing hierarchy.
+                  </Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      xxx
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>xxx</Text>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </CardBody>
+        </Card>
+      </Box>
 
       <Box className="row" marginBottom="10">
         <Card shadow="md" borderWidth="1px" borderColor="gray.300">
@@ -1645,26 +1690,25 @@ const PageReactCoreConcepts = () => {
                     </Link>
                   </Text>
 
-
                   <footer className="accordion-footer">
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
-                        href="https://react.dev/learn/preserving-and-resetting-state"
-                        isExternal
-                      >
-                        Preserving and Resetting State
+                      href="https://react.dev/learn/preserving-and-resetting-state"
+                      isExternal
+                    >
+                      Preserving and Resetting State
                       <IconReact
                         fill={"#009dc6"}
                         width={"1.3rem"}
                         height={"1.3rem"}
                       />
-                      </Link>
+                    </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
-                        href="https://legacy.reactjs.org/docs/reconciliation.html"
-                        isExternal
-                      >
-                        Reconciliation
+                      href="https://legacy.reactjs.org/docs/reconciliation.html"
+                      isExternal
+                    >
+                      Reconciliation
                       <IconReact
                         fill={"#009dc6"}
                         width={"1.3rem"}
@@ -1672,8 +1716,6 @@ const PageReactCoreConcepts = () => {
                       />
                     </Link>
                   </footer>
-
-
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1774,7 +1816,7 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      What is the difference between a key and ref in React?
+                      What is the difference between a key &amp; ref in React?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -1875,10 +1917,166 @@ const PageReactCoreConcepts = () => {
                   </footer>
                 </AccordionPanel>
               </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      What are some tools for improved React Performance?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <UnorderedList>
+                    <ListItem>
+                      <Link
+                        isExternal
+                        href="https://github.com/welldone-software/why-did-you-render?tab=readme-ov-file"
+                      >
+                        Why did you render?
+                      </Link>
+                    </ListItem>
+                    <ListItem>Lighthouse (Chrome DevTools)</ListItem>
+                    <ListItem>
+                      <Link
+                        isExternal
+                        href="https://github.com/webpack-contrib/webpack-bundle-analyzer"
+                      >
+                        Bundle Analyzer Tools (Webpack/CRA)
+                      </Link>
+                    </ListItem>
+                  </UnorderedList>
+                  <Text>...</Text>
+
+                  <h3>
+                    Why is it bad when a function is recreated on every
+                    re-render?
+                  </h3>
+                  <Text>
+                    <Link
+                      href="https://chatgpt.com/share/66f57e1f-8da4-8001-b758-b4c20b4e2d72"
+                      isExternal
+                    >
+                      The answer.
+                    </Link>
+                  </Text>
+                </AccordionPanel>
+              </AccordionItem>
             </Accordion>
           </CardBody>
         </Card>
       </Box>
+
+      {/* 
+
+              <AccordionItem>
+                <Heading>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      *****Heading******
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <Heading>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      *****Heading******
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <Heading>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      *****Heading******
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <Heading>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      *****Heading******
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <Heading>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      *****Heading******
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
+              </AccordionItem> */}
 
       {/* <Box className="row" marginBottom="10">
         <Accordion defaultIndex={[0]} allowToggle>
