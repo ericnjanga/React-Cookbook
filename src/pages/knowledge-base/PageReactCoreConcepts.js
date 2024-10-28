@@ -1256,17 +1256,15 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      What is useState in React? 
+                      What is useState in React?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
                   <Text>
-                  https://chatgpt.com/share/671d4449-2230-8001-bd95-e7749ba74b97
+                    https://chatgpt.com/share/671d4449-2230-8001-bd95-e7749ba74b97
                   </Text>
- 
- 
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1288,7 +1286,9 @@ const PageReactCoreConcepts = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>https://chatgpt.com/share/671d44d5-5ab8-8001-9be3-3d210e99bcf1</Text>
+                  <Text>
+                    https://chatgpt.com/share/671d44d5-5ab8-8001-9be3-3d210e99bcf1
+                  </Text>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -1313,20 +1313,17 @@ const PageReactCoreConcepts = () => {
                   <Text>
                     Prop Drilling is a concept in React development where data
                     (props) are passed from one component to another through
-                    multiple layers of components. {' '} This can happen when a deeply  {' '}
-                  
+                    multiple layers of components. This can happen when a deeply{" "}
                     <Link
                       href="https://chatgpt.com/share/671d40e1-e5e4-8001-8037-f7ed20e7bbe0"
                       isExternal
                     >
-                      nested component requires
-                      ...
+                      nested component requires ...
                     </Link>
                   </Text>
                 </AccordionPanel>
               </AccordionItem>
 
-            
               <AccordionItem>
                 <h2>
                   <AccordionButton
@@ -1346,46 +1343,42 @@ const PageReactCoreConcepts = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                   <Text>
-                  The Context API in React is a powerful feature for managing state and passing data across the component tree without the need for prop drilling, which is the process of passing props down multiple levels from parent to child components.</Text>
+                    The Context API in React is a powerful feature for managing
+                    state and passing data across the component tree without the
+                    need for prop drilling, which is the process of passing
+                    props down multiple levels from parent to child components.
+                  </Text>
 
                   <h3>When to Use the Context API</h3>
                   <ul className="list-align-left">
-                    <li>
-                    You have global data
-                    </li>
-                    <li>
-                    You want to avoid prop drilling
-                    </li>
-                    <li>
-                    You want a lightweight state management solution
-                    </li>
+                    <li>You have global data</li>
+                    <li>You want to avoid prop drilling</li>
+                    <li>You want a lightweight state management solution</li>
                   </ul>
 
-<footer className="accordion-footer">
-  <Link
-    className="btn btn-small btn-secondary"
-    href="https://chatgpt.com/share/671d42d6-8354-8001-84ab-a461c74d2fba"
-    isExternal
-  >
-    More on Context API
-  </Link>
-  <Link
-    className="btn btn-small btn-secondary btn-icon"
-    href="https://react.dev/reference/react/createContext"
-    isExternal
-  >
-    Context API
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary"
+                      href="https://chatgpt.com/share/671d42d6-8354-8001-84ab-a461c74d2fba"
+                      isExternal
+                    >
+                      More on Context API
+                    </Link>
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://react.dev/reference/react/createContext"
+                      isExternal
+                    >
+                      Context API
                       <IconReact
                         fill={"#009dc6"}
                         width={"1.3rem"}
                         height={"1.3rem"}
                       />
-  </Link>
-</footer>
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
- 
-              
             </Accordion>
           </CardBody>
         </Card>
@@ -1418,7 +1411,7 @@ const PageReactCoreConcepts = () => {
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4}> 
+                <AccordionPanel pb={4}>
                   <h3>
                     What is Redux, and how does it differ from React’s built-in
                     state management?
