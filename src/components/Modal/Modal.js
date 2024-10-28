@@ -22,7 +22,7 @@ export const ModalContext = createContext();
  * -------------------
  * - Defines the state and logic ("opening", "closing", and "state")
  * - Encapsulates "Modal Context", and uses it to expose the state and logic to its children
- * - Is being used at the app's global level
+ * - NOTE: Is being used at the app's global level
  * @param {*} param0 
  * @returns 
  */

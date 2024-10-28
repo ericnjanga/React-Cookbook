@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import IconReact from "../../components/Icons/IconReact";
+import IconReact, { IconExternalLink } from "../../components/Icons/IconReact";
 import {
   Accordion,
   AccordionItem,
@@ -64,13 +64,12 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      Introduction
+                      What is React?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </Heading>
                 <AccordionPanel pb={4}>
-                  <h3>What is React?</h3>
                   <Text mb={0}>React:</Text>
 
                   <ul className="list-align-left">
@@ -83,38 +82,74 @@ const PageReactCoreConcepts = () => {
                     </li>
                     <li>
                       Excels at creating applications where data changes over
-                      time without reloading the page
+                      time without triggering a page reload
                     </li>
                   </ul>
+                </AccordionPanel>
+              </AccordionItem>
 
-                  <hr></hr>
-
-                  <h3>Why using React? Explain its benefits</h3>
-                  <Text mb={0}>Developers use React for several reasons:</Text>
+              <AccordionItem>
+                <Heading>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      Why using React?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>
+                  <Text>Developers use React for several reasons:</Text>
                   <ul className="list-align-left">
                     <li>
                       <b>Reusability:</b> Build components once, reuse
                       everywhere.
                     </li>
                     <li>
-                      <b>Efficiency:</b> Fast updates via Virtual DOM.
+                      <b>Efficiency:</b> Fast updates via{" "}
+                      <button className="btn-link" onClick={openModal}>
+                        Virtual DOM
+                      </button>
+                      .
                     </li>
                     <li>
                       <b>Simplicity:</b> Declarative syntax for easy
                       understanding.
                     </li>
                   </ul>
+                </AccordionPanel>
+              </AccordionItem>
 
-                  <hr></hr>
-                  <h3>
-                    How does React differs from other front-end frameworks like
-                    Angular or Vue?
-                  </h3>
+              <AccordionItem>
+                <Heading>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      Comparative analysis against other frameworks
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>
                   <Text>
                     React differs from other front-end frameworks like Angular
-                    and Vue in several key areas, including its philosophy,
-                    architecture, and features. Below is a detailed comparison
-                    between React, Angular, and Vue:
+                    and Vue in several key areas, including its{" "}
+                    <b>philosophy</b>, <b>architecture</b>, and <b>features</b>.
+                    See below:
                   </Text>
 
                   <TableContainer>
@@ -128,9 +163,15 @@ const PageReactCoreConcepts = () => {
                       <Thead>
                         <Tr>
                           <Th>Aspect</Th>
-                          <Th>React</Th>
-                          <Th>Angular</Th>
-                          <Th>Vue</Th>
+                          <Th>
+                            <b>React</b>
+                          </Th>
+                          <Th>
+                            <b>Angular</b>
+                          </Th>
+                          <Th>
+                            <b>Vue</b>
+                          </Th>
                         </Tr>
                       </Thead>
                       <Tbody>
@@ -156,13 +197,23 @@ const PageReactCoreConcepts = () => {
                           <Td>Routes Management</Td>
                           <Td>External (react-router)</Td>
                           <Td>Built-in (routing module)</Td>
-                          <Td>Built-in (Vuew-router)</Td>
+                          <Td>Built-in (Vue-router)</Td>
                         </Tr>
                         <Tr>
                           <Td>Performance</Td>
-                          <Td>Fast with Virtual DOM</Td>
+                          <Td>
+                            Fast with{" "}
+                            <button className="btn-link" onClick={openModal}>
+                              Virtual DOM
+                            </button>
+                          </Td>
                           <Td>Slower with change detection</Td>
-                          <Td>Fast with Virtual DOM</Td>
+                          <Td>
+                            Fast with{" "}
+                            <button className="btn-link" onClick={openModal}>
+                              Virtual DOM
+                            </button>
+                          </Td>
                         </Tr>
                       </Tbody>
                     </Table>
@@ -228,7 +279,7 @@ const PageReactCoreConcepts = () => {
                       href="https://chatgpt.com/share/671d0f29-6b3c-8001-a137-74d54f17f824"
                       isExternal
                     >
-                      More about React features
+                      More about React features <IconExternalLink />
                     </Link>
                   </footer>
                 </AccordionPanel>
@@ -256,51 +307,60 @@ const PageReactCoreConcepts = () => {
 
                   <List spacing={3} marginLeft="0" paddingLeft="0">
                     <ListItem>
-                      <Badge colorScheme="purple">
-                        React 0.3 - (July 2013)
-                      </Badge>{" "}
-                      : The first public release. Basic concept of React
-                      components and the Virtual DOM.
+                      <b>July 2013</b>{" "}
+                      <Badge colorScheme="purple">React 0.3</Badge> :{" "}
+                      <b>First public release</b>.{" "}
+                      <small>
+                        Basic concept of React components and the{" "}
+                        <button className="btn-link" onClick={openModal}>
+                          <b>Virtual DOM</b>
+                        </button>
+                      </small>
+                      .
                     </ListItem>
 
                     <ListItem>
-                      <Badge colorScheme="purple">
-                        React 16.0 - (September 2017)
-                      </Badge>{" "}
-                      New Core Architecture ("Fiber"). Introduction of{" "}
-                      <b>Error Boundaries</b>, <b>Portals</b>, <b>Fragments</b>.
+                      <b>Sep 2017</b>{" "}
+                      <Badge colorScheme="purple">React 16.0</Badge> :{" "}
+                      <b>New Core Architecture ("Fiber")</b>.{" "}
+                      <small>
+                        Introduction of <b>Error Boundaries</b>, <b>Portals</b>,{" "}
+                        <b>Fragments</b>
+                      </small>
+                      .
                     </ListItem>
                     <ListItem>
-                      <Badge colorScheme="purple">
-                        React 16.3 - (March 2018)
-                      </Badge>{" "}
-                      <b>New Lifecycle Methods</b>, Context API Update, Strict
-                      Mode was introduced.
+                      <b>Mar 2018</b>{" "}
+                      <Badge colorScheme="purple">React 16.3</Badge> :{" "}
+                      <b>New Lifecycle Methods</b>.{" "}
+                      <small>
+                        Context API Update, Strict Mode was introduced.
+                      </small>
                     </ListItem>
                     <ListItem>
-                      <Badge colorScheme="purple">
-                        React 16.8 - (February 2019)
-                      </Badge>{" "}
-                      Major milestone with the{" "}
-                      <b>introduction of React Hooks</b> (useState, useEffect,
-                      useContext, etc.).
+                      <b>Feb 2019</b>{" "}
+                      <Badge colorScheme="purple">React 16.8</Badge> : Major
+                      milestone with the <b>introduction of React Hooks</b>{" "}
+                      (useState, useEffect, etc.).
                     </ListItem>
 
                     <ListItem>
-                      <Badge colorScheme="purple">
-                        React 18.0 - (March 2022)
-                      </Badge>{" "}
-                      Introduced <b>new concurrent rendering features</b>,
-                      allowing React to work on multiple tasks simultaneously
-                      for improved performance and responsiveness.
+                      <b>Mar 2022</b>{" "}
+                      <Badge colorScheme="purple">React 18.0</Badge> :{" "}
+                      <b>New concurrent rendering features</b>,
+                      <small>
+                        allowing React to work on multiple tasks simultaneously
+                        for improved performance and responsiveness.
+                      </small>
                     </ListItem>
                     <ListItem>
-                      <Badge colorScheme="purple">
-                        React 18.x - (Ongoing Updates)
-                      </Badge>{" "}
-                      <b>Progressive Hydration</b>: Allows React to
-                      progressively hydrate the page during server-side
-                      rendering (SSR).
+                      <b>Ongoing Updates</b>{" "}
+                      <Badge colorScheme="purple">React 18.x</Badge> :{" "}
+                      <b>Progressive Hydration</b>.{" "}
+                      <small>
+                        Allows React to progressively hydrate the page during
+                        server-side rendering (SSR).
+                      </small>
                     </ListItem>
                   </List>
                 </AccordionPanel>
@@ -338,37 +398,42 @@ const PageReactCoreConcepts = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <UnorderedList className="list-align-left" mb="10">
-                    <ListItem>
-                      <Link
-                        href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
-                        isExternal
-                      >
-                        Document Object Model
-                      </Link>
-                    </ListItem>
-                    <ListItem>
-                      Programming interface that represents the web document as
-                      nodes and objects
-                    </ListItem>
-                    <ListItem>
+                  <Text mb={0}>The real DOM is: </Text>
+                  <ul className="list-align-left" mb="10">
+                    <li>Document Object Model</li>
+                    <li>Programming interface</li>
+                    <li>Represents the web document as nodes and objects</li>
+                    <li>
                       Allows programming languages such as JS to manipulate the
                       web document
-                    </ListItem>
-                  </UnorderedList>
+                    </li>
+                  </ul>
 
-                  <Text>
-                    The DOM is not a programming language, but without it, the
-                    JavaScript language wouldn't have any model or notion of web
-                    pages, HTML documents, SVG documents, and their component
-                    parts.
-                  </Text>
-                  <Text>
-                    The DOM is not part of the JavaScript language, but is
-                    instead a Web API used to build websites. It was designed to
-                    be independent of any particular programming language (can
-                    be implemented in Python too).
-                  </Text>
+                  <Text mb={0}>The real DOM: </Text>
+                  <ul className="list-align-left" mb="10">
+                    <li>
+                      <b>is NOT</b> a programming language, but without it, the
+                      JavaScript language wouldn't have any model or notion of
+                      web pages, HTML documents, SVG documents, and their
+                      component parts.
+                    </li>
+                    <li>
+                      <b>is NOT</b> part of the JavaScript language, but is
+                      instead a Web API used to build websites. It was designed
+                      to be independent of any particular programming language
+                      (can be implemented in Python too).
+                    </li>
+                  </ul>
+
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
+                      isExternal
+                    >
+                      More about the Real DOM <IconExternalLink />
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -390,21 +455,15 @@ const PageReactCoreConcepts = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <UnorderedList className="list-align-left">
-                    <ListItem>
-                      <Link
-                        href="https://legacy.reactjs.org/docs/faq-internals.html#what-is-the-virtual-dom"
-                        isExternal
-                      >
-                        Programming concept
-                      </Link>
-                    </ListItem>
-                    <ListItem>
+                  <Text mb={0}>The virtual DOM is: </Text>
+                  <ul className="list-align-left">
+                    <li>Programming concept</li>
+                    <li>
                       Keeps an "ideal" or virtual representation of the UI in
                       memory
-                    </ListItem>
-                    <ListItem>
-                      Syncs React elements with the "reat" DOM (
+                    </li>
+                    <li>
+                      Syncs React elements with the real DOM (
                       <Link
                         href="https://legacy.reactjs.org/docs/reconciliation.html"
                         isExternal
@@ -412,10 +471,22 @@ const PageReactCoreConcepts = () => {
                         Reconciliation process
                       </Link>
                       )
-                    </ListItem>
-                  </UnorderedList>
+                    </li>
+                  </ul>
 
                   <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://legacy.reactjs.org/docs/faq-internals.html#what-is-the-virtual-dom"
+                      isExternal
+                    >
+                      More on the virtual DOM
+                      <IconReact
+                        fill={"#009dc6"}
+                        width={"1.3rem"}
+                        height={"1.3rem"}
+                      />
+                    </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
                       href="https://react.dev/learn/preserving-and-resetting-state"
@@ -457,8 +528,8 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      What is the difference between the the real DOM and the
-                      virtual DOM?
+                      Comparative analysis between real and 
+                      virtual DOM
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -466,7 +537,7 @@ const PageReactCoreConcepts = () => {
                 <AccordionPanel pb={4}>
                   <Text>
                     The real DOM and virtual DOM differ in their <b>nature</b>,{" "}
-                    <b>interaction</b>, and <b>update</b> the UI.
+                    <b>interaction</b>, and <b>update</b> of the UI.
                   </Text>
 
                   <TableContainer>
@@ -488,18 +559,19 @@ const PageReactCoreConcepts = () => {
                         <Tr>
                           <Td>
                             <b>NATURE</b>
-                          </Td>
-                          <Td>Is an API</Td>
-                          <Td>Is a coding pattern</Td>
-                        </Tr>
-                        <Tr>
+                          </Td>   
                           <Td>
-                            <b>NATURE</b>
+                            <ul className="list-align-left mb-0">
+                              <li>Is an API</li>
+                              <li>Represents the document as nodes and objects</li>
+                            </ul>
                           </Td>
-                          <Td>Represents the document as nodes and objects</Td>
                           <Td>
-                            Is a copy of the document (virtual representation)
-                            that is kept in memory
+                            <ul className="list-align-left mb-0">
+                              <li>Is a coding pattern</li>
+                              <li>Is a copy of the document (virtual representation)
+                              that is kept in memory</li>
+                            </ul> 
                           </Td>
                         </Tr>
                         <Tr>
@@ -507,9 +579,9 @@ const PageReactCoreConcepts = () => {
                             <b>INTERRACTIONS</b> such as <b>form submit</b> or{" "}
                             <b>link navigation</b>
                           </Td>
-                          <Td>Trigger page reload</Td>
+                          <Td>Trigger a page reload</Td>
                           <Td>
-                            <b>Do not</b> trigger page reload
+                            <b>Do not</b> trigger a page reload
                           </Td>
                         </Tr>
                         <Tr>
@@ -526,9 +598,9 @@ const PageReactCoreConcepts = () => {
                               href="https://legacy.reactjs.org/docs/reconciliation.html"
                               isExternal
                             >
-                              Reconciliation
+                              Reconciliation process (also called "diffing")
                             </Link>{" "}
-                            process is performed by{" "}
+                            is performed by{" "}
                             <Link
                               href="https://legacy.reactjs.org/docs/react-dom.html"
                               isExternal
@@ -541,14 +613,6 @@ const PageReactCoreConcepts = () => {
                       </Tbody>
                     </Table>
                   </TableContainer>
-
-                  <Alert status="info">
-                    <AlertIcon />
-                    <Text margin="0">
-                      <b>NOTE:</b> The reconciliation process is also called
-                      "diffing".
-                    </Text>
-                  </Alert>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
@@ -890,7 +954,7 @@ const PageReactCoreConcepts = () => {
                       href="https://chatgpt.com/share/671d2a9b-9bec-8001-99e5-32b4f06d469a"
                       isExternal
                     >
-                      The purpose of Hooks
+                      The purpose of Hooks  <IconExternalLink />
                     </Link>
                   </footer>
                 </AccordionPanel>
@@ -938,7 +1002,7 @@ const PageReactCoreConcepts = () => {
                       href="https://chatgpt.com/share/671d300c-1754-8001-9256-86e2016ba1ac"
                       isExternal
                     >
-                      More on Custom hooks
+                      More on Custom hooks <IconExternalLink />
                     </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
@@ -1358,11 +1422,11 @@ const PageReactCoreConcepts = () => {
 
                   <footer className="accordion-footer">
                     <Link
-                      className="btn btn-small btn-secondary"
+                      className="btn btn-small btn-secondary btn-icon"
                       href="https://chatgpt.com/share/671d42d6-8354-8001-84ab-a461c74d2fba"
                       isExternal
                     >
-                      More on Context API
+                      More on Context API  <IconExternalLink />
                     </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
@@ -1716,11 +1780,11 @@ const PageReactCoreConcepts = () => {
 
                   <footer className="accordion-footer">
                     <Link
-                      className="btn btn-small btn-secondary"
+                      className="btn btn-small btn-secondary btn-icon"
                       href="https://chatgpt.com/share/671bf545-c350-8001-8c04-9da0f9215634"
                       isExternal
                     >
-                      More on React perfomance optimization
+                      More on React perfomance optimization  <IconExternalLink />
                     </Link>
                   </footer>
                 </AccordionPanel>
@@ -1819,11 +1883,11 @@ const PageReactCoreConcepts = () => {
 
                   <footer className="accordion-footer">
                     <Link
-                      className="btn btn-small btn-secondary"
+                      className="btn btn-small btn-secondary btn-icon"
                       href="https://chatgpt.com/share/671cfbf6-afe0-8001-8cca-a1b44838c683"
                       isExternal
                     >
-                      More on <b>Lazy Loading</b>
+                      More on <b>Lazy Loading</b>  <IconExternalLink />
                     </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
@@ -1909,11 +1973,11 @@ const PageReactCoreConcepts = () => {
 
                   <footer className="accordion-footer">
                     <Link
-                      className="btn btn-small btn-secondary"
+                      className="btn btn-small btn-secondary btn-icon"
                       href="https://chatgpt.com/share/671ce1ca-de08-8001-ab09-c811f2633c73"
                       isExternal
                     >
-                      More on <b>Key</b> and <b>Ref</b>
+                      More on <b>Key</b> and <b>Ref</b>  <IconExternalLink />
                     </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
@@ -1969,11 +2033,11 @@ const PageReactCoreConcepts = () => {
 
                   <footer className="accordion-footer">
                     <Link
-                      className="btn btn-small btn-secondary"
+                      className="btn btn-small btn-secondary btn-icon"
                       href="https://chatgpt.com/share/671cd960-2040-8001-b3c6-9502e248cd77"
                       isExternal
                     >
-                      More on React Memo
+                      More on React Memo  <IconExternalLink />
                     </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
