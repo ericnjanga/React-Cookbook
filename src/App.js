@@ -5,9 +5,9 @@ import theme from "./theme/theme";
 import { ChakraProvider } from "@chakra-ui/react";
 import { ColorModeScript } from "@chakra-ui/react";
 import AppRoutes from "./AppRoutes";
-import React from "react";
-import Modal from "./components/Modal/Modal";
-import { ModalProvider } from "./components/Modal/Modal";
+import React from "react"; 
+import Modal from "./components/ModalModule";
+import { ModalProvider } from "./components/ModalModule";
 
 function App() {
   // const { theme = 'light' } = useTheme();    className={`App theme-${theme}`}

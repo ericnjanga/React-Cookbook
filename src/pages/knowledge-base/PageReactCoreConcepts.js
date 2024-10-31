@@ -31,7 +31,8 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 import { List, ListItem, UnorderedList, OrderedList } from "@chakra-ui/react";
-import { ModalContext } from "../../components/Modal/Modal";
+import { ModalContext } from "../../components/ModalModule";
+import { IconBxlJsfiddle, IconChatGPT } from "../../components/Icons/IconReact";
 
 const PageReactCoreConcepts = () => {
   const { openModal } = useContext(ModalContext);
@@ -106,7 +107,7 @@ const PageReactCoreConcepts = () => {
                   </AccordionButton>
                 </Heading>
                 <AccordionPanel pb={4}>
-                  <Text>Developers use React for several reasons:</Text>
+                  <Text mb={0}>Developers use React for several reasons:</Text>
                   <ul className="list-align-left">
                     <li>
                       <b>Reusability:</b> Build components once, reuse
@@ -114,14 +115,14 @@ const PageReactCoreConcepts = () => {
                     </li>
                     <li>
                       <b>Efficiency:</b> Fast updates via{" "}
-                      <button className="btn-link" onClick={openModal}>
+                      <button className="btn-link" onClick={() => openModal(1)}>
                         Virtual DOM
                       </button>
                       .
                     </li>
                     <li>
-                      <b>Simplicity:</b> Declarative syntax for easy
-                      understanding.
+                      <b>Simplicity:</b> JSX's declarative syntax is easy to
+                      understand.
                     </li>
                   </ul>
                 </AccordionPanel>
@@ -241,35 +242,45 @@ const PageReactCoreConcepts = () => {
                   </AccordionButton>
                 </Heading>
                 <AccordionPanel pb={4}>
-                  <Text>React's main features are as follows:</Text>
+                  <Text mb={0}>React's main features are as follows:</Text>
 
                   <ul className="list-align-left">
                     <li>
-                      <button className="btn-link" onClick={openModal}>
+                      <button className="btn-link" onClick={() => openModal(1)}>
                         <b>JSX</b>
                       </button>
-                      : Template syntax extension to JavaScript
                     </li>
                     <li>
-                      <b>Components</b>: Reusable building blocks of a React
-                      application
+                      <button
+                        className="btn-link"
+                        onClick={() => openModal(10)}
+                      >
+                        <b>Components</b>
+                      </button>
                     </li>
                     <li>
-                      <button className="btn-link" onClick={openModal}>
+                      <button
+                        className="btn-link"
+                        onClick={() => openModal(11)}
+                      >
                         <b>Virtual DOM</b>
                       </button>
-                      : Lightweight copy of the{" "}
-                      <button className="btn-link" onClick={openModal}>
-                        real DOM
+                    </li>
+                    <li>
+                      <button
+                        className="btn-link"
+                        onClick={() => openModal(12)}
+                      >
+                        <b>State management</b>
                       </button>
                     </li>
                     <li>
-                      <b>State Management</b>: Control of data that changes over
-                      time in response of user actions
-                    </li>
-                    <li>
-                      <b>Hooks</b>: Functions that allow the usage of React
-                      features in functional components
+                      <button
+                        className="btn-link"
+                        onClick={() => openModal(13)}
+                      >
+                        <b>Hooks</b>
+                      </button>
                     </li>
                   </ul>
 
@@ -305,11 +316,12 @@ const PageReactCoreConcepts = () => {
                 <AccordionPanel pb={4}>
                   <Text>Key moments of React history:</Text>
 
-                  <List spacing={3} marginLeft="0" paddingLeft="0">
-                    <ListItem>
-                      <b>July 2013</b>{" "}
-                      <Badge colorScheme="purple">React 0.3</Badge> :{" "}
-                      <b>First public release</b>.{" "}
+                  <ul className="list-align-left">
+                    <li>
+                      <b>
+                        React 0.3.0 <small>(July 2013)</small>
+                      </b>
+                      : <Badge colorScheme="purple">First public release</Badge>{" "}
                       <small>
                         Basic concept of React components and the{" "}
                         <button className="btn-link" onClick={openModal}>
@@ -317,34 +329,38 @@ const PageReactCoreConcepts = () => {
                         </button>
                       </small>
                       .
-                    </ListItem>
+                    </li>
 
-                    <ListItem>
-                      <b>Sep 2017</b>{" "}
-                      <Badge colorScheme="purple">React 16.0</Badge> :{" "}
-                      <b>New Core Architecture ("Fiber")</b>.{" "}
+                    <li>
+                      <b>
+                        React 16.0 <small>(Sep 2017)</small>
+                      </b>
+                      :{" "}
+                      <Badge colorScheme="purple">
+                        New Core Architecture ("Fiber")
+                      </Badge>{" "}
                       <small>
                         Introduction of <b>Error Boundaries</b>, <b>Portals</b>,{" "}
                         <b>Fragments</b>
                       </small>
                       .
-                    </ListItem>
-                    <ListItem>
+                    </li>
+                    <li>
                       <b>Mar 2018</b>{" "}
                       <Badge colorScheme="purple">React 16.3</Badge> :{" "}
                       <b>New Lifecycle Methods</b>.{" "}
                       <small>
                         Context API Update, Strict Mode was introduced.
                       </small>
-                    </ListItem>
-                    <ListItem>
+                    </li>
+                    <li>
                       <b>Feb 2019</b>{" "}
                       <Badge colorScheme="purple">React 16.8</Badge> : Major
                       milestone with the <b>introduction of React Hooks</b>{" "}
                       (useState, useEffect, etc.).
-                    </ListItem>
+                    </li>
 
-                    <ListItem>
+                    <li>
                       <b>Mar 2022</b>{" "}
                       <Badge colorScheme="purple">React 18.0</Badge> :{" "}
                       <b>New concurrent rendering features</b>,
@@ -352,8 +368,8 @@ const PageReactCoreConcepts = () => {
                         allowing React to work on multiple tasks simultaneously
                         for improved performance and responsiveness.
                       </small>
-                    </ListItem>
-                    <ListItem>
+                    </li>
+                    <li>
                       <b>Ongoing Updates</b>{" "}
                       <Badge colorScheme="purple">React 18.x</Badge> :{" "}
                       <b>Progressive Hydration</b>.{" "}
@@ -361,8 +377,8 @@ const PageReactCoreConcepts = () => {
                         Allows React to progressively hydrate the page during
                         server-side rendering (SSR).
                       </small>
-                    </ListItem>
-                  </List>
+                    </li>
+                  </ul>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
@@ -528,8 +544,7 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      Comparative analysis between real and 
-                      virtual DOM
+                      Comparative analysis between real and virtual DOM
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -559,19 +574,23 @@ const PageReactCoreConcepts = () => {
                         <Tr>
                           <Td>
                             <b>NATURE</b>
-                          </Td>   
+                          </Td>
                           <Td>
                             <ul className="list-align-left mb-0">
                               <li>Is an API</li>
-                              <li>Represents the document as nodes and objects</li>
+                              <li>
+                                Represents the document as nodes and objects
+                              </li>
                             </ul>
                           </Td>
                           <Td>
                             <ul className="list-align-left mb-0">
                               <li>Is a coding pattern</li>
-                              <li>Is a copy of the document (virtual representation)
-                              that is kept in memory</li>
-                            </ul> 
+                              <li>
+                                Is a copy of the document (virtual
+                                representation) that is kept in memory
+                              </li>
+                            </ul>
                           </Td>
                         </Tr>
                         <Tr>
@@ -954,7 +973,7 @@ const PageReactCoreConcepts = () => {
                       href="https://chatgpt.com/share/671d2a9b-9bec-8001-99e5-32b4f06d469a"
                       isExternal
                     >
-                      The purpose of Hooks  <IconExternalLink />
+                      The purpose of Hooks <IconExternalLink />
                     </Link>
                   </footer>
                 </AccordionPanel>
@@ -1426,7 +1445,7 @@ const PageReactCoreConcepts = () => {
                       href="https://chatgpt.com/share/671d42d6-8354-8001-84ab-a461c74d2fba"
                       isExternal
                     >
-                      More on Context API  <IconExternalLink />
+                      More on Context API <IconExternalLink />
                     </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
@@ -1784,7 +1803,7 @@ const PageReactCoreConcepts = () => {
                       href="https://chatgpt.com/share/671bf545-c350-8001-8c04-9da0f9215634"
                       isExternal
                     >
-                      More on React perfomance optimization  <IconExternalLink />
+                      More on React perfomance optimization <IconExternalLink />
                     </Link>
                   </footer>
                 </AccordionPanel>
@@ -1887,7 +1906,7 @@ const PageReactCoreConcepts = () => {
                       href="https://chatgpt.com/share/671cfbf6-afe0-8001-8cca-a1b44838c683"
                       isExternal
                     >
-                      More on <b>Lazy Loading</b>  <IconExternalLink />
+                      More on <b>Lazy Loading</b> <IconExternalLink />
                     </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
@@ -1977,7 +1996,7 @@ const PageReactCoreConcepts = () => {
                       href="https://chatgpt.com/share/671ce1ca-de08-8001-ab09-c811f2633c73"
                       isExternal
                     >
-                      More on <b>Key</b> and <b>Ref</b>  <IconExternalLink />
+                      More on <b>Key</b> and <b>Ref</b> <IconExternalLink />
                     </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
@@ -2037,7 +2056,7 @@ const PageReactCoreConcepts = () => {
                       href="https://chatgpt.com/share/671cd960-2040-8001-b3c6-9502e248cd77"
                       isExternal
                     >
-                      More on React Memo  <IconExternalLink />
+                      More on React Memo <IconExternalLink />
                     </Link>
                     <Link
                       className="btn btn-small btn-secondary btn-icon"
@@ -2106,6 +2125,257 @@ const PageReactCoreConcepts = () => {
                       The answer.
                     </Link>
                   </Text>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </CardBody>
+        </Card>
+      </Box>
+
+      <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
+          <CardHeader>
+            <Heading as="h2" size="lg">
+              Security
+            </Heading>
+          </CardHeader>
+          <CardBody>
+            <Accordion defaultIndex={[0]} allowToggle>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      What is cross-site scripting (XSS)?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text mb={0}>
+                    Cross-Site Scripting (XSS) is a type of security
+                    vulnerability commonly found in web applications. It occurs
+                    when an attacker injects malicious scripts, usually
+                    JavaScript, into a trusted website. These scripts can then
+                    be executed in the user’s browser, allowing the attacker to
+                    steal sensitive information, manipulate the user interface,
+                    or redirect users to malicious sites.
+                  </Text>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      What types of XSS there is?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>There are three main types of XSS:</Text>
+                  <ol className="list-aligh-left">
+                    <li>
+                      <b>Stored XSS (Persistent XSS)</b>: The malicious script
+                      is permanently stored on the target server (in a database,
+                      message board, etc.), and every time a user accesses the
+                      page, the script is served to their browser. This can have
+                      a wide impact if many users visit the infected page.
+                    </li>
+                    <li>
+                      <b>Reflected XSS</b>: The malicious script is reflected
+                      off a web server, typically through URL parameters or HTTP
+                      headers. It’s then sent back to the user in the response
+                      and executed by their browser. This type often relies on
+                      social engineering, like getting users to click on a
+                      malicious link.
+                    </li>
+                    <li>
+                      <b>DOM-Based XSS</b>: This happens entirely on the client
+                      side when JavaScript modifies the DOM without proper
+                      validation, allowing attackers to inject scripts directly
+                      in the browser without needing a server response.
+                    </li>
+                  </ol>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      What are the prevention techniques against XSS?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>Here are a few technique we can use:</Text>
+                  <ol className="list-aligh-left">
+                    <li>
+                      <b>Input Validation and Sanitization</b>: Ensure that all
+                      input is{" "}
+                      <Link
+                        isExternal
+                        href="https://github.com/cure53/DOMPurify"
+                      >
+                        validated and sanitized
+                      </Link>{" "}
+                      before it is rendered on the page.
+                    </li>
+                    <li>
+                      <b>Escaping User Input</b>: Always escape user-generated
+                      data when it is output in the HTML context.
+                    </li>
+                    <li>
+                      <b>Content Security Policy (CSP)</b>: Set up a CSP header
+                      to control which resources are allowed to load on a page.
+                    </li>
+                    <li>
+                      <b>Encoding Outputs</b>: Encode any outputs from user
+                      inputs to avoid unwanted script execution in the browser.
+                    </li>
+                  </ol>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      In which ways does a web app get exposed to XSS?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>
+                    Web applications are exposed to Cross-Site Scripting (XSS)
+                    vulnerabilities in a few main ways:
+                  </Text>
+                  <ol className="list-aligh-left">
+                    <li>
+                      <b>User Input Fields</b>: Form fields where users can
+                      submit information are common vectors. URL parameters are
+                      often used by applications to retrieve data or customize
+                      views.
+                    </li>
+                    <li>
+                      <b>Dynamic Content Rendering</b>: (DOM manipulations) In
+                      JavaScript-heavy apps (e.g., React, Vue, or vanilla JS),
+                      manipulating the DOM dynamically without sanitizing inputs
+                      can lead to XSS.
+                    </li>
+                    <li>
+                      <b>Third-Party Resources and APIs</b>: Third-Party
+                      Libraries, including third-party libraries or widgets
+                      (e.g., ads, analytics scripts) may introduce
+                      vulnerabilities if the scripts are compromised.
+                    </li>
+                  </ol>
+
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://chatgpt.com/share/6723983d-92f0-8001-a00f-4c9da2978677"
+                      isExternal
+                    >
+                      More on XSS exposures
+                      <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                    </Link>
+                  </footer>
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      Other questions ...
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <Text>
+                    Web applications are exposed to Cross-Site Scripting (XSS)
+                    vulnerabilities in a few main ways:
+                  </Text>
+                  <ol className="list-aligh-left">
+                    <li>
+                      What are some common security vulnerabilities in React
+                      applications, and how would you mitigate them?
+                    </li>
+                    <li>
+                      How can you prevent cross-site scripting (XSS) attacks in
+                      a React app?
+                    </li>
+                    <li>
+                      What is the importance of authentication and authorization
+                      in React, and how can you implement them securely?
+                    </li>
+
+                    <li>
+                      How can you secure API calls made from a React
+                      application?
+                    </li>
+
+                    <li>
+                      What are some best practices for securing state management
+                      in React, especially when using tools like Redux?
+                    </li>
+                  </ol>
+
+                  <footer className="accordion-footer">
+                    <Link
+                      className="btn btn-small btn-secondary btn-icon"
+                      href="https://chatgpt.com/share/6723983d-92f0-8001-a00f-4c9da2978677"
+                      isExternal
+                    >
+                      More on XSS exposures
+                      <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                    </Link>
+                  </footer>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>

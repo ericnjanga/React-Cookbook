@@ -8,7 +8,7 @@ import {
   AccordionIcon,
   Link,
 } from "@chakra-ui/react";
-import { ModalContext } from "../../components/Modal/Modal";
+import { ModalContext } from "../../components/ModalModule";
 
 const PageJavascriptInterestingPatterns = () => {
   const { openModal } = useContext(ModalContext);

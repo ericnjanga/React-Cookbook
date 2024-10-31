@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Heading, Box, Card, CardBody, Text, Badge } from "@chakra-ui/react";
-import { ListItem, OrderedList, UnorderedList } from "@chakra-ui/react";
 import {
   Accordion,
   AccordionItem,
@@ -9,9 +8,10 @@ import {
   AccordionIcon,
   Link,
 } from "@chakra-ui/react";
-import { ModalContext } from "../../components/Modal/Modal";
+import { ModalContext } from "../../components/ModalModule";
+import { IconBxlJsfiddle, IconChatGPT } from "../../components/Icons/IconReact";
 
-const PageHTMLCSSInterviewQuestions = () => {
+const PageHTMLCSSCoreConcepts = () => {
   const { openModal } = useContext(ModalContext);
 
   return (
@@ -44,58 +44,44 @@ const PageHTMLCSSInterviewQuestions = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                   <Text>By writing, using, enabling, and ensuring:</Text>
-                  <OrderedList marginLeft="0" paddingLeft="1.3rem">
-                    <ListItem>
-                      <Badge colorScheme="purple">semantic HTML</Badge> ... (
-                      <Badge bgColor="blue.100">Avoid using &lt;div&gt;</Badge>{" "}
-                      or
-                      <Badge bgColor="blue.100">&lt;span&gt;</Badge> elements
-                      for important content, as these are non-semantic and don’t
-                      convey meaning to assistive technologies.{" "}
-                      <Badge bgColor="blue.100">
-                        Instead, use &lt;header&gt;
-                      </Badge>
-                      ,<Badge bgColor="blue.100">&lt;nav&gt;</Badge>,{" "}
-                      <Badge bgColor="blue.100">&lt;label&gt;</Badge>,
-                      <Badge bgColor="blue.100">&lt;textarea&gt;</Badge>, etc…
-                      to give structure and meaning to the content)
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">ARIA attributes</Badge> ...{" "}
-                      (Accessible Rich Internet Applications)
-                      <Badge bgColor="blue.100">
-                        (e.g., aria-label, aria-hidden, aria-live, ...)
-                      </Badge>
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">Keyboard Navigation</Badge>
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">
-                        sufficient color contrast
-                      </Badge>{" "}
-                      ​​betweeen text and background
-                    </ListItem>
-                    <ListItem>
-                      <Badge colorScheme="purple">
-                        Responsive and flexible layouts
-                      </Badge>
-                    </ListItem>
-                  </OrderedList>
+                  <ul className="list-aligh-left">
+                    <li>
+                      <button className="btn-link" onClick={() => openModal(7)}>
+                        Semantic HTML
+                      </button>
+                    </li>
+                    <li>
+                      <button className="btn-link" onClick={() => openModal(8)}>
+                        ARIA attributes
+                      </button>
+                    </li>
+                    <li>
+                      <button className="btn-link" onClick={() => openModal(9)}>
+                        Keyboard Navigation
+                      </button>
+                    </li>
+                    <li>
+                      sufficient color contrast ​​betweeen text and background
+                    </li>
+                    <li>Responsive and flexible layouts</li>
+                  </ul>
 
                   <footer className="accordion-footer">
                     <Link
+                      className="btn btn-small btn-secondary btn-icon"
                       href="https://chatgpt.com/share/6718f079-9674-8001-a48b-2f6ced5eb123"
                       isExternal
                     >
                       Accessibility best practices
+                      <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
                     </Link>
-                    &nbsp; | &nbsp;
                     <Link
+                      className="btn btn-small btn-secondary btn-icon"
                       href="https://chatgpt.com/share/6718f286-7a24-8001-a9a5-27b418df3bcc"
                       isExternal
                     >
                       Enabling keyboard navigation
+                      <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
                     </Link>
                   </footer>
                 </AccordionPanel>
@@ -113,8 +99,7 @@ const PageHTMLCSSInterviewQuestions = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      What are some common CSS layout techniques, and when would
-                      you use each?
+                      Common CSS layout techniques
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -122,52 +107,29 @@ const PageHTMLCSSInterviewQuestions = () => {
                 <AccordionPanel pb={4}>
                   <ul className="list-align-left">
                     <li>
-                      <button className="btn-link" onClick={openModal}>
-                        Grid layouts
+                      <button className="btn-link" onClick={() => openModal(2)}>
+                        Grid layout
                       </button>
-                      {/* A two-dimensional layout system that
-                      allows you to create complex, grid-based designs. It’s
-                      used when both rows and columns need to be defined (e.g.,
-                      dashboards, galleries, complex page) */}
                     </li>
                     <li>
-                      <button className="btn-link" onClick={openModal}>
-                        Flexbox layouts
+                      <button className="btn-link" onClick={() => openModal(3)}>
+                        Flexbox layout
                       </button>
-                      {/* A one-dimensional layout model
-                      that allows you to align and distribute space between
-                      items in a container, either in a row or column. Used for
-                      one-dimensional layouts, either in a row or a column
-                      (e.g., navigation bars, content sections, or forms), to
-                      align items vertically or horizontally, distribute space
-                      evenly, or for simple responsive layoutslayouts), or
-                      easily center or align items within grid cells. */}
                     </li>
                     <li>
-                      <button className="btn-link" onClick={openModal}>
-                        Float layouts
+                      <button className="btn-link" onClick={() => openModal(4)}>
+                        Float layout
                       </button>
-                      {/* An older method of creating layouts
-                      by floating elements left or right within a container,
-                      causing content to wrap around them. Historically used for
-                      creating multi-column layouts, but largely replaced by
-                      Flexbox and Grid. */}
                     </li>
                     <li>
-                      <button className="btn-link" onClick={openModal}>
-                        Multi-Column layouts
+                      <button className="btn-link" onClick={() => openModal(5)}>
+                        Multi-Column layout
                       </button>
-                      {/* The columns property allows
-                      content to be divided into multiple columns, similar to
-                      how text flows in a newspaper. Used for text-heavy content
-                      that needs to be presented in a columnar format (e.g.,
-                      articles, news content). */}
                     </li>
                     <li>
-                      <button className="btn-link" onClick={openModal}>
-                        Positioning layouts
+                      <button className="btn-link" onClick={() => openModal(6)}>
+                        Positioning layout
                       </button>
-                      {/* Absolute, Relative, Fixed, Sticky */}
                     </li>
                   </ul>
                 </AccordionPanel>
@@ -250,11 +212,12 @@ const PageHTMLCSSInterviewQuestions = () => {
 
                   <footer className="accordion-footer">
                     <Link
-                      className="btn btn-small btn-secondary"
+                      className="btn btn-small btn-secondary btn-icon"
                       href="https://jsfiddle.net/enjanga/wqvpbd9k/54/"
                       isExternal
                     >
                       See code examples
+                      <IconBxlJsfiddle width={"1.3rem"} height={"1.3rem"} />
                     </Link>
                   </footer>
                 </AccordionPanel>
@@ -346,23 +309,92 @@ const PageHTMLCSSInterviewQuestions = () => {
                     Responsive design is implemented by combining various
                     techniques:
                   </Text>
-                  <UnorderedList marginLeft="0" paddingLeft="1.3rem">
-                    <ListItem>Mobile-First Approach</ListItem>
-                    <ListItem>Responsive Frameworks</ListItem>
-                    <ListItem>Media Queries</ListItem>
-                    <ListItem>Viewport Meta Tag</ListItem>
-                    <ListItem>Fluid Grid Layouts</ListItem>
-                  </UnorderedList>
+                  <ol className="list-align-left">
+                    <li>Viewport Meta Tag</li>
+                    <li>Responsive Frameworks</li>
+                    <li>Mobile-First Approach</li>
+                    <li>Media Queries</li>
+                    <li>Fluid Grid Layouts</li>
+                  </ol>
 
                   <footer className="accordion-footer">
                     <Link
-                      className="btn btn-small btn-secondary"
+                      className="btn btn-small btn-secondary btn-icon"
                       href="https://chatgpt.com/share/6719010c-b180-8001-bd6b-96374027173a"
                       isExternal
                     >
                       Key aspects of responsive designs
+                      <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
                     </Link>
                   </footer>
+                </AccordionPanel>
+              </AccordionItem>
+
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
+                      *** More concepts
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <ul>
+                    <li>
+                      1. What is the difference between inline, block, and inline-block display values? --- 
+                      Describe how each affects element layout, width/height, and line breaks.
+                    </li>
+                    <li>
+                      2. How does the CSS box model work?
+                      Explain the parts of the box model (content, padding, border, and margin) and how they affect an element’s size and positioning.
+                    </li>
+                    <li>
+                      3. What are CSS Flexbox and Grid, and when would you use each?
+Describe the main differences and use cases for Flexbox and Grid for building responsive layouts.
+
+                    </li>
+                    <li>
+                      4. Explain the concept of specificity in CSS and how it affects styles.
+                      Discuss how specificity is calculated and how it can impact which styles are applied when multiple rules target the same element.
+                    </li>
+                    <li>
+                    5. What is the position property, and what are the differences between static, relative, absolute, fixed, and sticky positioning?
+                    Describe each position type and how it affects element layout in relation to the document or parent elements.
+                    </li>
+                    
+                    <li>
+                      6. How does CSS inheritance work, and which properties are inherited by default?
+                      Explain how inheritance works in CSS and mention examples of properties that are or aren’t inherited by default.
+                    </li>
+                    <li>
+                      7. What are pseudo-classes and pseudo-elements, and how do they differ?
+                      Provide examples, like :hover, :nth-child(), and ::before, and describe the difference in usage between pseudo-classes and pseudo-elements.
+                    </li>
+                    <li>
+                      8. How does CSS specificity hierarchy work, and how can you override styles?
+                      Discuss the hierarchy of IDs, classes, and element selectors, and how to use !important or specificity to override styles.
+                    </li>
+                    <li>
+                      9. What are arrow functions, and how do they differ from
+                      regular functions? Explain syntax differences, implicit
+                      returns, and how arrow functions don’t bind their own
+                      this.
+                    </li>
+                    <li>
+                      10. How would you implement a responsive design in CSS?
+                      Describe the use of media queries, relative units (like %, vw, vh), and other techniques for creating layouts that adapt to different screen sizes.
+                    </li>
+                  </ul>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
@@ -373,4 +405,4 @@ const PageHTMLCSSInterviewQuestions = () => {
   );
 };
 
-export default PageHTMLCSSInterviewQuestions;
+export default PageHTMLCSSCoreConcepts;

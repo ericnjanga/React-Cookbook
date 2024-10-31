@@ -9,7 +9,7 @@ import ResourcesOverview from "./pages/additional-resources/PageOverview";
 import PageHighOrderComponents from "./pages/coding-patterns/PageHighOrderComponents";
 import PageRenderProps from "./pages/coding-patterns/PageRenderProps";
 import PageReactCoreConcepts from "./pages/knowledge-base/PageReactCoreConcepts";
-import PageHTMLCSSInterviewQuestions from "./pages/knowledge-base/PageHTMLCSSInterviewQuestions";
+import PageHTMLCSSCoreConcepts from "./pages/knowledge-base/PageHTMLCSSCoreConcepts";
 import PageJavascriptCoreConcepts from "./pages/knowledge-base/PageJavascriptCoreConcepts";
 import PageHome from "./pages";
 import LayoutPage, { LayoutTemp } from "./layouts/LayoutPage";
@@ -74,7 +74,7 @@ const AppRoutes = () => {
           </Route>
           <Route path="html-and-css" element={<LayoutPage />}>
             <Route index element={<Navigate to="core-concepts" />} /> {/* Parent route links here by default */}
-            <Route path="core-concepts" element={<PageHTMLCSSInterviewQuestions />} />
+            <Route path="core-concepts" element={<PageHTMLCSSCoreConcepts />} />
           </Route>
           <Route path="react" element={<LayoutPage />}>
           <Route index element={<Navigate to="core-concepts" />} /> {/* Parent route links here by default */}

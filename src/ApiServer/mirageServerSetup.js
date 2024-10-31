@@ -17,6 +17,66 @@ const makeMirageServer = () => {
         title: 'JSX',
         description: '---JSX---Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
       });
+      server.create('definition', {
+        id: 2, 
+        title: 'Grid Layout',
+        description: 'A two-dimensional layout system that allows you to create complex, grid-based designs. It’s used when both rows and columns need to be defined (e.g., dashboards, galleries, complex page).',
+      });
+      server.create('definition', {
+        id: 3, 
+        title: 'Flex Layout',
+        description: 'A one-dimensional layout model that allows you to align and distribute space between items in a container, either in a row or column. Used for one-dimensional layouts, either in a row or a column (e.g., navigation bars, content sections, or forms), to align items vertically or horizontally, distribute space easily center or align items within grid cells.',
+      });
+      server.create('definition', {
+        id: 4, 
+        title: 'Float layout',
+        description: 'An older method of creating layouts by floating elements left or right within a container, causing content to wrap around them. Historically used for creating multi-column layouts, but largely replaced by Flexbox and Grid.',
+      });
+      server.create('definition', {
+        id: 5, 
+        title: 'Multi-Column layout',
+        description: 'The columns property allows content to be divided into multiple columns, similar to how text flows in a newspaper. Used for text-heavy content that needs to be presented in a columnar format (e.g., articles, news content).',
+      });
+      server.create('definition', {
+        id: 6, 
+        title: 'Positioning layout',
+        description: 'Absolute, Relative, Fixed, Sticky.',
+      });
+      server.create('definition', {
+        id: 7, 
+        title: 'Semantic HTML',
+        description: 'Avoid using <div> <span> elements for important content, as these are non-semantic and don’t convey meaning to assistive technologies. Instead, use <header> <nav></Badge>, <label>, <textarea>, etc… to give structure and meaning to the content).',
+      });
+      server.create('definition', {
+        id: 8, 
+        title: 'ARIA attributes',
+        description: 'ARIA (Accessible Rich Internet Applications) attributes are HTML attributes that improve web accessibility by providing extra information to assistive technologies (like screen readers). They help describe elements, their roles, states, and properties, making interactive content more accessible to users with disabilities. (e.g., aria-label, aria-hidden, aria-live, ...)',
+      });
+      server.create('definition', {
+        id: 9, 
+        title: 'Keyboard Navigation',
+        description: 'Keyboard navigation enhances web accessibility by allowing users to navigate and interact with a website using only a keyboard. This is essential for users who can’t use a mouse, including those with mobility impairments or vision disabilities, enabling them to access content, links, and interactive elements through keyboard keys like Tab, Enter, and arrow keys. ------- HOW KEYBOARD NAV IS SETUP ON THE DOCUMENT: Keyboard navigation on a web document is set up by ensuring a logical tab order, using HTML elements like links and buttons (which are natively focusable), and applying tabindex where necessary. ARIA attributes like aria-label and role also help clarify element functions, while JavaScript event listeners (e.g., for Enter and Space keys) enable interactions.',
+      });
+      server.create('definition', {
+        id: 10, 
+        title: 'Components',
+        description: '---Components---Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
+      });
+      server.create('definition', {
+        id: 11, 
+        title: 'Virtual DOM',
+        description: '---Virtual DOM---Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
+      });
+      server.create('definition', {
+        id: 12, 
+        title: 'State management',
+        description: '---State management---Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
+      });
+      server.create('definition', {
+        id: 13, 
+        title: 'Hooks',
+        description: '---Hooks---Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
+      });
 
 
 
