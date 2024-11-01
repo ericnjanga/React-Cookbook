@@ -415,6 +415,18 @@ const PageReactCoreConcepts = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                   <Text mb={0}>The real DOM is: </Text>
+
+                  <h1>**** TO DO:</h1>
+                  <Link isExternal href="https://chatgpt.com/share/67239b23-4778-8001-89dd-129b13c2b6a0">Render HTML content coming through an API</Link>
+
+                  <p><b>As an example</b>: Save DOM definition in the "definition" database and render it here and inside modals.</p>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+
+
                   <ul className="list-align-left" mb="10">
                     <li>Document Object Model</li>
                     <li>Programming interface</li>
@@ -479,7 +491,7 @@ const PageReactCoreConcepts = () => {
                       memory
                     </li>
                     <li>
-                      Syncs React elements with the real DOM (
+                      Synchronizes React elements with the real DOM (
                       <Link
                         href="https://legacy.reactjs.org/docs/reconciliation.html"
                         isExternal
@@ -608,23 +620,24 @@ const PageReactCoreConcepts = () => {
                             <b>UI UPDATES</b> manipulations
                           </Td>
                           <Td>
-                            Have <b>direct effect</b> on the document
+                            Permits <b>direct manipulations</b> on the document
                           </Td>
                           <Td>
-                            Have <b>NO direct effect</b> on the document, and
-                            are only applied <b>after</b> the{" "}
+                            Updates the copy of the document in memory {" "}
+                            
                             <Link
-                              href="https://legacy.reactjs.org/docs/reconciliation.html"
+                              href="https://chatgpt.com/share/67241fc0-1f68-8001-abf5-def7cf2aff84"
                               isExternal
                             >
-                              Reconciliation process (also called "diffing")
-                            </Link>{" "}
-                            is performed by{" "}
+                            (diffing)
+                            </Link>
+                            , then synchronizes it with the real DOM {" "}
+                            
                             <Link
-                              href="https://legacy.reactjs.org/docs/react-dom.html"
+                              href="https://chatgpt.com/share/67241ff8-2e68-8001-a993-7b816b5efcf9"
                               isExternal
                             >
-                              ReactDOM
+                            (reconciliation)
                             </Link>
                             .
                           </Td>
