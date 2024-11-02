@@ -17,11 +17,7 @@ import {
   Card,
   CardBody,
   Link,
-  Text,
-  Alert,
-  AlertIcon,
-  Divider,
-  HStack,
+  Text, 
   Table,
   Thead,
   Tbody,
@@ -30,9 +26,10 @@ import {
   Td,
   TableContainer,
 } from "@chakra-ui/react";
-import { List, ListItem, UnorderedList, OrderedList } from "@chakra-ui/react";
+import { ListItem, UnorderedList, OrderedList } from "@chakra-ui/react";
 import { ModalContext } from "../../components/ModalModule";
-import { IconBxlJsfiddle, IconChatGPT } from "../../components/Icons/IconReact";
+import { IconChatGPT } from "../../components/Icons/IconReact";
+import ContentFetcher from "../../components/ContentFetcher/ContentFetcher";
 
 const PageReactCoreConcepts = () => {
   const { openModal } = useContext(ModalContext);
@@ -244,34 +241,10 @@ const PageReactCoreConcepts = () => {
                 <AccordionPanel pb={4}>
                   <Text mb={0}>React's main features are as follows:</Text>
 
-                  <ul className="list-align-left">
+                  <ol className="list-align-left">
                     <li>
                       <button className="btn-link" onClick={() => openModal(1)}>
-                        <b>JSX</b>
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        className="btn-link"
-                        onClick={() => openModal(10)}
-                      >
-                        <b>Components</b>
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        className="btn-link"
-                        onClick={() => openModal(11)}
-                      >
-                        <b>Virtual DOM</b>
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        className="btn-link"
-                        onClick={() => openModal(12)}
-                      >
-                        <b>State management</b>
+                        JSX
                       </button>
                     </li>
                     <li>
@@ -279,10 +252,34 @@ const PageReactCoreConcepts = () => {
                         className="btn-link"
                         onClick={() => openModal(13)}
                       >
-                        <b>Hooks</b>
+                        Hooks
                       </button>
                     </li>
-                  </ul>
+                    <li>
+                      <button
+                        className="btn-link"
+                        onClick={() => openModal(11)}
+                      >
+                        Virtual DOM
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        className="btn-link"
+                        onClick={() => openModal(12)}
+                      >
+                        State management
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        className="btn-link"
+                        onClick={() => openModal(10)}
+                      >
+                        Components
+                      </button>
+                    </li>
+                  </ol>
 
                   <footer className="accordion-footer">
                     <Link
@@ -324,7 +321,10 @@ const PageReactCoreConcepts = () => {
                       : <Badge colorScheme="purple">First public release</Badge>{" "}
                       <small>
                         Basic concept of React components and the{" "}
-                        <button className="btn-link" onClick={openModal}>
+                        <button
+                          className="btn-link"
+                          onClick={() => openModal(11)}
+                        >
                           <b>Virtual DOM</b>
                         </button>
                       </small>
@@ -408,28 +408,69 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
+                      **** Test content fetcher
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <ContentFetcher id={12} />
+                </AccordionPanel>
+              </AccordionItem>
+
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "blue.200", color: "gray.900" }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="20"
+                    >
                       What is the real DOM?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
+
+
+
+                {/* <ContentFetcher id={12} /> */}
+
+
+
+
                   <Text mb={0}>The real DOM is: </Text>
 
-                  <h1>**** TO DO:</h1>
-                  <Link isExternal href="https://chatgpt.com/share/67239b23-4778-8001-89dd-129b13c2b6a0">Render HTML content coming through an API</Link>
+                  <div className="warning">
+                    <h1>**** TO DO:</h1>
+                    <Link
+                      isExternal
+                      href="https://chatgpt.com/share/67239b23-4778-8001-89dd-129b13c2b6a0"
+                    >
+                      Render HTML content coming through an API
+                    </Link>
 
-                  <p><b>As an example</b>: Save DOM definition in the "definition" database and render it here and inside modals.</p>
+                    <p>
+                      <b>As an example</b>: Save DOM definition in the
+                      "definition" database and render it here and inside
+                      modals.
+                    </p>
+                  </div>
                   <br></br>
                   <br></br>
                   <br></br>
                   <br></br>
                   <br></br>
-
 
                   <ul className="list-align-left" mb="10">
                     <li>Document Object Model</li>
-                    <li>Programming interface</li>
+                    <li>Programming interface (an API)</li>
                     <li>Represents the web document as nodes and objects</li>
                     <li>
                       Allows programming languages such as JS to manipulate the
@@ -623,21 +664,19 @@ const PageReactCoreConcepts = () => {
                             Permits <b>direct manipulations</b> on the document
                           </Td>
                           <Td>
-                            Updates the copy of the document in memory {" "}
-                            
+                            Updates the document's copy in memory{" "}
                             <Link
                               href="https://chatgpt.com/share/67241fc0-1f68-8001-abf5-def7cf2aff84"
                               isExternal
                             >
-                            (diffing)
+                              (diffing)
                             </Link>
-                            , then synchronizes it with the real DOM {" "}
-                            
+                            , then synchronizes it with the real DOM{" "}
                             <Link
                               href="https://chatgpt.com/share/67241ff8-2e68-8001-a993-7b816b5efcf9"
                               isExternal
                             >
-                            (reconciliation)
+                              (reconciliation)
                             </Link>
                             .
                           </Td>
@@ -720,45 +759,55 @@ const PageReactCoreConcepts = () => {
                 <AccordionPanel pb={4}>
                   <OrderedList marginLeft=".5rem" paddingLeft="0">
                     <ListItem mb=".7rem">
-                      <div>Write HTML-like JS code.</div>
-                      <Code>
-                        const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;
-                      </Code>
-                    </ListItem>
-                    <ListItem mb=".7rem">
                       <div>
-                        Option to embed JS expressions inside curly braces
-                        &#123;&#125;
+                        The JSX code looks like HTML and can embed JavaScript
+                        expressions inside curly braces &#123;&#125;.
                       </div>
                       <Code>
+                        const element = &lt;h1&gt;Hello, dear!&lt;/h1&gt;;
+                      </Code>
+                      <Code>
                         const val = "John"; <br />
-                        const element = &lt;h1&gt;Hello,
+                        const element = &lt;h1&gt;Hello, dear
                         &#123;val&#125;!&lt;/h1&gt;;
                       </Code>
                     </ListItem>
                     <ListItem mb=".7rem">
                       <div>
-                        Transpiled into React elements (by compilers like Babel
-                        with{" "}
-                        <Badge colorScheme="purple">React.createElement</Badge>{" "}
+                        It is then transpiled into React elements (by compilers
+                        such as Babel with{" "}
+                        <button className="btn-link" onClick={openModal}>
+                          React.createElement()
+                        </button>{" "}
                         function):
                       </div>
                       <Code>
                         const element = &#123; <br />
                         &nbsp;&nbsp;type: 'h1', <br />
                         &nbsp;&nbsp;props: &#123; <br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;children: 'Hello, world!' <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;children: 'Hello, dear John!'{" "}
+                        <br />
                         &nbsp;&nbsp;&#125; <br />
                         &#125;;
                       </Code>
                     </ListItem>
                     <ListItem mb=".7rem">
-                      React element stored in the virtual DOM.
+                      The resulting React element, after a{" "}
+                      <button className="btn-link" onClick={openModal}>
+                        diffing process
+                      </button>{" "}
+                      is stored in the virtual DOM.
                     </ListItem>
                     <ListItem mb=".7rem">
                       <div>
-                        From virtual DOM to actual DOM node using{" "}
-                        <Badge colorScheme="purple">ReactDOM.render()</Badge>{" "}
+                        The virtual DOM, through a process of{" "}
+                        <button className="btn-link" onClick={openModal}>
+                          reconciliation
+                        </button>{" "}
+                        will turn it into actual DOM node using the{" "}
+                        <button className="btn-link" onClick={openModal}>
+                          ReactDOM.render()
+                        </button>{" "}
                         function.
                       </div>
                       <Code>
@@ -768,7 +817,7 @@ const PageReactCoreConcepts = () => {
                     </ListItem>
                     <ListItem mb=".7rem">
                       <div>Final DOM node output:</div>
-                      <Code>&lt;h1&gt;Hello, John!&lt;/h1&gt;</Code>
+                      <Code>&lt;h1&gt;Hello, dear John!&lt;/h1&gt;</Code>
                     </ListItem>
                   </OrderedList>
                 </AccordionPanel>
@@ -808,7 +857,7 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      What is the difference between an element and a component?
+                      Comparative analysis between an element and a component
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -833,11 +882,11 @@ const PageReactCoreConcepts = () => {
                         <Tr>
                           <Td>Definition</Td>
                           <Td>
-                            A plain JavaScript object that represents a DOM
+                            Is a plain JavaScript object that represents a DOM
                             element.
                           </Td>
                           <Td>
-                            A JavaScript function (or class) that returns React
+                            Is a JavaScript function (or class) that returns React
                             elements (often using{" "}
                             <button className="btn-link" onClick={openModal}>
                               JSX
@@ -848,29 +897,22 @@ const PageReactCoreConcepts = () => {
                         <Tr>
                           <Td>Creation/Type</Td>
                           <Td>
-                            Produced by{" "}
+                            Is transpilled from a {" "}
                             <button className="btn-link" onClick={openModal}>
                               JSX
                             </button>{" "}
-                            syntax, which gets transpiled into
-                            React.createElement() calls. For example, &lt;div
+                            into React.createElement() calls. For example, &lt;div
                             /&gt; gets converted to React.createElement('div').
                           </Td>
                           <Td>
-                            Can be either functional or class-based. Functional
-                            components are often simpler and use hooks for state
-                            and lifecycle management, while classes use built-in
-                            methods.
+                            If functional, uses hooks for state and lifecycle management; if class-based, use built-in methods.
                           </Td>
                         </Tr>
                         <Tr>
                           <Td>Immutability/Reusability</Td>
+                          <Td>Is immutable: once created, it cannot be changed.</Td>
                           <Td>
-                            Are immutable; once created, they cannot be changed.
-                          </Td>
-                          <Td>
-                            Are reusable building blocks and can manage their
-                            own state or lifecycle.
+                            Is a reusable building block.
                           </Td>
                         </Tr>
                       </Tbody>
@@ -1113,7 +1155,7 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      Explain the difference between Functional and Class
+                      Comparative analysis between Functional and Class
                       components
                     </Box>
                     <AccordionIcon />
@@ -1234,8 +1276,8 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      What is the difference between controlled and uncontrolled
-                      components?
+                      Comparative analysis between controlled and uncontrolled
+                      components
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -1658,7 +1700,7 @@ const PageReactCoreConcepts = () => {
                   <Text>...</Text>
 
                   <h3>
-                    What is the difference between relative and absolute paths?
+                  Comparative analysis between relative and absolute paths?
                   </h3>
                   <Text>
                     In the context of Single Page Applications (SPAs), relative
@@ -1985,7 +2027,7 @@ const PageReactCoreConcepts = () => {
                       fontWeight="bold"
                       fontSize="20"
                     >
-                      What is the difference between a key &amp; ref in React?
+                      Comparative analysis between "key" &amp; "ref" in React?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>

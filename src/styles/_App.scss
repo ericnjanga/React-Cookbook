@@ -62,6 +62,14 @@
 }
 
 
+.warning {
+  color: red;
+  *, a {
+    color: red!important;
+  }
+}
+
+
 .accordion-footer {
   display: flex;
   gap: 1rem;

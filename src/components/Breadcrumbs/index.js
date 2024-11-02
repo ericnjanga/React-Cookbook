@@ -21,7 +21,7 @@ const Breadcrumbs = () => {
   // const routeSegments = useRouteSegments();
   const breadSection = useSectionBy(crumbs[0]);
 
-  console.log('....Breadcrumbs....');
+  // console.log('....Breadcrumbs....');
 
 
 

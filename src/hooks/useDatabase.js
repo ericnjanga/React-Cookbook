@@ -4,16 +4,16 @@
  *
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 /**
  * - Responsible for fetching data from the "/api/definition"
- * TODO:
- * NEEDS TO BE OPTIMIZED FOR PERFORMANCE
+ * - MEMOIZATION: Using useCallback() to ensure fetchDefinition() is not re-created on each render
  * @returns Promise containing either the successful data or and error object
  */
 export const useDefinition = () => {
-  const fetchDefinition = async (id) => {
+  // NOTE: the
+  const fetchDefinition = useCallback(async (id) => {
     try {
       // Issue the API request and wait for the response ...
       const response = await fetch(`/api/definition/${id}`);
@@ -39,7 +39,7 @@ export const useDefinition = () => {
     catch (error) { 
       return { title:'Oups, something went wrong!', description:error.message };
     }
-  };
+  }, []);
 
   return {
     fetchDefinition,
@@ -155,7 +155,7 @@ export const useSectionBy = (sectionUri) => {
       }
 
       setSection(data.sections[0]);
-      console.log(">>>>> data.sections ", data.sections[0]);
+      // console.log(">>>>> data.sections ", data.sections[0]);
     } catch (error) {
       console.error(error.message);
     }
