@@ -1,3 +1,8 @@
+:root {
+  --site-col-btnOff: #fff; // #f1f2ff; // #e0e2ee;
+  --site-col-panel-active: #f1f2ff;
+  --site-col-btn-hover: #d3d7ff;
+}
 
 html[data-theme="light"] {  
   .chakra-accordion__item {
@@ -6,7 +11,27 @@ html[data-theme="light"] {
   } 
 }
  
- 
+.accordion {
+  border-width: 0;
+}
+.accordion__button[aria-expanded="true"] {
+  background: var(--site-col-btn-hover)!important;
+}
+.accordion__item {
+  background: var(--site-col-panel-active)!important;
+}
+.accordion__button {
+  font-size: 1.25rem;
+  font-weight: bold;
+  background: var(--site-col-btnOff)!important;
+  
+
+  &:hover {
+    background: var(--site-col-btn-hover)!important;
+  }
+}
+
+
 
 
 
@@ -23,8 +48,8 @@ html[data-theme="light"] {
     }
   }
 
-  .chakra-card__body {
-    // border: 3px solid blueviolet;
-    padding-top: 0;
-  }
+  // .chakra-card__body {
+  //   // border: 3px solid blueviolet;
+  //   padding-top: 0;
+  // }
 }

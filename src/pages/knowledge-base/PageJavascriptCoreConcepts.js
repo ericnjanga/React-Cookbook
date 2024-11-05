@@ -10,6 +10,20 @@ import {
 } from "@chakra-ui/react";
 import { ModalContext } from "../../components/ModalModule";
 import { IconBxlJsfiddle, IconChatGPT } from "../../components/Icons/IconReact";
+import ContentFetcher from "../../components/ContentFetcher/ContentFetcher";
+
+/**
+ * https://github.com/springload/react-accessible-accordion/tree/main?tab=readme-ov-file
+ * https://react-accessible-accordion.springload.co.nz/
+ */
+import {
+  Accordion as SpecAccordion,
+  AccordionItem as SpecAccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+  AccordionItemState,
+} from "react-accessible-accordion";
 
 const PageJavascriptCoreConcepts = () => {
   const { openModal } = useContext(ModalContext);
@@ -21,10 +35,84 @@ const PageJavascriptCoreConcepts = () => {
       </Box>
 
       <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
+            <SpecAccordion>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>What is a promise?</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <ContentFetcher id={14} />
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="#"
+                              isExternal
+                            >
+                              See code examples
+                              <IconBxlJsfiddle
+                                width={"1.3rem"}
+                                height={"1.3rem"}
+                              />
+                            </Link>
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://chatgpt.com/share/671a8c2c-9964-8001-bf4d-24a7ad5889f5"
+                              isExternal
+                            >
+                              More about promises
+                              <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                            </Link>
+                          </footer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    Test 2: Content conditionally rendered
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                  {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) => expanded && <ContentFetcher id={12} />}
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    Test 3: Content conditionally rendered
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                  {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) => expanded && <ContentFetcher id={13} />}
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+            </SpecAccordion>
+          </CardBody>
+        </Card>
+      </Box>
+
+      <Box className="row" marginBottom="10">
         <Card shadow="md" borderWidth="1px" borderColor="gray.300">
           <CardBody>
             <Accordion defaultIndex={[0]} allowToggle>
-              <AccordionItem>
+              {/* <AccordionItem>
                 <h2>
                   <AccordionButton
                     _expanded={{ bg: "blue.200", color: "gray.900" }}
@@ -75,7 +163,7 @@ const PageJavascriptCoreConcepts = () => {
                     </Link>
                   </footer>
                 </AccordionPanel>
-              </AccordionItem>
+              </AccordionItem> */}
 
               <AccordionItem>
                 <h2>
@@ -330,11 +418,11 @@ const PageJavascriptCoreConcepts = () => {
                       === (strict equality) is usually preferred.
                     </li>
                     <li>
-                    5. How does the JavaScript event loop work? Explain the
+                      5. How does the JavaScript event loop work? Explain the
                       concept of the call stack, Web APIs, callback queue, and
                       how JavaScript achieves asynchronous behavior.
                     </li>
-                    
+
                     <li>
                       6. What is this keyword, and how does its behavior change
                       in different contexts? Describe how this behaves in

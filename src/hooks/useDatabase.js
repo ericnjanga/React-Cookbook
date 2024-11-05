@@ -12,11 +12,12 @@ import { useEffect, useState, useCallback } from "react";
  * @returns Promise containing either the successful data or and error object
  */
 export const useDefinition = () => {
-  // NOTE: the
   const fetchDefinition = useCallback(async (id) => {
     try {
       // Issue the API request and wait for the response ...
       const response = await fetch(`/api/definition/${id}`);
+
+      console.log('>>>>>(244) data fetch', id);
 
       // Handle http errors ...
       if (!response.ok) {

@@ -10,6 +10,20 @@ import {
 } from "@chakra-ui/react";
 import { ModalContext } from "../../components/ModalModule";
 import { IconBxlJsfiddle, IconChatGPT } from "../../components/Icons/IconReact";
+import ContentFetcher from "../../components/ContentFetcher/ContentFetcher";
+
+/**
+ * https://github.com/springload/react-accessible-accordion/tree/main?tab=readme-ov-file
+ * https://react-accessible-accordion.springload.co.nz/
+ */
+import {
+  Accordion as SpecAccordion,
+  AccordionItem as SpecAccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+  AccordionItemState,
+} from "react-accessible-accordion";
 
 const PageHTMLCSSCoreConcepts = () => {
   const { openModal } = useContext(ModalContext);
@@ -18,6 +32,36 @@ const PageHTMLCSSCoreConcepts = () => {
     <>
       <Box className="row">
         <Heading as="h1">Core Concepts</Heading>
+      </Box>
+
+      <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
+          <CardBody>
+            <SpecAccordion onChange={() => console.log("Changed")}>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>Test 1: Content conditionally rendered</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {({ expanded }) => (expanded && <ContentFetcher id={4} />)}
+                  </AccordionItemState>
+                  
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                <AccordionItemButton>Test 2: Content conditionally rendered</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                  {({ expanded }) => (expanded && <ContentFetcher id={12} />)}
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+            </SpecAccordion>
+          </CardBody>
+        </Card>
       </Box>
 
       <Box className="row" marginBottom="10">

@@ -280,3 +280,13 @@
   border: 3px solid rgb(224, 64, 221);
   margin: 0 auto;
 }
+
+
+
+.chakra-card__header {
+  padding-bottom: 0!important;
+
+  .chakra-heading {
+    margin-bottom: 0!important;
+  }
+}

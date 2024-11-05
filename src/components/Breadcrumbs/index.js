@@ -1,7 +1,7 @@
-import React, { useEffect, useState, createContext } from "react";
+import React, { useState, createContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react"; 
-import { isEqual } from "lodash";
+// import { isEqual } from "lodash";
 import useRouteSegments from "../../hooks/useRouteSegments";
 import { useSectionBy } from "../../hooks/useDatabase";
 
@@ -17,7 +17,7 @@ export const PageContext = createContext(undefined);
  */
 
 const Breadcrumbs = () => { 
-  const [crumbs, setCrumbs] = useState(useRouteSegments());
+  const [crumbs/*, setCrumbs*/] = useState(useRouteSegments());
   // const routeSegments = useRouteSegments();
   const breadSection = useSectionBy(crumbs[0]);
 

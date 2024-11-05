@@ -16,6 +16,7 @@ import { useDefinition } from "../../hooks/useDatabase";
  * Designed to expose modal state and logic everywhere in the app.
  */
 export const ModalContext = createContext();
+export const ContentContext = createContext(); // Test ***
 
 
 /**
@@ -58,6 +59,37 @@ export const ModalProvider = ({ children }) => {
     </ModalContext.Provider>
   );
 };
+export const ContentCacheProvider = ({ children }) => { // Test ***
+  const [contentCached, setContentCached] = useState([]);
+
+
+  function _isInArray(arr) {
+    return (itemId) => {
+      return arr.some(item => Number(item.id) === itemId);
+    }
+  }
+ 
+  function _saveContent(newItem) {
+    if (!_isInArray(contentCached)(newItem.id)) {
+      const currContent = [...contentCached];
+      currContent.push(newItem);
+      setContentCached(currContent);
+
+      console.log('>>> contentCached=', contentCached);
+    }
+  }
+  const cashProvider = {  
+    hasItem: (id) => _isInArray(contentCached)(id),
+    saveItem: _saveContent,
+    getItem: (id) => contentCached.find(item => Number(item.id) === id)
+  };
+
+  return (
+    <ContentContext.Provider value={{ contentCached, cashProvider }}>
+      {children}
+    </ContentContext.Provider>
+  );
+};
 
 
 /**
@@ -79,7 +111,10 @@ const Modal = () => {
               <h3 className={!modalContent ? 'placeholder heading' : ''}>{modalContent && modalContent.title}</h3>
             </header>
             <main className="modal-body">
-              <p className={!modalContent ? 'placeholder text' : ''}>{modalContent && modalContent.description}</p>
+              {!modalContent ? <div className="placeholder text"></div> : 
+                <div dangerouslySetInnerHTML={{ __html:modalContent.description }}></div>
+              }
+              {/* <p className={!modalContent ? 'placeholder text' : ''} dangerouslySetInnerHTML={{ __html:modalContent.description }}>{modalContent && modalContent.description}</p> */}
             </main>
             <footer className="modal-footer">
               <button className="btn btn-primary" onClick={closeModal}>

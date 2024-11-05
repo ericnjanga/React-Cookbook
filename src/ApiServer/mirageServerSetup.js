@@ -15,7 +15,25 @@ const makeMirageServer = () => {
       server.create('definition', {
         id: 1, 
         title: 'JSX',
-        description: '---JSX---Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
+        description: `
+                  <p class="mb-0">JSX is: </p>
+                  <ul class="list-align-left">
+                    <li>
+                      <a
+                        href="https://legacy.reactjs.org/docs/introducing-jsx.html"
+                        target="_blank"
+                      >
+                        Short for JavaScript-XML
+                      </a>
+                    </li>
+                    <li>
+                      A template syntax extension to JavaScript
+                    </li>
+                    <li>Looks like HTML</li>
+                    <li>Describes what the UI should look like</li>
+                    <li>Returned by react components</li>
+                    <li>Transpiled into React “elements”</li>
+                  </ul>`,
       });
       server.create('definition', {
         id: 2, 
@@ -64,8 +82,25 @@ const makeMirageServer = () => {
       });
       server.create('definition', {
         id: 11, 
-        title: 'Virtual DOM',
-        description: '---Virtual DOM---Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
+        title: 'The virtual DOM',
+        description: `
+                  <p class="mb-0">The virtual DOM is: </p>
+                  <ul class="list-align-left">
+                    <li>Programming concept</li>
+                    <li>
+                      Keeps an "ideal" or virtual representation of the UI in
+                      memory
+                    </li>
+                    <li>
+                      Synchronizes React elements with the real DOM (
+                      <Link
+                        href="https://legacy.reactjs.org/docs/reconciliation.html"
+                        isExternal
+                      >
+                        Reconciliation process
+                      </Link>)
+                    </li>
+                  </ul>`,
       });
       server.create('definition', {
         id: 12, 
@@ -76,6 +111,112 @@ const makeMirageServer = () => {
         id: 13, 
         title: 'Hooks',
         description: '---Hooks---Lorem ipsum dolor sit amet consectetur. Vulputate purus elementum bibendum pharetra massa facilisis scelerisque tempor in. Commodo pulvinar aliquet lacinia neque nibh tempor. Proin montes nullam sed nunc accumsan. Eu id nulla est diam.',
+      });
+      server.create('definition', {
+        id: 14, 
+        title: 'JavaScript Closure',
+        description: `<p>A JavaScript promise is:</p>
+                  <ul class="list-aligh-left">
+                    <li>
+                      An object that represents the eventual completion (or
+                      failure)
+                    </li>
+                    <li>of an asynchronous operation</li>
+                    <li>and its resulting value</li>
+                    <li>
+                      It allows the handling asynchronous code more cleanly
+                    </li>
+                    <li>compared to traditional callback-based approaches</li>
+                  </ul>`,
+      });
+      server.create('definition', {
+        id: 15, 
+        title: 'React',
+        description: `<p class="mb-0">React:</p>
+
+                  <ul class="list-align-left">
+                    <li>
+                      Is a JavaScript library for building user interfaces
+                    </li>
+                    <li>
+                      Is good for creating large, complex, and single-page
+                      applications
+                    </li>
+                    <li>
+                      Excels at creating applications where data changes over
+                      time without triggering a page reload
+                    </li>
+                  </ul>`,
+      }); 
+      server.create('definition', {
+        id: 16, 
+        title: 'The DOM',
+        description: `<p class="mb-0">The real DOM is: </p>
+ 
+                  <ul class="list-align-left" mb="10">
+                    <li>Document Object Model</li>
+                    <li>Programming interface (an API)</li>
+                    <li>Represents the web document as nodes and objects</li>
+                    <li>
+                      Allows programming languages such as JS to manipulate the
+                      web document
+                    </li>
+                  </ul>
+
+                  <p class="mb-0">The real DOM: </p>
+                  <ul class="list-align-left" mb="10">
+                    <li>
+                      <b>is NOT</b> a programming language, but without it, the
+                      JavaScript language wouldn't have any model or notion of
+                      web pages, HTML documents, SVG documents, and their
+                      component parts.
+                    </li>
+                    <li>
+                      <b>is NOT</b> part of the JavaScript language, but is
+                      instead a Web API used to build websites. It was designed
+                      to be independent of any particular programming language
+                      (can be implemented in Python too).
+                    </li>
+                  </ul>`,
+      }); 
+      server.create('definition', {
+        id: 17, 
+        title: 'React Hook',
+        description: `<p>A React Hook is a function that makes it easier to leverage 
+                      React features. There is two types of React Hooks:</p> 
+
+                      <ul class="list-align-left">
+                        <li>
+                          <b>Buil-in hooks</b>: Which leverage core React management features 
+                          like State, Context, Effect, Ref, or Performance.
+                        </li>
+                        <li>
+                          <b>Custom hook</b>: Which leverage built-in hooks to create a sharable logic
+                        </li>
+                      </ul>
+
+                      <p>Reack Hooks where introduced in React 16.8, and are meant to be used 
+                      by functional components to leverage lifecycle functionality previously 
+                      available only to class components.</p>`,
+      });
+      server.create('definition', {
+        id: 18, 
+        title: 'Component unmounting process & performance optimization',
+        description: `<p>When a component unmounts:</p> 
+
+                      <ul class="list-align-left">
+                        <li><b>It is removed from the DOM</b>: The component’s rendered elements 
+                        are deleted from the DOM tree.</li>
+                        <li><b>State and effects are cleared</b>: Any state within the component 
+                        is discarded, and any side effects (like event listeners or timers) should be cleaned up through the useEffect cleanup function.</li>
+                        <li><b>Resources are released</b>: This helps free up memory and improve 
+                        performance.</li>
+                      </ul>
+
+                      <p>In essence, unmounting means the component is no longer needed in the 
+                      application and is therefore "destroyed" to free up resources. However, 
+                      the component’s logic (such as its code definition) still exists in your 
+                      application and can be mounted again if needed.</p>`,
       });
 
 
