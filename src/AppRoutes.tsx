@@ -23,6 +23,18 @@ import {
 import PageJavascriptInterestingPatterns from "./pages/knowledge-base/PageJavascriptInterestingPatterns";
 
 import ReactChallenge from "./pages/interview-challenges/ReactChallenge";
+import ReactChallengeCounters from "./pages/interview-challenges/ReactChallengeCounters";
+import ReactChallengeModal from "./pages/interview-challenges/ReactChallengeModal";
+import ReactChallengePerfHooks from "./pages/interview-challenges/ReactChallengePerfHooks";
+import ReactChallengeReusableComp1 from "./pages/interview-challenges/ReactChallengeReusableComp1";
+import ReactChallengeReusableComp2 from "./pages/interview-challenges/ReactChallengeReusableComp2";
+import ReactChallengeFormTesting from "./pages/interview-challenges/ReactChallengeFormTesting";
+import ReactChallengeRestApiAsync from "./pages/interview-challenges/ReactChallengeRestApiAsync";
+import ReactChallengeCiGitHubWorkflow from "./pages/interview-challenges/ReactChallengeCiGitHubWorkflow"; 
+import ReactChallangeLanding from "./pages/interview-challenges";
+
+
+
 
 const AppRoutes = () => {
   return (
@@ -31,8 +43,20 @@ const AppRoutes = () => {
         <Route index element={<PageHome />} />
 
         <Route path="/interview-challenges" element={<LayoutSafe />}>
-          <Route index element={<Navigate to="react" />} />
+          <Route index element={<Navigate to="index" />} />
+          <Route path="index" element={<ReactChallangeLanding />} />
           <Route path="react" element={<ReactChallenge />} />
+          <Route path="react/counters" element={<ReactChallengeCounters />} />
+          <Route path="react/modal-accessibility" element={<ReactChallengeModal />} />
+          <Route path="react/performance-hooks-1" element={<ReactChallengePerfHooks />} />
+          <Route path="react/cicd-git-workflow" element={<ReactChallengeCiGitHubWorkflow />} />
+          <Route path="react/rest-api-async-code" element={<ReactChallengeRestApiAsync />} />
+          <Route path="react/reusable-components-design-system-1" element={<ReactChallengeReusableComp1 />} />
+          <Route path="react/reusable-components-design-system-2" element={<ReactChallengeReusableComp2 />} />
+          <Route path="react/form-testing-jest" element={<ReactChallengeFormTesting />} />
+
+          
+
           <Route path="javascript" element={<PageCodPattJSPage1 />} />
           <Route path="accessibility" element={<PageCodPattJSPage2 />} />
           <Route path="css" element={<PageCodPattJSPage2 />} />

@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "./../../images/Logo.png";
+// import Logo from "./../../images/Logo.png";
 // import { MenuList } from "../../components/Menus";
-import { useSections } from "../../hooks/useDatabase";
+// import { useSections } from "../../hooks/useDatabase";
 // import NavSection from "./NavSection";
 // import NavCategories from "./NavCategories";
 // import NavPages, { NavSectionPage } from "./NavPages";
-import { setActiveClass } from "../../utilities/utils";
+// import { setActiveClass } from "../../utilities/utils";
 
 /**
  * Renders a menu organized in the following order:
@@ -16,13 +16,14 @@ import { setActiveClass } from "../../utilities/utils";
  * @returns
  */
 const MainNavigation = () => {
-  const pageSections = useSections();
+  // const pageSections = useSections();
 
   return (
     <>
       <header className="main-sidebar-header">
-        <NavLink to="/" className={setActiveClass}>
-          <img className="logo" src={Logo} alt="Front-end knowledge base" />
+        <NavLink to="/">
+        Logo
+          {/* <img className="logo" src={Logo} alt="Front-end knowledge base" /> */}
         </NavLink>
       </header>
 
