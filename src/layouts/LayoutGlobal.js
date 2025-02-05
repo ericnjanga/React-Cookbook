@@ -17,8 +17,7 @@ const LayoutGlobal = () => {
             <MainNavigation />
           </aside>
 
-          <section className="main-content offset-lg-3 col-lg-9">
-            <Breadcrumbs />
+          <section className="main-content offset-lg-3 col-lg-9"> 
             <Switch></Switch>
  
             {/** The Outlet component will render the children routes */}

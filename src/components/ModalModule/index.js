@@ -78,14 +78,14 @@ export const ContentCacheProvider = ({ children }) => { // Test ***
       console.log('>>> contentCached=', contentCached);
     }
   }
-  const cashProvider = {  
+  const cacheProvider = {  
     hasItem: (id) => _isInArray(contentCached)(id),
     saveItem: _saveContent,
     getItem: (id) => contentCached.find(item => Number(item.id) === id)
   };
 
   return (
-    <ContentContext.Provider value={{ contentCached, cashProvider }}>
+    <ContentContext.Provider value={{ contentCached, cacheProvider }}>
       {children}
     </ContentContext.Provider>
   );

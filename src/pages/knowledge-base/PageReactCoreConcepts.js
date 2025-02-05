@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import IconReact, {
-  IconExternalLink, 
+  IconExternalLink,
   IconChatGPT,
 } from "../../components/Icons/IconReact";
 import {
@@ -55,15 +55,12 @@ const PageReactCoreConcepts = () => {
         <Heading as="h1">Core Concepts</Heading>
       </Box>
 
+      <Heading as="h2" size="lg">
+        About React
+      </Heading>
       <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              About React
-            </Heading>
-          </CardHeader>
-
-          <CardBody>
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
             <SpecAccordion>
               <SpecAccordionItem>
                 <AccordionItemHeading>
@@ -82,27 +79,38 @@ const PageReactCoreConcepts = () => {
                   <AccordionItemButton>Why using React?</AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <Text mb={2}>Developers use React for several reasons:</Text>
-                  <ul className="list-align-left">
-                    <li>
-                      <b>Reusability:</b> Build components once, reuse
-                      everywhere.
-                    </li>
-                    <li>
-                      <b>Efficiency:</b> Fast updates via{" "}
-                      <button
-                        className="btn-link"
-                        onClick={() => openModal(11)}
-                      >
-                        Virtual DOM
-                      </button>
-                      .
-                    </li>
-                    <li>
-                      <b>Simplicity:</b> JSX's declarative syntax is easy to
-                      understand.
-                    </li>
-                  </ul>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text mb={2}>
+                            Developers use React for several reasons:
+                          </Text>
+                          <ul className="list-align-left">
+                            <li>
+                              <b>Reusability:</b> Build components once, reuse
+                              everywhere.
+                            </li>
+                            <li>
+                              <b>Efficiency:</b> Fast updates via{" "}
+                              <button
+                                className="btn-link"
+                                onClick={() => openModal(11)}
+                              >
+                                Virtual DOM
+                              </button>
+                              .
+                            </li>
+                            <li>
+                              <b>Simplicity:</b> JSX's declarative syntax is
+                              easy to understand.
+                            </li>
+                          </ul>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
                 </AccordionItemPanel>
               </SpecAccordionItem>
 
@@ -113,85 +121,94 @@ const PageReactCoreConcepts = () => {
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <Text>
-                    React differs from other front-end frameworks like Angular
-                    and Vue in several key areas, including its{" "}
-                    <b>philosophy</b>, <b>architecture</b>, and <b>features</b>.
-                    See below:
-                  </Text>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>
+                            React differs from other front-end frameworks like
+                            Angular and Vue in several key areas, including its{" "}
+                            <b>philosophy</b>, <b>architecture</b>, and{" "}
+                            <b>features</b>. See below:
+                          </Text>
 
-                  <TableContainer>
-                    <Table
-                      size="sm"
-                      variant="striped"
-                      colorScheme="teal"
-                      whiteSpace="wrap"
-                      className="table-definition"
-                    >
-                      <Thead>
-                        <Tr>
-                          <Th>Aspect</Th>
-                          <Th>
-                            <b>React</b>
-                          </Th>
-                          <Th>
-                            <b>Angular</b>
-                          </Th>
-                          <Th>
-                            <b>Vue</b>
-                          </Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        <Tr>
-                          <Td>Type</Td>
-                          <Td>Library (UI)</Td>
-                          <Td>Full-fledged framework</Td>
-                          <Td>Progressive framework</Td>
-                        </Tr>
-                        <Tr>
-                          <Td>Data Binding</Td>
-                          <Td>One-way</Td>
-                          <Td>Two-way</Td>
-                          <Td>Both one-way and two-way</Td>
-                        </Tr>
-                        <Tr>
-                          <Td>State Management</Td>
-                          <Td>External (Redux/MobX)</Td>
-                          <Td>Built-in (services, RxJS, NgRx)</Td>
-                          <Td>Built-in (VueX)</Td>
-                        </Tr>
-                        <Tr>
-                          <Td>Routes Management</Td>
-                          <Td>External (react-router)</Td>
-                          <Td>Built-in (routing module)</Td>
-                          <Td>Built-in (Vue-router)</Td>
-                        </Tr>
-                        <Tr>
-                          <Td>Performance</Td>
-                          <Td>
-                            Fast with{" "}
-                            <button
-                              className="btn-link"
-                              onClick={() => openModal(11)}
+                          <TableContainer>
+                            <Table
+                              size="sm"
+                              variant="striped"
+                              colorScheme="teal"
+                              whiteSpace="wrap"
+                              className="table-definition"
                             >
-                              Virtual DOM
-                            </button>
-                          </Td>
-                          <Td>Slower with change detection</Td>
-                          <Td>
-                            Fast with{" "}
-                            <button
-                              className="btn-link"
-                              onClick={() => openModal(11)}
-                            >
-                              Virtual DOM
-                            </button>
-                          </Td>
-                        </Tr>
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
+                              <Thead>
+                                <Tr>
+                                  <Th>Aspect</Th>
+                                  <Th>
+                                    <b>React</b>
+                                  </Th>
+                                  <Th>
+                                    <b>Angular</b>
+                                  </Th>
+                                  <Th>
+                                    <b>Vue</b>
+                                  </Th>
+                                </Tr>
+                              </Thead>
+                              <Tbody>
+                                <Tr>
+                                  <Td>Type</Td>
+                                  <Td>Library (UI)</Td>
+                                  <Td>Full-fledged framework</Td>
+                                  <Td>Progressive framework</Td>
+                                </Tr>
+                                <Tr>
+                                  <Td>Data Binding</Td>
+                                  <Td>One-way</Td>
+                                  <Td>Two-way</Td>
+                                  <Td>Both one-way and two-way</Td>
+                                </Tr>
+                                <Tr>
+                                  <Td>State Management</Td>
+                                  <Td>External (Redux/MobX)</Td>
+                                  <Td>Built-in (services, RxJS, NgRx)</Td>
+                                  <Td>Built-in (VueX)</Td>
+                                </Tr>
+                                <Tr>
+                                  <Td>Routes Management</Td>
+                                  <Td>External (react-router)</Td>
+                                  <Td>Built-in (routing module)</Td>
+                                  <Td>Built-in (Vue-router)</Td>
+                                </Tr>
+                                <Tr>
+                                  <Td>Performance</Td>
+                                  <Td>
+                                    Fast with{" "}
+                                    <button
+                                      className="btn-link"
+                                      onClick={() => openModal(11)}
+                                    >
+                                      Virtual DOM
+                                    </button>
+                                  </Td>
+                                  <Td>Slower with change detection</Td>
+                                  <Td>
+                                    Fast with{" "}
+                                    <button
+                                      className="btn-link"
+                                      onClick={() => openModal(11)}
+                                    >
+                                      Virtual DOM
+                                    </button>
+                                  </Td>
+                                </Tr>
+                              </Tbody>
+                            </Table>
+                          </TableContainer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
                 </AccordionItemPanel>
               </SpecAccordionItem>
 
@@ -200,57 +217,72 @@ const PageReactCoreConcepts = () => {
                   <AccordionItemButton>React Main features</AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <Text mb={0}>React's main features are as follows:</Text>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text mb={0}>
+                            React's main features are as follows:
+                          </Text>
 
-                  <ol className="list-align-left">
-                    <li>
-                      <button className="btn-link" onClick={() => openModal(1)}>
-                        JSX
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        className="btn-link"
-                        onClick={() => openModal(13)}
-                      >
-                        Hooks
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        className="btn-link"
-                        onClick={() => openModal(11)}
-                      >
-                        Virtual DOM
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        className="btn-link"
-                        onClick={() => openModal(12)}
-                      >
-                        State management
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        className="btn-link"
-                        onClick={() => openModal(10)}
-                      >
-                        Components
-                      </button>
-                    </li>
-                  </ol>
+                          <ol className="list-align-left">
+                            <li>
+                              <button
+                                className="btn-link"
+                                onClick={() => openModal(1)}
+                              >
+                                JSX
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="btn-link"
+                                onClick={() => openModal(13)}
+                              >
+                                Hooks
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="btn-link"
+                                onClick={() => openModal(11)}
+                              >
+                                Virtual DOM
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="btn-link"
+                                onClick={() => openModal(12)}
+                              >
+                                State management
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="btn-link"
+                                onClick={() => openModal(10)}
+                              >
+                                Components
+                              </button>
+                            </li>
+                          </ol>
 
-                  <footer className="accordion-footer">
-                    <Link
-                      className="btn btn-small btn-secondary btn-icon"
-                      href="https://chatgpt.com/share/671d0f29-6b3c-8001-a137-74d54f17f824"
-                      isExternal
-                    >
-                      More about React features <IconExternalLink />
-                    </Link>
-                  </footer>
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://chatgpt.com/share/671d0f29-6b3c-8001-a137-74d54f17f824"
+                              isExternal
+                            >
+                              More about React features
+                              <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                            </Link>
+                          </footer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
                 </AccordionItemPanel>
               </SpecAccordionItem>
 
@@ -259,74 +291,88 @@ const PageReactCoreConcepts = () => {
                   <AccordionItemButton>React History</AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <Text>Key moments of React history:</Text>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>Key moments of React history:</Text>
 
-                  <ul className="list-align-left">
-                    <li>
-                      <b>
-                        React 0.3.0 <small>(July 2013)</small>
-                      </b>
-                      : <Badge colorScheme="purple">First public release</Badge>{" "}
-                      <small>
-                        Basic concept of React components and the{" "}
-                        <button
-                          className="btn-link"
-                          onClick={() => openModal(11)}
-                        >
-                          <b>Virtual DOM</b>
-                        </button>
-                      </small>
-                      .
-                    </li>
+                          <ul className="list-align-left">
+                            <li>
+                              <b>
+                                React 0.3.0 <small>(July 2013)</small>
+                              </b>
+                              :{" "}
+                              <Badge colorScheme="purple">
+                                First public release
+                              </Badge>{" "}
+                              <small>
+                                Basic concept of React components and the{" "}
+                                <button
+                                  className="btn-link"
+                                  onClick={() => openModal(11)}
+                                >
+                                  <b>Virtual DOM</b>
+                                </button>
+                              </small>
+                              .
+                            </li>
 
-                    <li>
-                      <b>
-                        React 16.0 <small>(Sep 2017)</small>
-                      </b>
-                      :{" "}
-                      <Badge colorScheme="purple">
-                        New Core Architecture ("Fiber")
-                      </Badge>{" "}
-                      <small>
-                        Introduction of <b>Error Boundaries</b>, <b>Portals</b>,{" "}
-                        <b>Fragments</b>
-                      </small>
-                      .
-                    </li>
-                    <li>
-                      <b>Mar 2018</b>{" "}
-                      <Badge colorScheme="purple">React 16.3</Badge> :{" "}
-                      <b>New Lifecycle Methods</b>.{" "}
-                      <small>
-                        Context API Update, Strict Mode was introduced.
-                      </small>
-                    </li>
-                    <li>
-                      <b>Feb 2019</b>{" "}
-                      <Badge colorScheme="purple">React 16.8</Badge> : Major
-                      milestone with the <b>introduction of React Hooks</b>{" "}
-                      (useState, useEffect, etc.).
-                    </li>
+                            <li>
+                              <b>
+                                React 16.0 <small>(Sep 2017)</small>
+                              </b>
+                              :{" "}
+                              <Badge colorScheme="purple">
+                                New Core Architecture ("Fiber")
+                              </Badge>{" "}
+                              <small>
+                                Introduction of <b>Error Boundaries</b>,{" "}
+                                <b>Portals</b>, <b>Fragments</b>
+                              </small>
+                              .
+                            </li>
+                            <li>
+                              <b>Mar 2018</b>{" "}
+                              <Badge colorScheme="purple">React 16.3</Badge> :{" "}
+                              <b>New Lifecycle Methods</b>.{" "}
+                              <small>
+                                Context API Update, Strict Mode was introduced.
+                              </small>
+                            </li>
+                            <li>
+                              <b>Feb 2019</b>{" "}
+                              <Badge colorScheme="purple">React 16.8</Badge> :
+                              Major milestone with the{" "}
+                              <b>introduction of React Hooks</b> (useState,
+                              useEffect, etc.).
+                            </li>
 
-                    <li>
-                      <b>Mar 2022</b>{" "}
-                      <Badge colorScheme="purple">React 18.0</Badge> :{" "}
-                      <b>New concurrent rendering features</b>,
-                      <small>
-                        allowing React to work on multiple tasks simultaneously
-                        for improved performance and responsiveness.
-                      </small>
-                    </li>
-                    <li>
-                      <b>Ongoing Updates</b>{" "}
-                      <Badge colorScheme="purple">React 18.x</Badge> :{" "}
-                      <b>Progressive Hydration</b>.{" "}
-                      <small>
-                        Allows React to progressively hydrate the page during
-                        server-side rendering (SSR).
-                      </small>
-                    </li>
-                  </ul>
+                            <li>
+                              <b>Mar 2022</b>{" "}
+                              <Badge colorScheme="purple">React 18.0</Badge> :{" "}
+                              <b>New concurrent rendering features</b>,
+                              <small>
+                                allowing React to work on multiple tasks
+                                simultaneously for improved performance and
+                                responsiveness.
+                              </small>
+                            </li>
+                            <li>
+                              <b>Ongoing Updates</b>{" "}
+                              <Badge colorScheme="purple">React 18.x</Badge> :{" "}
+                              <b>Progressive Hydration</b>.{" "}
+                              <small>
+                                Allows React to progressively hydrate the page
+                                during server-side rendering (SSR).
+                              </small>
+                            </li>
+                          </ul>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
                 </AccordionItemPanel>
               </SpecAccordionItem>
             </SpecAccordion>
@@ -335,14 +381,11 @@ const PageReactCoreConcepts = () => {
       </Box>
 
       <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              The DOM
-            </Heading>
-          </CardHeader>
-
-          <CardBody>
+        <Heading as="h2" size="lg">
+          The DOM
+        </Heading>
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
             <SpecAccordion>
               <SpecAccordionItem>
                 <AccordionItemHeading>
@@ -363,11 +406,7 @@ const PageReactCoreConcepts = () => {
                               isExternal
                             >
                               More about the Real DOM
-                              <IconReact
-                                fill={"#009dc6"}
-                                width={"1.3rem"}
-                                height={"1.3rem"}
-                              />
+                              <IconExternalLink />
                             </Link>
                           </footer>
                         </>
@@ -444,87 +483,99 @@ const PageReactCoreConcepts = () => {
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <Text>
-                    The real DOM and virtual DOM differ in their <b>nature</b>,{" "}
-                    <b>interaction</b>, and <b>update</b> of the UI.
-                  </Text>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>
+                            The real DOM and virtual DOM differ in their{" "}
+                            <b>nature</b>, <b>interaction</b>, and <b>update</b>{" "}
+                            of the UI.
+                          </Text>
 
-                  <TableContainer>
-                    <Table
-                      size="sm"
-                      variant="striped"
-                      colorScheme="teal"
-                      whiteSpace="wrap"
-                      className="table-definition"
-                    >
-                      <Thead>
-                        <Tr>
-                          <Th></Th>
-                          <Th>The DOM</Th>
-                          <Th>Virtual DOM</Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        <Tr>
-                          <Td>
-                            <b>NATURE</b>
-                          </Td>
-                          <Td>
-                            <ul className="list-align-left mb-0">
-                              <li>Is an API</li>
-                              <li>
-                                Represents the document as nodes and objects
-                              </li>
-                            </ul>
-                          </Td>
-                          <Td>
-                            <ul className="list-align-left mb-0">
-                              <li>Is a coding pattern</li>
-                              <li>
-                                Is a copy of the document (virtual
-                                representation) that is kept in memory
-                              </li>
-                            </ul>
-                          </Td>
-                        </Tr>
-                        <Tr>
-                          <Td>
-                            <b>INTERRACTIONS</b> such as <b>form submit</b> or{" "}
-                            <b>link navigation</b>
-                          </Td>
-                          <Td>Trigger a page reload</Td>
-                          <Td>
-                            <b>Do not</b> trigger a page reload
-                          </Td>
-                        </Tr>
-                        <Tr>
-                          <Td>
-                            <b>UI UPDATES</b> manipulations
-                          </Td>
-                          <Td>
-                            Permits <b>direct manipulations</b> on the document
-                          </Td>
-                          <Td>
-                            Updates the document's copy in memory{" "}
-                            <Link
-                              href="https://chatgpt.com/share/67241fc0-1f68-8001-abf5-def7cf2aff84"
-                              isExternal
+                          <TableContainer>
+                            <Table
+                              size="sm"
+                              variant="striped"
+                              colorScheme="teal"
+                              whiteSpace="wrap"
+                              className="table-definition"
                             >
-                              (diffing)
-                            </Link>
-                            , then synchronizes it with the real DOM{" "}
-                            <Link
-                              href="https://chatgpt.com/share/67241ff8-2e68-8001-a993-7b816b5efcf9"
-                              isExternal
-                            >
-                              (reconciliation)
-                            </Link>
-                            .
-                          </Td>
-                        </Tr>
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
+                              <Thead>
+                                <Tr>
+                                  <Th></Th>
+                                  <Th>The DOM</Th>
+                                  <Th>Virtual DOM</Th>
+                                </Tr>
+                              </Thead>
+                              <Tbody>
+                                <Tr>
+                                  <Td>
+                                    <b>NATURE</b>
+                                  </Td>
+                                  <Td>
+                                    <ul className="list-align-left mb-0">
+                                      <li>Is an API</li>
+                                      <li>
+                                        Represents the document as nodes and
+                                        objects
+                                      </li>
+                                    </ul>
+                                  </Td>
+                                  <Td>
+                                    <ul className="list-align-left mb-0">
+                                      <li>Is a coding pattern</li>
+                                      <li>
+                                        Is a copy of the document (virtual
+                                        representation) that is kept in memory
+                                      </li>
+                                    </ul>
+                                  </Td>
+                                </Tr>
+                                <Tr>
+                                  <Td>
+                                    <b>INTERRACTIONS</b> such as{" "}
+                                    <b>form submit</b> or <b>link navigation</b>
+                                  </Td>
+                                  <Td>Trigger a page reload</Td>
+                                  <Td>
+                                    <b>Do not</b> trigger a page reload
+                                  </Td>
+                                </Tr>
+                                <Tr>
+                                  <Td>
+                                    <b>UI UPDATES</b> manipulations
+                                  </Td>
+                                  <Td>
+                                    Permits <b>direct manipulations</b> on the
+                                    document
+                                  </Td>
+                                  <Td>
+                                    Updates the document's copy in memory{" "}
+                                    <Link
+                                      href="https://chatgpt.com/share/67241fc0-1f68-8001-abf5-def7cf2aff84"
+                                      isExternal
+                                    >
+                                      (diffing)
+                                    </Link>
+                                    , then synchronizes it with the real DOM{" "}
+                                    <Link
+                                      href="https://chatgpt.com/share/67241ff8-2e68-8001-a993-7b816b5efcf9"
+                                      isExternal
+                                    >
+                                      (reconciliation)
+                                    </Link>
+                                    .
+                                  </Td>
+                                </Tr>
+                              </Tbody>
+                            </Table>
+                          </TableContainer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
                 </AccordionItemPanel>
               </SpecAccordionItem>
             </SpecAccordion>
@@ -532,15 +583,12 @@ const PageReactCoreConcepts = () => {
         </Card>
       </Box>
 
+      <Heading as="h2" size="lg">
+        JSX
+      </Heading>
       <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              JSX
-            </Heading>
-          </CardHeader>
-
-          <CardBody>
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
             <SpecAccordion>
               <SpecAccordionItem>
                 <AccordionItemHeading>
@@ -553,21 +601,6 @@ const PageReactCoreConcepts = () => {
                       expanded && (
                         <>
                           <ContentFetcher id={1} />
-
-                          <footer className="accordion-footer">
-                            <Link
-                              className="btn btn-small btn-secondary btn-icon"
-                              href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
-                              isExternal
-                            >
-                              More about the Real DOM
-                              <IconReact
-                                fill={"#009dc6"}
-                                width={"1.3rem"}
-                                height={"1.3rem"}
-                              />
-                            </Link>
-                          </footer>
                         </>
                       )
                     }
@@ -580,73 +613,96 @@ const PageReactCoreConcepts = () => {
                   <AccordionItemButton>How is JSX working?</AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <ol className="list-align-left">
-                    <li style={{ marginBottom: "1.7rem" }}>
-                      <div>
-                        JSX accepts a markup that looks like HTML, which can
-                        embed JavaScript expressions inside curly braces
-                        &#123;&#125;.
-                      </div>
-                      <Code>
-                        const element = &lt;h1&gt;Hello, dear!&lt;/h1&gt;;
-                      </Code>
-                      <Code>
-                        const val = "John"; <br />
-                        const element = &lt;h1&gt;Hello, dear
-                        &#123;val&#125;!&lt;/h1&gt;;
-                      </Code>
-                    </li>
-                    <li style={{ marginBottom: "1.7rem" }}>
-                      <div>
-                        The markup is then transpiled into React elements{" "}
-                        <small>
-                          (by compilers such as Babel with{" "}
-                          <button className="btn-link" onClick={openModal}>
-                            React.createElement()
-                          </button>
-                          ):
-                        </small>
-                      </div>
-                      <Code>
-                        const element = &#123; <br />
-                        &nbsp;&nbsp;type: 'h1', <br />
-                        &nbsp;&nbsp;props: &#123; <br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;children: 'Hello, dear John!'{" "}
-                        <br />
-                        &nbsp;&nbsp;&#125; <br />
-                        &#125;;
-                      </Code>
-                    </li>
-                    <li style={{ marginBottom: "1.7rem" }}>
-                      The resulting React element, after a{" "}
-                      <button className="btn-link" onClick={openModal}>
-                        diffing process
-                      </button>{" "}
-                      is stored in the virtual DOM.
-                    </li>
-                    <li style={{ marginBottom: "1.7rem" }}>
-                      <div>
-                        The virtual DOM synchronizes React elements with the
-                        real DOM{" "}
-                        <small>
-                          (through a process of{" "}
-                          <button className="btn-link" onClick={openModal}>
-                            reconciliation
-                          </button>
-                          ) turns into actual DOM nodes using{" "}
-                          <button className="btn-link" onClick={openModal}>
-                            ReactDOM.render()
-                          </button>{" "}
-                          function, and them .
-                        </small>
-                      </div>
-                      <Code>
-                        ReactDOM.render(element,
-                        document.getElementById('root'));
-                      </Code>
-                      <Code>&lt;h1&gt;Hello, dear John!&lt;/h1&gt;</Code>
-                    </li>
-                  </ol>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <ol className="list-align-left">
+                            <li style={{ marginBottom: "1.7rem" }}>
+                              <div>
+                                JSX accepts a markup that looks like HTML, which
+                                can embed JavaScript expressions inside curly
+                                braces &#123;&#125;.
+                              </div>
+                              <Code>
+                                const element = &lt;h1&gt;Hello,
+                                dear!&lt;/h1&gt;;
+                              </Code>
+                              <Code>
+                                const val = "John"; <br />
+                                const element = &lt;h1&gt;Hello, dear
+                                &#123;val&#125;!&lt;/h1&gt;;
+                              </Code>
+                            </li>
+                            <li style={{ marginBottom: "1.7rem" }}>
+                              <div>
+                                The markup is then transpiled into React
+                                elements{" "}
+                                <small>
+                                  (by compilers such as Babel with{" "}
+                                  <button
+                                    className="btn-link"
+                                    onClick={openModal}
+                                  >
+                                    React.createElement()
+                                  </button>
+                                  ):
+                                </small>
+                              </div>
+                              <Code>
+                                const element = &#123; <br />
+                                &nbsp;&nbsp;type: 'h1', <br />
+                                &nbsp;&nbsp;props: &#123; <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;children: 'Hello, dear
+                                John!' <br />
+                                &nbsp;&nbsp;&#125; <br />
+                                &#125;;
+                              </Code>
+                            </li>
+                            <li style={{ marginBottom: "1.7rem" }}>
+                              The resulting React element, after a{" "}
+                              <button className="btn-link" onClick={openModal}>
+                                diffing process
+                              </button>{" "}
+                              is stored in the virtual DOM.
+                            </li>
+                            <li style={{ marginBottom: "1.7rem" }}>
+                              <div>
+                                The virtual DOM synchronizes React elements with
+                                the real DOM{" "}
+                                <small>
+                                  (through a process of{" "}
+                                  <button
+                                    className="btn-link"
+                                    onClick={openModal}
+                                  >
+                                    reconciliation
+                                  </button>{" "}
+                                  which turns React elements into actual DOM
+                                  nodes using{" "}
+                                  <button
+                                    className="btn-link"
+                                    onClick={openModal}
+                                  >
+                                    ReactDOM.render()
+                                  </button>{" "}
+                                  function.
+                                </small>
+                              </div>
+                              <Code>
+                                ReactDOM.render(element,
+                                document.getElementById('root'));
+                              </Code>
+                              <Code>
+                                &lt;h1&gt;Hello, dear John!&lt;/h1&gt;
+                              </Code>
+                            </li>
+                          </ol>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
                 </AccordionItemPanel>
               </SpecAccordionItem>
 
@@ -657,63 +713,80 @@ const PageReactCoreConcepts = () => {
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <TableContainer>
-                    <Table
-                      size="sm"
-                      variant="striped"
-                      colorScheme="teal"
-                      whiteSpace="wrap"
-                      className="table-definition"
-                    >
-                      <Thead>
-                        <Tr>
-                          <Th></Th>
-                          <Th>React Element</Th>
-                          <Th>Component</Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        <Tr>
-                          <Td>Definition</Td>
-                          <Td>
-                            Is a plain JavaScript object that represents a DOM
-                            element.
-                          </Td>
-                          <Td>
-                            Is a JavaScript function (or class) that returns
-                            React elements (often using{" "}
-                            <button className="btn-link" onClick={openModal}>
-                              JSX
-                            </button>
-                            ).
-                          </Td>
-                        </Tr>
-                        <Tr>
-                          <Td>Creation/Type</Td>
-                          <Td>
-                            Is transpilled from a{" "}
-                            <button className="btn-link" onClick={openModal}>
-                              JSX
-                            </button>{" "}
-                            into React.createElement() calls. For example,
-                            &lt;div /&gt; gets converted to
-                            React.createElement('div').
-                          </Td>
-                          <Td>
-                            If functional, uses hooks for state and lifecycle
-                            management; if class-based, use built-in methods.
-                          </Td>
-                        </Tr>
-                        <Tr>
-                          <Td>Immutability/Reusability</Td>
-                          <Td>
-                            Is immutable: once created, it cannot be changed.
-                          </Td>
-                          <Td>Is a reusable building block.</Td>
-                        </Tr>
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <TableContainer>
+                            <Table
+                              size="sm"
+                              variant="striped"
+                              colorScheme="teal"
+                              whiteSpace="wrap"
+                              className="table-definition"
+                            >
+                              <Thead>
+                                <Tr>
+                                  <Th></Th>
+                                  <Th>React Element</Th>
+                                  <Th>Component</Th>
+                                </Tr>
+                              </Thead>
+                              <Tbody>
+                                <Tr>
+                                  <Td>Definition</Td>
+                                  <Td>
+                                    Is a plain JavaScript object that represents
+                                    a DOM element.
+                                  </Td>
+                                  <Td>
+                                    Is a JavaScript function (or class) that
+                                    returns React elements (often using{" "}
+                                    <button
+                                      className="btn-link"
+                                      onClick={openModal}
+                                    >
+                                      JSX
+                                    </button>
+                                    ).
+                                  </Td>
+                                </Tr>
+                                <Tr>
+                                  <Td>Creation/Type</Td>
+                                  <Td>
+                                    Is transpilled from a{" "}
+                                    <button
+                                      className="btn-link"
+                                      onClick={openModal}
+                                    >
+                                      JSX
+                                    </button>{" "}
+                                    into React.createElement() calls. For
+                                    example, &lt;div /&gt; gets converted to
+                                    React.createElement('div').
+                                  </Td>
+                                  <Td>
+                                    If functional, uses hooks for state and
+                                    lifecycle management; if class-based, use
+                                    built-in methods.
+                                  </Td>
+                                </Tr>
+                                <Tr>
+                                  <Td>Immutability/Reusability</Td>
+                                  <Td>
+                                    Is immutable: once created, it cannot be
+                                    changed.
+                                  </Td>
+                                  <Td>Is a reusable building block.</Td>
+                                </Tr>
+                              </Tbody>
+                            </Table>
+                          </TableContainer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
                 </AccordionItemPanel>
               </SpecAccordionItem>
             </SpecAccordion>
@@ -721,28 +794,26 @@ const PageReactCoreConcepts = () => {
         </Card>
       </Box>
 
+      <Heading as="h2" size="lg">
+        Hooks
+      </Heading>
       <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              Hooks
-            </Heading>
-          </CardHeader>
-
-          <CardBody>
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
             <SpecAccordion>
               <SpecAccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>What is a React Hook?</AccordionItemButton>
+                  <AccordionItemButton>
+                    What is a React Hook?
+                  </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-
-                <AccordionItemState>
+                  <AccordionItemState>
                     {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
                     {({ expanded }) =>
                       expanded && (
                         <>
-                          <ContentFetcher id={17} /> 
+                          <ContentFetcher id={17} />
                           <footer className="accordion-footer">
                             <Link
                               className="btn btn-small btn-secondary btn-icon"
@@ -778,518 +849,603 @@ const PageReactCoreConcepts = () => {
 
               <SpecAccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>xxxx</AccordionItemButton>
+                  <AccordionItemButton>
+                    Most common React hooks
+                  </AccordionItemButton>
                 </AccordionItemHeading>
-                <AccordionItemPanel>...</AccordionItemPanel>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <ul className="list-align-left">
+                            <li>
+                              <b>useState:</b> Allows state management to
+                              functional components.
+                            </li>
+                            <li>
+                              <b>useEffect:</b> Allows side effects such as{" "}
+                              <b>
+                                data fetching, subscriptions, or DOM
+                                manipulations
+                              </b>
+                              , but keeps components pure by ensuring those
+                              effects happen after the render.
+                            </li>
+                            <li>
+                              <b>useContext:</b> Allows for the easy flow of
+                              data down the component tree without the need for{" "}
+                              <b>props drilling</b>.
+                            </li>
+                            <li>
+                              <b>useReducer:</b> is a "super-powered" version of
+                              useState, that deals effectively with{" "}
+                              <b>complex state logic</b> or{" "}
+                              <b>multiple state transitions</b> that depend on
+                              previous states.
+                            </li>
+                            <li>
+                              <b>useMomo:</b> is used to{" "}
+                              <b>optimize performance</b> by memoizing (or
+                              caching) the result of a computation so that it
+                              only recalculates when necessary.
+                            </li>
+                            <li>
+                              <b>useCallback:</b> is used to{" "}
+                              <b>optimize performance</b> by memoizing (or
+                              caching) a function definition so that it doesn't
+                              get recreated on every render. This can be
+                              particularly useful when passing functions to
+                              child components, preventing unnecessary
+                              re-renders.
+                            </li>
+                            <li>
+                              <b>useRef:</b> is used to maintain a mutable
+                              reference to a value that does not trigger
+                              re-renders when updated.
+                            </li>
+                          </ul>
+
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://chatgpt.com/share/671d2a9b-9bec-8001-99e5-32b4f06d469a"
+                              isExternal
+                            >
+                              The purpose of Hooks <IconExternalLink />
+                            </Link>
+                          </footer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
               </SpecAccordionItem>
 
               <SpecAccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>xxxx</AccordionItemButton>
+                  <AccordionItemButton>
+                    What are Custom Hooks?
+                  </AccordionItemButton>
                 </AccordionItemHeading>
-                <AccordionItemPanel>...</AccordionItemPanel>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>
+                            Custom Hooks in React are reusable functions that
+                            allow you to encapsulate and share logic across
+                            multiple components.
+                          </Text>
+
+                          <h3>When do we use them?</h3>
+
+                          <ul className="list-align-left">
+                            <li>
+                              When you need to share complex state logic, side
+                              effects or interactions across components
+                            </li>
+                            <li>
+                              When you notice similar or identical logic in
+                              multiple components
+                            </li>
+                          </ul>
+
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://chatgpt.com/share/671d300c-1754-8001-9256-86e2016ba1ac"
+                              isExternal
+                            >
+                              More on Custom hooks
+                              <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                            </Link>
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://react.dev/learn/reusing-logic-with-custom-hooks"
+                              isExternal
+                            >
+                              Custom hooks API
+                              <IconReact
+                                fill={"#009dc6"}
+                                width={"1.3rem"}
+                                height={"1.3rem"}
+                              />
+                            </Link>
+                          </footer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+            </SpecAccordion>
+          </CardBody>
+        </Card>
+      </Box>
+
+      <Heading as="h2" size="lg">
+        Components
+      </Heading>
+      <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
+            <SpecAccordion>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    Explain the concept of components in React
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>
+                            In React, components are the building blocks of the
+                            user interface (UI). They allow you to split your UI
+                            into independent, reusable pieces, making it easier
+                            to manage and develop complex applications. Each
+                            component can manage its own state and lifecycle,
+                            making React a powerful tool for building
+                            interactive UIs.{" "}
+                            <Link
+                              href="https://chatgpt.com/share/66f58ce9-8738-8001-a0cb-891de78046cf"
+                              isExternal
+                            >
+                              Learn more
+                            </Link>
+                          </Text>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
               </SpecAccordionItem>
 
               <SpecAccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>xxxx</AccordionItemButton>
+                  <AccordionItemButton>
+                    Comparative analysis between Functional and Class components
+                  </AccordionItemButton>
                 </AccordionItemHeading>
-                <AccordionItemPanel>...</AccordionItemPanel>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>
+                            They can be defiend separely (
+                            <Link
+                              href="https://chatgpt.com/share/66f591dc-a47c-8001-aac0-988dd14b5102"
+                              isExternal
+                            >
+                              Learn more
+                            </Link>
+                            ), and contribute in different ways (
+                            <Link
+                              href="https://chatgpt.com/share/66f59442-65b4-8001-b74e-d0ea1eb73f38"
+                              isExternal
+                            >
+                              Learn more
+                            </Link>
+                            ).
+                          </Text>
+
+                          <TableContainer>
+                            <Table
+                              size="sm"
+                              variant="striped"
+                              colorScheme="teal"
+                              whiteSpace="wrap"
+                              className="table-definition"
+                            >
+                              <Thead>
+                                <Tr>
+                                  <Th></Th>
+                                  <Th>Functional</Th>
+                                  <Th>Class</Th>
+                                </Tr>
+                              </Thead>
+                              <Tbody>
+                                <Tr>
+                                  <Td fontWeight="bold">Definition</Td>
+                                  <Td>
+                                    JS functions taking props in params and
+                                    returning{" "}
+                                    <button
+                                      className="btn-link"
+                                      onClick={openModal}
+                                    >
+                                      JSX
+                                    </button>
+                                    .
+                                  </Td>
+                                  <Td>
+                                    ES6 classes extending React.Component.
+                                    Return{" "}
+                                    <button
+                                      className="btn-link"
+                                      onClick={openModal}
+                                    >
+                                      JSX
+                                    </button>{" "}
+                                    through a render method.
+                                  </Td>
+                                </Tr>
+                                <Tr>
+                                  <Td fontWeight="bold">State Management</Td>
+                                  <Td>Through hooks (useState, useReducer).</Td>
+                                  <Td>
+                                    Built-in state management methods
+                                    (this.state, this.setState).
+                                  </Td>
+                                </Tr>
+                                <Tr>
+                                  <Td fontWeight="bold">Lifecycle Methods</Td>
+                                  <Td>
+                                    Through hooks like <b>useEffect</b>:
+                                    <UnorderedList
+                                      mb="0"
+                                      className="list-align-left"
+                                    >
+                                      <ListItem>
+                                        After component render
+                                      </ListItem>
+                                      <ListItem>State/props change</ListItem>
+                                      <ListItem>Cleanup phase</ListItem>
+                                    </UnorderedList>
+                                  </Td>
+                                  <Td>
+                                    Through built-in lifecycle methods:
+                                    <UnorderedList
+                                      mb="0"
+                                      className="list-align-left"
+                                    >
+                                      <ListItem>
+                                        <b>componentDidMount</b>: After
+                                        component render
+                                      </ListItem>
+                                      <ListItem>
+                                        <b>componentDidUpdate</b>: State/props
+                                        change
+                                      </ListItem>
+                                      <ListItem>
+                                        <b>componentWillUnmount</b>: Cleanup
+                                        phase
+                                      </ListItem>
+                                    </UnorderedList>
+                                  </Td>
+                                </Tr>
+
+                                <Tr>
+                                  <Td fontWeight="bold">Complexity</Td>
+                                  <Td>...</Td>
+                                  <Td>
+                                    Best suited for handling complex state and
+                                    effects (with their built-in lifecycle
+                                    methods) than functional counterparts.
+                                  </Td>
+                                </Tr>
+                              </Tbody>
+                            </Table>
+                          </TableContainer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    Comparative analysis between controlled and uncontrolled
+                    components
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>
+                            This refers to how <b>form elements</b> manage their
+                            state.{" "}
+                            <Link
+                              href="https://chatgpt.com/share/66f598cd-c164-8001-88d3-2da17eb72c49"
+                              isExternal
+                            >
+                              Learn more
+                            </Link>
+                          </Text>
+
+                          <TableContainer>
+                            <Table
+                              size="sm"
+                              variant="striped"
+                              colorScheme="teal"
+                              whiteSpace="wrap"
+                              className="table-definition"
+                            >
+                              <Thead>
+                                <Tr>
+                                  <Th></Th>
+                                  <Th>Controlled</Th>
+                                  <Th>Uncontrolled</Th>
+                                </Tr>
+                              </Thead>
+                              <Tbody>
+                                <Tr>
+                                  <Td fontWeight="bold">State management</Td>
+                                  <Td>React</Td>
+                                  <Td>The DOM</Td>
+                                </Tr>
+                                <Tr>
+                                  <Td fontWeight="bold">Good for</Td>
+                                  <Td>
+                                    Complex forms, tighter control (validation,
+                                    state management)
+                                  </Td>
+                                  <Td>
+                                    Simple forms, looser control (validation,
+                                    state management)
+                                  </Td>
+                                </Tr>
+                              </Tbody>
+                            </Table>
+                          </TableContainer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    What is a higher-order component (HOC)?
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <ul className="list-align-left">
+                            <li>Pattern for reusing component logic</li>
+                            <li>For enhancement or extension purposes</li>
+                            <li>
+                              Takes a component as an argument, returns an
+                              enhanced component
+                            </li>
+                            <li>
+                              <Link
+                                href="https://chatgpt.com/share/66f59bfd-5e6c-8001-939b-cfdef98e23fe"
+                                isExternal
+                              >
+                                Learn more
+                              </Link>
+                            </li>
+                          </ul>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+            </SpecAccordion>
+          </CardBody>
+        </Card>
+      </Box>
+
+      <Heading as="h2" size="lg">
+        State management &amp; props
+      </Heading>
+      <Box className="row" marginBottom="10">
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
+            <SpecAccordion>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    What is useState in React?
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>
+                            The useState hook is a fundamental React hook used
+                            to manage state in functional components. Before
+                            hooks, state management was exclusive to class
+                            components, but with useState, functional components
+                            can now have their own state.
+                          </p>
+
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://chatgpt.com/share/671d4449-2230-8001-bd95-e7749ba74b97"
+                              isExternal
+                            >
+                              More on useState hook
+                              <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                            </Link>
+                          </footer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    How does React handle state management?
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>
+                            React manages state through several options, ranging
+                            from local component state to global state
+                            management with tools like Context API and Redux.
+                            Each approach has its strengths depending on the
+                            scale and complexity of the application:
+                          </p>
+                          <ol>
+                            <li>Local Component State</li>
+                            <li>Global State with Context API</li>
+                            <li>External Libraries like Redux</li>
+                          </ol>
+
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://chatgpt.com/share/671d44d5-5ab8-8001-9be3-3d210e99bcf1"
+                              isExternal
+                            >
+                              More on state management
+                              <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                            </Link>
+                          </footer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>xxxxx</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>yyyyy</p>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>xxxxx</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>yyyyy</p>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>xxxxx</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>yyyyy</p>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>xxxxx</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>yyyyy</p>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>xxxxx</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>yyyyy</p>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
               </SpecAccordionItem>
             </SpecAccordion>
 
             <Accordion defaultIndex={[0]} allowToggle>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      What are React Hooks?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    LLLLL
-                  </Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      What are the key React hooks?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <ul className="list-align-left">
-                    <li>
-                      <b>useState:</b> Allows state management to functional
-                      components.
-                    </li>
-                    <li>
-                      <b>useEffect:</b> Allows side effects such as{" "}
-                      <b>data fetching, subscriptions, or DOM manipulations</b>,
-                      but keeps components pure by ensuring those effects happen
-                      after the render.
-                    </li>
-                    <li>
-                      <b>useContext:</b> Allows for the easy flow of data down
-                      the component tree without the need for{" "}
-                      <b>props drilling</b>.
-                    </li>
-                    <li>
-                      <b>useReducer:</b> is a "super-powered" version of
-                      useState, that deals effectively with{" "}
-                      <b>complex state logic</b> or{" "}
-                      <b>multiple state transitions</b> that depend on previous
-                      states.
-                    </li>
-                    <li>
-                      <b>useMomo:</b> is used to <b>optimize performance</b> by
-                      memoizing (or caching) the result of a computation so that
-                      it only recalculates when necessary.
-                    </li>
-                    <li>
-                      <b>useCallback:</b> is used to <b>optimize performance</b>{" "}
-                      by memoizing (or caching) a function definition so that it
-                      doesn't get recreated on every render. This can be
-                      particularly useful when passing functions to child
-                      components, preventing unnecessary re-renders.
-                    </li>
-                    <li>
-                      <b>useRef:</b> is used to maintain a mutable reference to
-                      a value that does not trigger re-renders when updated.
-                    </li>
-                  </ul>
-
-                  <footer className="accordion-footer">
-                    <Link
-                      className="btn btn-small btn-secondary btn-icon"
-                      href="https://chatgpt.com/share/671d2a9b-9bec-8001-99e5-32b4f06d469a"
-                      isExternal
-                    >
-                      The purpose of Hooks <IconExternalLink />
-                    </Link>
-                  </footer>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      What are Custom Hooks?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    Custom Hooks in React are reusable functions that allow you
-                    to encapsulate and share logic across multiple components.
-                  </Text>
-
-                  <h3>When do we use them?</h3>
-
-                  <ul className="list-align-left">
-                    <li>
-                      When you need to share complex state logic, side effects
-                      or interactions across components
-                    </li>
-                    <li>
-                      When you notice similar or identical logic in multiple
-                      components
-                    </li>
-                  </ul>
-
-                  <footer className="accordion-footer">
-                    <Link
-                      className="btn btn-small btn-secondary btn-icon"
-                      href="https://chatgpt.com/share/671d300c-1754-8001-9256-86e2016ba1ac"
-                      isExternal
-                    >
-                      More on Custom hooks <IconExternalLink />
-                    </Link>
-                    <Link
-                      className="btn btn-small btn-secondary btn-icon"
-                      href="https://react.dev/learn/reusing-logic-with-custom-hooks"
-                      isExternal
-                    >
-                      Custom hooks API
-                      <IconReact
-                        fill={"#009dc6"}
-                        width={"1.3rem"}
-                        height={"1.3rem"}
-                      />
-                    </Link>
-                  </footer>
-                </AccordionPanel>
-              </AccordionItem>
-            </Accordion>
-          </CardBody>
-        </Card>
-      </Box>
-
-      <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              Components
-            </Heading>
-          </CardHeader>
-
-          <CardBody>
-            <Accordion defaultIndex={[0]} allowToggle>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      Explain the concept of components in React
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    In React, components are the building blocks of the user
-                    interface (UI). They allow you to split your UI into
-                    independent, reusable pieces, making it easier to manage and
-                    develop complex applications. Each component can manage its
-                    own state and lifecycle, making React a powerful tool for
-                    building interactive UIs.{" "}
-                    <Link
-                      href="https://chatgpt.com/share/66f58ce9-8738-8001-a0cb-891de78046cf"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                  </Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      Comparative analysis between Functional and Class
-                      components
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    They can be defiend separely (
-                    <Link
-                      href="https://chatgpt.com/share/66f591dc-a47c-8001-aac0-988dd14b5102"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                    ), and contribute in different ways (
-                    <Link
-                      href="https://chatgpt.com/share/66f59442-65b4-8001-b74e-d0ea1eb73f38"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                    ).
-                  </Text>
-
-                  <TableContainer>
-                    <Table
-                      size="sm"
-                      variant="striped"
-                      colorScheme="teal"
-                      whiteSpace="wrap"
-                      className="table-definition"
-                    >
-                      <Thead>
-                        <Tr>
-                          <Th></Th>
-                          <Th>Functional</Th>
-                          <Th>Class</Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        <Tr>
-                          <Td fontWeight="bold">Definition</Td>
-                          <Td>
-                            JS functions taking props in params and returning{" "}
-                            <button className="btn-link" onClick={openModal}>
-                              JSX
-                            </button>
-                            .
-                          </Td>
-                          <Td>
-                            ES6 classes extending React.Component. Return{" "}
-                            <button className="btn-link" onClick={openModal}>
-                              JSX
-                            </button>{" "}
-                            through a render method.
-                          </Td>
-                        </Tr>
-                        <Tr>
-                          <Td fontWeight="bold">State Management</Td>
-                          <Td>Through hooks (useState, useReducer).</Td>
-                          <Td>
-                            Built-in state management methods (this.state,
-                            this.setState).
-                          </Td>
-                        </Tr>
-                        <Tr>
-                          <Td fontWeight="bold">Lifecycle Methods</Td>
-                          <Td>
-                            Through hooks like <b>useEffect</b>:
-                            <UnorderedList mb="0" className="list-align-left">
-                              <ListItem>After component render</ListItem>
-                              <ListItem>State/props change</ListItem>
-                              <ListItem>Cleanup phase</ListItem>
-                            </UnorderedList>
-                          </Td>
-                          <Td>
-                            Through built-in lifecycle methods:
-                            <UnorderedList mb="0" className="list-align-left">
-                              <ListItem>
-                                <b>componentDidMount</b>: After component render
-                              </ListItem>
-                              <ListItem>
-                                <b>componentDidUpdate</b>: State/props change
-                              </ListItem>
-                              <ListItem>
-                                <b>componentWillUnmount</b>: Cleanup phase
-                              </ListItem>
-                            </UnorderedList>
-                          </Td>
-                        </Tr>
-
-                        <Tr>
-                          <Td fontWeight="bold">Complexity</Td>
-                          <Td>...</Td>
-                          <Td>
-                            Best suited for handling complex state and effects
-                            (with their built-in lifecycle methods) than
-                            functional counterparts.
-                          </Td>
-                        </Tr>
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
-
-                  <Spacer height="2rem"></Spacer>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      Comparative analysis between controlled and uncontrolled
-                      components
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    This refers to how <b>form elements</b> manage their state.{" "}
-                    <Link
-                      href="https://chatgpt.com/share/66f598cd-c164-8001-88d3-2da17eb72c49"
-                      isExternal
-                    >
-                      Learn more
-                    </Link>
-                  </Text>
-
-                  <TableContainer>
-                    <Table
-                      size="sm"
-                      variant="striped"
-                      colorScheme="teal"
-                      whiteSpace="wrap"
-                      className="table-definition"
-                    >
-                      <Thead>
-                        <Tr>
-                          <Th></Th>
-                          <Th>Controlled</Th>
-                          <Th>Uncontrolled</Th>
-                        </Tr>
-                      </Thead>
-                      <Tbody>
-                        <Tr>
-                          <Td fontWeight="bold">State management</Td>
-                          <Td>React</Td>
-                          <Td>The DOM</Td>
-                        </Tr>
-                        <Tr>
-                          <Td fontWeight="bold">Good for</Td>
-                          <Td>
-                            Complex forms, tighter control (validation, state
-                            management)
-                          </Td>
-                          <Td>
-                            Simple forms, looser control (validation, state
-                            management)
-                          </Td>
-                        </Tr>
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      What is a higher-order component (HOC)?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <UnorderedList className="list-align-left">
-                    <ListItem>Pattern for reusing component logic</ListItem>
-                    <ListItem>For enhancement or extension purposes</ListItem>
-                    <ListItem>
-                      Takes a component as an argument, returns an enhanced
-                      component
-                    </ListItem>
-                    <ListItem>
-                      <Link
-                        href="https://chatgpt.com/share/66f59bfd-5e6c-8001-939b-cfdef98e23fe"
-                        isExternal
-                      >
-                        Learn more
-                      </Link>
-                    </ListItem>
-                  </UnorderedList>
-                </AccordionPanel>
-              </AccordionItem>
-            </Accordion>
-          </CardBody>
-        </Card>
-      </Box>
-
-      <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              State management &amp; props
-            </Heading>
-          </CardHeader>
-
-          <CardBody>
-            <Accordion defaultIndex={[0]} allowToggle>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      What is useState in React?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    https://chatgpt.com/share/671d4449-2230-8001-bd95-e7749ba74b97
-                  </Text>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      How does React handle state management?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    https://chatgpt.com/share/671d44d5-5ab8-8001-9be3-3d210e99bcf1
-                  </Text>
-                </AccordionPanel>
-              </AccordionItem>
-
               <AccordionItem>
                 <h2>
                   <AccordionButton
@@ -1382,15 +1538,12 @@ const PageReactCoreConcepts = () => {
         </Card>
       </Box>
 
+      <Heading as="h2" size="lg">
+        Advanced state management with Redux
+      </Heading>
       <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              Advanced state management with Redux
-            </Heading>
-          </CardHeader>
-
-          <CardBody>
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
             <Accordion defaultIndex={[0]} allowToggle>
               <AccordionItem>
                 <h2>
@@ -1522,15 +1675,12 @@ const PageReactCoreConcepts = () => {
         </Card>
       </Box>
 
+      <Heading as="h2" size="lg">
+        Routes
+      </Heading>
       <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              Routes
-            </Heading>
-          </CardHeader>
-
-          <CardBody>
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
             <Accordion defaultIndex={[0]} allowToggle>
               <AccordionItem>
                 <h2>
@@ -1635,27 +1785,102 @@ const PageReactCoreConcepts = () => {
         </Card>
       </Box>
 
+      <Heading as="h2" size="lg">
+        Performance
+      </Heading>
       <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              Performance
-            </Heading>
-          </CardHeader>
-          <CardBody>
-
-
-          <SpecAccordion>
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
+            <SpecAccordion>
               <SpecAccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>What happens when a component unmounts and why?</AccordionItemButton>
+                  <AccordionItemButton>
+                    What happens when a component unmounts and why?
+                  </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) => expanded && <ContentFetcher id={18} />}
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
 
-                <AccordionItemState>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    How do you optimize performance in a React application?
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
                     {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
                     {({ expanded }) =>
-                      expanded && <ContentFetcher id={18} /> 
+                      expanded && (
+                        <>
+                          <p>
+                            Optimizing performance in a React application
+                            involves several techniques that help in{" "}
+                            <b>reducing the app's load time</b>,{" "}
+                            <b>minimizing unnecessary renders</b>, and{" "}
+                            <b>improving the overall user experience</b>. Here
+                            are some strategies:
+                          </p>
+
+                          <h3 className="mb-0">Processes</h3>
+                          <ul className="list-align-left">
+                            <li>
+                              Reducing initial load time with{" "}
+                              <b>lazy loading</b>
+                            </li>
+                            <li>
+                              Breaking the code into smaller bundles with{" "}
+                              <b>Code spitting</b>
+                            </li>
+                            <li>
+                              Avoiding unecessary operations with{" "}
+                              <b>Memoization</b>:
+                            </li>
+                            <ul className="list-align-left">
+                              <li>
+                                <b>React.memo()</b> for avoiding unecessary
+                                re-renders
+                              </li>
+                              <li>
+                                <b>UseMemo()</b> for avoiding unecessary
+                                re-calculations
+                              </li>
+                              <li>
+                                <b>UseCallback()</b> for caching functions
+                              </li>
+                            </ul>
+                          </ul>
+
+                          <h3 className="mb-0">Coding patterns</h3>
+                          <ul className="list-align-left">
+                            <li>
+                              Reducing components size by keeping them reusable
+                              and simple
+                            </li>
+                            <li>Preventing excessive state updates</li>
+                            <li>
+                              Identifying performance bottlenecks by using
+                              DevTools
+                            </li>
+                          </ul>
+
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://chatgpt.com/share/671bf545-c350-8001-8c04-9da0f9215634"
+                              isExternal
+                            >
+                              React perfomance optimization{" "}
+                              <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                            </Link>
+                          </footer>
+                        </>
+                      )
                     }
                   </AccordionItemState>
                 </AccordionItemPanel>
@@ -1663,175 +1888,112 @@ const PageReactCoreConcepts = () => {
 
               <SpecAccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>xxxx</AccordionItemButton>
+                  <AccordionItemButton>
+                    How does reconciliation work in React?
+                  </AccordionItemButton>
                 </AccordionItemHeading>
-                <AccordionItemPanel>...</AccordionItemPanel>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>
+                            React uses the reconciliation process to figure out
+                            how to update the{" "}
+                            <button className="btn-link" onClick={() => openModal(16)}>
+                              actual DOM
+                            </button>
+                            {" "}to match the{" "}
+                            <button className="btn-link" onClick={() => openModal(11)}>
+                              Virtual DOM
+                            </button>
+                            {" "}effectively. Here’s is{" "}
+                            <Link
+                              href="https://chatgpt.com/share/671d00f5-4244-8001-b0d7-0fcdbefb4611"
+                              isExternal
+                            >
+                              how reconciliation works ...
+                            </Link>
+                          </p>
+
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://react.dev/learn/preserving-and-resetting-state"
+                              isExternal
+                            >
+                              Preserving and Resetting State
+                              <IconReact
+                                fill={"#009dc6"}
+                                width={"1.3rem"}
+                                height={"1.3rem"}
+                              />
+                            </Link>
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://legacy.reactjs.org/docs/reconciliation.html"
+                              isExternal
+                            >
+                              Reconciliation
+                              <IconReact
+                                fill={"#009dc6"}
+                                width={"1.3rem"}
+                                height={"1.3rem"}
+                              />
+                            </Link>
+                          </footer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
               </SpecAccordionItem>
+
+
 
               <SpecAccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>xxxx</AccordionItemButton>
+                  <AccordionItemButton>xxxxx</AccordionItemButton>
                 </AccordionItemHeading>
-                <AccordionItemPanel>...</AccordionItemPanel>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>yyyyy</p>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
               </SpecAccordionItem>
+
+
 
               <SpecAccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>xxxx</AccordionItemButton>
+                  <AccordionItemButton>xxxxx</AccordionItemButton>
                 </AccordionItemHeading>
-                <AccordionItemPanel>...</AccordionItemPanel>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>yyyyy</p>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
               </SpecAccordionItem>
+
+
             </SpecAccordion>
 
-
-
             <Accordion defaultIndex={[0]} allowToggle>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      How do you optimize performance in a React application?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text mb={0}>
-                    Optimizing performance in a React application involves
-                    several techniques that help in{" "}
-                    <b>reducing the app's load time</b>,{" "}
-                    <b>minimizing unnecessary renders</b>, and{" "}
-                    <b>improving the overall user experience</b>.
-                  </Text>
-                  <Text>Here are some strategies:</Text>
-
-                  <Heading as="h3" size={"md"} mb={0}>
-                    Processes
-                  </Heading>
-                  <ul className="list-align-left">
-                    <li>
-                      Reducing initial load time with <b>lazy loading</b>
-                    </li>
-                    <li>
-                      Breaking the code into smaller bundles with{" "}
-                      <b>Code spitting</b>
-                    </li>
-                    <li>
-                      Avoids unecessary operations with <b>Memoization</b>:
-                    </li>
-                    <ul className="list-align-left">
-                      <li>
-                        <b>React.memo()</b> for avoiding unecessary re-renders
-                      </li>
-                      <li>
-                        <b>UseMemo()</b> for avoiding unecessary re-calculations
-                      </li>
-                      <li>
-                        <b>UseCallback()</b> for caching functions
-                      </li>
-                    </ul>
-                  </ul>
-
-                  <Heading as="h3" size={"md"} mb={0}>
-                    Coding patterns
-                  </Heading>
-                  <ul className="list-align-left">
-                    <li>
-                      Reducing components size by keeping them reusable and
-                      simple
-                    </li>
-                    <li>Preventing excessive state updates</li>
-                    <li>
-                      Identifying performance bottlenecks by using DevTools
-                    </li>
-                  </ul>
-
-                  <footer className="accordion-footer">
-                    <Link
-                      className="btn btn-small btn-secondary btn-icon"
-                      href="https://chatgpt.com/share/671bf545-c350-8001-8c04-9da0f9215634"
-                      isExternal
-                    >
-                      More on React perfomance optimization <IconExternalLink />
-                    </Link>
-                  </footer>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      How does reconciliation work in React?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    React uses the reconciliation process to figure out how to
-                    update the{" "}
-                    <button className="btn-link" onClick={openModal}>
-                      actual DOM
-                    </button>{" "}
-                    to match the{" "}
-                    <button className="btn-link" onClick={openModal}>
-                      Virtual DOM
-                    </button>
-                    effectively. Here’s is{" "}
-                    <Link
-                      href="https://chatgpt.com/share/671d00f5-4244-8001-b0d7-0fcdbefb4611"
-                      isExternal
-                    >
-                      how reconciliation works ...
-                    </Link>
-                  </Text>
-
-                  <footer className="accordion-footer">
-                    <Link
-                      className="btn btn-small btn-secondary btn-icon"
-                      href="https://react.dev/learn/preserving-and-resetting-state"
-                      isExternal
-                    >
-                      Preserving and Resetting State
-                      <IconReact
-                        fill={"#009dc6"}
-                        width={"1.3rem"}
-                        height={"1.3rem"}
-                      />
-                    </Link>
-                    <Link
-                      className="btn btn-small btn-secondary btn-icon"
-                      href="https://legacy.reactjs.org/docs/reconciliation.html"
-                      isExternal
-                    >
-                      Reconciliation
-                      <IconReact
-                        fill={"#009dc6"}
-                        width={"1.3rem"}
-                        height={"1.3rem"}
-                      />
-                    </Link>
-                  </footer>
-                </AccordionPanel>
-              </AccordionItem>
-
               <AccordionItem>
                 <h2>
                   <AccordionButton
@@ -2089,466 +2251,254 @@ const PageReactCoreConcepts = () => {
         </Card>
       </Box>
 
+      <Heading as="h2" size="lg">
+        Security
+      </Heading>
       <Box className="row" marginBottom="10">
-        <Card shadow="md" borderWidth="1px" borderColor="gray.300">
-          <CardHeader>
-            <Heading as="h2" size="lg">
-              Security
-            </Heading>
-          </CardHeader>
-          <CardBody>
-            <Accordion defaultIndex={[0]} allowToggle>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      What is cross-site scripting (XSS)?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text mb={0}>
-                    Cross-Site Scripting (XSS) is a type of security
-                    vulnerability commonly found in web applications. It occurs
-                    when an attacker injects malicious scripts, usually
-                    JavaScript, into a trusted website. These scripts can then
-                    be executed in the user’s browser, allowing the attacker to
-                    steal sensitive information, manipulate the user interface,
-                    or redirect users to malicious sites.
-                  </Text>
-                </AccordionPanel>
-              </AccordionItem>
+        <Card shadow="md" borderWidth="1px" borderColor="gray.300" padding={0}>
+          <CardBody padding={0}>
+            <SpecAccordion>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    What is cross-site scripting (XSS)?
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>
+                            Cross-Site Scripting (XSS) is a type of security
+                            vulnerability commonly found in web applications. It
+                            occurs when an attacker injects malicious scripts,
+                            usually JavaScript, into a trusted website. These
+                            scripts can then be executed in the user’s browser,
+                            allowing the attacker to steal sensitive
+                            information, manipulate the user interface, or
+                            redirect users to malicious sites.
+                          </p>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
 
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      What types of XSS there is?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>There are three main types of XSS:</Text>
-                  <ol className="list-aligh-left">
-                    <li>
-                      <b>Stored XSS (Persistent XSS)</b>: The malicious script
-                      is permanently stored on the target server (in a database,
-                      message board, etc.), and every time a user accesses the
-                      page, the script is served to their browser. This can have
-                      a wide impact if many users visit the infected page.
-                    </li>
-                    <li>
-                      <b>Reflected XSS</b>: The malicious script is reflected
-                      off a web server, typically through URL parameters or HTTP
-                      headers. It’s then sent back to the user in the response
-                      and executed by their browser. This type often relies on
-                      social engineering, like getting users to click on a
-                      malicious link.
-                    </li>
-                    <li>
-                      <b>DOM-Based XSS</b>: This happens entirely on the client
-                      side when JavaScript modifies the DOM without proper
-                      validation, allowing attackers to inject scripts directly
-                      in the browser without needing a server response.
-                    </li>
-                  </ol>
-                </AccordionPanel>
-              </AccordionItem>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    What types of XSS there is?
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <p>There are three main types of XSS:</p>
+                          <ol className="list-aligh-left">
+                            <li>
+                              <b>Stored/Persistent XSS</b>: The malicious script
+                              is permanently stored on the target server (in a
+                              database, message board, etc.), and every time a
+                              user accesses the page, the script is served to
+                              their browser. This can have a wide impact if many
+                              users visit the infected page.
+                            </li>
+                            <li>
+                              <b>Reflected XSS</b>: The malicious script is
+                              reflected off a web server, typically through URL
+                              parameters or HTTP headers. It’s then sent back to
+                              the user in the response and executed by their
+                              browser. This type often relies on social
+                              engineering, like getting users to click on a
+                              malicious link.
+                            </li>
+                            <li>
+                              <b>DOM-Based XSS</b>: This happens entirely on the
+                              client side when JavaScript modifies the DOM
+                              without proper validation, allowing attackers to
+                              inject scripts directly in the browser without
+                              needing a server response.
+                            </li>
+                          </ol>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
 
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      What are the prevention techniques against XSS?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>Here are a few technique we can use:</Text>
-                  <ol className="list-aligh-left">
-                    <li>
-                      <b>Input Validation and Sanitization</b>: Ensure that all
-                      input is{" "}
-                      <Link
-                        isExternal
-                        href="https://github.com/cure53/DOMPurify"
-                      >
-                        validated and sanitized
-                      </Link>{" "}
-                      before it is rendered on the page.
-                    </li>
-                    <li>
-                      <b>Escaping User Input</b>: Always escape user-generated
-                      data when it is output in the HTML context.
-                    </li>
-                    <li>
-                      <b>Content Security Policy (CSP)</b>: Set up a CSP header
-                      to control which resources are allowed to load on a page.
-                    </li>
-                    <li>
-                      <b>Encoding Outputs</b>: Encode any outputs from user
-                      inputs to avoid unwanted script execution in the browser.
-                    </li>
-                  </ol>
-                </AccordionPanel>
-              </AccordionItem>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    What are the prevention techniques against XSS?
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>Here are a few technique we can use:</Text>
+                          <ol className="list-aligh-left">
+                            <li>
+                              <b>Input Validation and Sanitization</b>: Ensure
+                              that all input is{" "}
+                              <Link
+                                isExternal
+                                href="https://github.com/cure53/DOMPurify"
+                              >
+                                validated and sanitized
+                              </Link>{" "}
+                              before it is rendered on the page.
+                            </li>
+                            <li>
+                              <b>Escaping User Input</b>: Always escape
+                              user-generated data when it is output in the HTML
+                              context.
+                            </li>
+                            <li>
+                              <b>Content Security Policy (CSP)</b>: Set up a CSP
+                              header to control which resources are allowed to
+                              load on a page.
+                            </li>
+                            <li>
+                              <b>Encoding Outputs</b>: Encode any outputs from
+                              user inputs to avoid unwanted script execution in
+                              the browser.
+                            </li>
+                          </ol>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
 
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      In which ways does a web app get exposed to XSS?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    Web applications are exposed to Cross-Site Scripting (XSS)
-                    vulnerabilities in a few main ways:
-                  </Text>
-                  <ol className="list-aligh-left">
-                    <li>
-                      <b>User Input Fields</b>: Form fields where users can
-                      submit information are common vectors. URL parameters are
-                      often used by applications to retrieve data or customize
-                      views.
-                    </li>
-                    <li>
-                      <b>Dynamic Content Rendering</b>: (DOM manipulations) In
-                      JavaScript-heavy apps (e.g., React, Vue, or vanilla JS),
-                      manipulating the DOM dynamically without sanitizing inputs
-                      can lead to XSS.
-                    </li>
-                    <li>
-                      <b>Third-Party Resources and APIs</b>: Third-Party
-                      Libraries, including third-party libraries or widgets
-                      (e.g., ads, analytics scripts) may introduce
-                      vulnerabilities if the scripts are compromised.
-                    </li>
-                  </ol>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    In which ways does a web app get exposed to XSS?
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>
+                            Web applications are exposed to Cross-Site Scripting
+                            (XSS) vulnerabilities in a few main ways:
+                          </Text>
+                          <ol className="list-aligh-left">
+                            <li>
+                              <b>User Input Fields</b>: Form fields where users
+                              can submit information are common vectors. URL
+                              parameters are often used by applications to
+                              retrieve data or customize views.
+                            </li>
+                            <li>
+                              <b>Dynamic Content Rendering</b>: (DOM
+                              manipulations) In JavaScript-heavy apps (e.g.,
+                              React, Vue, or vanilla JS), manipulating the DOM
+                              dynamically without sanitizing inputs can lead to
+                              XSS.
+                            </li>
+                            <li>
+                              <b>Third-Party Resources and APIs</b>: Third-Party
+                              Libraries, including third-party libraries or
+                              widgets (e.g., ads, analytics scripts) may
+                              introduce vulnerabilities if the scripts are
+                              compromised.
+                            </li>
+                          </ol>
 
-                  <footer className="accordion-footer">
-                    <Link
-                      className="btn btn-small btn-secondary btn-icon"
-                      href="https://chatgpt.com/share/6723983d-92f0-8001-a00f-4c9da2978677"
-                      isExternal
-                    >
-                      More on XSS exposures
-                      <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
-                    </Link>
-                  </footer>
-                </AccordionPanel>
-              </AccordionItem>
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://chatgpt.com/share/6723983d-92f0-8001-a00f-4c9da2978677"
+                              isExternal
+                            >
+                              More on XSS exposures
+                              <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                            </Link>
+                          </footer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
 
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      Other questions ...
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Text>
-                    Web applications are exposed to Cross-Site Scripting (XSS)
-                    vulnerabilities in a few main ways:
-                  </Text>
-                  <ol className="list-aligh-left">
-                    <li>
-                      What are some common security vulnerabilities in React
-                      applications, and how would you mitigate them?
-                    </li>
-                    <li>
-                      How can you prevent cross-site scripting (XSS) attacks in
-                      a React app?
-                    </li>
-                    <li>
-                      What is the importance of authentication and authorization
-                      in React, and how can you implement them securely?
-                    </li>
+              <SpecAccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>Other questions ...</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <AccordionItemState>
+                    {/** PERFORMANCE OPTIMIZATION: Only renders if panel is expanded */}
+                    {({ expanded }) =>
+                      expanded && (
+                        <>
+                          <Text>
+                            Web applications are exposed to Cross-Site Scripting
+                            (XSS) vulnerabilities in a few main ways:
+                          </Text>
+                          <ol className="list-aligh-left">
+                            <li>
+                              What are some common security vulnerabilities in
+                              React applications, and how would you mitigate
+                              them?
+                            </li>
+                            <li>
+                              How can you prevent cross-site scripting (XSS)
+                              attacks in a React app?
+                            </li>
+                            <li>
+                              What is the importance of authentication and
+                              authorization in React, and how can you implement
+                              them securely?
+                            </li>
 
-                    <li>
-                      How can you secure API calls made from a React
-                      application?
-                    </li>
+                            <li>
+                              How can you secure API calls made from a React
+                              application?
+                            </li>
 
-                    <li>
-                      What are some best practices for securing state management
-                      in React, especially when using tools like Redux?
-                    </li>
-                  </ol>
+                            <li>
+                              What are some best practices for securing state
+                              management in React, especially when using tools
+                              like Redux?
+                            </li>
+                          </ol>
 
-                  <footer className="accordion-footer">
-                    <Link
-                      className="btn btn-small btn-secondary btn-icon"
-                      href="https://chatgpt.com/share/6723983d-92f0-8001-a00f-4c9da2978677"
-                      isExternal
-                    >
-                      More on XSS exposures
-                      <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
-                    </Link>
-                  </footer>
-                </AccordionPanel>
-              </AccordionItem>
-            </Accordion>
+                          <footer className="accordion-footer">
+                            <Link
+                              className="btn btn-small btn-secondary btn-icon"
+                              href="https://chatgpt.com/share/6723983d-92f0-8001-a00f-4c9da2978677"
+                              isExternal
+                            >
+                              More on XSS exposures
+                              <IconChatGPT width={"1.3rem"} height={"1.3rem"} />
+                            </Link>
+                          </footer>
+                        </>
+                      )
+                    }
+                  </AccordionItemState>
+                </AccordionItemPanel>
+              </SpecAccordionItem>
+            </SpecAccordion>
           </CardBody>
         </Card>
       </Box>
-
-      {/* 
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <Heading>
-                  <AccordionButton
-                    _expanded={{ bg: "blue.200", color: "gray.900" }}
-                  >
-                    <Box
-                      as="span"
-                      flex="1"
-                      textAlign="left"
-                      fontWeight="bold"
-                      fontSize="20"
-                    >
-                      *****Heading******
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </Heading>
-                <AccordionPanel pb={4}>****** Body ******</AccordionPanel>
-              </AccordionItem> */}
-
-      {/* <Box className="row" marginBottom="10">
-        <Accordion defaultIndex={[0]} allowToggle>
-          <AccordionItem>
-            <h2>
-              <AccordionButton
-                _expanded={{ bg: "blue.200", color: "gray.900" }}
-              >
-                <Box
-                  as="span"
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize="20"
-                >
-                  Section 1 title
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </AccordionPanel>
-          </AccordionItem>
-
-          <AccordionItem>
-            <h2>
-              <AccordionButton
-                _expanded={{ bg: "blue.200", color: "gray.900" }}
-              >
-                <Box
-                  as="span"
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize="20"
-                >
-                  Section 2 title
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-      </Box> */}
-
-      {/* <Box className="row" marginBottom="10">
-        <Accordion defaultIndex={[0]} allowToggle>
-          <AccordionItem>
-            <h2>
-              <AccordionButton
-                _expanded={{ bg: "blue.200", color: "gray.900" }}
-              >
-                <Box
-                  as="span"
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize="20"
-                >
-                  Section 1 title
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </AccordionPanel>
-          </AccordionItem>
-
-          <AccordionItem>
-            <h2>
-              <AccordionButton
-                _expanded={{ bg: "blue.200", color: "gray.900" }}
-              >
-                <Box
-                  as="span"
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize="20"
-                >
-                  Section 2 title
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-      </Box>  */}
     </section>
   );
 };

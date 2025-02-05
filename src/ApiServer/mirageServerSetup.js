@@ -124,7 +124,7 @@ const makeMirageServer = () => {
                     <li>of an asynchronous operation</li>
                     <li>and its resulting value</li>
                     <li>
-                      It allows the handling asynchronous code more cleanly
+                      It allows the handling of asynchronous code more cleanly
                     </li>
                     <li>compared to traditional callback-based approaches</li>
                   </ul>`,
@@ -187,7 +187,7 @@ const makeMirageServer = () => {
 
                       <ul class="list-align-left">
                         <li>
-                          <b>Buil-in hooks</b>: Which leverage core React management features 
+                          <b>Built-in hooks</b>: Which leverage core React management features 
                           like State, Context, Effect, Ref, or Performance.
                         </li>
                         <li>
@@ -217,6 +217,63 @@ const makeMirageServer = () => {
                       application and is therefore "destroyed" to free up resources. However, 
                       the component’s logic (such as its code definition) still exists in your 
                       application and can be mounted again if needed.</p>`,
+      });
+
+      server.create('definition', {
+        id: 19, 
+        title: 'Asynchronous function',
+        description: `<p>An async function returns a promise and simplifies asynchronous operations like:</p> 
+
+                      <ul class="list-align-left">
+                        <li>Fetching data from an API</li>
+                        <li>Performing a database query</li>
+                        <li>Waiting for the result of a specific process</li>
+                      </ul>`,
+      });
+
+      server.create('definition', {
+        id: 20, 
+        title: 'A closure',
+        description: `<p>A closure is a function that retains access to the variables
+                    and parameters of its outer function even after the outer
+                    function has finished executing. This allows the inner
+                    function to 'remember' the context in which it was created,
+                    giving it privileged access to the scope of its parent
+                    function.</p> 
+
+                    <h4>Key points</h4>
+
+                    <ul className="list-aligh-left">
+                      <li>
+                        <b>Inner function access:</b> The inner function can still
+                        access the variables from its parent function, even after
+                        the parent has returned.
+                      </li>
+                      <li>
+                        <b>Context retention:</b> This ability to "remember" and
+                        use variables from the parent function is what defines the
+                        closure.
+                      </li>
+                      <li>
+                        <b>Privileged access:</b> The closure creates a private
+                        environment for these variables, not accessible from the
+                        outside.
+                      </li>
+                    </ul> 
+                      
+                      `,
+      });
+
+      server.create('definition', {
+        id: 21, 
+        title: 'Route/url parameter',
+        description: `<p className="mb-0">A route or URL parameter is a variable part of a URL that
+                    can be used to capture and pass data in the URL itself.
+                    These parameters help define dynamic routes in web
+                    applications, allowing for flexibility in handling different
+                    data with the same route pattern.</p>  
+                      
+                      `,
       });
 
 
