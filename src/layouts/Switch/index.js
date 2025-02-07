@@ -11,14 +11,13 @@ const Switch = () => {
 
     return (
       <Box className='theme-switch'>
-        <Button onClick={toggleColorMode} variant='ghost'>
-          {colorMode === 'light' ?
+        <button aria-label={`Change theme color to ${colorMode === 'light'? 'dark' : 'light'}`}>
+        {colorMode === 'light' ?
             <FontAwesomeIcon icon={faSun} size='2x' />
             :
             <FontAwesomeIcon icon={faMoon} size='2x' />
           }
-          
-        </Button>
+        </button> 
       </Box>
 //         <label className="switch">
 

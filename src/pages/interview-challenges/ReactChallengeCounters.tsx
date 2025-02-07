@@ -119,44 +119,58 @@ const ReactChallengeCounters = () => {
                     </li>
                   </ol>
                 </div>
-              </div> 
+              </div>
             </div>
           </div>
 
-<br />
+          <br />
 
-<div className="card text-bg-light">
-  <div className="card-header">
-    <h3>Part 3: Jest test</h3>
-  </div>
-  <div className="card-body">
-    <p>
-      Write tests that check the counter:
-    </p>
-    <ol className="list-align-left">
-          <li>
-            <b>minus (-)</b> and <b>plus (+)</b> buttons work well
-          </li>
-          <li>
-          The display is initialized at <b>zero (0)</b>, and updates when <b>minus (-)</b> and <b>plus (+)</b> buttons are pressed. 
-          </li> 
-        </ol>
+          <div className="card text-bg-light">
+            <div className="card-header">
+              <h3>Part 3: Accessibility</h3>
+            </div>
+            <div className="card-body">
+              <p>Ensure the full application fulfills {' '}
+              <a href="https://chatgpt.com/share/67a4f510-f420-8001-a1dc-258866a1bdb9" target="_blank"><b>AA</b> and <b>AAA</b> Accessibility standards</a> {' '}
+                
+                 and explain your evaluation process. For example, when applying an accessibility feature, explain Accessibility standard you are matching.</p>  
+            </div>
+          </div>
 
-    <p>
-      Write tests that check the <b>"global display"</b> and <b>"Add counter"</b> buttons:
-    </p>
-    <ol className="list-align-left">
-          <li>
-            Clicking the <b>"Add counter"</b> increases the number of counters
-          </li>
-          <li>
-            The <b>"global display"</b> is synchronized to the total count of all counters
-          </li> 
-        </ol>
+          <br />
 
+          <div className="card text-bg-light">
+            <div className="card-header">
+              <h3>Part 4: Jest test</h3>
+            </div>
+            <div className="card-body">
+              <p>Write tests that check the counter:</p>
+              <ol className="list-align-left">
+                <li>
+                  <b>minus (-)</b> and <b>plus (+)</b> buttons work well
+                </li>
+                <li>
+                  The display is initialized at <b>zero (0)</b>, and updates
+                  when <b>minus (-)</b> and <b>plus (+)</b> buttons are pressed.
+                </li>
+              </ol>
 
-  </div>
-</div>
+              <p>
+                Write tests that check the <b>"global display"</b> and{" "}
+                <b>"Add counter"</b> buttons:
+              </p>
+              <ol className="list-align-left">
+                <li>
+                  Clicking the <b>"Add counter"</b> increases the number of
+                  counters
+                </li>
+                <li>
+                  The <b>"global display"</b> is synchronized to the total count
+                  of all counters
+                </li>
+              </ol>
+            </div>
+          </div>
         </section>
       </div>
 

@@ -35,19 +35,21 @@ const ReactChallengePerfHooks = () => {
         <br />
         <p>
           Explain the difference between <b>React.memo</b>, <b>useMemo</b>, and{" "}
-          <b>useCallback</b> hooks. For each hook:
+          <b>useCallback</b> hooks.
         </p>
 
         <div className="col">
           <div className="card text-bg-light">
             <div className="card-body">
-              <ul style={{ paddingLeft: "1.4rem" }}>
+              <p>For each hook:</p>
+              <ol style={{ paddingLeft: "1.4rem" }}>
                 <li>
-                  Create a small application showcasing its implementation
+                  Create a small application without the hook, and explain{" "}
+                  <b>what we are missing by not using the hook</b>.
                 </li>
-                <li>Explain the reason for its usage</li>
-                <li>Tell us what does it do</li>
-              </ul>
+                <li>Modify your application by using the hook <b>and explain the difference</b>.</li>
+                <li>Conclude by giving us a general use case for this hook.</li>
+              </ol>
             </div>
           </div>
         </div>
