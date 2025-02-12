@@ -36,44 +36,44 @@ const ReactChallengeCounters = () => {
         <section>
           <div className="card text-bg-light">
             <div className="card-header">
-              <h3>Part 1</h3>
+              <h3>Part 1: xxx</h3>
             </div>
             <div className="card-body">
+              <h3>Part 1</h3>
+              <ol className="list-align-left">
+                <li>
+                  Create a counter component rendering 1 small{" "}
+                  <b>heading initialized to "0"</b> and 2 buttons, one{" "}
+                  <b>"-"</b>, and one <b>"+"</b>.
+                </li>
+                <li>
+                  Clicking the <b>"+"</b> button increments the display by{" "}
+                  <b>1</b>. Clicking the <b>"-"</b>, button decrements the
+                  display by <b>1</b>.
+                </li>
+              </ol>
+              <p></p>
+
+              <br />
+
+              <h3>Part 2</h3>
+              <ol className="list-align-left">
+                <li>
+                  Create the functionality to <b>add</b> and <b>remove</b> as
+                  many counter on stage.
+                </li>
+                <li>
+                  Create the functionality to display a <b>grand total</b>,
+                  which is the sum of all counters on stage.
+                </li>
+                <li>
+                  Create the functionality to apply a{" "}
+                  <b>random background color</b> to each newly added counter.
+                </li>
+              </ol>
               <p>
-                Create a counter component containing a <b>display</b> and{" "}
-                <b>2 buttons</b>, then place it on the main stage.
+                <b>Note:</b> A minimum of 1 counter should always be on stage.
               </p>
-
-              <div className="row">
-                <div className="col">
-                  <h3>Anatomy</h3>
-                  <ol className="list-align-left">
-                    <li>
-                      The display is initialized at <b>zero (0)</b>.
-                    </li>
-                    <li>
-                      The first button is labelled as <b>plus (+)</b>.
-                    </li>
-                    <li>
-                      The second button is labelled as <b>minus (-)</b>.
-                    </li>
-                  </ol>
-                </div>
-
-                <div className="col">
-                  <h3>Behaviour</h3>
-                  <ol className="list-align-left">
-                    <li>
-                      Clicking the <b>plus (+)</b> button increments the display
-                      by <b>1</b>.
-                    </li>
-                    <li>
-                      Clicking the <b>minus (-)</b> button decrements the
-                      display by <b>1</b>.
-                    </li>
-                  </ol>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -81,45 +81,12 @@ const ReactChallengeCounters = () => {
 
           <div className="card text-bg-light">
             <div className="card-header">
-              <h3>Part 2</h3>
+              <h3>Part 2: Code optimization</h3>
             </div>
             <div className="card-body">
               <p>
-                Add a new button labelled <b>"Add counter"</b> to the main
-                stage; then add a new <b>display</b> (we'll call it{" "}
-                <b>"global display"</b>) besides the new counter.
+                Make sure there is no <b>unnecessary re-render</b> and <b>unnecessary re-calculations</b>.
               </p>
-
-              <div className="row">
-                <div className="col">
-                  <h3>Anatomy</h3>
-                  <ol className="list-align-left">
-                    <li>
-                      The <b>"global display"</b> and <b>"Add counter"</b>{" "}
-                      button are global elements and shall be above the rest of
-                      the components.
-                    </li>
-                    <li>
-                      The <b>"global display"</b> is initialized at{" "}
-                      <b>zero (0)</b>.
-                    </li>
-                  </ol>
-                </div>
-
-                <div className="col">
-                  <h3>Behaviour</h3>
-                  <ol className="list-align-left">
-                    <li>
-                      Clicking the <b>"Add counter"</b> button a new counter
-                      dynamically on stage.
-                    </li>
-                    <li>
-                      The <b>"global display"</b> will render the sum of all
-                      counter displays.
-                    </li>
-                  </ol>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -130,10 +97,18 @@ const ReactChallengeCounters = () => {
               <h3>Part 3: Accessibility</h3>
             </div>
             <div className="card-body">
-              <p>Ensure the full application fulfills {' '}
-              <a href="https://chatgpt.com/share/67a4f510-f420-8001-a1dc-258866a1bdb9" target="_blank"><b>AA</b> and <b>AAA</b> Accessibility standards</a> {' '}
-                
-                 and explain your evaluation process. For example, when applying an accessibility feature, explain Accessibility standard you are matching.</p>  
+              <p>
+                Ensure the full application fulfills{" "}
+                <NavLink
+                  to="https://chatgpt.com/share/67a4f510-f420-8001-a1dc-258866a1bdb9"
+                  target="_blank"
+                >
+                  <b>AA</b> and <b>AAA</b> Accessibility standards
+                </NavLink>{" "}
+                and explain your evaluation process. For example, when applying
+                an accessibility feature, explain Accessibility standard you are
+                matching.
+              </p>
             </div>
           </div>
 
@@ -176,22 +151,22 @@ const ReactChallengeCounters = () => {
 
       <footer className="row challenge-footer">
         <div className="col">
-          <a
+          <NavLink
             className="btn btn-secondary"
-            href="#"
+            to="https://chatgpt.com/c/67abde3b-b5d4-8001-a274-2110fe169254"
             target="_blank"
             rel="noopener"
           >
             See solution
-          </a>
-          <a
+          </NavLink>
+          <NavLink
             className="btn btn-primary"
-            href="https://stackblitz.com/fork/react-ts"
+            to="https://stackblitz.com/fork/react-ts"
             target="_blank"
             rel="noopener"
           >
             Start coding
-          </a>
+          </NavLink>
         </div>
       </footer>
 

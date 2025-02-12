@@ -47,7 +47,11 @@ const ReactChallengePerfHooks = () => {
                   Create a small application without the hook, and explain{" "}
                   <b>what we are missing by not using the hook</b>.
                 </li>
-                <li>Modify your application by using the hook <b>and explain the difference</b>.</li>
+                <li>Modify your application by using the hook <b>and explain the difference</b>. Show {' '}
+                <a href="https://chatgpt.com/c/67a74ef2-34e4-8001-b2e4-abb9dbe81762" target="_blank">how they purify the component</a>.
+                
+                
+                </li>
                 <li>Conclude by giving us a general use case for this hook.</li>
               </ol>
             </div>

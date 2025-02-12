@@ -31,21 +31,22 @@ const ReactChallenge = () => {
         <br />
         <br />
         <section>
-          <p>Skill and knowledge test in React. Each test, though focused on specific aspects of React will also test various aspects of your skills (TypeScript, {' '}
-            
-            <a href="https://chatgpt.com/share/67a4f510-f420-8001-a1dc-258866a1bdb9" target="_blank">Accessibility</a>
-            , Unit testing, ...)</p>
+          <p>
+            Skill and knowledge test in React. Each test, though focused on
+            specific aspects of React will also test various aspects of your
+            skills (TypeScript,{" "}
+            <a
+              href="https://chatgpt.com/share/67a4f510-f420-8001-a1dc-258866a1bdb9"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+            , Unit testing, ...)
+          </p>
           <ol className="list-align-left">
             <li>
               <NavLink to={`${root}/interview-challenges/react/counters`}>
                 Counters
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to={`${root}/interview-challenges/react/modal-accessibility`}
-              >
-                Modal (Accessibility)
               </NavLink>
             </li>
             <li>
@@ -84,22 +85,53 @@ const ReactChallenge = () => {
               </NavLink>
             </li>
             <li>
-              <a href="https://chatgpt.com/share/67a4b834-f13c-8001-a249-27cc1f91179e" target="_blank">
-              Theme Switcher with Context API (Jest API test)
+              <a
+                href="https://chatgpt.com/share/67a4b8ca-274c-8001-9b8d-2a6f618cd47a"
+                target="_blank"
+              >
+                Full Component Lifecycle Review
+              </a>
+            </li>
+          </ol>
+
+          <h3>Accessibility</h3>
+          <ol className="list-align-left">
+            <li>
+              <a
+                href="https://chatgpt.com/c/67a3ec6f-8254-8001-9169-702b8ef65327"
+                target="_blank"
+              >
+                Accessibility Review
               </a>
             </li>
             <li>
-              <a href="https://chatgpt.com/share/67a4b8ca-274c-8001-9b8d-2a6f618cd47a" target="_blank">Full Component Lifecycle Review</a>
+              <NavLink
+                to={`${root}/interview-challenges/react/modal-accessibility`}
+              >
+                Modal (Accessibility)
+              </NavLink>
             </li>
-            <li>
-              <a href="https://chatgpt.com/c/67a3ec6f-8254-8001-9169-702b8ef65327" target="_blank">Accessibility Review</a>
-            </li>
-
-
-            
           </ol>
 
-
+          <h3>Context API</h3>
+          <ol className="list-align-left">
+            <li>
+              <a
+                href="https://chatgpt.com/share/67a4b834-f13c-8001-a249-27cc1f91179e"
+                target="_blank"
+              >
+                Theme Switcher with Context API (Jest API test)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://chatgpt.com/c/67a77995-061c-8001-84ea-8604cfa4e66c"
+                target="_blank"
+              >
+                Multi-Step Form with Context API
+              </a>
+            </li>
+          </ol>
 
           <h3>Performance optimization, preventing unnecessary re-renders</h3>
           <ol className="list-align-left">
@@ -108,6 +140,30 @@ const ReactChallenge = () => {
                 to={`${root}/interview-challenges/react/performance-hooks-1`}
               >
                 Perforance hooks (1)
+              </NavLink>
+            </li>
+          </ol>
+
+          <h3>Component lifecycle</h3>
+          <ol className="list-align-left">
+            <li>
+              <NavLink
+                to="https://chatgpt.com/c/67a4b89f-3fe8-8001-b882-2d1641c21463"
+                target="_blank"
+              >
+                Component lifecycle (1)
+              </NavLink>
+            </li>
+          </ol>
+
+          <h3>Refs: DOM manipulation, persistent values without re-rendr</h3>
+          <ol className="list-align-left">
+            <li>
+              <NavLink
+                to="https://chatgpt.com/c/67aa57bf-0628-8001-89c9-acd9acc4a240"
+                target="_blank"
+              >
+                Interactive video player component
               </NavLink>
             </li>
           </ol>
